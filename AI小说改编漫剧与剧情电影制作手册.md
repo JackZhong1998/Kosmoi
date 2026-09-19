@@ -1,0 +1,381 @@
+# 用 AI 把小说改编成漫剧或真人剧情电影
+
+## 学习手册与 Agent 制作框架
+
+日期：2026 年 9 月 8 日  
+读者：希望系统学习 AI 叙事视频制作，并把方法交给 Agent 执行的创作者、导演、编剧和产品开发者
+
+## 直接结论
+
+当前 AI 视频模型已经能稳定承担短镜头生成、关键帧动画、参考角色控制、表演迁移、局部重绘和部分原生音频，但没有一个模型能可靠地把整部小说一次变成可发行电影。主流产品的单次输出通常只有 5 至 30 秒，而且角色身份、服装、道具、空间、动作因果和声音仍会随镜头漂移。因此，可复用的生产系统应把工作拆成三类：前期用结构化数据锁定故事和资产；中期按短镜头提交生成任务；后期用剪辑、配音、音效、调色和局部重生成完成作品。
+
+最实用的原则是：剧作和连续性尽量确定，生成允许随机，最终选择由验收门槛决定。视频提示词只是镜头计划的编译结果，不能替代改编、导演和剪辑。
+
+## 研究范围和假设
+
+本文同时覆盖两条成片路线：一是 2D、漫画、插画或 2.5D 风格的漫剧；二是写实角色和摄影感画面的真人剧情片。目标不是列一组提示词，而是建立能够持续处理长篇小说、多个章节和多集内容的制作方法。模型能力按 2026 年 9 月 8 日的公开资料核验；价格、地域、账号权限和 API 状态变化很快，正式开工前应重新检查。
+
+本文把三幕、节拍表、180 度轴线和常见 coverage 视为实用框架，不视为强制标准。导演可以有意打破惯例，但必须说明叙事效果，并确保观众仍能理解人物欲望、因果、空间和情绪变化。
+
+## 一 从小说到成片的表示链
+
+一个长篇项目需要把同一故事保存为不同精度的表示。推荐使用以下九层：
+
+1. 小说原文与授权信息。保存章节、段落定位、版本、权利范围和禁用素材。
+2. 改编圣经。锁定主题核心、类型承诺、世界规则、主要角色弧和最终结局。
+3. 章节事件账本。记录事实事件、人物欲望与阻力、关系变化、伏笔和回收、内心信息、意象与语气。
+4. 季集与段落结构。把材料重组为 episode、sequence、scene 和 story beat。
+5. 场景剧本。用可见行动、对白、声音和环境写出连续时空中的戏剧单元。
+6. 场景和角色资产。建立身份、服装、道具、场景拓扑、材质、时间和光线的权威参考。
+7. 镜头计划。为每个 shot 定义叙事功能、构图、调度、运动、时长、声音和首尾状态。
+8. 生成清单。记录模型、入口、参数、参考图职责、提示词、候选、版本、成本和错误。
+9. 剪辑与验收记录。保存选用 take、时间线、连续性检查、修改原因、版权和标识状态。
+
+这条链的价值在于可追溯。如果最终镜头丢失伏笔，可以向上追到改编决策；如果角色衣服突然改变，可以追到资产版本或镜头首尾状态；如果模型出错，可以重跑一个镜头，而不必重做整集。
+
+## 二 前期准备
+
+### 权利和项目合同
+
+开始改编前先确认小说的改编和视听制作授权。中国著作权法把改编和以摄制视听作品的方法使用作品列为著作权控制的行为；使用改编作品制作录音录像还可能同时涉及原作权利人的许可。项目还应记录真人肖像、声音、音乐、字体、品牌和参考图的许可范围。[中华人民共和国著作权法](https://www.npc.gov.cn/c2/c30834/202011/t20201119_308796.html)
+
+建立一张项目合同卡，至少包含：目标成片类型、受众、级别、单集和总时长、画幅、语言、平台、视觉路线、制作预算、可接受的生成工具、禁用内容、版权与肖像授权状态、人工审批人。
+
+### 小说解析和改编决策
+
+不要把 chapter 直接映射为 episode，也不要逐字改写。先对每章抽取：
+
+- 事实事件和因果关系。
+- 每个角色此刻想要什么、遇到什么阻力、采取什么策略。
+- 人物关系和权力如何变化。
+- 新出现或回收的伏笔。
+- 世界规则和不可违背的设定。
+- 叙述者提供但镜头看不见的内心信息。
+- 反复出现的意象、声音和语气。
+
+再给每项材料标注 preserve、merge、delete、reorder、reassign 或 externalize。externalize 是关键：把内心独白转化为行为、道具、场景阻力、构图、视点、对白潜台词、旁白或声音母题。Academy 的编剧教材强调电影以视觉讲述；BAFTA 的改编讲座则把改编描述为保留核心后重新为电影想象，而非复制原作。[Academy 编剧活动指南](https://www.oscars.org/sites/oscars/files/complete_screen_writing_activities_guide.pdf) [Peter Straughan 的 BAFTA 编剧讲座](https://www.bafta.org/media-centre/press-releases/screenwriters-lecture-peter-straughan/) [Emma Thompson 的 BAFTA 编剧讲座](https://www.bafta.org/media-centre/press-releases/screenwriters-lecture-emma-thompson/)
+
+Agent 必须维护 adaptation_decision_log，至少记录 source_span、decision、reason、downstream_effect 和 confidence。这样才能在几十章之后检查某个伏笔或动机是否被意外删除。
+
+### 从事件到场景
+
+把保留的材料按戏剧功能重新聚类，而不是按原文章节边界排列：
+
+- sequence 负责完成一个较大的叙事目标，例如“主人公第一次进入禁区并带出关键证据”。
+- scene 是连续时空中的戏剧单元，具有进入状态、目标、冲突、转折和退出状态。
+- story beat 是场景内意图、情绪、信息或权力关系发生变化的点。
+- shot 是观众一次连续观看的画面，是生成模型的主要执行单元。
+
+每场戏必须回答四个问题：谁想要什么；谁或什么阻止他；本场发生了哪个不可逆变化；离场时观众知道或感受到什么。固定节拍数不是目标。结构模型只用于发现中段松散、因果断裂或角色没有选择。
+
+### 角色资产
+
+已安装的 Cast Builder Skill 可以作为角色资产模块。其可复用部分不是某个模型名字，而是权威资产链和审批门槛：
+
+1. 文字身份规格。
+2. 可选候选脸。
+3. 用户选中的唯一候选。
+4. 用户批准的标准身份卡。
+5. 用户批准的每套服装基准。
+6. 三格角色表、局部细节卡、面部特写或双参考换装。
+
+只有获批资产才能成为下游参考。模型返回图片不等于资产获批。角色账本需要区分永久身份字段和随戏变化的 Look：脸型、肤色、发色、疤痕属于身份；衣服、妆面、首饰、发型和美甲属于 Look。每套服装还要绑定 story_time、weather、scene_range 和版本。
+
+### 场景和道具资产
+
+角色一致只是连续性的一部分。每个重要场景应建立：
+
+- 场景主参考图、平面拓扑和四向视图。
+- 门窗、主要家具、光源和可移动物体的位置。
+- 时间、天气、季节、年代、材质和色彩范围。
+- 允许改变与禁止改变的部分。
+- 入口、出口、人物轴线和可用机位。
+
+关键道具需要正反面、尺寸关系、材质、磨损和状态版本。例如“一封未拆的信”和“已经撕开的信”必须是两个连续性状态，而不是同一个道具名称。
+
+### 资产层级
+
+把资产分为三档，可以避免无差别地花费时间：
+
+- A 级英雄资产：主要角色、标志性服装、核心场景和剧情道具。必须人工批准，做多角度和细节检查。
+- B 级重复资产：配角、常用室内、车辆和常用物件。至少保持颜色、轮廓和功能稳定。
+- C 级一次性资产：路人、远景、不可辨识装饰。允许更宽松的随机性。
+
+## 三 漫剧和真人剧情片的路线差异
+
+### 漫剧
+
+漫剧最适合先把角色、场景和每个镜头的构图锁成高质量静帧，再用图生视频、2.5D 分层、局部循环、口型或表演驱动制作运动。它对照片级物理要求较低，但对造型线条、配色、脸和服装一致性要求很高。
+
+推荐的动作层级是：静态分镜加镜头运动；头发、衣摆、粒子和光影的局部循环；人物小幅表演；必要时才做全身复杂动作。对白戏可用单人表演迁移后交叉剪辑。不要让一个生成任务同时承担多人精细口型、复杂动作、长对白和大幅运镜。
+
+### 真人剧情片
+
+真人路线对皮肤、解剖、物理、视线、手部、接触动作、灯光方向和镜头匹配的要求更高。建议在重要镜头前先做 blocking 或真人驱动视频，再使用视频转视频、角色替换或关键帧控制。复杂动作、多人互动和精确接触比单人情绪近景风险高，应准备替代 coverage 和插入镜头。
+
+### 混合路线
+
+当成片要求高于纯文生视频的可控性时，可先用真人、3D 或简单动画做动作和机位预演，再用视频转视频完成角色和美术风格。这条路线增加前期劳动，却能把动作、节奏和构图从随机生成中剥离出来，通常最接近可导演的生产方式。
+
+## 四 镜头语言设计
+
+### 镜头从信息和情绪出发
+
+先写镜头功能，再选技术参数。每个镜头只需承担一个主要戏剧动词，例如发现、隐瞒、逼近、拒绝、误导或失去。然后决定观众应该先看见什么、和谁站在一起、此刻需要理解空间还是读取表情。
+
+ASC 的摄影指导认为机位应服务故事的情感核心，blocking 应先于机位，镜头运动应由人物动作或情绪触发。[ASC Shot Craft](https://theasc.com/article/shot-craft-where-do-you-put-the-camera/)
+
+### 景别
+
+- 极远景和远景建立环境、尺度、孤立或群体关系。
+- 全景展示身体动作和人物与空间的关系。
+- 中景适合交流、动作和双人关系。
+- 中近景与近景把注意力转向判断、情绪和细微反应。
+- 大特写用于线索、身体细节或强烈主观感受。
+
+景别变化应对应信息距离变化。没有叙事原因时，连续使用多个同功能近景只会制造形式上的忙碌。
+
+### 角度和视点
+
+平视通常中性；俯拍或仰拍可以改变脆弱、压力、权力或空间的感知，但不能机械地等同于“弱”和“强”。过肩镜头显示双方关系和视线；主观镜头把观众放进角色知觉；插入镜头呈现线索或动作细节；反应镜头告诉观众一个事件对谁最重要。
+
+### 镜头运动
+
+pan 和 tilt 重新分配画面注意力；dolly、truck、arc、crane 改变观众与人物及空间的关系；handheld 会增加身体感和不稳定感。一次 AI 生成最好只指定一个主要相机运动和一个主要人物动作。复杂的多段运动应拆镜或用运动参考视频。
+
+### 焦距和景深
+
+视频模型对精确毫米数不总是可靠。Agent 应同时写 lens_intent：广角强调空间和接近感，正常视角保持自然关系，长焦压缩空间并隔离人物。景深说明观众应该看见一个平面、多个信息层还是逐步转移焦点。镜头规格可保留 focal_length_equiv，但验收应以画面感知结果为准。
+
+### Blocking 和 coverage
+
+Blocking 定义人物站位、朝向、移动路径、眼神和道具动作。常见对话 coverage 可以包括主镜头、双人镜头、A 对 B 的过肩、B 对 A 的过肩、单人近景、反应和插入，但不是每场都要拍齐。选择取决于情绪节拍和剪辑风险。
+
+AI 对话场景更适合把人物拆开生成，先锁定两人的轴线、背景方向和视线高度，再交叉剪辑。精确台词可由独立声音轨控制，画面以短句、停顿和反应镜头为主。
+
+### 连续性
+
+180 度轴线、左右屏幕方向、eyeline 和 match on action 用来保持空间可读。可以有意越轴、跳切或错位，但 shot_plan 必须记录 intended_effect；否则 QC Agent 应把它当错误。BFI 展示了经典电影如何故意破坏传统 master、视线和动作连续性，这也说明规则服务于效果，而非反过来。[BFI 连续性规则案例](https://www.bfi.org.uk/features/passion-joan-arc-carl-dreyer-style)
+
+每个镜头都要记录 start_state 和 end_state，包括人物位置、朝向、手中物、衣服状态、情绪、光线、天气、损伤和可见背景。相邻镜头必须满足前一镜 end_state 与后一镜 start_state 兼容，除非剧本明确发生跳时空。
+
+### 剪辑意图和声音
+
+镜头计划需要写 cut_on、transition 和 handles。生成镜头前后各留少量可剪余量，避免动作从第一帧就开始或在最后一帧尚未完成。J cut、L cut 和 sound bridge 可以先用声音进入下一场或保留上一场声音，帮助跨越生成镜头之间的视觉接缝。
+
+声音要在 animatic 阶段设计。最少分为对白或旁白、环境、拟音和动作音效、音乐、静默。声音决定对白长度、动作节奏和转场，不能等画面完成后才随意补齐。
+
+## 五 Storyboard Animatic 和 Previs
+
+Storyboard 把剧本变成逐镜构图，并形成生产清单。Animatic 把分镜按预计时长排进时间线，加上临时对白、音效和音乐，用来检验叙事是否看得懂、剪辑是否顺畅、节奏是否成立。Adobe 把 animatic 定义为带时间和声音的粗略动画分镜，可在正式制作前测试 flow 和 meaning。[Adobe Animatic 指南](https://www.adobe.com/uk/creativecloud/animation/discover/animatics.html) [Adobe Storyboard 指南](https://www.adobe.com/in/creativecloud/video/discover/storyboarding.html)
+
+复杂动作、VFX、车辆、群戏或空间调度可以升级为 3D previs。预演的目标不是美观，而是把机位、动作、长度和剪辑问题在昂贵生成前暴露出来。
+
+建议设置一个硬门槛：animatic 未通过，不进入大规模视频生成。检查包括：静音时能否理解主要动作；只听声音时能否理解情绪和信息；每个镜头是否带来新信息；是否有缺失的反应、空间锚点或转场；目标时长是否满足。
+
+## 六 具体生成任务
+
+### 一镜头一任务
+
+默认以 shot 为最小生成任务。多镜头原生模型可用于快速探索 sequence，但正式成片仍应把结果切回单镜头管理和验收。原因是重试、替换、连续性、版本和成本都发生在镜头级。
+
+每个任务应包含：
+
+- shot_id 和 source_span。
+- 本镜头的叙事功能与主要戏剧动词。
+- 目标时长、画幅、帧率和输出规格。
+- 角色、服装、场景、道具的资产 ID 和版本。
+- 每张参考图的唯一职责。
+- start_state、end_state 和与相邻镜头的连接条件。
+- 景别、角度、构图、焦距意图、镜头运动和 blocking。
+- 人物主动作、动作节奏和表情变化。
+- 对白、环境、SFX、音乐和静默。
+- 模型专属提示词和参数。
+- 禁止改变项、允许改变项和验收标准。
+
+### 提示词编译
+
+一个通用镜头提示结构是：
+
+1. 可见主体和当前状态。
+2. 环境、时间、天气和关键道具。
+3. 从起始到结束的单一主动作，必要时用时间顺序表达。
+4. 构图、景别、视角、镜头运动和焦距意图。
+5. 光线、材质、色彩和风格。
+6. 对白、环境声和音效，仅在模型入口支持时加入。
+7. 必须保持和不允许变化的视觉事实。
+
+图生视频提示应把静帧已经给出的外观当成既有事实，重点描述动作和镜头运动。Runway 官方也建议 I2V 提示关注场景运动，而 T2V 同时描述画面和运动。[Runway Gen 4.5 指南](https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5)
+
+不要把整个故事圣经塞进每个提示词。Prompt Compiler 应从权威账本抽取与本镜头有关的最小充分信息。不同模型的负向提示、参考图顺序、镜头词、音频写法和参数通道不同，应为每个模型维护 adapter。
+
+### 生成和重试策略
+
+先用低成本模式制作 2 至 4 个候选，选出动作、构图和身份最接近的一个，再做高质量版本。重试不能只换 seed；先把失败分类为身份、构图、动作、物理、口型、连续性、音频或审核错误，再决定是改提示、换参考、拆镜、提供运动视频还是换模型。
+
+一个镜头连续失败两到三轮后，应停止消耗并重新设计。常见降难度方法包括：减少同时动作；切成两个镜头；改用反应或插入；用真人或 3D 驱动；先生成首尾帧；把精确台词从原生音频转为后期配音。
+
+### 成本管理
+
+预算不要只按成片秒数计算。生成量约等于镜头数 × 每镜秒数 × 每轮候选数 × 平均重试轮数，再加延展、重绘、升格和音频。先做 30 至 90 秒的完整样片，用真实可用率估算成本，然后再批量生产。
+
+## 七 2026 年 9 月的模型选型
+
+模型应按任务路由，而不是选一个“总冠军”。厂商性能声明通常来自自有评测，以下只把它当能力说明，不当独立排名。
+
+| 模型或平台 | 已核验的关键能力 | 适合环节 | 主要边界 |
+| --- | --- | --- | --- |
+| Seedance 2.5 | 单次最长 30 秒音视频，多轮延展，最多 30 图 10 视频 10 音频参考，时间戳级编辑 | 多镜头探索，长一点的叙事段落，大量资产参考 | 跨数分钟的真实一致率缺乏独立数据，第一方 API 状态需复核 |
+| Veo 3.1 | 文生和图生、首尾帧、最多 3 张角色或物体参考、原生音频、延展 | 高画质短镜头，对白和环境音，关键帧控制 | 通常 4 6 8 秒；高分辨率和参考或延展组合有限 |
+| Kling 3.0 和 Omni | 最长 15 秒，全模态输入输出，参考生成、视频内编辑、原生多语言和方言音频 | 中文对白、多角色参考、多镜头短段落 | 第一方公开 API 规格不够完整，开工前需要小样验证 |
+| Runway Gen 4.5 工具链 | 2 至 10 秒 T2V 和 I2V；References 做一致静帧；Act Two 做表演迁移；Aleph 2.0 做视频编辑 | 模块化 Agent 流水线、人物表演、镜头修复 | Gen 4.5 本身不负责全片身份记忆，正式镜头仍需资产和 I2V |
+| Luma Ray3 系列 | 关键帧、角色参考、视频转绘、HDR 和 EXR；部分型号支持延展 | 高动态范围、转绘、角色替换和专业调色素材 | 型号能力碎片化；Ray3 无原生音频，Ray3.14 无角色参考 |
+| Hailuo 2.3 | 6 或 10 秒 T2V 和 I2V，支持批量，动画和人物动作优化 | 低成本候选和批量 B 级镜头 | 角色参考和音频能力应按具体 endpoint 核验 |
+| Adobe Firefly 和 Creative Cloud | 5 秒 Firefly Video，首尾帧、构图与运动参考、相机控件；整合多家模型、时间线和音频工具 | 多模型生产中枢、版权敏感项目、后期和交付 | 自家模型与第三方模型条款不同；构图参考与关键帧不可同时用 |
+| Pika | 5 或 10 秒 T2V 和 I2V，Pikaframes 最长 25 秒，场景增删替换和音轨工具 | 社媒特效、转场和补音 | 长片角色连续性和 API 公开规格有限 |
+
+Seedance 2.5 的官方发布说明了 30 秒和多模态参考能力。[Seedance 2.5 官方发布](https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5) Veo 3.1 的 Gemini API 文档给出了时长、参考图、首尾帧、延展和音频限制。[Veo 3.1 API 文档](https://ai.google.dev/gemini-api/docs/veo) Kling 3.0 的 15 秒、全模态与原生多语言音频来自快手官方发布。[Kling 3.0 官方发布](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be) Runway、Luma、MiniMax 和 Adobe 的能力分别见 [Runway Gen 4.5](https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5)、[Runway Act Two](https://help.runwayml.com/hc/en-us/articles/42311337895827-Performance-Capture-with-Act-Two)、[Luma Ray3 Modify](https://lumalabs.ai/learning-hub/ray3-modify-user-guide)、[MiniMax Video API](https://platform.minimax.io/docs/guides/video-generation) 和 [Adobe Firefly 构图参考](https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-video/use-video-as-composition-reference.html)。
+
+Sora 不应进入新项目的主干。OpenAI 已于 2026 年 4 月 26 日停止 Sora Web 和 App，并计划在 2026 年 9 月 24 日关闭 API。[OpenAI Sora 停止服务说明](https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation)
+
+## 八 Agent 制作系统
+
+### 逻辑角色
+
+这些角色可以由多个 Agent 并行，也可以由一个 Agent 分阶段执行：
+
+- Rights Agent 只检查权利、人物同意和平台要求，不创作画面。
+- Story Analyst 建立事件、角色、伏笔和世界规则账本。
+- Adaptation Architect 决定保留、合并、删改、重排和外化。
+- Screenwriter 输出 sequence、scene、beat 和场景剧本。
+- Asset Producer 维护角色、服装、场景和道具的权威资产。
+- Director and Previs Agent 设计 blocking、shot list、storyboard 和 animatic。
+- Prompt Compiler 把 shot_job 编译到特定模型，不擅自修改故事事实。
+- Render Orchestrator 管理候选、失败、费用、重试和文件。
+- Continuity and QC Agent 比较参考与相邻镜头并出验收报告。
+- Editor and Sound Agent 组接、配音、音效、音乐、字幕、调色和交付。
+
+### 不变量
+
+Agent 系统必须遵守：
+
+1. 小说原文不可被下游 Agent 静默修改。
+2. adaptation_decision_log 中的删除或改派必须有理由。
+3. 未获批资产不能成为权威参考。
+4. 每张参考图只有明确职责，身份来源唯一。
+5. 上一镜头 end_state 与下一镜头 start_state 必须兼容。
+6. 任何越轴、跳时空、错位声音或造型突变都需要 intended_effect。
+7. Prompt Compiler 只能读取获批事实，不能补写未定义的永久特征。
+8. 生成成功只表示收到文件，不表示镜头通过。
+9. 不因失败静默换模型、画幅、参考图或对白。
+10. 所有输出保留模型、入口、时间、参数、参考、prompt 和 take 记录。
+
+### 人工审批门槛
+
+建议只在高影响节点要求人类确认：权利和项目合同；改编圣经；主角身份和英雄资产；每集剧本；animatic；A 级镜头；最终剪辑。其余步骤由 Agent 在预算和重试限制内自动执行。
+
+### 状态机
+
+项目可使用以下状态：ingested → rights_cleared → adaptation_locked → script_locked → assets_locked → animatic_locked → generating → rough_cut → qc_hold → final_approved → delivered。
+
+每个 shot 使用：planned → prompt_ready → submitted → candidate_received → qc_failed 或 selected → cut_locked。错误另记 auth_error、policy_blocked、submission_unknown、provider_error 和 budget_hold，不能伪装成 qc_failed。
+
+## 九 逐章个性化处理
+
+不同章节要选择不同的视觉化策略：
+
+| 原文类型 | 改编动作 | 常用画面与声音 |
+| --- | --- | --- |
+| 大量内心活动 | externalize 或少量 VO | 选择、犹豫、反应、道具、主观镜头、声音母题 |
+| 对话和关系戏 | 保留权力变化，压缩重复信息 | 双人空间锚点、OTS、单人反应、停顿、J 或 L cut |
+| 动作场面 | 拆成目标、障碍、反应和结果 | 清楚地理、动作匹配、插入镜头、表演或运动参考 |
+| 世界观说明 | 合并并分散到事件中 | 场景细节、公告、仪式、角色误用规则、环境声 |
+| 时间跨度大 | 重排为 montage 或 sequence | 重复构图、声音桥、季节和道具状态变化 |
+| 悬疑和伏笔 | 保留信息可见度与回收点 | 限制视点、插入线索、反应晚于线索、声音先行 |
+| 抒情和意象 | 保留语气而非逐句旁白 | 色彩、天气、镜头节奏、重复构图和声音母题 |
+| 群像章节 | 按关系或目标拆场 | 每场只让一个关系变化成为中心，保持入口和位置账本 |
+
+## 十 从一段小说到生成任务的例子
+
+示例原文：林舟推开停电的档案室，手机在口袋里震动。他没有接。窗外闪电照亮桌上一封已经拆开的信，收件人是三年前失踪的姐姐。
+
+改编决策：保留停电、未接电话、拆开的信和姐姐姓名；把“害怕真相”的内心判断外化为手停在灯绳上、手机震动后被按灭；把闪电作为线索显现的视觉触发。
+
+场景卡：目标是找到停电原因，冲突是黑暗和未知来电，转折是看到信，退出状态是林舟确认姐姐曾来过这里。
+
+镜头可以设计为：
+
+1. 远景，林舟进入黑暗档案室，手电光扫过空间，建立门、窗和桌的位置。
+2. 中近景，手机在外套口袋震动，他按灭屏幕，没有接。
+3. 主观移动镜头，手电扫向桌面，雷声先到。
+4. 闪电瞬间的信件插入特写，姓名第一次清晰可读。
+5. 林舟近景，目光从信移向门口，呼吸停顿。
+6. 信件与手进入画面，手在触碰前停住，切黑。
+
+第 4 镜的 shot_job 应把“准确显示姓名”视为硬验收。如果当前视频模型文字渲染不可靠，应先制作获批的信件静帧，再用极小运动的 I2V，或在后期合成文字，而不是反复用 T2V 碰运气。
+
+## 十一 质量验收
+
+### 镜头硬门槛
+
+任何一项失败都不进入剪辑：文件可解码；时长和画幅正确；主角身份无明显漂移；服装和永久标记匹配；动作完成；关键道具状态正确；首尾状态可接；没有多余肢体、严重变形或不可用文字；对白和口型在本镜要求内；无版权或肖像风险。
+
+### 分层评分
+
+通过硬门槛后，以 0 至 4 分评价：
+
+- 叙事：镜头是否完成指定信息和情绪变化。
+- 身份与资产：人物、服装、场景、道具是否匹配权威参考。
+- 空间与剪辑：轴线、视线、动作、光线和首尾状态是否可接。
+- 动作与物理：动作是否自然，接触、重量和因果是否可信。
+- 画面：构图、焦点、材质、噪点、闪烁和压缩是否可用。
+- 声音：台词、口型、环境、SFX、音乐和静默是否正确。
+- 技术：分辨率、帧率、色彩、声道、字幕和元数据是否符合交付。
+
+VBench 2.0 把 human fidelity、controllability、physics、commonsense 和 creative composition 作为视频生成的内在忠实性维度，说明“看起来漂亮”不能替代物理、解剖和因果检查。[VBench 2.0](https://vchitect.github.io/VBench-2.0-project/)
+
+### 自动和人工结合
+
+自动 QC 可检查文件规格、黑帧、冻结、闪烁、音频峰值、参考图相似度、字幕、角色和道具存在性，并用视觉模型比较 start_state 和 end_state。人类负责故事是否成立、表演是否可信、审美是否匹配、喜剧或恐惧的节奏，以及有意打破规则是否有效。
+
+## 十二 后期与交付
+
+粗剪先按 animatic 替换镜头，不立刻追求调色。先解决信息、节奏和连续性，再做对白编辑、ADR 或 TTS、环境、Foley、SFX、音乐和混音。之后统一色彩、颗粒、锐度、运动模糊、字幕和片头片尾。生成式编辑适合修复局部，不应覆盖原始素材；所有修改保留可回退版本。
+
+在中国公开传播 AI 生成视频时，应遵守 2025 年 9 月 1 日生效的人工智能生成合成内容标识要求。规则要求服务提供者处理显式和隐式标识，并要求用户发布生成合成内容时主动声明；不得恶意删除、篡改、伪造或隐匿规定标识。[人工智能生成合成内容标识办法](https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm) [GB 45438 2025](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F32EA2A561F1886CD8D606513512D547&refer=outter)
+
+## 十三 推荐学习路径
+
+第一阶段只做改编。选一个短篇或一个章节，完成事件账本、改编决策、sequence map、scene cards 和 2 至 3 页剧本，不生成视频。
+
+第二阶段只做角色和场景资产。完成一个主角的身份卡、两套 Look、一个场景四向图和一个道具状态表，练习权威资产审批。
+
+第三阶段只做镜头。把一场 30 秒戏设计成 6 至 10 个镜头，制作 storyboard 和带临时声音的 animatic。要求静音可懂、只听声音也能理解主要情绪。
+
+第四阶段制作 30 至 90 秒成片。每镜头记录模型、参考、候选和 QC，计算真实可用率和重试成本。完成后复盘哪些问题来自剧本、资产、镜头设计、模型或后期。
+
+第五阶段才扩展到一集。先冻结数据结构和状态机，再批量生产；每次只新增已验证的模型 adapter。
+
+## 十四 研究局限
+
+模型功能、API、价格和地域可用性会快速变化，同一模型在第一方产品、聚合平台和 API 的能力也可能不同。本文不把厂商自有基准当独立性能排名。尤其是角色跨多镜头的一致率、一次生成可直接进入成片的比例和大规模项目真实成本，公开资料仍不足，必须通过项目样片测量。
+
+不同作品的最佳结构、镜头数量和规则使用没有统一答案。本文给出的 schema、状态机、重试上限和审批门槛是依据影视制作原则与当前模型限制综合出的实践框架，不是行业强制标准。
+
+## 主要资料
+
+- OpenAI. What to know about the Sora discontinuation. 2026. https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation
+- Google AI for Developers. Generate videos with Veo 3.1. 2026. https://ai.google.dev/gemini-api/docs/veo
+- ByteDance Seed. Introducing Seedance 2.5. 2026-07-31. https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5
+- Kuaishou Technology. Kling AI 3.0 launch. 2026-02-05. https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be
+- Runway. Creating with Gen 4.5. 2026. https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5
+- Runway. Performance Capture with Act Two. 2026. https://help.runwayml.com/hc/en-us/articles/42311337895827-Performance-Capture-with-Act-Two
+- Luma AI. Ray3 Modify User Guide. 2025-12. https://lumalabs.ai/learning-hub/ray3-modify-user-guide
+- MiniMax. Video Generation Guide. 2026. https://platform.minimax.io/docs/guides/video-generation
+- Adobe. Use video as composition reference. 2026-06-16. https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-video/use-video-as-composition-reference.html
+- Academy of Motion Picture Arts and Sciences. Complete Screen Writing Activities Guide. https://www.oscars.org/sites/oscars/files/complete_screen_writing_activities_guide.pdf
+- BAFTA. Screenwriters Lecture Peter Straughan. https://www.bafta.org/media-centre/press-releases/screenwriters-lecture-peter-straughan/
+- American Society of Cinematographers. Shot Craft Where Do You Put the Camera. 2020-01-26. https://theasc.com/article/shot-craft-where-do-you-put-the-camera/
+- BFI. Four hard and fast rules from The Passion of Joan of Arc. 2018-04-20. https://www.bfi.org.uk/features/passion-joan-arc-carl-dreyer-style
+- 中国人大网. 中华人民共和国著作权法. 2020. https://www.npc.gov.cn/c2/c30834/202011/t20201119_308796.html
+- 国家互联网信息办公室等. 人工智能生成合成内容标识办法. 2025-03-07. https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm
