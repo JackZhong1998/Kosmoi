@@ -1,12 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@clerk/nextjs';
 import { prefetchCreateWorkspace } from '@/lib/create-workspace';
-import { createStoryPath, readLastCreateId } from '@/lib/stories';
 import { useLocale } from '@/components/LocaleProvider';
 import { apiJson } from '@/lib/client-api';
 import type { Locale, ReaderGender } from '@/lib/i18n';
@@ -53,13 +52,26 @@ function IconMe() {
   );
 }
 
+type UserPreferences = { language: Locale; gender: ReaderGender; completed: boolean };
+type PreferencesValue = {
+  preferences: UserPreferences;
+  savePreferences: (next: UserPreferences) => Promise<void>;
+};
+
+const PreferencesContext = createContext<PreferencesValue | null>(null);
+
+export function usePreferences() {
+  const value = useContext(PreferencesContext);
+  if (!value) throw new Error('usePreferences must be used inside ConsumeShell');
+  return value;
+}
+
 export function ConsumeShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const { locale, setLocale, t } = useLocale();
-  const { isLoaded, isSignedIn } = useAuth();
-  const [createHref, setCreateHref] = useState('/create');
-  const [preferences, setPreferences] = useState<{ language: Locale; gender: ReaderGender; completed: boolean } | null>(null);
+  const { isLoaded, isSignedIn, userId } = useAuth();
+  const [preferences, setPreferences] = useState<UserPreferences | null>(null);
   const [preferenceError, setPreferenceError] = useState('');
 
   const nav = [
@@ -69,40 +81,53 @@ export function ConsumeShell({ children }: { children: React.ReactNode }) {
   ] as const;
 
   useEffect(() => {
-    const lastId = readLastCreateId();
-    if (lastId) setCreateHref(createStoryPath(lastId));
-  }, []);
-
-  useEffect(() => {
     if (!isLoaded) return;
     if (!isSignedIn) {
       router.replace(`/sign-in?redirect_url=${encodeURIComponent(pathname || '/')}`);
-      return;
     }
+  }, [isLoaded, isSignedIn, pathname, router]);
+
+  useEffect(() => {
+    if (!isLoaded || !isSignedIn) return;
     let cancelled = false;
-    apiJson<{ language: Locale; gender: ReaderGender; completed: boolean }>('/api/preferences')
+    let hasCachedPreferences = false;
+    const cacheKey = userId ? `spark-preferences:${userId}` : '';
+    if (cacheKey) {
+      try {
+        const cached = JSON.parse(sessionStorage.getItem(cacheKey) || 'null') as UserPreferences | null;
+        if (cached?.language && cached?.gender) {
+          hasCachedPreferences = true;
+          setPreferences(cached);
+          setLocale(cached.language);
+        }
+      } catch {
+        /* stale preference cache */
+      }
+    }
+    apiJson<UserPreferences>('/api/preferences')
       .then((data) => {
         if (cancelled) return;
         setPreferences(data);
         setLocale(data.language);
+        if (cacheKey) sessionStorage.setItem(cacheKey, JSON.stringify(data));
       })
       .catch((err) => {
-        if (!cancelled) setPreferenceError(err instanceof Error ? err.message : 'Unable to load preferences');
+        if (!cancelled && !hasCachedPreferences) setPreferenceError(err instanceof Error ? err.message : 'Unable to load preferences');
       });
     return () => {
       cancelled = true;
     };
-  }, [isLoaded, isSignedIn, pathname, router, setLocale]);
+  }, [isLoaded, isSignedIn, setLocale, userId]);
 
   async function savePreferences(next: { language: Locale; gender: ReaderGender; completed: boolean }) {
     setPreferenceError('');
     setLocale(next.language);
-    const saved = await apiJson<{ language: Locale; gender: ReaderGender; completed: boolean }>('/api/preferences', {
+    const saved = await apiJson<UserPreferences>('/api/preferences', {
       method: 'PATCH',
       body: JSON.stringify(next),
     });
     setPreferences(saved);
-    window.dispatchEvent(new CustomEvent('spark-preferences', { detail: saved }));
+    if (userId) sessionStorage.setItem(`spark-preferences:${userId}`, JSON.stringify(saved));
   }
 
   if (!isLoaded || (isSignedIn && !preferences && !preferenceError)) {
@@ -112,11 +137,12 @@ export function ConsumeShell({ children }: { children: React.ReactNode }) {
   if (!isSignedIn) return null;
 
   return (
+    <PreferencesContext.Provider value={{ preferences: preferences!, savePreferences }}>
     <div className="consume">
       {process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ? <CreatePrefetch /> : null}
       <nav className="consume-nav" aria-label={locale === 'zh' ? '主导航' : 'Main navigation'}>
         {nav.map((item) => {
-          const href = item.href === '/create' ? createHref : item.href;
+          const href = item.href;
           const on = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
           return (
             <Link
@@ -124,7 +150,10 @@ export function ConsumeShell({ children }: { children: React.ReactNode }) {
               href={href}
               className={`consume-nav-item${on ? ' on' : ''}`}
               onMouseEnter={() => {
-                if (item.href === '/create') prefetchCreateWorkspace(readLastCreateId());
+                if (item.href === '/create') prefetchCreateWorkspace();
+              }}
+              onTouchStart={() => {
+                if (item.href === '/create') prefetchCreateWorkspace();
               }}
             >
               <item.Icon />
@@ -133,23 +162,7 @@ export function ConsumeShell({ children }: { children: React.ReactNode }) {
           );
         })}
       </nav>
-      {preferences?.completed ? (
-        <LanguageSwitch
-          className="language-switch desktop"
-          locale={locale}
-          label={t('language')}
-          onChange={(language) => void savePreferences({ ...preferences, language })}
-        />
-      ) : null}
       <main className="consume-main">{children}</main>
-      {pathname === '/' && preferences?.completed ? (
-        <LanguageSwitch
-          className="language-switch mobile"
-          locale={locale}
-          label={t('language')}
-          onChange={(language) => void savePreferences({ ...preferences, language })}
-        />
-      ) : null}
       {preferences && !preferences.completed ? (
         <Onboarding
           initial={preferences}
@@ -159,28 +172,7 @@ export function ConsumeShell({ children }: { children: React.ReactNode }) {
         />
       ) : null}
     </div>
-  );
-}
-
-function LanguageSwitch({
-  locale,
-  label,
-  className,
-  onChange,
-}: {
-  locale: Locale;
-  label: string;
-  className: string;
-  onChange: (locale: Locale) => void;
-}) {
-  return (
-    <label className={className}>
-      <span>{label}</span>
-      <select value={locale} onChange={(event) => onChange(event.target.value as Locale)}>
-        <option value="en">English</option>
-        <option value="zh">中文</option>
-      </select>
-    </label>
+    </PreferencesContext.Provider>
   );
 }
 
@@ -256,7 +248,7 @@ function Onboarding({
 function CreatePrefetch() {
   const { isLoaded, isSignedIn } = useAuth();
   useEffect(() => {
-    if (isLoaded && isSignedIn) prefetchCreateWorkspace(readLastCreateId());
+    if (isLoaded && isSignedIn) prefetchCreateWorkspace();
   }, [isLoaded, isSignedIn]);
   return null;
 }

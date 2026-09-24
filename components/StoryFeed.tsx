@@ -6,42 +6,22 @@ import type { FeedCard } from '@/lib/feed';
 import { apiJson } from '@/lib/client-api';
 import { useLocale } from '@/components/LocaleProvider';
 import type { ReaderGender } from '@/lib/i18n';
+import { usePreferences } from '@/components/ConsumeShell';
 
 export function StoryFeed() {
   const { locale, t } = useLocale();
+  const { preferences, savePreferences } = usePreferences();
   const [stories, setStories] = useState<FeedCard[]>([]);
-  const [gender, setGender] = useState<ReaderGender>('all');
-  const [preferenceReady, setPreferenceReady] = useState(false);
+  const [gender, setGender] = useState<ReaderGender>(preferences.gender);
   const [error, setError] = useState('');
   const [ready, setReady] = useState(false);
   const feedRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let cancelled = false;
-    apiJson<{ gender: ReaderGender }>('/api/preferences')
-      .then((data) => {
-        if (!cancelled) setGender(data.gender || 'all');
-      })
-      .catch(() => null)
-      .finally(() => {
-        if (!cancelled) setPreferenceReady(true);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+    setGender(preferences.gender);
+  }, [preferences.gender]);
 
   useEffect(() => {
-    const sync = (event: Event) => {
-      const detail = (event as CustomEvent<{ gender?: ReaderGender }>).detail;
-      if (detail?.gender) setGender(detail.gender);
-    };
-    window.addEventListener('spark-preferences', sync);
-    return () => window.removeEventListener('spark-preferences', sync);
-  }, []);
-
-  useEffect(() => {
-    if (!preferenceReady) return;
     let cancelled = false;
     setReady(false);
     setError('');
@@ -62,7 +42,7 @@ export function StoryFeed() {
     return () => {
       cancelled = true;
     };
-  }, [gender, locale, preferenceReady]);
+  }, [gender, locale]);
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
@@ -88,7 +68,10 @@ export function StoryFeed() {
     <div className="home-discovery">
       <div className="audience-tabs" role="tablist" aria-label={t('audience')}>
         {(['all', 'female', 'male'] as ReaderGender[]).map((item) => (
-          <button key={item} type="button" role="tab" aria-selected={gender === item} className={gender === item ? 'on' : ''} onClick={() => setGender(item)}>
+          <button key={item} type="button" role="tab" aria-selected={gender === item} className={gender === item ? 'on' : ''} onClick={() => {
+            setGender(item);
+            void savePreferences({ ...preferences, gender: item });
+          }}>
             {t(item)}
           </button>
         ))}

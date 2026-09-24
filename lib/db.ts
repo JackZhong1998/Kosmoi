@@ -2,7 +2,7 @@ import 'server-only';
 import type { ChatMessage } from './types';
 import type { Audience } from './topic-tags';
 import type { PlaySnapshot, ReadingRecord } from './reading-history';
-import type { StoryProject } from './stories';
+import { isLaunchLibraryStory, type StoryProject } from './stories';
 import { getServiceSupabase } from './supabase';
 import { buildFeedCard, type FeedCard } from './feed';
 import type { Locale, ReaderGender } from './i18n';
@@ -159,7 +159,9 @@ export async function listStorySummaries(userId: string): Promise<StoryProject[]
     .eq('user_id', userId)
     .order('updated_at', { ascending: false });
   if (error) throw dbError('无法读取草稿', error);
-  return (data ?? []).map((row) => storySummaryFromRow(row as Parameters<typeof storySummaryFromRow>[0]));
+  return (data ?? [])
+    .map((row) => storySummaryFromRow(row as Parameters<typeof storySummaryFromRow>[0]))
+    .filter((story) => !isLaunchLibraryStory(story));
 }
 
 export async function getLatestStory(userId: string): Promise<StoryProject | null> {
@@ -176,11 +178,12 @@ export async function getLatestStory(userId: string): Promise<StoryProject | nul
 }
 
 export async function openCreateWorkspace(userId: string, preferredId = ''): Promise<{ stories: StoryProject[]; story: StoryProject }> {
-  const [summaries, opened] = await Promise.all([
-    listStorySummaries(userId),
-    preferredId ? getStory(userId, preferredId) : getLatestStory(userId),
-  ]);
-  const story = opened ?? (preferredId ? await getLatestStory(userId) : null) ?? (await createStoryRow(userId));
+  const summaries = await listStorySummaries(userId);
+  const selectedId = preferredId && summaries.some((item) => item.id === preferredId)
+    ? preferredId
+    : summaries[0]?.id || '';
+  const opened = selectedId ? await getStory(userId, selectedId) : null;
+  const story = opened && !isLaunchLibraryStory(opened) ? opened : await createStoryRow(userId);
   const stories = summaries.some((item) => item.id === story.id)
     ? summaries.map((item) => (item.id === story.id ? story : item))
     : [story, ...summaries];
@@ -325,6 +328,18 @@ export async function getPublication(id: string): Promise<PublicationRow | null>
     .maybeSingle();
   if (error) throw dbError('无法读取作品', error);
   return (data as PublicationRow | null) ?? null;
+}
+
+export async function getPublicationHome(id: string) {
+  const supabase = getServiceSupabase();
+  const { data, error } = await supabase
+    .from('publications')
+    .select('id, title, excerpt, word_count, language, recommendation_gender, recommendation_tags, recommendation_summary, logline')
+    .eq('id', id)
+    .eq('status', 'published')
+    .maybeSingle();
+  if (error) throw dbError('无法读取作品', error);
+  return data;
 }
 
 export async function listPublishedFeed(filters: { language?: Locale; gender?: ReaderGender } = {}): Promise<FeedCard[]> {

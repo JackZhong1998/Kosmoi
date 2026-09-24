@@ -25,7 +25,7 @@ export default function NovelHomePage() {
 
   useEffect(() => {
     let cancelled = false;
-    apiJson<NovelHome>(`/api/publications/${params.id}`)
+    apiJson<NovelHome>(`/api/publications/${params.id}?view=home`)
       .then((data) => {
         if (!cancelled) setNovel(data);
       })

@@ -14,6 +14,8 @@ export const viewport = {
   viewportFit: 'cover' as const,
 };
 
+export const preferredRegion = 'sin1';
+
 const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

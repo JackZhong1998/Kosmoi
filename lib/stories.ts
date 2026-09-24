@@ -51,6 +51,11 @@ export function createStoryPath(id: string) {
   return `/create/${id}`;
 }
 
+/** Launch-library rows are published catalogue content, not the owner's working drafts. */
+export function isLaunchLibraryStory(story: Pick<StoryProject, 'title' | 'topicTitle'>) {
+  return /^\[launch:/i.test(story.topicTitle.trim()) || /^\[launch:/i.test(story.title.trim());
+}
+
 export function parseCreateStoryId(pathname: string) {
   const raw = pathname.match(/^\/create\/([^/]+)/)?.[1] || '';
   try {

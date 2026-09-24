@@ -15,7 +15,9 @@ export async function GET(req: Request) {
       language: asLocale(searchParams.get('language')),
       gender: asReaderGender(searchParams.get('gender')),
     });
-    return NextResponse.json({ stories });
+    return NextResponse.json({ stories }, {
+      headers: { 'Cache-Control': 'private, max-age=30, stale-while-revalidate=120' },
+    });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : '列表加载失败' }, { status: 500 });
   }

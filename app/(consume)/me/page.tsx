@@ -8,10 +8,13 @@ import { formatReadAt, type ReadingRecord } from '@/lib/reading-history';
 import { apiJson } from '@/lib/client-api';
 import { createStoryPath, displayTitle, type StoryProject } from '@/lib/stories';
 import { useLocale } from '@/components/LocaleProvider';
+import { usePreferences } from '@/components/ConsumeShell';
+import { isLaunchLibraryStory } from '@/lib/stories';
 
 export default function MePage() {
   const router = useRouter();
   const { locale } = useLocale();
+  const { preferences, savePreferences } = usePreferences();
   const en = locale === 'en';
   const [stories, setStories] = useState<StoryProject[]>([]);
   const [history, setHistory] = useState<ReadingRecord[]>([]);
@@ -22,7 +25,6 @@ export default function MePage() {
     let cancelled = false;
     (async () => {
       try {
-        await apiJson('/api/me');
         const [storyData, progressData] = await Promise.all([
           apiJson<{ stories: StoryProject[] }>('/api/stories'),
           apiJson<{ records: ReadingRecord[] }>('/api/progress'),
@@ -44,7 +46,7 @@ export default function MePage() {
   }, []);
 
   const drafts = stories.filter(
-    (item) => item.topicTitle.trim() || item.publishedId || (item.title.trim() && item.title !== '未命名故事'),
+    (item) => !isLaunchLibraryStory(item) && (item.topicTitle.trim() || item.publishedId || (item.title.trim() && item.title !== '未命名故事')),
   );
 
   function continueWrite(id: string) {
@@ -59,6 +61,16 @@ export default function MePage() {
           <p>{en ? 'Drafts and reading progress stay with your account on every device.' : '草稿和阅读进度会跟着账号走。换设备登录，还能接着写、接着玩。'}</p>
         </div>
         <div className="me-account">
+          <label className="me-language" aria-label={en ? 'Language' : '语言'}>
+            <span aria-hidden="true">◎</span>
+            <select
+              value={locale}
+              onChange={(event) => void savePreferences({ ...preferences, language: event.target.value as 'en' | 'zh' })}
+            >
+              <option value="en">EN</option>
+              <option value="zh">中文</option>
+            </select>
+          </label>
           {process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ? <UserButton /> : null}
         </div>
       </header>
