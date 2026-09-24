@@ -1,0 +1,317 @@
+{
+  "item": {
+    "slug": "en-m-own-rebellion",
+    "language": "en",
+    "gender": "male",
+    "title": "The King Who Woke Inside His Own Rebellion",
+    "hook": "You awaken with no memory as the masked rebel about to execute the king—then recognize the king as an older version of yourself.",
+    "themes": [
+      "Epic fantasy",
+      "Strategy",
+      "Identity paradox",
+      "Rebellion",
+      "Moral choices"
+    ]
+  },
+  "result": {
+    "topicDoc": "# Story Idea\n\n## Title\nThe King Who Woke Inside His Own Rebellion\n\n## Hook\nYou awaken with no memory as the masked rebel about to execute the king—then recognize the king as an older version of yourself.\n\n## Themes\nEpic fantasy, Strategy, Identity paradox, Rebellion, Moral choices",
+    "designDoc": "# Story Design\n\n## Logline\nYou awaken as the masked rebel about to execute the king, only to realize the monarch is an older version of yourself.\n\n## Audience\nMen\n\n## Themes and tone\nEpic fantasy, Strategy, Identity paradox, Rebellion, Moral choices\n\n## Interactive structure\n- n01 · Prologue · The Blade at Dawn: Lower the blade slightly, demanding answers. → n02\n- n02 · Chapter 1 · Echoes of the Crown: Accept the warning and listen to his full story. → n03 | Reject him as a madman and press for immediate action. → n04\n- n03 · Chapter 2 · The Weight of Years: Step onto the dais to join him. → n05\n- n04 · Chapter 2 · Steel and Doubt: Shove him back onto the throne and retreat to think. → n05\n- n05 · Chapter 3 · The Fork in Fate: Drag the King to the Altar of Echoes. → n06 | Confront Kaelen and assert political control. → n07\n- n06 · Chapter 4 · Whispers in Stone: Return to the surface with renewed purpose. → n08\n- n07 · Chapter 4 · Crowds and Conspiracies: Face the King with newfound authority. → n08\n- n08 · Climax · The Final Verdict: Execute the King and ignite the revolution. → n09 | Force abdication and establish a Republic. → n10 | Assume the King's identity and rule in shadow. → n11\n- n09 · Ending A · Blood on the Banner\n- n10 · Ending B · The Paper Throne\n- n11 · Ending C · The Mirror King",
+    "chaptersDoc": "# Chapters and Nodes\n\n- n01 · Prologue · The Blade at Dawn: Lower the blade slightly, demanding answers. → n02\n- n02 · Chapter 1 · Echoes of the Crown: Accept the warning and listen to his full story. → n03 | Reject him as a madman and press for immediate action. → n04\n- n03 · Chapter 2 · The Weight of Years: Step onto the dais to join him. → n05\n- n04 · Chapter 2 · Steel and Doubt: Shove him back onto the throne and retreat to think. → n05\n- n05 · Chapter 3 · The Fork in Fate: Drag the King to the Altar of Echoes. → n06 | Confront Kaelen and assert political control. → n07\n- n06 · Chapter 4 · Whispers in Stone: Return to the surface with renewed purpose. → n08\n- n07 · Chapter 4 · Crowds and Conspiracies: Face the King with newfound authority. → n08\n- n08 · Climax · The Final Verdict: Execute the King and ignite the revolution. → n09 | Force abdication and establish a Republic. → n10 | Assume the King's identity and rule in shadow. → n11\n- n09 · Ending A · Blood on the Banner\n- n10 · Ending B · The Paper Throne\n- n11 · Ending C · The Mirror King",
+    "styleDoc": "# Locked Style\n\nCinematic immersive prose in second person, with concrete scenes, restrained dialogue, and legible consequences.",
+    "proseDoc": "===STORY_PATCH===\n{\"meta\":{\"title\":\"The King Who Woke Inside His Own Rebellion\",\"logline\":\"You awaken as the masked rebel about to execute the king, only to realize the monarch is an older version of yourself.\",\"start\":\"n01\",\"stats\":[{\"id\":\"trust\",\"name\":\"Trust in Self\",\"initial\":5,\"min\":0,\"max\":10,\"visible\":true}],\"factLabels\":{\"memory_fragment\":\"Memory Fragment\"}},\"nodes\":[{\"id\":\"n01\",\"chapter\":\"Prologue\",\"title\":\"The Blade at Dawn\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"Cold stone bites into your knees. The air smells of iron and old blood. You are kneeling before a throne room that feels both alien and intimately familiar. A heavy mask obscures your vision, narrowing the world to a slit of dim candlelight. In your hands, you grip a dagger wrapped in black leather. Your knuckles are white.\\n\\nAcross from you sits the King. He wears robes of deep crimson, embroidered with silver threads that catch the flickering light. His face is hidden beneath a crown of thorns, but his posture is one of weary resignation. He does not beg. He does not struggle. He simply watches you through the slits of your own mask.\\n\\nA voice booms from the shadows behind you—your lieutenant, Kaelen. \\\"Do it, brother. End the tyranny. Free us.\\\" The crowd outside the palace walls roars, a tidal wave of demand for justice.\\n\\nYou raise the blade. Your arm trembles, not from fear, but from a strange, vibrating resonance in your bones. As you step closer, the King lifts his head. For a second, the candlelight catches his eyes. They are grey. Piercingly, painfully grey. And they look exactly like yours.\\n\\nTime seems to fracture. A flash of memory hits you—not of rebellion, but of coronation. Of standing on this very dais, young and arrogant, swearing oaths you can no longer recall. The realization crashes over you like ice water. The man sitting there isn't just a tyrant. He is you. Older. Broken. Waiting.\\n\\nYour heart hammers against your ribs. Is this a trick? A hallucination induced by stress? Or has time folded in on itself, trapping you in a loop of self-destruction? The dagger feels heavier now, anchored by the weight of impossible truth. Kaelen shouts again, impatient. \\\"Strike!\\\" he commands. But you hesitate, suspended between duty and identity.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Lower the blade slightly, demanding answers.\",\"meaning\":\"Seek Truth\",\"next\":\"n02\",\"effects\":{\"trust\":-1},\"setFacts\":[\"memory_fragment\"],\"conditions\":{}}]},{\"id\":\"n02\",\"chapter\":\"Chapter 1\",\"title\":\"Echoes of the Crown\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"You lower the tip of the dagger inches from the King's throat. The movement is subtle, but in the silent hall, it sounds like thunder. Kaelen’s shout dies in his throat, replaced by confused murmurs from the rebels surrounding the dais.\\n\\n\\\"Who are you?\\\" you ask, your voice roughened by disuse and the mask.\\n\\nThe King smiles, a sad, crooked thing. \\\"I am what remains when ambition burns out,\\\" he replies. His voice is gravelly, aged, yet undeniably yours. \\\"And you... you are the fire I thought I had extinguished.\\\"\\n\\nHe gestures weakly to the side table where a goblet of wine sits untouched. \\\"Drink. It will steady your hand. Or don't. It matters little which way the coin falls, provided we stop spinning.\\\"\\n\\nYou glance at the rebels. Their loyalty is fragile, built on hatred of a figurehead they barely know. If you show weakness, if you question the mission, they might turn on you. But if you strike blindly, you kill yourself—or rather, the future you could have been.\\n\\nThe King leans forward, ignoring the danger. \\\"Listen closely, boy. There is a reason I sent assassins after my own past. Not to erase it, but to warn it. The rebellion was never about freedom. It was about survival. Mine. Yours. We are trapped in a cycle because we refuse to understand the cost of power.\\\"\\n\\nHis words hang in the air, thick with implication. Do you trust this fractured reflection of yourself? Or do you see manipulation in every syllable? The dagger still points toward his chest, a physical manifestation of your indecision. Outside, the roar of the mob grows louder, sensing hesitation. Time is running out.\",\"choices\":[{\"id\":\"c2a\",\"text\":\"Accept the warning and listen to his full story.\",\"meaning\":\"Empathy\",\"next\":\"n03\",\"effects\":{\"trust\":2},\"setFacts\":[],\"conditions\":{}},{\"id\":\"c2b\",\"text\":\"Reject him as a madman and press for immediate action.\",\"meaning\":\"Duty\",\"next\":\"n04\",\"effects\":{\"trust\":-2},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n03\",\"chapter\":\"Chapter 2\",\"title\":\"The Weight of Years\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You sheathe the dagger halfway, a gesture of tentative peace. The King exhales, a long, shuddering breath that seems to release decades of tension. He begins to speak, not as a ruler addressing subjects, but as a father speaking to a lost son.\\n\\n\\\"Twenty years ago,\\\" he starts, his eyes distant, \\\"you stood where you stand now. Masked. Angry. Righteous. You believed that killing me would break the curse. You were wrong. Killing me didn't end the war; it began a civil conflict that burned the kingdom to ash. You spent the next decade hunting down ghosts, trying to undo what couldn't be undone.\\\"\\n\\nHe touches the scar running down his cheek—a mirror image of the cut on your own forearm. \\\"This wasn't battle-wound. It was self-inflicted. In grief. When I realized that the 'tyranny' I fought was actually necessary order holding back chaos, I tried to reverse it. But history doesn't bend easily.\\\"\\n\\nAs he speaks, fragments of memory return to you. Not clear images, but sensations: the smell of burning libraries, the sound of children crying in ruins, the cold comfort of a throne that felt like a cage. You realize the King isn't lying. The pain radiating from him is authentic, raw, and shared.\\n\\nKaelen steps forward, suspicious. \\\"Brother, ignore the serpent's tongue. He seeks to confuse you. Kill him, and we rule clean.\\\"\\n\\nBut you feel different. Lighter, somehow, despite the gravity of the revelation. You understand now that the enemy isn't the man on the throne, but the ignorance that placed him there. The path forward shifts. It is no longer about execution or mercy in the traditional sense. It is about integration. Accepting the burden of leadership, even if it means accepting the sins of the past.\",\"choices\":[{\"id\":\"c3\",\"text\":\"Step onto the dais to join him.\",\"meaning\":\"Unity\",\"next\":\"n05\",\"effects\":{\"trust\":1},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n04\",\"chapter\":\"Chapter 2\",\"title\":\"Steel and Doubt\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You tighten your grip on the hilt. The King’s words are poison, designed to paralyze. You’ve heard such rhetoric before—from generals who wanted glory, from priests who promised salvation. This man offers neither. He offers confusion.\\n\\n\\\"Lies,\\\" you spit out. \\\"You wear my face to mock me. To make me doubt my cause. But the people suffer regardless of who sits here. Order without justice is oppression. And you represent nothing but oppression.\\\"\\n\\nThe King nods slowly, unsurprised. \\\"Justice is subjective, child. What looks like tyranny to the hungry looks like stability to the fed. You choose sides based on emotion, not strategy. That is why you failed last time.\\\"\\n\\nHis arrogance ignites your anger. You lunge, not to kill, but to intimidate. You grab him by the collar of his crimson robe, pulling him up from the throne. He goes limp, allowing himself to be manhandled, his eyes locked on yours with unnerving calmness.\\n\\n\\\"Strike me,\\\" he whispers. \\\"If you believe it solves anything. But remember: every drop of royal blood spilled invites foreign invasion. Do you want freedom, or do you want chaos? Because they are not the same thing.\\\"\\n\\nKaelen draws his sword, ready to intervene if you falter, or to finish the job if you succeed. The rebels watch, tense. The atmosphere in the hall is brittle, ready to shatter. You hold the King’s fate in your trembling hands. The logical part of your brain screams that this is a trap, but another part wonders if he is right. Chaos is easy. Governance is hard. Are you prepared to govern? Or are you just another destroyer?\",\"choices\":[{\"id\":\"c4\",\"text\":\"Shove him back onto the throne and retreat to think.\",\"meaning\":\"Caution\",\"next\":\"n05\",\"effects\":{\"trust\":-1},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n05\",\"chapter\":\"Chapter 3\",\"title\":\"The Fork in Fate\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"Silence stretches across the throne room. Whether you listened or shouted, the outcome is the same: paralysis. The rebels are waiting for a command. The King is waiting for judgment. And you are stuck in the center of a paradox that threatens to unravel reality itself.\\n\\nYou pace before the dais, the mask feeling tighter than ever. Sweat stings your eyes. You need a plan, but every option leads to disaster. If you kill him, you risk the collapse Kaelen warns of, or worse, become the villain history remembers. If you spare him, you betray your comrades and likely get executed by them.\\n\\nThere is a third path. One whispered in the margins of your returning memories. The King mentioned a ritual. An ancient magic tied to the bloodline, capable of transferring consciousness—or merging timelines. It requires consent from both parties. It is dangerous, unstable, and forbidden.\\n\\nKaelen notices your distraction. \\\"What are you looking for, brother? The exit? Or the excuse?\\\"\\n\\nYou turn to him. \\\"We aren't leaving until this is resolved properly.\\\"\\n\\nThe King raises a hand. \\\"The Altar of Echoes lies beneath the castle. Bring me there, or bring me death. Choose quickly. The stars align only once per century. Miss this window, and we remain trapped forever.\\\"\\n\\nThe mention of the altar sends a jolt through you. You remember its location. Cold, dark, humming with latent energy. It is a place of transformation. But transforming what? Yourself? The timeline? The soul?\\n\\nYou look at Kaelen, then at the King. The choice defines your next move. Do you pursue the mystical solution, risking everything on untested magic? Or do you stick to the martial solution, resolving the conflict with steel and politics?\",\"choices\":[{\"id\":\"c5a\",\"text\":\"Drag the King to the Altar of Echoes.\",\"meaning\":\"Magic/Risk\",\"next\":\"n06\",\"effects\":{\"trust\":1},\"setFacts\":[\"altar_knowledge\"],\"conditions\":{}},{\"id\":\"c5b\",\"text\":\"Confront Kaelen and assert political control.\",\"meaning\":\"Strategy/Power\",\"next\":\"n07\",\"effects\":{\"trust\":-1},\"setFacts\":[\"political_leverage\"],\"conditions\":{}}]},{\"id\":\"n06\",\"chapter\":\"Chapter 4\",\"title\":\"Whispers in Stone\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"You bind the King’s wrists with silk ropes—gentle enough to avoid injury, tight enough to prevent escape. Kaelen protests, calling it madness, but you override him with a glare that carries the authority of someone who knows too much. Together, you descend the spiral stairs into the bowels of the castle.\\n\\nThe air grows colder, damp with the scent of ozone and earth. Torches line the walls, their flames burning blue instead of orange. At the bottom lies the Altar of Echoes, a circular platform carved from obsidian, etched with runes that pulse faintly in rhythm with your heartbeat.\\n\\nThe King stands silently as you lead him to the center. \\\"You remember how this works,\\\" he says. It’s not a question.\\n\\nYou nod. Fragments surface: chanting, bleeding, the sensation of two souls colliding. \\\"It merges our perspectives. Temporarily. Permanently, if we survive.\\\"\\n\\n\\\"Survival is uncertain,\\\" he admits. \\\"But clarity is guaranteed.\\\"\\n\\nKaelen waits at the entrance, sword drawn, watching nervously. He trusts you, but he fears the unknown. You begin the incantation, your voice echoing off the stone walls. The runes flare bright white. Pain shoots through your skull as visions flood in—not memories, but possibilities. You see kingdoms rising and falling. You see yourself as a benevolent ruler, and as a cruel despot. You see the rebellion succeeding, and failing.\\n\\nIn the haze of psychic noise, you find the core truth. The rebellion was orchestrated by external forces seeking to destabilize the realm. The King knew this. He played the tyrant to draw them out. By killing him prematurely, you handed victory to the enemies within the shadows.\\n\\nThe connection snaps. You fall to your knees, gasping. The King steadies you, his hand surprisingly warm on your shoulder. \\\"Now you know,\\\" he says softly. \\\"What will you do with the truth?\\\"\",\"choices\":[{\"id\":\"c6\",\"text\":\"Return to the surface with renewed purpose.\",\"meaning\":\"Resolve\",\"next\":\"n08\",\"effects\":{\"trust\":2},\"setFacts\":[\"truth_revealed\"],\"conditions\":{}}]},{\"id\":\"n07\",\"chapter\":\"Chapter 4\",\"title\":\"Crowds and Conspiracies\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"You leave the King seated on the throne, a prisoner in plain sight. Instead, you march up to Kaelen, grabbing him by the armor. \\\"Gather the lieutenants. Now.\\\"\\n\\nConfused but obedient, Kaelen signals the others. Within minutes, five key figures of the rebellion surround you in the antechamber. They expect orders to storm the keep. Instead, you give them a speech.\\n\\n\\\"The King is not the enemy,\\\" you declare, your voice projecting with unnatural confidence. \\\"The enemy is the shadow council manipulating us from abroad. They want us to destroy our own infrastructure so they can rebuild it under their flag.\\\"\\n\\nSkepticism ripples through the group. One lieutenant scoffs. \\\"Pretty words. Why should we believe a masked assassin over centuries of propaganda?\\\"\\n\\n\\\"Because I know things,\\\" you reply, leveraging the fragmented memories you retain. You cite specific troop movements planned by the foreign allies, details only high-command would know. You expose the traitors among them—men paid in gold, not ideology.\\n\\nChaos erupts. Accusations fly. Swords are drawn. But you stand firm, channeling the regal bearing you saw in the King. You are not just a rebel anymore; you are a strategist. You divide the loyalists from the corrupt, isolating the dissenters.\\n\\nWhen the dust settles, you have secured the inner circle. The outer mobs still chant for blood, but they lack direction. You have bought time. You walk back into the throne room, where the King watches with a mixture of pride and sorrow.\\n\\n\\\"Well played,\\\" he says. \\\"But buying time is not winning wars. What is your endgame?\\\"\",\"choices\":[{\"id\":\"c7\",\"text\":\"Face the King with newfound authority.\",\"meaning\":\"Control\",\"next\":\"n08\",\"effects\":{\"trust\":1},\"setFacts\":[\"army_secured\"],\"conditions\":{}}]},{\"id\":\"n08\",\"chapter\":\"Climax\",\"title\":\"The Final Verdict\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"You stand once more before the King, but the dynamic has shifted. You are no longer the hesitant executioner, nor the manipulated pawn. You are a player with agency. The knowledge gained—whether from the altar or the battlefield—has clarified your options.\\n\\nThe morning sun breaks through the high windows, casting long beams of light across the floor. Dust motes dance in the air, indifferent to the drama below. The rebels wait outside, restless. The foreign spies close in. The clock ticks toward noon.\\n\\nThree paths diverge before you:\\n\\nFirst, you can complete the original mission. Execute the King publicly. Claim martyrdom for the rebellion. Use the outrage to unite the factions under a new banner, hoping to purge the corruption later. It is risky, bloody, and relies on faith in the people.\\n\\nSecond, you can abdicate. Force the King to sign a treaty dissolving the monarchy, replacing it with a republic led by you and Kaelen. It compromises stability for freedom, potentially causing internal strife but eliminating the symbol of tyranny.\\n\\nThird, you can merge. Take the King’s life, not physically, but spiritually. Assume his identity. Let the world believe the King died, while you rule in secret, using the rebellion’s momentum to enact change from within the system. It is deceitful, lonely, but effective.\\n\\nThe King watches you, his expression unreadable. \\\"Choose wisely, younger self. History judges outcomes, not intentions.\\\"\\n\\nKaelen enters, breathing hard. \\\"They’re getting restless, brother. Give the word.\\\"\",\"choices\":[{\"id\":\"c8a\",\"text\":\"Execute the King and ignite the revolution.\",\"meaning\":\"Revolution\",\"next\":\"n09\",\"effects\":{\"trust\":0},\"setFacts\":[],\"conditions\":{}},{\"id\":\"c8b\",\"text\":\"Force abdication and establish a Republic.\",\"meaning\":\"Reform\",\"next\":\"n10\",\"effects\":{\"trust\":1},\"setFacts\":[],\"conditions\":{}},{\"id\":\"c8c\",\"text\":\"Assume the King's identity and rule in shadow.\",\"meaning\":\"Paradox\",\"next\":\"n11\",\"effects\":{\"trust\":-1},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n09\",\"chapter\":\"Ending A\",\"title\":\"Blood on the Banner\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_revolution\",\"body\":\"The blade flashes. It is quick, merciful. The King slumps forward, dead before he hits the marble. A silence falls, absolute and terrifying. Then, a roar. Not of joy, but of shock turning to fury.\\n\\nYou lift the mask, revealing your face to the crowd. You scream the names of the fallen heroes, pointing fingers at the foreign ambassadors lurking in the gallery. The rebellion explodes into violence, but it is directed outward now. The internal rot is exposed.\\n\\nYears pass. The kingdom becomes a republic, battered but free. You serve as General, then Senator. You never marry. You sleep poorly. Sometimes, in dreams, you hear the King’s laugh. Was he truly evil? Or did you sacrifice a savior for the sake of symbolism?\\n\\nHistory books call you the Liberator. Statues rise in your honor. But in the quiet moments, you wonder if you killed hope along with the tyrant. The cost was high, paid in blood and innocence. Yet, the chains are broken. And for many, that is enough.\",\"choices\":[]},{\"id\":\"n10\",\"chapter\":\"Ending B\",\"title\":\"The Paper Throne\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_republic\",\"body\":\"The signing ceremony is dull, bureaucratic. The King, frail and defeated, puts pen to parchment. He abdicates all rights. The monarchy is dissolved. You step forward, taking the document aloft for the cameras—and the crowds.\\n\\nTransition is messy. Warlords resist. Foreign powers sanction. But you navigate the storms with diplomatic precision learned from the King’s strategies. You build institutions, courts, councils. Slowly, painfully, democracy takes root.\\n\\nThe King lives out his days in exile, writing memoirs that no one reads. You visit him once, years later. He looks smaller, less imposing. \\\"You chose safety over passion,\\\" he remarks. \\\"Was it worth it?\\\"\\n\\nYou look at the bustling city outside the prison gates. Peaceful. Ordinary. \\\"Yes,\\\" you say. \\\"Passion burns cities. Safety builds them.\\\"\\n\\nYou retire early, content. The statue in the square depicts not a warrior, but a scholar holding a scroll. The legacy is quiet, enduring. No grand battles, no martyrs. Just progress.\",\"choices\":[]},{\"id\":\"n11\",\"chapter\":\"Ending C\",\"title\":\"The Mirror King\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_paradox\",\"body\":\"You dismiss the guards. Alone with the King, you perform the final act of deception. With the help of alchemists loyal to the crown, you stage a fatal accident. The public sees the King die. The body is buried with honors.\\n\\nBut in the crypt, you swap places. You donning the crown jewels, assuming the persona of the grieving successor who survived the assassination attempt. The rebellion declares victory, thinking the threat gone. They go home.\\n\\nYou sit on the throne, wearing the mask internally. Every day is a performance. You implement reforms secretly, crushing corruption quietly. You are loved by the people as a hero-king, feared by nobles as a ruthless autocrat.\\n\\nDecades pass. You grow old. The irony is bitter. You became the very thing you sought to destroy, but with better intentions. Did you save the kingdom? Yes. Did you lose yourself? Completely.\\n\\nOn your deathbed, a young rebel bursts in, dagger raised. You smile, recognizing the fire in his eyes. It is the same fire you once held. The cycle continues. You whisper, \\\"Strike true, boy. Make it count.\\\"\",\"choices\":[]}]}\n===END_STORY_PATCH==="
+  },
+  "story": {
+    "meta": {
+      "title": "The King Who Woke Inside His Own Rebellion",
+      "logline": "You awaken as the masked rebel about to execute the king, only to realize the monarch is an older version of yourself.",
+      "start": "n01",
+      "stats": [
+        {
+          "id": "trust",
+          "name": "Trust in Self",
+          "initial": 5,
+          "min": 0,
+          "max": 10,
+          "visible": true
+        }
+      ],
+      "factLabels": {
+        "memory_fragment": "Memory Fragment"
+      }
+    },
+    "nodes": [
+      {
+        "id": "n01",
+        "chapter": "Prologue",
+        "title": "The Blade at Dawn",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Cold stone bites into your knees. The air smells of iron and old blood. You are kneeling before a throne room that feels both alien and intimately familiar. A heavy mask obscures your vision, narrowing the world to a slit of dim candlelight. In your hands, you grip a dagger wrapped in black leather. Your knuckles are white.\n\nAcross from you sits the King. He wears robes of deep crimson, embroidered with silver threads that catch the flickering light. His face is hidden beneath a crown of thorns, but his posture is one of weary resignation. He does not beg. He does not struggle. He simply watches you through the slits of your own mask.\n\nA voice booms from the shadows behind you—your lieutenant, Kaelen. \"Do it, brother. End the tyranny. Free us.\" The crowd outside the palace walls roars, a tidal wave of demand for justice.\n\nYou raise the blade. Your arm trembles, not from fear, but from a strange, vibrating resonance in your bones. As you step closer, the King lifts his head. For a second, the candlelight catches his eyes. They are grey. Piercingly, painfully grey. And they look exactly like yours.\n\nTime seems to fracture. A flash of memory hits you—not of rebellion, but of coronation. Of standing on this very dais, young and arrogant, swearing oaths you can no longer recall. The realization crashes over you like ice water. The man sitting there isn't just a tyrant. He is you. Older. Broken. Waiting.\n\nYour heart hammers against your ribs. Is this a trick? A hallucination induced by stress? Or has time folded in on itself, trapping you in a loop of self-destruction? The dagger feels heavier now, anchored by the weight of impossible truth. Kaelen shouts again, impatient. \"Strike!\" he commands. But you hesitate, suspended between duty and identity.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Lower the blade slightly, demanding answers.",
+            "meaning": "Seek Truth",
+            "next": "n02",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "memory_fragment"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n02",
+        "chapter": "Chapter 1",
+        "title": "Echoes of the Crown",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You lower the tip of the dagger inches from the King's throat. The movement is subtle, but in the silent hall, it sounds like thunder. Kaelen’s shout dies in his throat, replaced by confused murmurs from the rebels surrounding the dais.\n\n\"Who are you?\" you ask, your voice roughened by disuse and the mask.\n\nThe King smiles, a sad, crooked thing. \"I am what remains when ambition burns out,\" he replies. His voice is gravelly, aged, yet undeniably yours. \"And you... you are the fire I thought I had extinguished.\"\n\nHe gestures weakly to the side table where a goblet of wine sits untouched. \"Drink. It will steady your hand. Or don't. It matters little which way the coin falls, provided we stop spinning.\"\n\nYou glance at the rebels. Their loyalty is fragile, built on hatred of a figurehead they barely know. If you show weakness, if you question the mission, they might turn on you. But if you strike blindly, you kill yourself—or rather, the future you could have been.\n\nThe King leans forward, ignoring the danger. \"Listen closely, boy. There is a reason I sent assassins after my own past. Not to erase it, but to warn it. The rebellion was never about freedom. It was about survival. Mine. Yours. We are trapped in a cycle because we refuse to understand the cost of power.\"\n\nHis words hang in the air, thick with implication. Do you trust this fractured reflection of yourself? Or do you see manipulation in every syllable? The dagger still points toward his chest, a physical manifestation of your indecision. Outside, the roar of the mob grows louder, sensing hesitation. Time is running out.",
+        "choices": [
+          {
+            "id": "c2a",
+            "text": "Accept the warning and listen to his full story.",
+            "meaning": "Empathy",
+            "next": "n03",
+            "effects": {
+              "trust": 2
+            },
+            "setFacts": [],
+            "conditions": {}
+          },
+          {
+            "id": "c2b",
+            "text": "Reject him as a madman and press for immediate action.",
+            "meaning": "Duty",
+            "next": "n04",
+            "effects": {
+              "trust": -2
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n03",
+        "chapter": "Chapter 2",
+        "title": "The Weight of Years",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You sheathe the dagger halfway, a gesture of tentative peace. The King exhales, a long, shuddering breath that seems to release decades of tension. He begins to speak, not as a ruler addressing subjects, but as a father speaking to a lost son.\n\n\"Twenty years ago,\" he starts, his eyes distant, \"you stood where you stand now. Masked. Angry. Righteous. You believed that killing me would break the curse. You were wrong. Killing me didn't end the war; it began a civil conflict that burned the kingdom to ash. You spent the next decade hunting down ghosts, trying to undo what couldn't be undone.\"\n\nHe touches the scar running down his cheek—a mirror image of the cut on your own forearm. \"This wasn't battle-wound. It was self-inflicted. In grief. When I realized that the 'tyranny' I fought was actually necessary order holding back chaos, I tried to reverse it. But history doesn't bend easily.\"\n\nAs he speaks, fragments of memory return to you. Not clear images, but sensations: the smell of burning libraries, the sound of children crying in ruins, the cold comfort of a throne that felt like a cage. You realize the King isn't lying. The pain radiating from him is authentic, raw, and shared.\n\nKaelen steps forward, suspicious. \"Brother, ignore the serpent's tongue. He seeks to confuse you. Kill him, and we rule clean.\"\n\nBut you feel different. Lighter, somehow, despite the gravity of the revelation. You understand now that the enemy isn't the man on the throne, but the ignorance that placed him there. The path forward shifts. It is no longer about execution or mercy in the traditional sense. It is about integration. Accepting the burden of leadership, even if it means accepting the sins of the past.",
+        "choices": [
+          {
+            "id": "c3",
+            "text": "Step onto the dais to join him.",
+            "meaning": "Unity",
+            "next": "n05",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n04",
+        "chapter": "Chapter 2",
+        "title": "Steel and Doubt",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You tighten your grip on the hilt. The King’s words are poison, designed to paralyze. You’ve heard such rhetoric before—from generals who wanted glory, from priests who promised salvation. This man offers neither. He offers confusion.\n\n\"Lies,\" you spit out. \"You wear my face to mock me. To make me doubt my cause. But the people suffer regardless of who sits here. Order without justice is oppression. And you represent nothing but oppression.\"\n\nThe King nods slowly, unsurprised. \"Justice is subjective, child. What looks like tyranny to the hungry looks like stability to the fed. You choose sides based on emotion, not strategy. That is why you failed last time.\"\n\nHis arrogance ignites your anger. You lunge, not to kill, but to intimidate. You grab him by the collar of his crimson robe, pulling him up from the throne. He goes limp, allowing himself to be manhandled, his eyes locked on yours with unnerving calmness.\n\n\"Strike me,\" he whispers. \"If you believe it solves anything. But remember: every drop of royal blood spilled invites foreign invasion. Do you want freedom, or do you want chaos? Because they are not the same thing.\"\n\nKaelen draws his sword, ready to intervene if you falter, or to finish the job if you succeed. The rebels watch, tense. The atmosphere in the hall is brittle, ready to shatter. You hold the King’s fate in your trembling hands. The logical part of your brain screams that this is a trap, but another part wonders if he is right. Chaos is easy. Governance is hard. Are you prepared to govern? Or are you just another destroyer?",
+        "choices": [
+          {
+            "id": "c4",
+            "text": "Shove him back onto the throne and retreat to think.",
+            "meaning": "Caution",
+            "next": "n05",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n05",
+        "chapter": "Chapter 3",
+        "title": "The Fork in Fate",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Silence stretches across the throne room. Whether you listened or shouted, the outcome is the same: paralysis. The rebels are waiting for a command. The King is waiting for judgment. And you are stuck in the center of a paradox that threatens to unravel reality itself.\n\nYou pace before the dais, the mask feeling tighter than ever. Sweat stings your eyes. You need a plan, but every option leads to disaster. If you kill him, you risk the collapse Kaelen warns of, or worse, become the villain history remembers. If you spare him, you betray your comrades and likely get executed by them.\n\nThere is a third path. One whispered in the margins of your returning memories. The King mentioned a ritual. An ancient magic tied to the bloodline, capable of transferring consciousness—or merging timelines. It requires consent from both parties. It is dangerous, unstable, and forbidden.\n\nKaelen notices your distraction. \"What are you looking for, brother? The exit? Or the excuse?\"\n\nYou turn to him. \"We aren't leaving until this is resolved properly.\"\n\nThe King raises a hand. \"The Altar of Echoes lies beneath the castle. Bring me there, or bring me death. Choose quickly. The stars align only once per century. Miss this window, and we remain trapped forever.\"\n\nThe mention of the altar sends a jolt through you. You remember its location. Cold, dark, humming with latent energy. It is a place of transformation. But transforming what? Yourself? The timeline? The soul?\n\nYou look at Kaelen, then at the King. The choice defines your next move. Do you pursue the mystical solution, risking everything on untested magic? Or do you stick to the martial solution, resolving the conflict with steel and politics?",
+        "choices": [
+          {
+            "id": "c5a",
+            "text": "Drag the King to the Altar of Echoes.",
+            "meaning": "Magic/Risk",
+            "next": "n06",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "altar_knowledge"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c5b",
+            "text": "Confront Kaelen and assert political control.",
+            "meaning": "Strategy/Power",
+            "next": "n07",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "political_leverage"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n06",
+        "chapter": "Chapter 4",
+        "title": "Whispers in Stone",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You bind the King’s wrists with silk ropes—gentle enough to avoid injury, tight enough to prevent escape. Kaelen protests, calling it madness, but you override him with a glare that carries the authority of someone who knows too much. Together, you descend the spiral stairs into the bowels of the castle.\n\nThe air grows colder, damp with the scent of ozone and earth. Torches line the walls, their flames burning blue instead of orange. At the bottom lies the Altar of Echoes, a circular platform carved from obsidian, etched with runes that pulse faintly in rhythm with your heartbeat.\n\nThe King stands silently as you lead him to the center. \"You remember how this works,\" he says. It’s not a question.\n\nYou nod. Fragments surface: chanting, bleeding, the sensation of two souls colliding. \"It merges our perspectives. Temporarily. Permanently, if we survive.\"\n\n\"Survival is uncertain,\" he admits. \"But clarity is guaranteed.\"\n\nKaelen waits at the entrance, sword drawn, watching nervously. He trusts you, but he fears the unknown. You begin the incantation, your voice echoing off the stone walls. The runes flare bright white. Pain shoots through your skull as visions flood in—not memories, but possibilities. You see kingdoms rising and falling. You see yourself as a benevolent ruler, and as a cruel despot. You see the rebellion succeeding, and failing.\n\nIn the haze of psychic noise, you find the core truth. The rebellion was orchestrated by external forces seeking to destabilize the realm. The King knew this. He played the tyrant to draw them out. By killing him prematurely, you handed victory to the enemies within the shadows.\n\nThe connection snaps. You fall to your knees, gasping. The King steadies you, his hand surprisingly warm on your shoulder. \"Now you know,\" he says softly. \"What will you do with the truth?\"",
+        "choices": [
+          {
+            "id": "c6",
+            "text": "Return to the surface with renewed purpose.",
+            "meaning": "Resolve",
+            "next": "n08",
+            "effects": {
+              "trust": 2
+            },
+            "setFacts": [
+              "truth_revealed"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n07",
+        "chapter": "Chapter 4",
+        "title": "Crowds and Conspiracies",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You leave the King seated on the throne, a prisoner in plain sight. Instead, you march up to Kaelen, grabbing him by the armor. \"Gather the lieutenants. Now.\"\n\nConfused but obedient, Kaelen signals the others. Within minutes, five key figures of the rebellion surround you in the antechamber. They expect orders to storm the keep. Instead, you give them a speech.\n\n\"The King is not the enemy,\" you declare, your voice projecting with unnatural confidence. \"The enemy is the shadow council manipulating us from abroad. They want us to destroy our own infrastructure so they can rebuild it under their flag.\"\n\nSkepticism ripples through the group. One lieutenant scoffs. \"Pretty words. Why should we believe a masked assassin over centuries of propaganda?\"\n\n\"Because I know things,\" you reply, leveraging the fragmented memories you retain. You cite specific troop movements planned by the foreign allies, details only high-command would know. You expose the traitors among them—men paid in gold, not ideology.\n\nChaos erupts. Accusations fly. Swords are drawn. But you stand firm, channeling the regal bearing you saw in the King. You are not just a rebel anymore; you are a strategist. You divide the loyalists from the corrupt, isolating the dissenters.\n\nWhen the dust settles, you have secured the inner circle. The outer mobs still chant for blood, but they lack direction. You have bought time. You walk back into the throne room, where the King watches with a mixture of pride and sorrow.\n\n\"Well played,\" he says. \"But buying time is not winning wars. What is your endgame?\"",
+        "choices": [
+          {
+            "id": "c7",
+            "text": "Face the King with newfound authority.",
+            "meaning": "Control",
+            "next": "n08",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "army_secured"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n08",
+        "chapter": "Climax",
+        "title": "The Final Verdict",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You stand once more before the King, but the dynamic has shifted. You are no longer the hesitant executioner, nor the manipulated pawn. You are a player with agency. The knowledge gained—whether from the altar or the battlefield—has clarified your options.\n\nThe morning sun breaks through the high windows, casting long beams of light across the floor. Dust motes dance in the air, indifferent to the drama below. The rebels wait outside, restless. The foreign spies close in. The clock ticks toward noon.\n\nThree paths diverge before you:\n\nFirst, you can complete the original mission. Execute the King publicly. Claim martyrdom for the rebellion. Use the outrage to unite the factions under a new banner, hoping to purge the corruption later. It is risky, bloody, and relies on faith in the people.\n\nSecond, you can abdicate. Force the King to sign a treaty dissolving the monarchy, replacing it with a republic led by you and Kaelen. It compromises stability for freedom, potentially causing internal strife but eliminating the symbol of tyranny.\n\nThird, you can merge. Take the King’s life, not physically, but spiritually. Assume his identity. Let the world believe the King died, while you rule in secret, using the rebellion’s momentum to enact change from within the system. It is deceitful, lonely, but effective.\n\nThe King watches you, his expression unreadable. \"Choose wisely, younger self. History judges outcomes, not intentions.\"\n\nKaelen enters, breathing hard. \"They’re getting restless, brother. Give the word.\"",
+        "choices": [
+          {
+            "id": "c8a",
+            "text": "Execute the King and ignite the revolution.",
+            "meaning": "Revolution",
+            "next": "n09",
+            "effects": {
+              "trust": 0
+            },
+            "setFacts": [],
+            "conditions": {}
+          },
+          {
+            "id": "c8b",
+            "text": "Force abdication and establish a Republic.",
+            "meaning": "Reform",
+            "next": "n10",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [],
+            "conditions": {}
+          },
+          {
+            "id": "c8c",
+            "text": "Assume the King's identity and rule in shadow.",
+            "meaning": "Paradox",
+            "next": "n11",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n09",
+        "chapter": "Ending A",
+        "title": "Blood on the Banner",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_revolution",
+        "body": "The blade flashes. It is quick, merciful. The King slumps forward, dead before he hits the marble. A silence falls, absolute and terrifying. Then, a roar. Not of joy, but of shock turning to fury.\n\nYou lift the mask, revealing your face to the crowd. You scream the names of the fallen heroes, pointing fingers at the foreign ambassadors lurking in the gallery. The rebellion explodes into violence, but it is directed outward now. The internal rot is exposed.\n\nYears pass. The kingdom becomes a republic, battered but free. You serve as General, then Senator. You never marry. You sleep poorly. Sometimes, in dreams, you hear the King’s laugh. Was he truly evil? Or did you sacrifice a savior for the sake of symbolism?\n\nHistory books call you the Liberator. Statues rise in your honor. But in the quiet moments, you wonder if you killed hope along with the tyrant. The cost was high, paid in blood and innocence. Yet, the chains are broken. And for many, that is enough.",
+        "choices": []
+      },
+      {
+        "id": "n10",
+        "chapter": "Ending B",
+        "title": "The Paper Throne",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_republic",
+        "body": "The signing ceremony is dull, bureaucratic. The King, frail and defeated, puts pen to parchment. He abdicates all rights. The monarchy is dissolved. You step forward, taking the document aloft for the cameras—and the crowds.\n\nTransition is messy. Warlords resist. Foreign powers sanction. But you navigate the storms with diplomatic precision learned from the King’s strategies. You build institutions, courts, councils. Slowly, painfully, democracy takes root.\n\nThe King lives out his days in exile, writing memoirs that no one reads. You visit him once, years later. He looks smaller, less imposing. \"You chose safety over passion,\" he remarks. \"Was it worth it?\"\n\nYou look at the bustling city outside the prison gates. Peaceful. Ordinary. \"Yes,\" you say. \"Passion burns cities. Safety builds them.\"\n\nYou retire early, content. The statue in the square depicts not a warrior, but a scholar holding a scroll. The legacy is quiet, enduring. No grand battles, no martyrs. Just progress.",
+        "choices": []
+      },
+      {
+        "id": "n11",
+        "chapter": "Ending C",
+        "title": "The Mirror King",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_paradox",
+        "body": "You dismiss the guards. Alone with the King, you perform the final act of deception. With the help of alchemists loyal to the crown, you stage a fatal accident. The public sees the King die. The body is buried with honors.\n\nBut in the crypt, you swap places. You donning the crown jewels, assuming the persona of the grieving successor who survived the assassination attempt. The rebellion declares victory, thinking the threat gone. They go home.\n\nYou sit on the throne, wearing the mask internally. Every day is a performance. You implement reforms secretly, crushing corruption quietly. You are loved by the people as a hero-king, feared by nobles as a ruthless autocrat.\n\nDecades pass. You grow old. The irony is bitter. You became the very thing you sought to destroy, but with better intentions. Did you save the kingdom? Yes. Did you lose yourself? Completely.\n\nOn your deathbed, a young rebel bursts in, dagger raised. You smile, recognizing the fire in his eyes. It is the same fire you once held. The cycle continues. You whisper, \"Strike true, boy. Make it count.\"",
+        "choices": []
+      }
+    ]
+  },
+  "recommendation": {
+    "gender": "male",
+    "tags": [
+      "Time Loop",
+      "Political Intrigue",
+      "Moral Dilemma",
+      "Rebellion",
+      "Identity Crisis"
+    ],
+    "summary": "Stand before the throne with your blade raised, only to find your target is an aged reflection of yourself. As the masked rebel, you must navigate a labyrinth of temporal paradoxes and political conspiracies where every choice reshapes history. Will you sever the cycle in blood, forge a fragile republic from paper promises, or don the crown of shadows to become the very tyrant you sought to destroy? Your identity hangs in the balance."
+  },
+  "generatedAt": "2026-09-24T12:08:37.583Z"
+}

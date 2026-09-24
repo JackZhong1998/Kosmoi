@@ -226,17 +226,6 @@ Storyboard 把剧本变成逐镜构图，并形成生产清单。Animatic 把分
 | 模型或平台 | 已核验的关键能力 | 适合环节 | 主要边界 |
 | --- | --- | --- | --- |
 | Seedance 2.5 | 单次最长 30 秒音视频，多轮延展，最多 30 图 10 视频 10 音频参考，时间戳级编辑 | 多镜头探索，长一点的叙事段落，大量资产参考 | 跨数分钟的真实一致率缺乏独立数据，第一方 API 状态需复核 |
-| Veo 3.1 | 文生和图生、首尾帧、最多 3 张角色或物体参考、原生音频、延展 | 高画质短镜头，对白和环境音，关键帧控制 | 通常 4 6 8 秒；高分辨率和参考或延展组合有限 |
-| Kling 3.0 和 Omni | 最长 15 秒，全模态输入输出，参考生成、视频内编辑、原生多语言和方言音频 | 中文对白、多角色参考、多镜头短段落 | 第一方公开 API 规格不够完整，开工前需要小样验证 |
-| Runway Gen 4.5 工具链 | 2 至 10 秒 T2V 和 I2V；References 做一致静帧；Act Two 做表演迁移；Aleph 2.0 做视频编辑 | 模块化 Agent 流水线、人物表演、镜头修复 | Gen 4.5 本身不负责全片身份记忆，正式镜头仍需资产和 I2V |
-| Luma Ray3 系列 | 关键帧、角色参考、视频转绘、HDR 和 EXR；部分型号支持延展 | 高动态范围、转绘、角色替换和专业调色素材 | 型号能力碎片化；Ray3 无原生音频，Ray3.14 无角色参考 |
-| Hailuo 2.3 | 6 或 10 秒 T2V 和 I2V，支持批量，动画和人物动作优化 | 低成本候选和批量 B 级镜头 | 角色参考和音频能力应按具体 endpoint 核验 |
-| Adobe Firefly 和 Creative Cloud | 5 秒 Firefly Video，首尾帧、构图与运动参考、相机控件；整合多家模型、时间线和音频工具 | 多模型生产中枢、版权敏感项目、后期和交付 | 自家模型与第三方模型条款不同；构图参考与关键帧不可同时用 |
-| Pika | 5 或 10 秒 T2V 和 I2V，Pikaframes 最长 25 秒，场景增删替换和音轨工具 | 社媒特效、转场和补音 | 长片角色连续性和 API 公开规格有限 |
-
-Seedance 2.5 的官方发布说明了 30 秒和多模态参考能力。[Seedance 2.5 官方发布](https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5) Veo 3.1 的 Gemini API 文档给出了时长、参考图、首尾帧、延展和音频限制。[Veo 3.1 API 文档](https://ai.google.dev/gemini-api/docs/veo) Kling 3.0 的 15 秒、全模态与原生多语言音频来自快手官方发布。[Kling 3.0 官方发布](https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be) Runway、Luma、MiniMax 和 Adobe 的能力分别见 [Runway Gen 4.5](https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5)、[Runway Act Two](https://help.runwayml.com/hc/en-us/articles/42311337895827-Performance-Capture-with-Act-Two)、[Luma Ray3 Modify](https://lumalabs.ai/learning-hub/ray3-modify-user-guide)、[MiniMax Video API](https://platform.minimax.io/docs/guides/video-generation) 和 [Adobe Firefly 构图参考](https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-video/use-video-as-composition-reference.html)。
-
-Sora 不应进入新项目的主干。OpenAI 已于 2026 年 4 月 26 日停止 Sora Web 和 App，并计划在 2026 年 9 月 24 日关闭 API。[OpenAI Sora 停止服务说明](https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation)
 
 ## 八 Agent 制作系统
 
@@ -361,21 +350,3 @@ VBench 2.0 把 human fidelity、controllability、physics、commonsense 和 crea
 模型功能、API、价格和地域可用性会快速变化，同一模型在第一方产品、聚合平台和 API 的能力也可能不同。本文不把厂商自有基准当独立性能排名。尤其是角色跨多镜头的一致率、一次生成可直接进入成片的比例和大规模项目真实成本，公开资料仍不足，必须通过项目样片测量。
 
 不同作品的最佳结构、镜头数量和规则使用没有统一答案。本文给出的 schema、状态机、重试上限和审批门槛是依据影视制作原则与当前模型限制综合出的实践框架，不是行业强制标准。
-
-## 主要资料
-
-- OpenAI. What to know about the Sora discontinuation. 2026. https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation
-- Google AI for Developers. Generate videos with Veo 3.1. 2026. https://ai.google.dev/gemini-api/docs/veo
-- ByteDance Seed. Introducing Seedance 2.5. 2026-07-31. https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5
-- Kuaishou Technology. Kling AI 3.0 launch. 2026-02-05. https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be
-- Runway. Creating with Gen 4.5. 2026. https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5
-- Runway. Performance Capture with Act Two. 2026. https://help.runwayml.com/hc/en-us/articles/42311337895827-Performance-Capture-with-Act-Two
-- Luma AI. Ray3 Modify User Guide. 2025-12. https://lumalabs.ai/learning-hub/ray3-modify-user-guide
-- MiniMax. Video Generation Guide. 2026. https://platform.minimax.io/docs/guides/video-generation
-- Adobe. Use video as composition reference. 2026-06-16. https://helpx.adobe.com/firefly/web/work-with-audio-and-video/work-with-video/use-video-as-composition-reference.html
-- Academy of Motion Picture Arts and Sciences. Complete Screen Writing Activities Guide. https://www.oscars.org/sites/oscars/files/complete_screen_writing_activities_guide.pdf
-- BAFTA. Screenwriters Lecture Peter Straughan. https://www.bafta.org/media-centre/press-releases/screenwriters-lecture-peter-straughan/
-- American Society of Cinematographers. Shot Craft Where Do You Put the Camera. 2020-01-26. https://theasc.com/article/shot-craft-where-do-you-put-the-camera/
-- BFI. Four hard and fast rules from The Passion of Joan of Arc. 2018-04-20. https://www.bfi.org.uk/features/passion-joan-arc-carl-dreyer-style
-- 中国人大网. 中华人民共和国著作权法. 2020. https://www.npc.gov.cn/c2/c30834/202011/t20201119_308796.html
-- 国家互联网信息办公室等. 人工智能生成合成内容标识办法. 2025-03-07. https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm

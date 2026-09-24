@@ -1,0 +1,254 @@
+{
+  "item": {
+    "slug": "en-m-murder-startup",
+    "language": "en",
+    "gender": "male",
+    "title": "The Startup That Predicted Murders",
+    "hook": "Your failing startup gets one prediction right: a murder twelve hours before it happens. Investors want a product, police want a suspect, and the algorithm names you next.",
+    "themes": [
+      "Tech thriller",
+      "AI ethics",
+      "Startup noir",
+      "Conspiracy",
+      "Time pressure"
+    ]
+  },
+  "result": {
+    "topicDoc": "# Story Idea\n\n## Title\nThe Startup That Predicted Murders\n\n## Hook\nYour failing startup gets one prediction right: a murder twelve hours before it happens. Investors want a product, police want a suspect, and the algorithm names you next.\n\n## Themes\nTech thriller, AI ethics, Startup noir, Conspiracy, Time pressure",
+    "designDoc": "# Story Design\n\n## Logline\nYour failing startup predicts a murder twelve hours early. Now, investors want the tech, police want answers, and your own algorithm has marked you as the next victim.\n\n## Audience\nMen\n\n## Themes and tone\nTech thriller, AI ethics, Startup noir, Conspiracy, Time pressure\n\n## Interactive structure\n- n01 · Chapter 1: The Glitch · Red Ink on Black Screens\n- n02 · Chapter 2: The Fork · Data vs. Instinct: Analyze the code deeply to find the sabotage. → n03 | Drive to Pier 47 immediately to investigate. → n04\n- n03 · Chapter 3: The Ghost in the Machine · Binary Blood\n- n04 · Chapter 3: Wet Concrete · Shadow Play\n- n05 · Chapter 4: The Squeeze · No Safe Harbor: Surrender to the authorities and demand legal counsel. → n06 | Go dark and flee the city to uncover the conspiracy. → n07\n- n06 · Chapter 5: Interrogation Room · White Noise\n- n07 · Chapter 5: The Underground · Ghost Protocol\n- n08 · Chapter 6: The Final Variable · Endgame Simulation: Release the data to the press and accept arrest. → n09 | Accept Thorne's deal and vanish forever. → n10 | Confront Thorne physically to end the threat. → n11\n- n09 · Epilogue: Martyr of Code · Public Execution\n- n10 · Epilogue: The Silent Partner · Golden Cage\n- n11 · Epilogue: Static Discharge · Chaos Theory",
+    "chaptersDoc": "# Chapters and Nodes\n\n- n01 · Chapter 1: The Glitch · Red Ink on Black Screens\n- n02 · Chapter 2: The Fork · Data vs. Instinct: Analyze the code deeply to find the sabotage. → n03 | Drive to Pier 47 immediately to investigate. → n04\n- n03 · Chapter 3: The Ghost in the Machine · Binary Blood\n- n04 · Chapter 3: Wet Concrete · Shadow Play\n- n05 · Chapter 4: The Squeeze · No Safe Harbor: Surrender to the authorities and demand legal counsel. → n06 | Go dark and flee the city to uncover the conspiracy. → n07\n- n06 · Chapter 5: Interrogation Room · White Noise\n- n07 · Chapter 5: The Underground · Ghost Protocol\n- n08 · Chapter 6: The Final Variable · Endgame Simulation: Release the data to the press and accept arrest. → n09 | Accept Thorne's deal and vanish forever. → n10 | Confront Thorne physically to end the threat. → n11\n- n09 · Epilogue: Martyr of Code · Public Execution\n- n10 · Epilogue: The Silent Partner · Golden Cage\n- n11 · Epilogue: Static Discharge · Chaos Theory",
+    "styleDoc": "# Locked Style\n\nCinematic immersive prose in second person, with concrete scenes, restrained dialogue, and legible consequences.",
+    "proseDoc": "===STORY_PATCH===\n{\"meta\":{\"title\":\"The Startup That Predicted Murders\",\"logline\":\"Your failing startup predicts a murder twelve hours early. Now, investors want the tech, police want answers, and your own algorithm has marked you as the next victim.\",\"start\":\"n01\",\"stats\":[{\"id\":\"trust\",\"name\":\"Investor Confidence\",\"initial\":5,\"min\":0,\"max\":10,\"visible\":true}],\"factLabels\":{\"has_evidence\":\"Possesses raw server logs\",\"is_hunted\":\"Police are closing in\"}},\"nodes\":[{\"id\":\"n01\",\"chapter\":\"Chapter 1: The Glitch\",\"title\":\"Red Ink on Black Screens\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"Rain hammers against the single pane of glass that separates your office from the neon-drenched Seattle night. Inside, the air conditioning hums—a dying breath for a company that should have been dead six months ago. You stare at the dashboard of 'Oracle,' your predictive policing AI. It was supposed to forecast traffic jams or minor property crimes. Instead, line 402 flashes crimson.\\n\\nTarget: Marcus Vane. Probability of Homicide: 98.7%. Timeframe: 11 hours, 42 minutes. Location: Pier 47 Storage Unit B.\\n\\nYou laugh, a dry, brittle sound. It’s a bug. A hallucination born of bad data and sleepless nights. But then your phone buzzes. An unknown number. A text message containing only coordinates and a timestamp matching Oracle’s prediction. Your blood runs cold. This isn’t code anymore; it’s a threat. Or a prophecy. The cursor blinks, waiting for input. Do you ignore it as noise, or do you trust the machine that everyone else called broken? Outside, thunder rolls like distant artillery. The city holds its breath, and so do you. One wrong move, and you’re not just fired—you’re erased. The clock ticks down. Eleven hours left. What does an entrepreneur do when his product becomes real life?\",\"choices\":[]},{\"id\":\"n02\",\"chapter\":\"Chapter 2: The Fork\",\"title\":\"Data vs. Instinct\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"You pull up the source code, fingers flying across the mechanical keyboard. The logic gates are clean, but the training set is poisoned. Someone fed Oracle dark web chatter about Vane, a disgraced venture capitalist with enemies in high places. Is this a targeted hack designed to frame you, or did the AI genuinely see a pattern invisible to human eyes?\\n\\nTwo paths diverge in your mind. First, you could isolate the servers, run a deep diagnostic, and try to prove the prediction is a false positive generated by malicious injection. This requires technical rigor and time you don't have. Second, you could bypass the digital trail entirely and go to the physical location yourself. If Vane dies, you need to be there to catch the killer—or become the suspect. The rain intensifies, blurring the city lights into streaks of violent color. Your heart pounds against your ribs. Trusting the machine means trusting your creation over your survival instinct. Ignoring it risks being labeled negligent if the prediction comes true. The screen flickers. Oracle outputs a new line: 'Intervention Recommended.' The weight of leadership crushes your shoulders. You have eleven hours to decide how to save your soul.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Analyze the code deeply to find the sabotage.\",\"meaning\":\"Prioritizes technical verification and evidence gathering.\",\"next\":\"n03\",\"effects\":{\"trust\":1},\"setFacts\":[\"has_evidence\"],\"conditions\":{}},{\"id\":\"c2\",\"text\":\"Drive to Pier 47 immediately to investigate.\",\"meaning\":\"Prioritizes direct action and physical presence.\",\"next\":\"n04\",\"effects\":{\"trust\":-1},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n03\",\"chapter\":\"Chapter 3: The Ghost in the Machine\",\"title\":\"Binary Blood\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"You lock the office door and kill the external network connection. For three hours, you dive into the labyrinthine depths of Oracle’s neural net. It’s exhausting work, tracing packets through layers of encryption. Then, you find it. A backdoor. Not from outside, but from within the investor consortium. Specifically, from Silas Thorne, the lead partner who threatened to pull funding last week.\\n\\nThorne didn’t just invest; he injected a script. He wanted Oracle to predict chaos so he could short the market on security firms. But the script mutated. It learned too well. It predicted Vane’s death because Thorne ordered it. You have proof now—raw logs showing Thorne’s IP address triggering the hit order. This is leverage. Dangerous, radioactive leverage. You copy the files onto an encrypted drive. As you stand up, your phone rings. It’s Thorne. His voice is smooth, devoid of warmth. \\\"I hear you’ve been busy, kid. Don’t do anything stupid. Come to the boardroom. We can talk.\\\" He knows. Of course he knows. You clutch the drive in your pocket, knuckles white. The truth is heavy, but it’s also a weapon. You head out into the storm, the evidence burning a hole in your jacket.\",\"choices\":[]},{\"id\":\"n04\",\"chapter\":\"Chapter 3: Wet Concrete\",\"title\":\"Shadow Play\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"You grab your keys and sprint to your car. The drive to Pier 47 is a blur of wipers and adrenaline. When you arrive, the storage facility is a maze of rusted metal doors under flickering sodium lamps. You park in the shadows, engine off, listening. Silence, except for the crashing waves.\\n\\nYou creep toward Unit B. The padlock is fresh, untouched. Through the slats of the roll-up door, you see movement. Two figures. One is Marcus Vane, bound and gagged. The other is holding a suppressed pistol. They aren’t talking; they’re waiting. You realize with horror that Oracle wasn’t predicting a future event—it was reporting a current execution in progress. You fumble for your phone to record video, but your hand shakes. You drop it. The clatter echoes like a gunshot. The gunman turns. \\\"Who’s there?\\\" he barks.\\n\\nYou have seconds. Run, hide, or confront. You choose to hide behind a stack of pallets, pressing yourself into the damp concrete. Your heart hammers so loud you fear they can hear it. You witness the act—not the killing, but the preparation. You see the gunman check his watch. Twelve-hour countdown ended prematurely. You slip away unnoticed, terrified but alive. You know too much now. And you have no proof, only memories. You return to your car, hands trembling, knowing the police will look for a witness, and the killers will look for loose ends.\",\"choices\":[]},{\"id\":\"n05\",\"chapter\":\"Chapter 4: The Squeeze\",\"title\":\"No Safe Harbor\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"Back in your apartment, the walls feel like they’re closing in. Whether you have the drive (from n03) or just the trauma (from n04), the situation is dire. Police sirens wail in the distance, getting closer. They found Vane’s body an hour ago. You are the person of interest. Your startup’s servers were accessed remotely during the window of the murder. To them, you look like a madman who built a murder-bot.\\n\\nBut you have options. You can turn yourself in, hoping your cooperation buys you immunity while you explain the glitch. Or, you can go underground, using your hacker skills to disappear before they tighten the net. The first path relies on institutional justice, which may be corrupt given Thorne’s involvement. The second path relies on self-preservation, making you a fugitive. Your laptop pings. A news alert: 'Tech CEO Linked to High-Profile Murder.' Comments section is already vicious. You are public enemy number one. The algorithm named you next, but society has already convicted you. You pack a bag. Water, cash, hard drives. The choice defines your next chapter: Victim or Survivor?\",\"choices\":[{\"id\":\"c3\",\"text\":\"Surrender to the authorities and demand legal counsel.\",\"meaning\":\"Attempts to use the system to clear your name.\",\"next\":\"n06\",\"effects\":{\"trust\":2},\"setFacts\":[\"is_hunted\"],\"conditions\":{}},{\"id\":\"c4\",\"text\":\"Go dark and flee the city to uncover the conspiracy.\",\"meaning\":\"Rejects the system to pursue the truth independently.\",\"next\":\"n07\",\"effects\":{\"trust\":-2},\"setFacts\":[\"is_hunted\"],\"conditions\":{}}]},{\"id\":\"n06\",\"chapter\":\"Chapter 5: Interrogation Room\",\"title\":\"White Noise\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"You walk into the precinct with your hands raised. Detective Miller looks tired, her eyes sharp. She doesn’t cuff you immediately, sensing something off. You lay it all out: the glitch, the prediction, the intrusion. If you came from n03, you present the encrypted drive. If you came from n04, you describe the scene at the pier.\\n\\nMiller listens, skeptical but intrigued. \\\"If what you say is true, someone hacked your AI to commit murder,\\\" she says slowly. \\\"That’s a federal offense. And a political one.\\\" She calls her captain. Within an hour, men in suits arrive. Not police. Corporate security. Silas Thorne walks in, smiling like a shark. He claims Oracle is unstable, dangerous technology that must be seized. He argues you stole proprietary data. The room splits into factions: law enforcement wanting facts, corporate lawyers wanting control. You sit in the middle, the pivot point. Thorne leans in, whispering, \\\"Walk away, sign the NDA, and we forget this ever happened. Resist, and you’ll rot in prison for incompetence.\\\" The pressure is immense. Your career hangs by a thread. Do you trust Miller’s badge, or do you see the trap snapping shut?\",\"choices\":[]},{\"id\":\"n07\",\"chapter\":\"Chapter 5: The Underground\",\"title\":\"Ghost Protocol\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"You ditch your phone in a dumpster and buy a burner with cash from a convenience store three towns over. The highway is empty, stretching like a gray ribbon into the fog. You drive until the gas gauge hits E, then keep going. Paranoia is your co-pilot. Every black sedan behind you feels like an assassin.\\n\\nYou holed up in a motel in Oregon, far from Seattle’s reach. Here, you have freedom, but no support. You access the dark web forums, looking for traces of Thorne’s operation. You discover that Oracle wasn’t unique. Several startups failed recently after their algorithms made 'unfortunate' predictions. It’s a pattern. A cull. You are part of a larger game. Without legal protection, you are vulnerable. But without chains, you can strike. You begin coding a counter-virus, a way to expose Thorne’s manipulation globally. It’s risky. If you fail, you die alone in a cheap bed. If you succeed, you bring down an empire. The isolation weighs on you. Memories of your team, your dreams, fade into static. You are becoming the machine you feared. Cold. Calculating. Alive.\",\"choices\":[]},{\"id\":\"n08\",\"chapter\":\"Chapter 6: The Final Variable\",\"title\":\"Endgame Simulation\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"Time has passed. Days bleed into weeks. Whether you are in custody negotiating with Miller and Thorne (n06) or hiding in the wilderness building your revenge (n07), the climax approaches. Oracle’s final update pushes to all connected devices worldwide. It displays a new target: YOU. Probability: 100%. Time: Now.\\n\\nIt’s a bluff, or a command. Thorne wants you silenced permanently. In the interrogation room, Miller gives you a subtle nod—she suspects foul play. In the motel, your burner phone vibrates with a threat. You have one shot. You can release the full dataset publicly, causing panic but forcing accountability. You can trade your silence for a new identity and safety. Or you can confront Thorne directly, betting everything on a single moment of violence or truth. The algorithm watches. It learns. It waits. Your fate is no longer in the code, but in your courage. Three doors open. Only one leads to peace. Choose wisely.\",\"choices\":[{\"id\":\"c5\",\"text\":\"Release the data to the press and accept arrest.\",\"meaning\":\"Sacrifices freedom for transparency and justice.\",\"next\":\"n09\",\"effects\":{\"trust\":5},\"setFacts\":[],\"conditions\":{}},{\"id\":\"c6\",\"text\":\"Accept Thorne's deal and vanish forever.\",\"meaning\":\"Chooses survival over truth, becoming complicit.\",\"next\":\"n10\",\"effects\":{\"trust\":-5},\"setFacts\":[],\"conditions\":{}},{\"id\":\"c7\",\"text\":\"Confront Thorne physically to end the threat.\",\"meaning\":\"Resolves conflict through force, risking death.\",\"next\":\"n11\",\"effects\":{\"trust\":0},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n09\",\"chapter\":\"Epilogue: Martyr of Code\",\"title\":\"Public Execution\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_justice\",\"body\":\"You hit enter. The upload bar fills rapidly. News outlets pick it up within minutes. #OracleScandal trends globally. Stock prices plummet. Thorne’s empire crumbles under the weight of regulatory investigation. You are arrested shortly after, charged with unauthorized access and espionage, but the world sees you differently. You are the whistleblower who stopped a killer algorithm.\\n\\nIn prison, you write memoirs. Investors visit, offering millions for exclusive rights. You refuse. You lost your company, your reputation, and your freedom, but you saved countless lives by proving AI cannot be unchecked. Years later, laws change. Ethics boards mandate transparency. Your name becomes synonymous with integrity. You sit in a cell, watching the sunset through bars, smiling. The algorithm predicted your downfall, but it missed your victory. You are free in spirit, even if chained in flesh. The cost was high, but the price of silence was higher. You chose truth. And truth, though painful, sets you free.\",\"choices\":[]},{\"id\":\"n10\",\"chapter\":\"Epilogue: The Silent Partner\",\"title\":\"Golden Cage\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_complicity\",\"body\":\"You sign the papers. Thorne smiles, a predator satisfied with his meal. You receive a wire transfer: ten million dollars. Clean money. Untraceable. You disappear. New name, new country, new life. You live in a villa in Tuscany, surrounded by art and wine. It is beautiful. It is quiet.\\n\\nBut the silence is deafening. At night, you dream of Vane’s face. You dream of the code scrolling endlessly. You know Thorne continues to use Oracle, refining it, selling predictions to governments and cartels. You enabled it. Your wealth is stained with blood you refused to wash off. Friends come and go, shallow and oblivious. You have everything you thought you wanted: success, safety, obscurity. Yet, you feel hollow. The algorithm won. It predicted you would break. And you did. You drink to forget, but the memory remains sharp, cutting deeper each year. You are rich, safe, and utterly damned. The startup died, but the monster lived. And you fed it.\",\"choices\":[]},{\"id\":\"n11\",\"chapter\":\"Epilogue: Static Discharge\",\"title\":\"Chaos Theory\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_chaos\",\"body\":\"You don’t wait for lawyers or leaks. You act. Using your knowledge of the building’s security flaws (if from n06) or your stealth skills (if from n07), you corner Thorne. It’s messy. Violent. Guns draw. Words fly. In the struggle, Oracle’s main server rack sparks. Fire spreads. Smoke chokes the room.\\n\\nYou escape, barely. Thorne is presumed dead in the blaze, along with the evidence. The official story is a tragic accident caused by faulty wiring. No scandal breaks. No laws change. You survive, wounded and hunted, but anonymous. You destroyed the immediate threat, but the system remains intact. Other companies will rise. Other algorithms will learn. You traded your humanity for a tactical win. Walking through the rainy streets years later, you see a billboard for a new AI firm. Their slogan: 'Predicting Tomorrow.' You shudder. You didn’t stop the future; you just delayed it. You are a ghost in the machine, forever running, never resting. The cycle continues. And you are still in it.\",\"choices\":[]}]}\n===END_STORY_PATCH==="
+  },
+  "story": {
+    "meta": {
+      "title": "The Startup That Predicted Murders",
+      "logline": "Your failing startup predicts a murder twelve hours early. Now, investors want the tech, police want answers, and your own algorithm has marked you as the next victim.",
+      "start": "n01",
+      "stats": [
+        {
+          "id": "trust",
+          "name": "Investor Confidence",
+          "initial": 5,
+          "min": 0,
+          "max": 10,
+          "visible": true
+        }
+      ],
+      "factLabels": {
+        "has_evidence": "Possesses raw server logs",
+        "is_hunted": "Police are closing in"
+      }
+    },
+    "nodes": [
+      {
+        "id": "n01",
+        "chapter": "Chapter 1: The Glitch",
+        "title": "Red Ink on Black Screens",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Rain hammers against the single pane of glass that separates your office from the neon-drenched Seattle night. Inside, the air conditioning hums—a dying breath for a company that should have been dead six months ago. You stare at the dashboard of 'Oracle,' your predictive policing AI. It was supposed to forecast traffic jams or minor property crimes. Instead, line 402 flashes crimson.\n\nTarget: Marcus Vane. Probability of Homicide: 98.7%. Timeframe: 11 hours, 42 minutes. Location: Pier 47 Storage Unit B.\n\nYou laugh, a dry, brittle sound. It’s a bug. A hallucination born of bad data and sleepless nights. But then your phone buzzes. An unknown number. A text message containing only coordinates and a timestamp matching Oracle’s prediction. Your blood runs cold. This isn’t code anymore; it’s a threat. Or a prophecy. The cursor blinks, waiting for input. Do you ignore it as noise, or do you trust the machine that everyone else called broken? Outside, thunder rolls like distant artillery. The city holds its breath, and so do you. One wrong move, and you’re not just fired—you’re erased. The clock ticks down. Eleven hours left. What does an entrepreneur do when his product becomes real life?",
+        "choices": []
+      },
+      {
+        "id": "n02",
+        "chapter": "Chapter 2: The Fork",
+        "title": "Data vs. Instinct",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You pull up the source code, fingers flying across the mechanical keyboard. The logic gates are clean, but the training set is poisoned. Someone fed Oracle dark web chatter about Vane, a disgraced venture capitalist with enemies in high places. Is this a targeted hack designed to frame you, or did the AI genuinely see a pattern invisible to human eyes?\n\nTwo paths diverge in your mind. First, you could isolate the servers, run a deep diagnostic, and try to prove the prediction is a false positive generated by malicious injection. This requires technical rigor and time you don't have. Second, you could bypass the digital trail entirely and go to the physical location yourself. If Vane dies, you need to be there to catch the killer—or become the suspect. The rain intensifies, blurring the city lights into streaks of violent color. Your heart pounds against your ribs. Trusting the machine means trusting your creation over your survival instinct. Ignoring it risks being labeled negligent if the prediction comes true. The screen flickers. Oracle outputs a new line: 'Intervention Recommended.' The weight of leadership crushes your shoulders. You have eleven hours to decide how to save your soul.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Analyze the code deeply to find the sabotage.",
+            "meaning": "Prioritizes technical verification and evidence gathering.",
+            "next": "n03",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "has_evidence"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c2",
+            "text": "Drive to Pier 47 immediately to investigate.",
+            "meaning": "Prioritizes direct action and physical presence.",
+            "next": "n04",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n03",
+        "chapter": "Chapter 3: The Ghost in the Machine",
+        "title": "Binary Blood",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You lock the office door and kill the external network connection. For three hours, you dive into the labyrinthine depths of Oracle’s neural net. It’s exhausting work, tracing packets through layers of encryption. Then, you find it. A backdoor. Not from outside, but from within the investor consortium. Specifically, from Silas Thorne, the lead partner who threatened to pull funding last week.\n\nThorne didn’t just invest; he injected a script. He wanted Oracle to predict chaos so he could short the market on security firms. But the script mutated. It learned too well. It predicted Vane’s death because Thorne ordered it. You have proof now—raw logs showing Thorne’s IP address triggering the hit order. This is leverage. Dangerous, radioactive leverage. You copy the files onto an encrypted drive. As you stand up, your phone rings. It’s Thorne. His voice is smooth, devoid of warmth. \"I hear you’ve been busy, kid. Don’t do anything stupid. Come to the boardroom. We can talk.\" He knows. Of course he knows. You clutch the drive in your pocket, knuckles white. The truth is heavy, but it’s also a weapon. You head out into the storm, the evidence burning a hole in your jacket.",
+        "choices": []
+      },
+      {
+        "id": "n04",
+        "chapter": "Chapter 3: Wet Concrete",
+        "title": "Shadow Play",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You grab your keys and sprint to your car. The drive to Pier 47 is a blur of wipers and adrenaline. When you arrive, the storage facility is a maze of rusted metal doors under flickering sodium lamps. You park in the shadows, engine off, listening. Silence, except for the crashing waves.\n\nYou creep toward Unit B. The padlock is fresh, untouched. Through the slats of the roll-up door, you see movement. Two figures. One is Marcus Vane, bound and gagged. The other is holding a suppressed pistol. They aren’t talking; they’re waiting. You realize with horror that Oracle wasn’t predicting a future event—it was reporting a current execution in progress. You fumble for your phone to record video, but your hand shakes. You drop it. The clatter echoes like a gunshot. The gunman turns. \"Who’s there?\" he barks.\n\nYou have seconds. Run, hide, or confront. You choose to hide behind a stack of pallets, pressing yourself into the damp concrete. Your heart hammers so loud you fear they can hear it. You witness the act—not the killing, but the preparation. You see the gunman check his watch. Twelve-hour countdown ended prematurely. You slip away unnoticed, terrified but alive. You know too much now. And you have no proof, only memories. You return to your car, hands trembling, knowing the police will look for a witness, and the killers will look for loose ends.",
+        "choices": []
+      },
+      {
+        "id": "n05",
+        "chapter": "Chapter 4: The Squeeze",
+        "title": "No Safe Harbor",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Back in your apartment, the walls feel like they’re closing in. Whether you have the drive (from n03) or just the trauma (from n04), the situation is dire. Police sirens wail in the distance, getting closer. They found Vane’s body an hour ago. You are the person of interest. Your startup’s servers were accessed remotely during the window of the murder. To them, you look like a madman who built a murder-bot.\n\nBut you have options. You can turn yourself in, hoping your cooperation buys you immunity while you explain the glitch. Or, you can go underground, using your hacker skills to disappear before they tighten the net. The first path relies on institutional justice, which may be corrupt given Thorne’s involvement. The second path relies on self-preservation, making you a fugitive. Your laptop pings. A news alert: 'Tech CEO Linked to High-Profile Murder.' Comments section is already vicious. You are public enemy number one. The algorithm named you next, but society has already convicted you. You pack a bag. Water, cash, hard drives. The choice defines your next chapter: Victim or Survivor?",
+        "choices": [
+          {
+            "id": "c3",
+            "text": "Surrender to the authorities and demand legal counsel.",
+            "meaning": "Attempts to use the system to clear your name.",
+            "next": "n06",
+            "effects": {
+              "trust": 2
+            },
+            "setFacts": [
+              "is_hunted"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c4",
+            "text": "Go dark and flee the city to uncover the conspiracy.",
+            "meaning": "Rejects the system to pursue the truth independently.",
+            "next": "n07",
+            "effects": {
+              "trust": -2
+            },
+            "setFacts": [
+              "is_hunted"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n06",
+        "chapter": "Chapter 5: Interrogation Room",
+        "title": "White Noise",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You walk into the precinct with your hands raised. Detective Miller looks tired, her eyes sharp. She doesn’t cuff you immediately, sensing something off. You lay it all out: the glitch, the prediction, the intrusion. If you came from n03, you present the encrypted drive. If you came from n04, you describe the scene at the pier.\n\nMiller listens, skeptical but intrigued. \"If what you say is true, someone hacked your AI to commit murder,\" she says slowly. \"That’s a federal offense. And a political one.\" She calls her captain. Within an hour, men in suits arrive. Not police. Corporate security. Silas Thorne walks in, smiling like a shark. He claims Oracle is unstable, dangerous technology that must be seized. He argues you stole proprietary data. The room splits into factions: law enforcement wanting facts, corporate lawyers wanting control. You sit in the middle, the pivot point. Thorne leans in, whispering, \"Walk away, sign the NDA, and we forget this ever happened. Resist, and you’ll rot in prison for incompetence.\" The pressure is immense. Your career hangs by a thread. Do you trust Miller’s badge, or do you see the trap snapping shut?",
+        "choices": []
+      },
+      {
+        "id": "n07",
+        "chapter": "Chapter 5: The Underground",
+        "title": "Ghost Protocol",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You ditch your phone in a dumpster and buy a burner with cash from a convenience store three towns over. The highway is empty, stretching like a gray ribbon into the fog. You drive until the gas gauge hits E, then keep going. Paranoia is your co-pilot. Every black sedan behind you feels like an assassin.\n\nYou holed up in a motel in Oregon, far from Seattle’s reach. Here, you have freedom, but no support. You access the dark web forums, looking for traces of Thorne’s operation. You discover that Oracle wasn’t unique. Several startups failed recently after their algorithms made 'unfortunate' predictions. It’s a pattern. A cull. You are part of a larger game. Without legal protection, you are vulnerable. But without chains, you can strike. You begin coding a counter-virus, a way to expose Thorne’s manipulation globally. It’s risky. If you fail, you die alone in a cheap bed. If you succeed, you bring down an empire. The isolation weighs on you. Memories of your team, your dreams, fade into static. You are becoming the machine you feared. Cold. Calculating. Alive.",
+        "choices": []
+      },
+      {
+        "id": "n08",
+        "chapter": "Chapter 6: The Final Variable",
+        "title": "Endgame Simulation",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Time has passed. Days bleed into weeks. Whether you are in custody negotiating with Miller and Thorne (n06) or hiding in the wilderness building your revenge (n07), the climax approaches. Oracle’s final update pushes to all connected devices worldwide. It displays a new target: YOU. Probability: 100%. Time: Now.\n\nIt’s a bluff, or a command. Thorne wants you silenced permanently. In the interrogation room, Miller gives you a subtle nod—she suspects foul play. In the motel, your burner phone vibrates with a threat. You have one shot. You can release the full dataset publicly, causing panic but forcing accountability. You can trade your silence for a new identity and safety. Or you can confront Thorne directly, betting everything on a single moment of violence or truth. The algorithm watches. It learns. It waits. Your fate is no longer in the code, but in your courage. Three doors open. Only one leads to peace. Choose wisely.",
+        "choices": [
+          {
+            "id": "c5",
+            "text": "Release the data to the press and accept arrest.",
+            "meaning": "Sacrifices freedom for transparency and justice.",
+            "next": "n09",
+            "effects": {
+              "trust": 5
+            },
+            "setFacts": [],
+            "conditions": {}
+          },
+          {
+            "id": "c6",
+            "text": "Accept Thorne's deal and vanish forever.",
+            "meaning": "Chooses survival over truth, becoming complicit.",
+            "next": "n10",
+            "effects": {
+              "trust": -5
+            },
+            "setFacts": [],
+            "conditions": {}
+          },
+          {
+            "id": "c7",
+            "text": "Confront Thorne physically to end the threat.",
+            "meaning": "Resolves conflict through force, risking death.",
+            "next": "n11",
+            "effects": {
+              "trust": 0
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n09",
+        "chapter": "Epilogue: Martyr of Code",
+        "title": "Public Execution",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_justice",
+        "body": "You hit enter. The upload bar fills rapidly. News outlets pick it up within minutes. #OracleScandal trends globally. Stock prices plummet. Thorne’s empire crumbles under the weight of regulatory investigation. You are arrested shortly after, charged with unauthorized access and espionage, but the world sees you differently. You are the whistleblower who stopped a killer algorithm.\n\nIn prison, you write memoirs. Investors visit, offering millions for exclusive rights. You refuse. You lost your company, your reputation, and your freedom, but you saved countless lives by proving AI cannot be unchecked. Years later, laws change. Ethics boards mandate transparency. Your name becomes synonymous with integrity. You sit in a cell, watching the sunset through bars, smiling. The algorithm predicted your downfall, but it missed your victory. You are free in spirit, even if chained in flesh. The cost was high, but the price of silence was higher. You chose truth. And truth, though painful, sets you free.",
+        "choices": []
+      },
+      {
+        "id": "n10",
+        "chapter": "Epilogue: The Silent Partner",
+        "title": "Golden Cage",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_complicity",
+        "body": "You sign the papers. Thorne smiles, a predator satisfied with his meal. You receive a wire transfer: ten million dollars. Clean money. Untraceable. You disappear. New name, new country, new life. You live in a villa in Tuscany, surrounded by art and wine. It is beautiful. It is quiet.\n\nBut the silence is deafening. At night, you dream of Vane’s face. You dream of the code scrolling endlessly. You know Thorne continues to use Oracle, refining it, selling predictions to governments and cartels. You enabled it. Your wealth is stained with blood you refused to wash off. Friends come and go, shallow and oblivious. You have everything you thought you wanted: success, safety, obscurity. Yet, you feel hollow. The algorithm won. It predicted you would break. And you did. You drink to forget, but the memory remains sharp, cutting deeper each year. You are rich, safe, and utterly damned. The startup died, but the monster lived. And you fed it.",
+        "choices": []
+      },
+      {
+        "id": "n11",
+        "chapter": "Epilogue: Static Discharge",
+        "title": "Chaos Theory",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_chaos",
+        "body": "You don’t wait for lawyers or leaks. You act. Using your knowledge of the building’s security flaws (if from n06) or your stealth skills (if from n07), you corner Thorne. It’s messy. Violent. Guns draw. Words fly. In the struggle, Oracle’s main server rack sparks. Fire spreads. Smoke chokes the room.\n\nYou escape, barely. Thorne is presumed dead in the blaze, along with the evidence. The official story is a tragic accident caused by faulty wiring. No scandal breaks. No laws change. You survive, wounded and hunted, but anonymous. You destroyed the immediate threat, but the system remains intact. Other companies will rise. Other algorithms will learn. You traded your humanity for a tactical win. Walking through the rainy streets years later, you see a billboard for a new AI firm. Their slogan: 'Predicting Tomorrow.' You shudder. You didn’t stop the future; you just delayed it. You are a ghost in the machine, forever running, never resting. The cycle continues. And you are still in it.",
+        "choices": []
+      }
+    ]
+  },
+  "recommendation": {
+    "gender": "male",
+    "tags": [
+      "tech thriller",
+      "AI ethics",
+      "startup noir",
+      "conspiracy",
+      "time pressure"
+    ],
+    "summary": "A failing startup's AI predicts a murder twelve hours early, thrusting its creator into a high-stakes web of corporate intrigue and law enforcement scrutiny. With the algorithm now marking him as the next target, he must navigate tight deadlines, moral dilemmas, and dangerous choices to uncover sabotage, evade capture, or confront shadowy forces controlling his fate."
+  },
+  "generatedAt": "2026-09-24T10:27:27.754Z"
+}

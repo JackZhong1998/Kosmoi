@@ -5,5 +5,8 @@ out
 .env
 .env.local
 .DS_Store
+.vercel
+*.tsbuildinfo
 output/messages.json
 output/short/messages.json
+output/film/messages.json

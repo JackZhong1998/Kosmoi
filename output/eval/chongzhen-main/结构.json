@@ -1,0 +1,1768 @@
+{
+  "flowchart": [
+    {
+      "id": "登基之夜",
+      "chapter": "序章",
+      "kind": "linear",
+      "summary": "天启七年八月，你在一片药味里睁眼，成了刚登基的朱由检，魏忠贤当晚就来试探。",
+      "next": [
+        "九千岁的试探"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "九千岁的试探",
+      "chapter": "第一章",
+      "kind": "choice",
+      "summary": "魏忠贤递上第一份东西，你在文华殿里决定，是现在就动他，还是先忍着。",
+      "next": [
+        "雷霆除魏",
+        "稳住不动"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "雷霆除魏",
+      "chapter": "第一章",
+      "kind": "branch",
+      "summary": "你当朝发难，一夜之间扳倒魏忠贤，抄了阉党半座家底，也把自己架到了火上。",
+      "next": [
+        "太仓门口"
+      ],
+      "from": "九千岁的试探",
+      "enter": "读者选了雷霆除魏",
+      "meaning": "你选择用最快的刀立威，赌自己十七岁就能压住满朝",
+      "stateChange": "朝局 +3，国库 +1，记下:除了魏忠贤",
+      "join": "当场汇合",
+      "mergeAt": "太仓门口",
+      "echo": "太仓门口",
+      "ending": ""
+    },
+    {
+      "id": "稳住不动",
+      "chapter": "第一章",
+      "kind": "branch",
+      "summary": "你把那份东西压了下来，魏忠贤继续在内廷走动，朝里一时看不出你深浅。",
+      "next": [
+        "太仓门口"
+      ],
+      "from": "九千岁的试探",
+      "enter": "读者选了稳住不动",
+      "meaning": "你选择先借魏忠贤的手挡住外朝，把摊牌的时机往后拖",
+      "stateChange": "朝局 -1，记下:魏忠贤还在",
+      "join": "当场汇合",
+      "mergeAt": "太仓门口",
+      "echo": "太仓门口",
+      "ending": ""
+    },
+    {
+      "id": "太仓门口",
+      "chapter": "第二章",
+      "kind": "merge",
+      "summary": "你在太仓门口站了很久，账本上的钱和库里的钱对不上，户部报上辽饷与赈灾两笔账。",
+      "next": [
+        "辽饷之议"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "辽饷之议",
+      "chapter": "第三章",
+      "kind": "choice",
+      "summary": "崇祯元年冬，陕西的灾报和关外的军报同时摆上案，钱只有一份。",
+      "next": [
+        "加征辽饷",
+        "开内帑赈灾"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "加征辽饷",
+      "chapter": "第三章",
+      "kind": "branch",
+      "summary": "辽饷加了下去，关外的兵有了棉衣，三秦的米价应声往上窜。",
+      "next": [
+        "平台召对"
+      ],
+      "from": "辽饷之议",
+      "enter": "读者选了加征辽饷",
+      "meaning": "你选择让关外的兵先吃饱，代价是让关内的百姓先饿着",
+      "stateChange": "国库 +2，民心 -2",
+      "join": "当场汇合",
+      "mergeAt": "平台召对",
+      "echo": "米脂来的名字",
+      "ending": ""
+    },
+    {
+      "id": "开内帑赈灾",
+      "chapter": "第三章",
+      "kind": "branch",
+      "summary": "你掏了内帑去陕西赈灾，活下来的人记住了皇帝的名字，臣子也记住了皇帝有钱。",
+      "next": [
+        "平台召对"
+      ],
+      "from": "辽饷之议",
+      "enter": "读者选了开内帑赈灾",
+      "meaning": "你选择拿自己的私房钱去买人心，代价是以后谁都盯着你的内库",
+      "stateChange": "国库 -2，民心 +2，记下:开了内帑",
+      "join": "当场汇合",
+      "mergeAt": "平台召对",
+      "echo": "平台召对",
+      "ending": ""
+    },
+    {
+      "id": "平台召对",
+      "chapter": "第四章",
+      "kind": "merge",
+      "summary": "崇祯二年，袁崇焕在平台上说出“五年复辽”，你张了张嘴，没说出史书上那句话。",
+      "next": [
+        "尚方宝剑"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "尚方宝剑",
+      "chapter": "第五章",
+      "kind": "choice",
+      "summary": "袁崇焕请尚方宝剑，朝里有人反对，你要在“信他”和“防他”之间选一个。",
+      "next": [
+        "授剑用袁",
+        "只给敕书"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "授剑用袁",
+      "chapter": "第五章",
+      "kind": "branch",
+      "summary": "你把尚方宝剑交了出去，袁崇焕连夜出京，关宁一线终于有人统一调度。",
+      "next": [
+        "关宁防线"
+      ],
+      "from": "尚方宝剑",
+      "enter": "读者选了授剑用袁",
+      "meaning": "你选择把赌注全压在一个你明知结局的人身上",
+      "stateChange": "朝局 +1，记下:用了袁崇焕",
+      "join": "延迟汇合",
+      "mergeAt": "己巳之变",
+      "echo": "杀与不杀",
+      "ending": ""
+    },
+    {
+      "id": "关宁防线",
+      "chapter": "第五章",
+      "kind": "branch",
+      "summary": "宁锦一线被重新编练，军饷从太仓一支一支往关外送，朝廷咬着牙撑。",
+      "next": [
+        "己巳之变"
+      ],
+      "from": "尚方宝剑",
+      "enter": "从授剑用袁来",
+      "meaning": "你把时间给了他，辽东的线勉强稳住了",
+      "stateChange": "国库 -1",
+      "join": "延迟汇合",
+      "mergeAt": "己巳之变",
+      "echo": "己巳之变",
+      "ending": ""
+    },
+    {
+      "id": "只给敕书",
+      "chapter": "第五章",
+      "kind": "branch",
+      "summary": "你只给了敕书，没给剑，袁崇焕跪谢之后，皮岛和宁远各干各的。",
+      "next": [
+        "皮岛书信"
+      ],
+      "from": "尚方宝剑",
+      "enter": "读者选了只给敕书",
+      "meaning": "你选择既用他也防他，可你防的那一手，他看得见",
+      "stateChange": "朝局 -1",
+      "join": "延迟汇合",
+      "mergeAt": "己巳之变",
+      "echo": "杀与不杀",
+      "ending": ""
+    },
+    {
+      "id": "皮岛书信",
+      "chapter": "第五章",
+      "kind": "branch",
+      "summary": "毛文龙不听调，皮岛的军报绕开宁远直递京城，朝里开始有人拿这件事做文章。",
+      "next": [
+        "己巳之变"
+      ],
+      "from": "尚方宝剑",
+      "enter": "从只给敕书来",
+      "meaning": "关外那盘棋没有人能一手捏住，你放出去的疑心先长了草",
+      "stateChange": "民心 -1",
+      "join": "延迟汇合",
+      "mergeAt": "己巳之变",
+      "echo": "己巳之变",
+      "ending": ""
+    },
+    {
+      "id": "己巳之变",
+      "chapter": "第六章",
+      "kind": "merge",
+      "summary": "崇祯二年冬，皇太极绕道入塞，你第一次站在城头，看见的不是史书上的两行字。",
+      "next": [
+        "城下之盟"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "国库 -1",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "城下之盟",
+      "chapter": "第七章",
+      "kind": "choice",
+      "summary": "皇太极的议和书递到案上，主战的人在殿外跪了一片，你要不要谈。",
+      "next": [
+        "议和退兵",
+        "背城死战"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "议和退兵",
+      "chapter": "第七章",
+      "kind": "branch",
+      "summary": "你派人出城议和，后金退兵了，城里从此有人说皇帝怕了。",
+      "next": [
+        "杀与不杀"
+      ],
+      "from": "城下之盟",
+      "enter": "读者选了议和退兵",
+      "meaning": "你选择用一份要被人骂的条约，换北京一口喘气的功夫",
+      "stateChange": "国库 +1，民心 -1，朝局 -1，记下:议和",
+      "join": "当场汇合",
+      "mergeAt": "杀与不杀",
+      "echo": "内外交困",
+      "ending": ""
+    },
+    {
+      "id": "背城死战",
+      "chapter": "第七章",
+      "kind": "branch",
+      "summary": "你下令背城一战，北京守住了，护城河边的柳树被砍光了当柴烧。",
+      "next": [
+        "杀与不杀"
+      ],
+      "from": "城下之盟",
+      "enter": "读者选了背城死战",
+      "meaning": "你选择硬碰硬，赢了一场，也烧掉了一批本来能救命的钱",
+      "stateChange": "国库 -2，民心 +1",
+      "join": "当场汇合",
+      "mergeAt": "杀与不杀",
+      "echo": "杀与不杀",
+      "ending": ""
+    },
+    {
+      "id": "杀与不杀",
+      "chapter": "第八章",
+      "kind": "choice",
+      "summary": "崇祯三年，朝议汹汹，袁崇焕被推到你面前，你知道史书上这一笔怎么写。",
+      "next": [
+        "下狱问罪",
+        "保他戴罪"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "下狱问罪",
+      "chapter": "第八章",
+      "kind": "branch",
+      "summary": "袁崇焕下了狱，朝里安静了，关外那根最硬的柱子也塌了。",
+      "next": [
+        "米脂来的名字"
+      ],
+      "from": "杀与不杀",
+      "enter": "读者选了下狱问罪",
+      "meaning": "你选择顺从朝里的声音，也选择背弃那个唯一挡在关外的人",
+      "stateChange": "朝局 +1，民心 -1，记下:杀了袁崇焕",
+      "join": "当场汇合",
+      "mergeAt": "米脂来的名字",
+      "echo": "煤山雪",
+      "ending": ""
+    },
+    {
+      "id": "保他戴罪",
+      "chapter": "第八章",
+      "kind": "branch",
+      "summary": "你压下了朝议，让袁崇焕戴罪守关，关外保住了一条线，朝里从此记恨你。",
+      "next": [
+        "米脂来的名字"
+      ],
+      "from": "杀与不杀",
+      "enter": "读者选了保他戴罪",
+      "meaning": "你选择逆着满朝的声音，也选择背着一个你明知会输的人",
+      "stateChange": "朝局 -2，民心 +1，记下:保了袁崇焕",
+      "join": "当场汇合",
+      "mergeAt": "米脂来的名字",
+      "echo": "中兴",
+      "ending": ""
+    },
+    {
+      "id": "米脂来的名字",
+      "chapter": "第九章",
+      "kind": "choice",
+      "summary": "崇祯六到十年，陕西的饥民从几百人变成几万人，你在名单上看见一个熟悉的名字。",
+      "next": [
+        "开仓招安",
+        "调兵进剿"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "开仓招安",
+      "chapter": "第九章",
+      "kind": "branch",
+      "summary": "你开了仓，招安了一部分人，活下来的人跪下来磕头，也有拿了粮又走的人。",
+      "next": [
+        "内外交困"
+      ],
+      "from": "米脂来的名字",
+      "enter": "读者选了开仓招安",
+      "meaning": "你选择用粮食买时间，赌他们里头有人真的只想吃饭",
+      "stateChange": "国库 -2，民心 +1，记下:招安流寇",
+      "join": "当场汇合",
+      "mergeAt": "内外交困",
+      "echo": "内外交困",
+      "ending": ""
+    },
+    {
+      "id": "调兵进剿",
+      "chapter": "第九章",
+      "kind": "branch",
+      "summary": "你调兵进剿，打散了一股，又逼出了两股，陕西的山里开始有人立寨。",
+      "next": [
+        "内外交困"
+      ],
+      "from": "米脂来的名字",
+      "enter": "读者选了调兵进剿",
+      "meaning": "你选择用刀说话，赌他们撑不过这个冬天",
+      "stateChange": "国库 -1，民心 -1，记下:剿灭流寇",
+      "join": "当场汇合",
+      "mergeAt": "内外交困",
+      "echo": "内外交困",
+      "ending": ""
+    },
+    {
+      "id": "内外交困",
+      "chapter": "第十章",
+      "kind": "merge",
+      "summary": "崇祯十一到十五年，皇太极称帝改国号大清，关外一座座城丢，关内一处处反。",
+      "next": [
+        "留都的门"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "国库 -1，民心 -1",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "留都的门",
+      "chapter": "第十一章",
+      "kind": "choice",
+      "summary": "崇祯十六年，南京的奏报到了，漕船可以调，朝里为“走不走”吵成一团。",
+      "next": [
+        "议定南迁",
+        "留京死守"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "议定南迁",
+      "chapter": "第十一章",
+      "kind": "branch",
+      "summary": "你密调漕船，把路铺向南京，北方还有人不肯走，说你弃了祖宗陵寝。",
+      "next": [
+        "南京登基"
+      ],
+      "from": "留都的门",
+      "enter": "读者选了议定南迁",
+      "meaning": "你选择活下来，也选择了“正统”这两个字的一部分永远留在北方",
+      "stateChange": "国库 -1，记下:议定南迁",
+      "join": "不汇合",
+      "mergeAt": "",
+      "echo": "南渡",
+      "ending": ""
+    },
+    {
+      "id": "南京登基",
+      "chapter": "第十一章",
+      "kind": "branch",
+      "summary": "你在南京重新坐上那把椅子，回头看江北，风把旗子吹得直响。",
+      "next": [
+        "南渡"
+      ],
+      "from": "留都的门",
+      "enter": "从议定南迁来",
+      "meaning": "你把这把椅子搬到了南方，可它坐上去，和在北京时不太一样了",
+      "stateChange": "朝局 +1",
+      "join": "不汇合",
+      "mergeAt": "",
+      "echo": "南渡",
+      "ending": ""
+    },
+    {
+      "id": "南渡",
+      "chapter": "第十一章",
+      "kind": "ending",
+      "summary": "已议定南迁，且民心 ≥ 4、国库 ≥ 3，长江以南还认你这个皇帝。",
+      "next": [],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": "南渡"
+    },
+    {
+      "id": "留京死守",
+      "chapter": "第十一章",
+      "kind": "branch",
+      "summary": "你烧了迁都之议，留在北京城，把最后十七年的账，押在这一座城里。",
+      "next": [
+        "最后一道门"
+      ],
+      "from": "留都的门",
+      "enter": "读者选了留京死守",
+      "meaning": "你选择不给自己留后路，赌这十七年的账能在这城里结清",
+      "stateChange": "民心 +1",
+      "join": "当场汇合",
+      "mergeAt": "最后一道门",
+      "echo": "最后一道门",
+      "ending": ""
+    },
+    {
+      "id": "最后一道门",
+      "chapter": "第十二章",
+      "kind": "choice",
+      "summary": "崇祯十七年三月，李自成的军报到了通州，你面前只剩几扇门。",
+      "next": [
+        "中兴之路",
+        "死守京城"
+      ],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": ""
+    },
+    {
+      "id": "中兴之路",
+      "chapter": "第十二章",
+      "kind": "branch",
+      "summary": "你留下，把十七年里攒下的每一笔都用上，把那个三月十九从日历上划掉。",
+      "next": [
+        "中兴"
+      ],
+      "from": "最后一道门",
+      "enter": "读者选了留下来做完，且国库 ≥ 7、民心 ≥ 7、朝局 ≥ 7，已除魏忠贤，未杀袁崇焕",
+      "meaning": "你选择用十七年去换一个史书上没有的结局",
+      "stateChange": "无",
+      "join": "不汇合",
+      "mergeAt": "",
+      "echo": "中兴",
+      "ending": ""
+    },
+    {
+      "id": "中兴",
+      "chapter": "第十二章",
+      "kind": "ending",
+      "summary": "国库 ≥ 7、民心 ≥ 7、朝局 ≥ 7，已除魏忠贤，未杀袁崇焕，且你选了留下来做完。",
+      "next": [],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": "中兴"
+    },
+    {
+      "id": "死守京城",
+      "chapter": "第十二章",
+      "kind": "branch",
+      "summary": "你站上城头，下令死守，椅子还在，椅子外的东西一件一件没了。",
+      "next": [
+        "守城"
+      ],
+      "from": "最后一道门",
+      "enter": "读者选了死守京城",
+      "meaning": "你选择守住这把椅子，也接受代价是把别的一切都押上去",
+      "stateChange": "无",
+      "join": "不汇合",
+      "mergeAt": "",
+      "echo": "守城",
+      "ending": ""
+    },
+    {
+      "id": "守城",
+      "chapter": "第十二章",
+      "kind": "ending",
+      "summary": "朝局 ≥ 6，且国库 ≤ 4 或民心 ≤ 4，你没有议定南迁，还选了死守京城。",
+      "next": [],
+      "from": "",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": "守城"
+    },
+    {
+      "id": "煤山雪",
+      "chapter": "第十二章",
+      "kind": "ending",
+      "summary": "民心 ≤ 3 或国库 ≤ 2，且没有议定南迁，日历上那个三月十九一天没少。",
+      "next": [],
+      "from": "最后一道门",
+      "enter": "",
+      "meaning": "",
+      "stateChange": "",
+      "join": "",
+      "mergeAt": "",
+      "echo": "",
+      "ending": "煤山雪"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "登基之夜",
+      "chapter": "天启七年八月",
+      "whenWhereWho": "乾清宫，朱由检、魏忠贤、群臣",
+      "enter": "无",
+      "purpose": "穿越成崇祯，面对登基第一夜",
+      "desire": "想活下来并看清局势；阻力是魏忠贤试探",
+      "must": "先帝驾崩，信王即位，魏忠贤递试探",
+      "options": [],
+      "feedback": "你意识到每改一笔历史都会变",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "后续朝局",
+      "next": "九千岁的试探",
+      "plant": "埋下历史会变的伏笔，全线可见",
+      "words": "3000"
+    },
+    {
+      "id": "九千岁的试探",
+      "chapter": "天启七年八月",
+      "whenWhereWho": "乾清宫，朱由检、魏忠贤",
+      "enter": "无",
+      "purpose": "第一次真正选择：动魏还是忍",
+      "desire": "想除魏；阻力是无人可用",
+      "must": "魏忠贤献媚试探，朝臣观望",
+      "options": [
+        {
+          "text": "当场斥退魏忠贤，显露锋芒",
+          "meaning": "选择雷霆除魏，风险高"
+        },
+        {
+          "text": "温言安抚，稳住魏忠贤",
+          "meaning": "选择稳住不动，先蓄力"
+        }
+      ],
+      "feedback": "你的态度决定魏党反应",
+      "stateChange": "无",
+      "settleWhen": "点选项时记下倾向",
+      "affects": "雷霆除魏或稳住不动",
+      "next": "雷霆除魏、稳住不动",
+      "plant": "魏忠贤的试探，后续朝局回收",
+      "words": "2500"
+    },
+    {
+      "id": "雷霆除魏",
+      "chapter": "天启七年十一月",
+      "whenWhereWho": "朝堂，朱由检、魏忠贤、阉党",
+      "enter": "选雷霆除魏",
+      "purpose": "快速铲除魏忠贤",
+      "desire": "想立威；阻力是朝局动荡",
+      "must": "列举魏忠贤罪状，下旨拿办",
+      "options": [],
+      "feedback": "魏党倒台，但朝廷缺人",
+      "stateChange": "朝局 -2，除魏忠贤",
+      "settleWhen": "无",
+      "affects": "中兴条件",
+      "next": "太仓门口",
+      "plant": "除魏忠贤，中兴线钥匙",
+      "words": "2500"
+    },
+    {
+      "id": "稳住不动",
+      "chapter": "天启七年十一月",
+      "whenWhereWho": "乾清宫，朱由检、魏忠贤",
+      "enter": "选稳住不动",
+      "purpose": "暂时容忍魏忠贤",
+      "desire": "想蓄力；阻力是魏党坐大",
+      "must": "表面信任，暗中布局",
+      "options": [],
+      "feedback": "魏忠贤放松警惕，你争取时间",
+      "stateChange": "朝局 +1，魏党未除",
+      "settleWhen": "无",
+      "affects": "后续除魏难度",
+      "next": "太仓门口",
+      "plant": "魏忠贤未除，后续朝局回收",
+      "words": "2500"
+    },
+    {
+      "id": "太仓门口",
+      "chapter": "崇祯元年",
+      "whenWhereWho": "太仓，朱由检、户部官员",
+      "enter": "无",
+      "purpose": "面对财政危机",
+      "desire": "想找钱；阻力是国库空虚",
+      "must": "太仓见底，辽饷与赈灾两难",
+      "options": [],
+      "feedback": "你看见空仓和饥民奏报",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "辽饷之议",
+      "next": "辽饷之议",
+      "plant": "太仓空，后续钱粮线",
+      "words": "2000"
+    },
+    {
+      "id": "辽饷之议",
+      "chapter": "崇祯元年",
+      "whenWhereWho": "朝堂，朱由检、户部、群臣",
+      "enter": "无",
+      "purpose": "选择加辽饷还是开内帑",
+      "desire": "想兼顾边关与灾民；阻力是钱不够",
+      "must": "辽饷加征与内帑赈灾争论",
+      "options": [
+        {
+          "text": "加征辽饷，先保关外兵饷",
+          "meaning": "选择加征，国库增但民心降"
+        },
+        {
+          "text": "开内帑赈灾，先安陕西",
+          "meaning": "选择内帑，民心增但国库降"
+        }
+      ],
+      "feedback": "朝臣反应两极",
+      "stateChange": "无",
+      "settleWhen": "点选项时记下倾向",
+      "affects": "加征辽饷或开内帑赈灾",
+      "next": "加征辽饷、开内帑赈灾",
+      "plant": "辽饷与民变，后续流寇线",
+      "words": "2500"
+    },
+    {
+      "id": "加征辽饷",
+      "chapter": "崇祯元年",
+      "whenWhereWho": "户部，朱由检、户部官员",
+      "enter": "选加征辽饷",
+      "purpose": "筹边饷",
+      "desire": "想稳住关外；阻力是民怨",
+      "must": "下旨加征，陕西饥民加重",
+      "options": [],
+      "feedback": "太仓进银，陕西民变萌芽",
+      "stateChange": "国库 +2，民心 -2",
+      "settleWhen": "无",
+      "affects": "流寇线",
+      "next": "平台召对",
+      "plant": "加征导致民变，米脂线回收",
+      "words": "2000"
+    },
+    {
+      "id": "开内帑赈灾",
+      "chapter": "崇祯元年",
+      "whenWhereWho": "内库，朱由检、太监",
+      "enter": "选开内帑赈灾",
+      "purpose": "安抚陕西",
+      "desire": "想救饥民；阻力是内帑有限",
+      "must": "发内帑赈灾，边饷仍缺",
+      "options": [],
+      "feedback": "陕西暂稳，关外欠饷",
+      "stateChange": "民心 +2，国库 -2",
+      "settleWhen": "无",
+      "affects": "边关线",
+      "next": "平台召对",
+      "plant": "内帑减少，后续钱粮线",
+      "words": "2000"
+    },
+    {
+      "id": "平台召对",
+      "chapter": "崇祯二年",
+      "whenWhereWho": "平台，朱由检、袁崇焕",
+      "enter": "无",
+      "purpose": "袁崇焕提出五年复辽",
+      "desire": "想用袁；阻力是知道历史结局",
+      "must": "袁崇焕承诺五年复辽，索要权柄",
+      "options": [],
+      "feedback": "你面对是否给尚方宝剑",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "尚方宝剑",
+      "next": "尚方宝剑",
+      "plant": "五年复辽，后续杀袁线",
+      "words": "2500"
+    },
+    {
+      "id": "尚方宝剑",
+      "chapter": "崇祯二年",
+      "whenWhereWho": "平台，朱由检、袁崇焕",
+      "enter": "无",
+      "purpose": "选择授剑用袁还是只给敕书",
+      "desire": "想用袁又怕失控；阻力是历史教训",
+      "must": "袁崇焕请尚方剑，朝臣争议",
+      "options": [
+        {
+          "text": "授尚方宝剑，许他便宜行事",
+          "meaning": "选择授剑用袁，放权"
+        },
+        {
+          "text": "只给敕书，不授尚方剑",
+          "meaning": "选择只给敕书，保留控制"
+        }
+      ],
+      "feedback": "袁崇焕反应不同",
+      "stateChange": "无",
+      "settleWhen": "点选项时记下",
+      "affects": "授剑用袁或只给敕书",
+      "next": "授剑用袁、只给敕书",
+      "plant": "尚方剑，后续皮岛书信回收",
+      "words": "2500"
+    },
+    {
+      "id": "授剑用袁",
+      "chapter": "崇祯二年",
+      "whenWhereWho": "平台，朱由检、袁崇焕",
+      "enter": "选授剑用袁",
+      "purpose": "放权袁崇焕",
+      "desire": "想复辽；阻力是朝臣猜忌",
+      "must": "授剑，袁崇焕赴辽东",
+      "options": [],
+      "feedback": "袁崇焕感激，朝臣不安",
+      "stateChange": "朝局 -1，袁崇焕信任 +1",
+      "settleWhen": "无",
+      "affects": "关宁防线",
+      "next": "关宁防线",
+      "plant": "袁崇焕权力大，后续杀与不杀",
+      "words": "2000"
+    },
+    {
+      "id": "关宁防线",
+      "chapter": "崇祯二年",
+      "whenWhereWho": "辽东，袁崇焕、关宁军",
+      "enter": "无",
+      "purpose": "展示关宁防线",
+      "desire": "想守辽；阻力是粮饷不足",
+      "must": "关宁防线稳固，但欠饷",
+      "options": [],
+      "feedback": "防线暂时无虞",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "己巳之变",
+      "next": "皮岛书信",
+      "plant": "关宁军依赖袁，后续己巳",
+      "words": "2000"
+    },
+    {
+      "id": "只给敕书",
+      "chapter": "崇祯二年",
+      "whenWhereWho": "平台，朱由检、袁崇焕",
+      "enter": "选只给敕书",
+      "purpose": "保留控制",
+      "desire": "想用袁又防袁；阻力是袁不满",
+      "must": "给敕书，不授剑",
+      "options": [],
+      "feedback": "袁崇焕失望，朝臣安心",
+      "stateChange": "朝局 +1，袁崇焕信任 -1",
+      "settleWhen": "无",
+      "affects": "关宁防线",
+      "next": "皮岛书信",
+      "plant": "袁崇焕受制，后续杀与不杀",
+      "words": "2000"
+    },
+    {
+      "id": "皮岛书信",
+      "chapter": "崇祯二年",
+      "whenWhereWho": "皮岛，毛文龙、袁崇焕",
+      "enter": "无",
+      "purpose": "毛文龙与袁崇焕矛盾",
+      "desire": "想稳住皮岛；阻力是两人不和",
+      "must": "皮岛书信往来，毛文龙不服",
+      "options": [],
+      "feedback": "袁毛矛盾激化",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "杀与不杀",
+      "next": "己巳之变",
+      "plant": "毛文龙之死，后续杀与不杀",
+      "words": "2000"
+    },
+    {
+      "id": "己巳之变",
+      "chapter": "崇祯二年冬",
+      "whenWhereWho": "北京城下，朱由检、袁崇焕、皇太极",
+      "enter": "无",
+      "purpose": "皇太极兵临北京",
+      "desire": "想退敌；阻力是城防与谣言",
+      "must": "皇太极入塞，北京戒严",
+      "options": [],
+      "feedback": "城下兵临，朝臣疑袁",
+      "stateChange": "民心 -1",
+      "settleWhen": "无",
+      "affects": "城下之盟",
+      "next": "城下之盟",
+      "plant": "反间计，后续杀袁",
+      "words": "2500"
+    },
+    {
+      "id": "城下之盟",
+      "chapter": "崇祯二年冬",
+      "whenWhereWho": "北京城头，朱由检、袁崇焕、群臣",
+      "enter": "无",
+      "purpose": "选择议和退兵还是背城死战",
+      "desire": "想解围；阻力是议和骂名",
+      "must": "皇太极提出议和，袁崇焕主张战",
+      "options": [
+        {
+          "text": "议和退兵，先保京城",
+          "meaning": "选择议和，喘口气但失威望"
+        },
+        {
+          "text": "背城死战，击退皇太极",
+          "meaning": "选择死战，风险高但保气节"
+        }
+      ],
+      "feedback": "朝野反应激烈",
+      "stateChange": "无",
+      "settleWhen": "点选项时记下",
+      "affects": "议和退兵或背城死战",
+      "next": "议和退兵、背城死战",
+      "plant": "议和与死战，后续南渡或守城",
+      "words": "2500"
+    },
+    {
+      "id": "议和退兵",
+      "chapter": "崇祯二年冬",
+      "whenWhereWho": "北京，朱由检、使臣",
+      "enter": "选议和退兵",
+      "purpose": "与皇太极议和",
+      "desire": "想退兵；阻力是骂名",
+      "must": "议和达成，皇太极退兵",
+      "options": [],
+      "feedback": "京城解围，朝臣骂你",
+      "stateChange": "民心 -1，朝局 -1",
+      "settleWhen": "无",
+      "affects": "南渡线",
+      "next": "杀与不杀",
+      "plant": "议和骂名，后续南渡",
+      "words": "2000"
+    },
+    {
+      "id": "背城死战",
+      "chapter": "崇祯二年冬",
+      "whenWhereWho": "北京城下，朱由检、袁崇焕",
+      "enter": "选背城死战",
+      "purpose": "击退皇太极",
+      "desire": "想守城；阻力是兵力不足",
+      "must": "袁崇焕力战，皇太极退",
+      "options": [],
+      "feedback": "京城守住，袁崇焕声望高",
+      "stateChange": "民心 +1，朝局 +1",
+      "settleWhen": "无",
+      "affects": "守城线",
+      "next": "杀与不杀",
+      "plant": "袁崇焕功高，后续杀与不杀",
+      "words": "2000"
+    },
+    {
+      "id": "杀与不杀",
+      "chapter": "崇祯三到五年",
+      "whenWhereWho": "朝堂，朱由检、袁崇焕、群臣",
+      "enter": "无",
+      "purpose": "决定袁崇焕生死",
+      "desire": "想稳朝局；阻力是历史与猜忌",
+      "must": "袁崇焕被弹劾，毛文龙旧案",
+      "options": [
+        {
+          "text": "下狱问罪，按史书杀袁崇焕",
+          "meaning": "选择下狱问罪，除患但失长城"
+        },
+        {
+          "text": "保他戴罪，留袁崇焕守辽",
+          "meaning": "选择保他戴罪，留人但朝局疑"
+        }
+      ],
+      "feedback": "朝局震动",
+      "stateChange": "无",
+      "settleWhen": "点选项时记下",
+      "affects": "下狱问罪或保他戴罪",
+      "next": "下狱问罪、保他戴罪",
+      "plant": "杀袁与否，中兴条件",
+      "words": "2500"
+    },
+    {
+      "id": "下狱问罪",
+      "chapter": "崇祯三到五年",
+      "whenWhereWho": "诏狱，朱由检、袁崇焕",
+      "enter": "选下狱问罪",
+      "purpose": "杀袁崇焕",
+      "desire": "想立威；阻力是辽东无人",
+      "must": "袁崇焕下狱，最终处死",
+      "options": [],
+      "feedback": "袁崇焕死，辽东军心散",
+      "stateChange": "朝局 +1，杀袁崇焕",
+      "settleWhen": "无",
+      "affects": "中兴不可达",
+      "next": "米脂来的名字",
+      "plant": "杀袁，中兴线排除",
+      "words": "2000"
+    },
+    {
+      "id": "保他戴罪",
+      "chapter": "崇祯三到五年",
+      "whenWhereWho": "辽东，朱由检、袁崇焕",
+      "enter": "选保他戴罪",
+      "purpose": "留袁崇焕",
+      "desire": "想守辽；阻力是朝臣不满",
+      "must": "袁崇焕戴罪守辽",
+      "options": [],
+      "feedback": "袁崇焕感激，朝臣不满",
+      "stateChange": "朝局 -1，袁崇焕信任 +1",
+      "settleWhen": "无",
+      "affects": "中兴条件",
+      "next": "米脂来的名字",
+      "plant": "留袁，中兴线钥匙",
+      "words": "2000"
+    },
+    {
+      "id": "米脂来的名字",
+      "chapter": "崇祯六到十年",
+      "whenWhereWho": "陕西，朱由检、李自成",
+      "enter": "无",
+      "purpose": "面对李自成起义",
+      "desire": "想平乱；阻力是钱粮不足",
+      "must": "李自成名字出现，饥民从贼",
+      "options": [
+        {
+          "text": "开仓招安，给饥民一条活路",
+          "meaning": "选择招安，民心增但隐患"
+        },
+        {
+          "text": "调兵进剿，斩草除根",
+          "meaning": "选择进剿，耗钱但除患"
+        }
+      ],
+      "feedback": "陕西局势分叉",
+      "stateChange": "无",
+      "settleWhen": "点选项时记下",
+      "affects": "开仓招安或调兵进剿",
+      "next": "开仓招安、调兵进剿",
+      "plant": "李自成，后续内外交困",
+      "words": "2500"
+    },
+    {
+      "id": "开仓招安",
+      "chapter": "崇祯六到十年",
+      "whenWhereWho": "陕西，朱由检、李自成",
+      "enter": "选开仓招安",
+      "purpose": "招安流寇",
+      "desire": "想安民；阻力是招安反复",
+      "must": "开仓放粮，招安部分流寇",
+      "options": [],
+      "feedback": "民心回升，流寇未绝",
+      "stateChange": "民心 +2，国库 -1",
+      "settleWhen": "无",
+      "affects": "中兴或南渡",
+      "next": "内外交困",
+      "plant": "招安隐患，后续内外交困",
+      "words": "2000"
+    },
+    {
+      "id": "调兵进剿",
+      "chapter": "崇祯六到十年",
+      "whenWhereWho": "陕西，朱由检、洪承畴",
+      "enter": "选调兵进剿",
+      "purpose": "剿灭流寇",
+      "desire": "想除患；阻力是军费",
+      "must": "调兵进剿，流寇暂退",
+      "options": [],
+      "feedback": "流寇受挫，国库更空",
+      "stateChange": "国库 -2，民心 -1",
+      "settleWhen": "无",
+      "affects": "守城或煤山",
+      "next": "内外交困",
+      "plant": "进剿耗钱，后续煤山",
+      "words": "2000"
+    },
+    {
+      "id": "内外交困",
+      "chapter": "崇祯十一到十五年",
+      "whenWhereWho": "北京，朱由检、群臣",
+      "enter": "无",
+      "purpose": "清军入塞，流寇复起",
+      "desire": "想撑住；阻力是两线作战",
+      "must": "皇太极称帝，清军入塞，流寇再起",
+      "options": [],
+      "feedback": "局势全面恶化",
+      "stateChange": "民心 -1，国库 -1",
+      "settleWhen": "无",
+      "affects": "留都的门",
+      "next": "留都的门",
+      "plant": "内外交困，后续南迁",
+      "words": "2500"
+    },
+    {
+      "id": "留都的门",
+      "chapter": "崇祯十六到十七年",
+      "whenWhereWho": "北京，朱由检、群臣",
+      "enter": "无",
+      "purpose": "选择南迁还是留京",
+      "desire": "想保命保国；阻力是祖宗陵寝",
+      "must": "南京可去，群臣争议",
+      "options": [
+        {
+          "text": "议定南迁，迁都南京",
+          "meaning": "选择南迁，保半壁"
+        },
+        {
+          "text": "留京死守，与社稷共存亡",
+          "meaning": "选择死守，守气节"
+        }
+      ],
+      "feedback": "朝臣分裂",
+      "stateChange": "无",
+      "settleWhen": "点选项时记下",
+      "affects": "议定南迁或留京死守",
+      "next": "议定南迁、留京死守",
+      "plant": "南迁与死守，后续结局",
+      "words": "2500"
+    },
+    {
+      "id": "议定南迁",
+      "chapter": "崇祯十七年",
+      "whenWhereWho": "北京，朱由检、周皇后",
+      "enter": "选议定南迁",
+      "purpose": "准备南迁",
+      "desire": "想走；阻力是时间",
+      "must": "下旨南迁，收拾行装",
+      "options": [],
+      "feedback": "南迁成行",
+      "stateChange": "议定南迁",
+      "settleWhen": "无",
+      "affects": "南京登基",
+      "next": "南京登基",
+      "plant": "南迁，南渡线钥匙",
+      "words": "2000"
+    },
+    {
+      "id": "南京登基",
+      "chapter": "崇祯十七年",
+      "whenWhereWho": "南京，朱由检、周皇后、群臣",
+      "enter": "无",
+      "purpose": "南京登基",
+      "desire": "想续明；阻力是北方丢失",
+      "must": "南京即位，长江为界",
+      "options": [],
+      "feedback": "南明建立",
+      "stateChange": "民心 +1",
+      "settleWhen": "无",
+      "affects": "南渡",
+      "next": "南渡",
+      "plant": "南京登基，南渡结局",
+      "words": "2000"
+    },
+    {
+      "id": "南渡",
+      "chapter": "崇祯十七年",
+      "whenWhereWho": "南京，朱由检、周皇后",
+      "enter": "无",
+      "purpose": "南渡结局",
+      "desire": "想活下去；阻力是北方",
+      "must": "南方稳住，北方尽失",
+      "options": [],
+      "feedback": "你回头看江北",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "结局",
+      "next": "",
+      "plant": "无",
+      "words": "1500"
+    },
+    {
+      "id": "留京死守",
+      "chapter": "崇祯十七年",
+      "whenWhereWho": "北京，朱由检、王承恩",
+      "enter": "选留京死守",
+      "purpose": "死守北京",
+      "desire": "想守城；阻力是兵少",
+      "must": "北京被围，死守",
+      "options": [],
+      "feedback": "城破在即",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "最后一道门",
+      "next": "最后一道门",
+      "plant": "死守，后续守城或煤山",
+      "words": "2000"
+    },
+    {
+      "id": "最后一道门",
+      "chapter": "崇祯十七年",
+      "whenWhereWho": "北京，朱由检、王承恩",
+      "enter": "无",
+      "purpose": "最后选择：中兴之路还是死守京城",
+      "desire": "想改命；阻力是历史",
+      "must": "李自成兵临，最后机会",
+      "options": [
+        {
+          "text": "走中兴之路，拼死一搏",
+          "meaning": "选择中兴，需满足条件"
+        },
+        {
+          "text": "死守京城，不退不降",
+          "meaning": "选择死守，走向守城或煤山"
+        }
+      ],
+      "feedback": "你做出最后决定",
+      "stateChange": "无",
+      "settleWhen": "点选项时记下",
+      "affects": "中兴或守城或煤山",
+      "next": "中兴之路、死守京城",
+      "plant": "最后一道门，结局分叉",
+      "words": "2500"
+    },
+    {
+      "id": "中兴之路",
+      "chapter": "崇祯十七年",
+      "whenWhereWho": "北京，朱由检、袁崇焕",
+      "enter": "选中兴之路",
+      "purpose": "拼死一搏",
+      "desire": "想中兴；阻力是条件苛刻",
+      "must": "调兵勤王，袁崇焕来援",
+      "options": [],
+      "feedback": "局势逆转",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "中兴",
+      "next": "中兴",
+      "plant": "中兴条件，结局",
+      "words": "2000"
+    },
+    {
+      "id": "中兴",
+      "chapter": "结局",
+      "whenWhereWho": "乾清宫，朱由检",
+      "enter": "满足中兴条件",
+      "purpose": "中兴结局",
+      "desire": "无",
+      "must": "三月十九无人来",
+      "options": [],
+      "feedback": "天亮了，没有人来",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "无",
+      "next": "",
+      "plant": "无",
+      "words": "1500"
+    },
+    {
+      "id": "死守京城",
+      "chapter": "崇祯十七年",
+      "whenWhereWho": "北京，朱由检、王承恩",
+      "enter": "选死守京城",
+      "purpose": "死守到底",
+      "desire": "想守城；阻力是城破",
+      "must": "城破，选择守城或煤山",
+      "options": [
+        {
+          "text": "亲自守城，与将士同在",
+          "meaning": "选择守城，可能守住"
+        },
+        {
+          "text": "城破自缢，煤山雪",
+          "meaning": "选择煤山，走向死亡"
+        }
+      ],
+      "feedback": "城破时刻",
+      "stateChange": "无",
+      "settleWhen": "点选项时记下",
+      "affects": "守城或煤山雪",
+      "next": "守城、煤山雪",
+      "plant": "煤山，结局",
+      "words": "2000"
+    },
+    {
+      "id": "守城",
+      "chapter": "结局",
+      "whenWhereWho": "北京城头，朱由检、王承恩",
+      "enter": "满足守城条件",
+      "purpose": "守城结局",
+      "desire": "无",
+      "must": "北京没破，但千里无人烟",
+      "options": [],
+      "feedback": "你守住了城，没跪",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "无",
+      "next": "",
+      "plant": "无",
+      "words": "1500"
+    },
+    {
+      "id": "煤山雪",
+      "chapter": "结局",
+      "whenWhereWho": "煤山，朱由检、王承恩",
+      "enter": "城破且未选中兴或守城",
+      "purpose": "煤山结局",
+      "desire": "无",
+      "must": "自缢，大明亡",
+      "options": [],
+      "feedback": "雪落煤山",
+      "stateChange": "无",
+      "settleWhen": "无",
+      "affects": "无",
+      "next": "",
+      "plant": "无",
+      "words": "1500"
+    }
+  ],
+  "states": {
+    "play": "在知道历史走向的前提下，用国库、民心、朝局三根弦反复权衡，改一笔就变一笔，最后决定大明以哪种方式活下去或死掉。",
+    "stats": [
+      {
+        "name": "国库",
+        "means": "朝廷可调动的钱粮与内帑，决定能否赈灾、发饷、支撑战争。",
+        "initial": 4,
+        "min": 0,
+        "max": 12,
+        "step": "小 +1 / 关键 +2",
+        "visible": true,
+        "affects": "辽饷、赈灾、守城、南渡、煤山雪"
+      },
+      {
+        "name": "民心",
+        "means": "百姓与地方对朝廷的信任，决定流寇规模、北京守城时的人心。",
+        "initial": 4,
+        "min": 0,
+        "max": 12,
+        "step": "小 +1 / 关键 +2",
+        "visible": true,
+        "affects": "流寇、守城、南渡、煤山雪"
+      },
+      {
+        "name": "朝局",
+        "means": "朝堂与官僚系统的稳定程度，决定政令能否出京、能否除魏、能否守城。",
+        "initial": 4,
+        "min": 0,
+        "max": 12,
+        "step": "小 +1 / 关键 +2",
+        "visible": true,
+        "affects": "除魏、用袁、守城、中兴"
+      }
+    ],
+    "facts": [
+      {
+        "key": "除魏忠贤",
+        "means": "魏忠贤已被扳倒或赐死，阉党网络被拆。",
+        "use": "路线钥匙",
+        "mutex": ""
+      },
+      {
+        "key": "杀袁崇焕",
+        "means": "袁崇焕已被下狱处死，辽东再无此人。",
+        "use": "排除条件",
+        "mutex": "与保袁崇焕互斥，覆盖"
+      },
+      {
+        "key": "保袁崇焕",
+        "means": "袁崇焕被留用或戴罪守辽。",
+        "use": "路线钥匙",
+        "mutex": "与杀袁崇焕互斥，覆盖"
+      },
+      {
+        "key": "议定南迁",
+        "means": "朝廷已正式决定迁都南京。",
+        "use": "路线钥匙",
+        "mutex": ""
+      },
+      {
+        "key": "加征辽饷",
+        "means": "为辽东加派辽饷，国库短期增，民心受损。",
+        "use": "记忆事实",
+        "mutex": ""
+      },
+      {
+        "key": "开内帑赈灾",
+        "means": "动用内帑赈济陕西，民心增，国库减。",
+        "use": "记忆事实",
+        "mutex": ""
+      },
+      {
+        "key": "城下之盟",
+        "means": "与皇太极议和退兵，获得喘息但朝局受损。",
+        "use": "记忆事实",
+        "mutex": ""
+      },
+      {
+        "key": "招安流寇",
+        "means": "对米脂流寇开仓招安，暂时收编。",
+        "use": "路线钥匙",
+        "mutex": ""
+      },
+      {
+        "key": "进剿流寇",
+        "means": "调兵进剿流寇，短期压制但耗费国库。",
+        "use": "记忆事实",
+        "mutex": ""
+      },
+      {
+        "key": "授剑用袁",
+        "means": "赐袁崇焕尚方宝剑，授权辽东。",
+        "use": "路线钥匙",
+        "mutex": ""
+      },
+      {
+        "key": "只给敕书",
+        "means": "只给袁崇焕敕书，不授尚方剑，保留牵制。",
+        "use": "记忆事实",
+        "mutex": ""
+      },
+      {
+        "key": "南京登基",
+        "means": "已在南京登基，南渡路线确认。",
+        "use": "锁定状态",
+        "mutex": ""
+      }
+    ],
+    "choices": [
+      {
+        "node": "登基之夜",
+        "option": "先稳住魏忠贤，收下名单",
+        "stats": "朝局 +1",
+        "facts": "记下:收魏名单",
+        "settleWhen": "当夜收下名单时",
+        "feedback": "魏忠贤退后半步，满朝看见新帝没有立刻翻脸。",
+        "later": "九千岁的试探里魏忠贤更敢试探"
+      },
+      {
+        "node": "登基之夜",
+        "option": "当夜召韩爌入京",
+        "stats": "朝局 +1",
+        "facts": "记下:召韩爌",
+        "settleWhen": "诏书发出时",
+        "feedback": "韩爌在家接到诏书，东林一脉开始动。",
+        "later": "太仓门口韩爌会替你算账"
+      },
+      {
+        "node": "九千岁的试探",
+        "option": "收下名单，让他继续办事",
+        "stats": "朝局 +1",
+        "facts": "记下:留魏办事",
+        "settleWhen": "收下名单时",
+        "feedback": "魏忠贤手指在袖子里捻佛珠，尾音拖了半拍。",
+        "later": "雷霆除魏或稳住不动都受此影响"
+      },
+      {
+        "node": "九千岁的试探",
+        "option": "退回名单，当面问辽东",
+        "stats": "朝局 -1",
+        "facts": "记下:退魏名单",
+        "settleWhen": "退回名单时",
+        "feedback": "魏忠贤第一次没有立刻答话，殿里静得能听见灯花。",
+        "later": "雷霆除魏时朝局门槛更高"
+      },
+      {
+        "node": "太仓门口",
+        "option": "加征辽饷，先保关外",
+        "stats": "国库 +2，民心 -2",
+        "facts": "记下:加征辽饷",
+        "settleWhen": "诏书加派时",
+        "feedback": "太仓门口有人跪着哭，关外却先发下了一批饷。",
+        "later": "米脂来的名字会更早出现"
+      },
+      {
+        "node": "太仓门口",
+        "option": "开内帑赈灾，先保陕西",
+        "stats": "国库 -2，民心 +2",
+        "facts": "记下:开内帑赈灾",
+        "settleWhen": "内帑出银时",
+        "feedback": "陕西来的奏报里，树皮两个字少了些。",
+        "later": "辽饷之议时国库更紧"
+      },
+      {
+        "node": "辽饷之议",
+        "option": "两头各让一步，加半饷并赈灾",
+        "stats": "国库 -1，民心 +1，朝局 +1",
+        "facts": "记下:半饷半赈",
+        "settleWhen": "廷议定案时",
+        "feedback": "两边都不满意，但两边都没有立刻翻脸。",
+        "later": "内外交困时朝局多撑一撑"
+      },
+      {
+        "node": "平台召对",
+        "option": "授剑用袁，许他五年",
+        "stats": "朝局 +1，民心 +1",
+        "facts": "记下:授剑用袁",
+        "settleWhen": "尚方剑递出时",
+        "feedback": "袁崇焕接剑时手很稳，眼睛却红了。",
+        "later": "己巳之变他会回援"
+      },
+      {
+        "node": "平台召对",
+        "option": "只给敕书，保留牵制",
+        "stats": "朝局 +1",
+        "facts": "记下:只给敕书",
+        "settleWhen": "敕书递出时",
+        "feedback": "袁崇焕谢恩，话比平时少了一半。",
+        "later": "杀与不杀时他更孤立"
+      },
+      {
+        "node": "皮岛书信",
+        "option": "密令毛文龙听袁调度",
+        "stats": "朝局 +1",
+        "facts": "记下:毛听袁调",
+        "settleWhen": "密信送出时",
+        "feedback": "皮岛回信只有八个字，袁崇焕看完烧了。",
+        "later": "杀与不杀时袁崇焕少一桩罪"
+      },
+      {
+        "node": "皮岛书信",
+        "option": "默许袁崇焕斩毛文龙",
+        "stats": "朝局 -1",
+        "facts": "记下:默许斩毛",
+        "settleWhen": "默许之意传到辽东时",
+        "feedback": "袁崇焕没有谢恩，只上了一道请罪折。",
+        "later": "杀与不杀时朝局更难保他"
+      },
+      {
+        "node": "己巳之变",
+        "option": "议和退兵，先喘口气",
+        "stats": "国库 +1，朝局 -2",
+        "facts": "记下:城下之盟",
+        "settleWhen": "议和使臣出城时",
+        "feedback": "皇太极退兵那天，北京城头有人骂，也有人偷偷哭。",
+        "later": "南渡时议和旧账会被翻出"
+      },
+      {
+        "node": "己巳之变",
+        "option": "背城死战，召袁勤王",
+        "stats": "民心 +1，国库 -2",
+        "facts": "记下:背城死战",
+        "settleWhen": "袁崇焕入援时",
+        "feedback": "城外火光烧了一夜，城里百姓第一次看见皇帝站在城头。",
+        "later": "杀与不杀时袁崇焕有功也有疑"
+      },
+      {
+        "node": "杀与不杀",
+        "option": "下狱问罪，按史书办",
+        "stats": "朝局 -2，民心 -1",
+        "facts": "记下:杀袁崇焕",
+        "settleWhen": "诏狱门关上时",
+        "feedback": "袁崇焕在狱里写了一首诗，没有递出来。",
+        "later": "中兴路线关闭"
+      },
+      {
+        "node": "杀与不杀",
+        "option": "保他戴罪，让他回辽",
+        "stats": "朝局 -1，民心 +1",
+        "facts": "记下:保袁崇焕",
+        "settleWhen": "戴罪诏书发出时",
+        "feedback": "袁崇焕出狱时回头看了一眼午门，没有跪。",
+        "later": "中兴路线保留"
+      },
+      {
+        "node": "米脂来的名字",
+        "option": "开仓招安，先给活路",
+        "stats": "国库 -2，民心 +2",
+        "facts": "记下:招安流寇",
+        "settleWhen": "开仓放粮时",
+        "feedback": "米脂来的名字没有立刻降，但送来了一个空碗。",
+        "later": "内外交困时流寇规模小一些"
+      },
+      {
+        "node": "米脂来的名字",
+        "option": "调兵进剿，斩草除根",
+        "stats": "国库 -2，民心 -1",
+        "facts": "记下:进剿流寇",
+        "settleWhen": "官军出潼关时",
+        "feedback": "捷报和饥荒的奏折同一天到，你分不清哪封更真。",
+        "later": "煤山雪时流寇已入京"
+      },
+      {
+        "node": "留都的门",
+        "option": "议定南迁，先送太子",
+        "stats": "民心 -1，朝局 +1",
+        "facts": "记下:议定南迁",
+        "settleWhen": "南迁诏书明发时",
+        "feedback": "南京的城门图被摊在案上，北京的老臣开始称病。",
+        "later": "南渡路线开启"
+      },
+      {
+        "node": "留都的门",
+        "option": "留京死守，天子守国门",
+        "stats": "民心 +1，朝局 +1",
+        "facts": "记下:留京死守",
+        "settleWhen": "诏告天下时",
+        "feedback": "王承恩把煤山的地图收了起来，没有让你看见。",
+        "later": "守城或煤山雪路线开启"
+      },
+      {
+        "node": "最后一道门",
+        "option": "走中兴之路，把三月十九划掉",
+        "stats": "国库 +1，民心 +1，朝局 +1",
+        "facts": "记下:选中兴",
+        "settleWhen": "最终选择确认时",
+        "feedback": "乾清宫外天亮了，没有人来。",
+        "later": "结算中兴结局"
+      },
+      {
+        "node": "最后一道门",
+        "option": "南京登基，保住半壁",
+        "stats": "民心 +1",
+        "facts": "记下:南京登基",
+        "settleWhen": "南京登基礼成时",
+        "feedback": "你回头看江北，风把旗子吹得直响。",
+        "later": "结算南渡结局"
+      },
+      {
+        "node": "最后一道门",
+        "option": "死守京城，不跪",
+        "stats": "朝局 +1",
+        "facts": "记下:死守京城",
+        "settleWhen": "城门关闭时",
+        "feedback": "护城河边的柳树全被砍了当柴烧。",
+        "later": "结算守城结局"
+      },
+      {
+        "node": "最后一道门",
+        "option": "上煤山，看清是谁写死了大明",
+        "stats": "民心 -1",
+        "facts": "记下:煤山雪",
+        "settleWhen": "煤山树下时",
+        "feedback": "你忽然想起天启七年八月，魏忠贤递上来的第一份东西。",
+        "later": "结算煤山雪结局"
+      }
+    ],
+    "endings": [
+      {
+        "name": "中兴",
+        "stats": "国库 >= 8 且 民心 >= 8 且 朝局 >= 8",
+        "events": "除魏忠贤；保袁崇焕；授剑用袁；己巳之变守住北京；未议定南迁",
+        "forbid": "杀袁崇焕；议定南迁；南京登基",
+        "finalChoice": "在最后一道门选择中兴之路",
+        "trigger": "玩家选择",
+        "priority": "2"
+      },
+      {
+        "name": "南渡",
+        "stats": "民心 >= 4",
+        "events": "议定南迁；南京登基",
+        "forbid": "无",
+        "finalChoice": "在留都的门或最后一道门选择议定南迁并南京登基",
+        "trigger": "路线锁定",
+        "priority": "3"
+      },
+      {
+        "name": "守城",
+        "stats": "朝局 >= 7 且 (国库 <= 3 或 民心 <= 3)",
+        "events": "留京死守；北京未破",
+        "forbid": "议定南迁；南京登基",
+        "finalChoice": "在最后一道门选择死守京城",
+        "trigger": "玩家选择",
+        "priority": "4"
+      },
+      {
+        "name": "煤山雪",
+        "stats": "(民心 <= 3 或 国库 <= 3)",
+        "events": "未议定南迁；北京破",
+        "forbid": "议定南迁；南京登基；中兴条件全部满足",
+        "finalChoice": "在最后一道门选择煤山雪或未作有效选择",
+        "trigger": "优先级自动触发",
+        "priority": "1"
+      }
+    ],
+    "simulations": [
+      {
+        "route": "从头到尾坚持中兴路线",
+        "choices": "登基之夜召韩爌；九千岁的试探退名单；太仓门口开内帑赈灾；平台召对授剑用袁；皮岛书信密令毛听袁；己巳之变背城死战；杀与不杀保他戴罪；米脂来的名字开仓招安；留都的门留京死守；最后一道门选中兴",
+        "stats": "国库 6，民心 10，朝局 9",
+        "facts": "除魏忠贤；保袁崇焕；授剑用袁；开内帑赈灾；招安流寇；留京死守",
+        "expected": "中兴",
+        "actual": "中兴条件满足，玩家选择中兴，进入中兴",
+        "pass": true
+      },
+      {
+        "route": "在两个方案之间摇摆",
+        "choices": "登基之夜收魏名单；九千岁的试探留魏办事；太仓门口加征辽饷；辽饷之议半饷半赈；平台召对只给敕书；己巳之变议和退兵；杀与不杀下狱问罪；米脂来的名字调兵进剿；留都的门议定南迁；最后一道门选南京登基",
+        "stats": "国库 5，民心 3，朝局 4",
+        "facts": "收魏名单；加征辽饷；城下之盟；杀袁崇焕；议定南迁；南京登基",
+        "expected": "南渡或煤山雪",
+        "actual": "民心低于南渡门槛，但议定南迁且南京登基，路线锁定南渡；若未登基则煤山雪",
+        "pass": true
+      },
+      {
+        "route": "数值很高但触发关键排除条件",
+        "choices": "登基之夜召韩爌；九千岁的试探退名单；太仓门口开内帑赈灾；平台召对授剑用袁；己巳之变背城死战；杀与不杀下狱问罪；米脂来的名字开仓招安；留都的门留京死守；最后一道门选中兴",
+        "stats": "国库 8，民心 9，朝局 9",
+        "facts": "除魏忠贤；杀袁崇焕；授剑用袁；开内帑赈灾；招安流寇",
+        "expected": "中兴被排除",
+        "actual": "杀袁崇焕触发排除条件，中兴不可用；朝局高且国库民心不低，守城条件不满足，最终只能走煤山雪或南渡",
+        "pass": true
+      },
+      {
+        "route": "数值一般但完成关键专属事件",
+        "choices": "登基之夜召韩爌；九千岁的试探退名单；太仓门口开内帑赈灾；平台召对授剑用袁；皮岛书信密令毛听袁；己巳之变背城死战；杀与不杀保他戴罪；米脂来的名字开仓招安；留都的门议定南迁；最后一道门选南京登基",
+        "stats": "国库 4，民心 7，朝局 6",
+        "facts": "除魏忠贤；保袁崇焕；授剑用袁；议定南迁；南京登基",
+        "expected": "南渡",
+        "actual": "南渡门槛满足，路线锁定南渡",
+        "pass": true
+      },
+      {
+        "route": "主动退出或放开",
+        "choices": "登基之夜不动声色；九千岁的试探收下名单；太仓门口不加征也不开帑；平台召对只给敕书；己巳之变不召袁；杀与不杀不表态；米脂来的名字不招安不进剿；留都的门不议南迁；最后一道门不选",
+        "stats": "国库 3，民心 3，朝局 3",
+        "facts": "无",
+        "expected": "煤山雪",
+        "actual": "民心与国库均低，未议定南迁，煤山雪自动触发",
+        "pass": true
+      },
+      {
+        "route": "长期回避资源或时间耗尽",
+        "choices": "登基之夜收魏名单；九千岁的试探留魏办事；太仓门口加征辽饷；辽饷之议拖延；平台召对只给敕书；皮岛书信不表态；己巳之变议和退兵；杀与不杀不表态；米脂来的名字调兵进剿；留都的门留京死守；最后一道门死守京城",
+        "stats": "国库 2，民心 2，朝局 6",
+        "facts": "加征辽饷；城下之盟；进剿流寇；留京死守",
+        "expected": "守城或煤山雪",
+        "actual": "朝局 6 低于守城门槛 7，国库民心低且未议南迁，煤山雪自动触发",
+        "pass": true
+      },
+      {
+        "route": "刚好低于门槛",
+        "choices": "登基之夜召韩爌；九千岁的试探退名单；太仓门口开内帑赈灾；平台召对授剑用袁；己巳之变背城死战；杀与不杀保他戴罪；米脂来的名字开仓招安；留都的门留京死守；最后一道门选中兴",
+        "stats": "国库 7，民心 8，朝局 8",
+        "facts": "除魏忠贤；保袁崇焕；授剑用袁；开内帑赈灾；招安流寇",
+        "expected": "中兴不可用",
+        "actual": "国库 7 低于中兴门槛 8，中兴按钮不出现；朝局高且国库民心不低，守城条件不满足，最终只能煤山雪或南渡",
+        "pass": true
+      },
+      {
+        "route": "等于门槛",
+        "choices": "登基之夜召韩爌；九千岁的试探退名单；太仓门口开内帑赈灾；平台召对授剑用袁；己巳之变背城死战；杀与不杀保他戴罪；米脂来的名字开仓招安；留都的门留京死守；最后一道门选中兴",
+        "stats": "国库 8，民心 8，朝局 8",
+        "facts": "除魏忠贤；保袁崇焕；授剑用袁；开内帑赈灾；招安流寇",
+        "expected": "中兴",
+        "actual": "三项均等于门槛，中兴按钮出现，玩家选择后进入中兴",
+        "pass": true
+      },
+      {
+        "route": "高于门槛",
+        "choices": "登基之夜召韩爌；九千岁的试探退名单；太仓门口开内帑赈灾；辽饷之议半饷半赈；平台召对授剑用袁；皮岛书信密令毛听袁；己巳之变背城死战；杀与不杀保他戴罪；米脂来的名字开仓招安；留都的门留京死守；最后一道门选中兴",
+        "stats": "国库 9，民心 10，朝局 10",
+        "facts": "除魏忠贤；保袁崇焕；授剑用袁；开内帑赈灾；招安流寇；留京死守",
+        "expected": "中兴",
+        "actual": "中兴条件满足，玩家选择中兴，进入中兴",
+        "pass": true
+      },
+      {
+        "route": "同时满足两个结局",
+        "choices": "登基之夜召韩爌；九千岁的试探退名单；太仓门口开内帑赈灾；平台召对授剑用袁；己巳之变背城死战；杀与不杀保他戴罪；米脂来的名字开仓招安；留都的门议定南迁；最后一道门选中兴",
+        "stats": "国库 8，民心 8，朝局 8",
+        "facts": "除魏忠贤；保袁崇焕；授剑用袁；议定南迁；南京登基",
+        "expected": "按优先级结算",
+        "actual": "中兴与南渡同时满足，中兴优先于南渡；若玩家在最后一道门明确选南京登基，则南渡覆盖中兴",
+        "pass": true
+      },
+      {
+        "route": "同时带有互斥事实",
+        "choices": "登基之夜召韩爌；九千岁的试探退名单；太仓门口开内帑赈灾；平台召对授剑用袁；杀与不杀先保他戴罪后下狱问罪；米脂来的名字开仓招安；留都的门留京死守；最后一道门选中兴",
+        "stats": "国库 8，民心 8，朝局 8",
+        "facts": "保袁崇焕；杀袁崇焕",
+        "expected": "杀袁崇焕覆盖保袁崇焕",
+        "actual": "互斥事实按覆盖处理，最终记为杀袁崇焕，中兴排除条件触发，中兴不可用",
+        "pass": true
+      }
+    ]
+  }
+}

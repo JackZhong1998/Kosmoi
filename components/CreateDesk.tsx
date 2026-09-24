@@ -14,6 +14,7 @@ import {
 import {
   applyDocUpdates,
   hasLockedStyle,
+  foldChatProse,
   lastUpdatedKind,
   lockedStyleName,
   parseAssistantPayload,
@@ -26,10 +27,24 @@ import {
   isBookComplete,
   isPageTurnText,
   mergeProseAppend,
+  proseShouldAppend,
   storyFromProse,
   storyWordCount,
 } from '@/lib/parse-story';
-import { streamGenerate } from '@/lib/stream-generate';
+import { streamGenerate, streamStructure } from '@/lib/stream-generate';
+import {
+  isStructureMessage,
+  latestStructureRaw,
+  parseStructure,
+  readStructure,
+  revisionForStructure,
+  sceneNamesFromStructure,
+  shouldRefreshStructure,
+  stripStructureMessages,
+  structureParseError,
+  withStructureContext,
+} from '@/lib/structure';
+import { StoryStructurePanel } from '@/components/StoryStructure';
 import {
   createStory,
   createStoryPath,
@@ -46,18 +61,28 @@ import { loadCreateWorkspace, peekCreateWorkspace } from '@/lib/create-workspace
 import { PHASE_STARTERS } from '@/lib/system-prompt';
 import type { ChatMessage, DocKind, StoryChoice, StoryData, StudioDocs } from '@/lib/types';
 import type { Audience } from '@/lib/topic-tags';
+import { useLocale } from '@/components/LocaleProvider';
 
-type PreviewTab = 'design' | 'prose';
+type PreviewTab = 'design' | 'structure' | 'prose';
 
 const PREVIEW_DOC_KINDS = new Set<DocKind>(['design', 'prose']);
 
-function isPreviewTab(kind: DocKind | null | undefined): kind is PreviewTab {
+function isPreviewTab(kind: DocKind | null | undefined): kind is 'design' | 'prose' {
   return kind === 'design' || kind === 'prose';
 }
 
-function previewChipLabel(kind: PreviewTab, streaming?: boolean) {
-  const name = kind === 'prose' ? '正文' : '故事设计';
-  return streaming ? `正在写${name}` : `查看${name}`;
+function sceneTitles(content: string): string[] {
+  return [...content.matchAll(/^##\s+(.+)$/gm)]
+    .map((match) => match[1].replace(/\*+/g, '').trim())
+    .filter((title) => title && title !== '本场准备');
+}
+
+function previewChipLabel(kind: 'design' | 'prose', streaming?: boolean, titles: string[] = []) {
+  if (kind === 'design') return streaming ? '正在写故事设计' : '查看故事设计';
+  const title = titles[0];
+  if (!title) return streaming ? '正在写正文' : '查看正文';
+  if (titles.length > 1) return streaming ? `正在写「${title}」` : `读「${title}」等${titles.length}节`;
+  return streaming ? `正在写「${title}」` : `读「${title}」`;
 }
 
 const GREETING = `说说你脑海里的故事`;
@@ -75,18 +100,49 @@ function docsFrom(project: Pick<StoryProject, 'topicDoc' | 'designDoc' | 'chapte
   };
 }
 
+const PLACEHOLDER_TITLES = new Set(['未命名故事', '未命名互动小说', '目录']);
+
+function meaningfulTitle(title: string) {
+  const name = title.trim();
+  return name && !PLACEHOLDER_TITLES.has(name) ? name : '';
+}
+
+/** 选题常把书名写成 **书名：**《…》，星号会挡在冒号和书名号中间。 */
+function plainDoc(text: string) {
+  return text.replace(/\*\*/g, '');
+}
+
 function pickTitle(topic: string) {
-  const recBlock = (topic.split(/##\s*推荐/)[1] || '').trim();
-  const rec = recBlock.match(/[《「]([^》」]{2,40})[》」]/);
+  const text = plainDoc(topic);
+  const recBlock = (text.split(/##\s*推荐/)[1] || '').trim();
+  const rec = recBlock.match(/[《「]([^》」]{2,80})[》」]/);
   if (rec) return rec[1].trim();
-  const rec2 = topic.match(/推荐[^\n《]*[《「]([^》」]+)[》」]/);
+  const rec2 = text.match(/推荐[^\n《]*[《「]([^》」]+)[》」]/);
   if (rec2) return rec2[1].trim();
-  const bookName = topic.match(/书名[：:]\s*[《「]([^》」]+)[》」]/);
+  const bookName = text.match(/书名[：:]\s*[《「]([^》」]+)[》」]/);
   if (bookName) return bookName[1].trim();
-  const named = [...topic.matchAll(/[#]{2,3}[^\n]*[《]([^》]+)[》]/g)].pop();
+  const named = [...text.matchAll(/[#]{2,3}[^\n]*[《]([^》]+)[》]/g)].pop();
   if (named) return named[1].trim();
-  const h1 = topic.match(/^#\s+《?([^》\n]+)》?/m);
+  const h1 = text.match(/^#\s+《([^》\n]+)》/m);
   return h1 ? h1[1].trim() : '';
+}
+
+function pickDesignTitle(design: string) {
+  const text = plainDoc(design);
+  const named = text.match(/^\s*书名[：:]\s*[《「]([^》」\n]+)[》」]/m);
+  if (named) return named[1].trim();
+  const marked = text.match(/^#\s*《([^》\n]+)》/m);
+  return marked ? marked[1].trim() : '';
+}
+
+function storyTitle(opts: { topicTitle?: string; topicDoc?: string; designDoc?: string; metaTitle?: string }) {
+  return (
+    pickDesignTitle(opts.designDoc || '') ||
+    meaningfulTitle(opts.topicTitle || '') ||
+    pickTitle(opts.topicDoc || '') ||
+    meaningfulTitle(opts.metaTitle || '') ||
+    '未命名故事'
+  );
 }
 
 function pickStyleName(styleDoc: string) {
@@ -100,12 +156,20 @@ function pickStyleName(styleDoc: string) {
 type ProjectJob = {
   busy: boolean;
   generating: boolean;
+  structuring: boolean;
   streamText: string;
   thinkText: string;
   error: string;
 };
 
-const EMPTY_JOB: ProjectJob = { busy: false, generating: false, streamText: '', thinkText: '', error: '' };
+const EMPTY_JOB: ProjectJob = {
+  busy: false,
+  generating: false,
+  structuring: false,
+  streamText: '',
+  thinkText: '',
+  error: '',
+};
 
 type RunResult = 'ok' | 'aborted' | 'busy' | 'error';
 
@@ -116,17 +180,63 @@ function isAbortError(err: unknown) {
   );
 }
 
-function replyPreview(base: { docs: StudioDocs }, text: string, fallback?: DocKind) {
+function structureErrorKey(storyId: string) {
+  return `structure-error:${storyId}`;
+}
+
+function rememberStructureError(storyId: string, message: string) {
+  try {
+    sessionStorage.setItem(structureErrorKey(storyId), message);
+  } catch {
+    /* 隐私模式写不进去时，至少当页还能看见 */
+  }
+}
+
+function readStructureError(storyId: string) {
+  try {
+    return sessionStorage.getItem(structureErrorKey(storyId)) || '';
+  } catch {
+    return '';
+  }
+}
+
+function clearStructureError(storyId: string) {
+  try {
+    sessionStorage.removeItem(structureErrorKey(storyId));
+  } catch {
+    /* ignore */
+  }
+}
+
+function structureFailMessage(err: unknown) {
+  if (isAbortError(err)) return '结构整理被中断了，结果没有写回。再试一次即可。';
+  const message = err instanceof Error ? err.message : '';
+  if (/failed to fetch|networkerror|load failed|network error/i.test(message)) {
+    return '结构请求失败了，连接中断，没有拿到结果。再试一次即可。';
+  }
+  return message || '结构整理失败';
+}
+
+function looksLikeStyleDoc(text: string) {
+  return /(?:^|\n)#{1,3}\s*已锁定|\*\*已锁定|候选\s*[一二三123]/.test(text);
+}
+
+function replyPreview(base: { docs: StudioDocs }, text: string, fallback?: DocKind, structure?: ReturnType<typeof parseStructure>) {
   const parsed = parseAssistantPayload(text);
   let updates = parsed.updates;
-  if (fallback === 'prose' && base.docs.prose.trim()) {
-    updates = updates.map((update) => (update.kind === 'prose' ? { ...update, append: true } : update));
+  if (base.docs.prose.trim()) {
+    updates = updates.map((update) => {
+      if (update.kind !== 'prose' || update.append) return update;
+      const keep =
+        fallback === 'prose' || proseShouldAppend(base.docs.prose, update.content);
+      return keep ? { ...update, append: true } : update;
+    });
   }
   let nextDocs = applyDocUpdates(base.docs, updates);
   if (!updates.length && fallback) {
     if (fallback === 'prose' && base.docs.prose.trim()) {
       if (/^##\s+/m.test(text)) nextDocs = { ...nextDocs, prose: mergeProseAppend(base.docs.prose, text) };
-    } else {
+    } else if (!(fallback === 'style' && !looksLikeStyleDoc(text))) {
       nextDocs = { ...nextDocs, [fallback]: text };
     }
   }
@@ -136,7 +246,7 @@ function replyPreview(base: { docs: StudioDocs }, text: string, fallback?: DocKi
   return {
     parsed,
     nextDocs,
-    nextStory: storyFromProse(nextDocs.prose),
+    nextStory: storyFromProse(nextDocs.prose, parseStructure(nextDocs.chapters) || structure),
     kind: lastUpdatedKind(updates) || (updates.length === 0 ? fallback : null),
   };
 }
@@ -160,7 +270,7 @@ function shortUserText(text: string) {
     if (title && title !== '未命名故事') return path ? `就写这个：${title}` : title;
     return '先选题。';
   }
-  if (visible.startsWith('用户想写：')) return visible.replace(/^用户想写：/, '').slice(0, 280);
+  if (visible.startsWith('用户想写：')) return visible.replace(/^用户想写：/, '');
   if (visible.startsWith('请写【选题】')) return '先选题。';
   if (visible.includes('请写【故事设计】') || visible.includes('用户已确认选题')) {
     const m = visible.match(/《([^》]+)》/);
@@ -176,16 +286,17 @@ function shortUserText(text: string) {
     return '开始写正文。';
   }
   if (visible.startsWith('继续写。') || visible.startsWith('继续往下写。')) {
-    const scene = visible.match(/下一场是「([^」]+)」/)?.[1];
-    if (scene) return `下一章：${scene}`;
-    const missing = visible.match(/还缺这些场面：([^。]+)/)?.[1];
+    const scene =
+      visible.match(/下一(?:场|节点)(?:先写|是)「([^」]+)」/)?.[1] ||
+      visible.match(/下一节点是「([^」]+)」/)?.[1];
+    if (scene && !/下一节点|流程图/.test(scene)) return `下一章：${scene}`;
+    const missing = visible.match(/还缺这些(?:场面|节点)：([^。]+)/)?.[1];
     const first = missing?.split('、')[0]?.trim();
-    return first ? `下一章：${first}` : '写完全篇';
+    return first ? `下一章：${first}` : '继续往下写';
   }
   if (visible.startsWith('这是修改意见')) {
-    return visible.replace(/^这是修改意见，不是新项目：\n\n/, '').slice(0, 280);
+    return visible.replace(/^这是修改意见，不是新项目：\n\n/, '');
   }
-  if (visible.length > 280) return `${visible.slice(0, 280)}…`;
   return visible;
 }
 
@@ -220,6 +331,8 @@ function CreateDeskGate() {
 }
 
 function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolean }) {
+  const { locale } = useLocale();
+  const en = locale === 'en';
   const router = useRouter();
   const pathname = usePathname();
   const routeId = parseCreateStoryId(pathname);
@@ -247,9 +360,12 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   const [playOpen, setPlayOpen] = useState(false);
   const [dismissedPicks, setDismissedPicks] = useState<Record<string, string>>({});
   const chatRef = useRef<HTMLDivElement>(null);
+  const composerRef = useRef<HTMLTextAreaElement>(null);
+  const stickToBottomRef = useRef(true);
   const brandRef = useRef<HTMLDivElement>(null);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const skipSaveRef = useRef(true);
+  const steeredProseRef = useRef('');
   const mountedRef = useRef(true);
   const currentIdRef = useRef('');
   const storiesRef = useRef<StoryProject[]>([]);
@@ -306,7 +422,12 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
     const prev = v.stories.find((s) => s.id === v.currentId);
     return {
       id: v.currentId,
-      title: v.topicTitle.trim() || prev?.title || '未命名故事',
+      title: storyTitle({
+        topicTitle: v.topicTitle,
+        topicDoc: v.topicDoc,
+        designDoc: v.designDoc,
+        metaTitle: prev?.title,
+      }),
       updatedAt: Date.now(),
       topicTitle: v.topicTitle,
       topicDoc: v.topicDoc,
@@ -335,7 +456,7 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
       styleDoc: project.styleDoc,
       styleName: project.styleName,
       proseDoc: project.proseDoc,
-      messages: project.messages,
+      messages: project.messages.filter((message) => message.role !== 'assistant' || message.content.trim()),
     };
   }
 
@@ -383,6 +504,14 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
     if (mountedRef.current) setAutoRunning(false);
   }
 
+  function pauseGeneration() {
+    if (autoRunRef.current) {
+      stopAutoWrite();
+      return;
+    }
+    abortsRef.current.get(currentIdRef.current)?.abort();
+  }
+
   function applyProject(project: StoryProject) {
     loadedIdsRef.current.add(project.id);
     rememberCreateId(project.id);
@@ -395,13 +524,18 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
     setChaptersDoc(project.chaptersDoc || '');
     setStyleDoc(project.styleDoc || '');
     setStyleName(project.styleName || lockedStyleName(project.styleDoc || ''));
-    setProseDoc(project.proseDoc);
+    const proseDoc = foldChatProse(project.proseDoc || '', project.messages || []);
+    const recoveredProse = proseDoc.trim() !== (project.proseDoc || '').trim();
+    setProseDoc(proseDoc);
     setPublishedId(project.publishedId || '');
     setAudience(project.audience || '');
     setTagPath(project.tagPath || []);
     setMessages(project.messages || []);
-    setStory(storyFromProse(project.proseDoc));
-    setTab(project.proseDoc ? 'prose' : 'design');
+    setStory(storyFromProse(proseDoc, parseStructure(project.chaptersDoc)));
+    const structureError = (project.chaptersDoc || '').trim() ? '' : readStructureError(project.id);
+    if ((project.chaptersDoc || '').trim()) clearStructureError(project.id);
+    else if (structureError) setJob(project.id, { error: structureError });
+    setTab(proseDoc.trim() ? 'prose' : structureError ? 'structure' : 'design');
     viewRef.current = {
       currentId: project.id,
       topicTitle: project.topicTitle,
@@ -410,13 +544,14 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
       chaptersDoc: project.chaptersDoc || '',
       styleDoc: project.styleDoc || '',
       styleName: project.styleName || lockedStyleName(project.styleDoc || ''),
-      proseDoc: project.proseDoc,
+      proseDoc,
       publishedId: project.publishedId || '',
       audience: project.audience || '',
       tagPath: project.tagPath || [],
       messages: project.messages || [],
       stories: storiesRef.current,
     };
+    if (recoveredProse) queueSave();
   }
 
   function openStory(project: StoryProject, list = storiesRef.current) {
@@ -561,10 +696,47 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   ]);
 
   useEffect(() => {
+    if (!hydrated || !currentId) return;
+    if (jobsRef.current[currentId]?.generating) return;
+    const dumped = messages.some(
+      (message) =>
+        message.role === 'assistant' &&
+        !message.content.includes('===DOC:prose') &&
+        parseAssistantPayload(message.content).updates.some((update) => update.kind === 'prose' && update.content.trim()),
+    );
+    const next = foldChatProse(viewRef.current.proseDoc, messages);
+    const changed = next.trim() !== viewRef.current.proseDoc.trim();
+    if (changed) {
+      setProseDoc(next);
+      setStory(storyFromProse(next, parseStructure(viewRef.current.chaptersDoc)));
+      viewRef.current = { ...viewRef.current, proseDoc: next };
+    }
+    if ((changed || dumped) && steeredProseRef.current !== currentId) {
+      steeredProseRef.current = currentId;
+      setTab('prose');
+    }
+  }, [hydrated, currentId, messages]);
+
+  useLayoutEffect(() => {
+    stickToBottomRef.current = true;
+  }, [currentId]);
+
+  useEffect(() => {
     const el = chatRef.current;
     if (!el) return;
+    const onScroll = () => {
+      const gap = el.scrollHeight - el.scrollTop - el.clientHeight;
+      stickToBottomRef.current = gap < 72;
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
+  }, [hydrated, loadError]);
+
+  useLayoutEffect(() => {
+    const el = chatRef.current;
+    if (!el || !stickToBottomRef.current) return;
     el.scrollTop = el.scrollHeight;
-  }, [messages, streamText]);
+  }, [messages, streamText, thinkText, currentId]);
 
   useEffect(() => {
     if (!listOpen) return;
@@ -593,10 +765,29 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   const styleLocked = hasLockedStyle(styleDoc);
   const nodeCount = Object.keys(story.nodes).length;
   const words = useMemo(() => storyWordCount(story), [story]);
+  const structure = useMemo(() => readStructure(messages, chaptersDoc), [messages, chaptersDoc]);
+  const mapNames = structure?.flowchart.map((node) => node.id) || [];
   const docs = docsFrom({ topicDoc, designDoc, chaptersDoc, styleDoc, proseDoc });
-  const currentDoc = docs[tab];
-  const canPublish = nodeCount > 0 && !!proseDoc.trim() && !!(topicTitle.trim() || story.meta?.title);
-  const bookTitle = topicTitle.trim() || story.meta?.title || '未命名故事';
+  const currentDoc = tab === 'structure' ? '' : docs[tab];
+  const bookTitle = storyTitle({
+    topicTitle,
+    topicDoc,
+    designDoc,
+    metaTitle: story.meta?.title,
+  });
+  const canPublish = nodeCount > 0 && !!proseDoc.trim() && bookTitle !== '未命名故事';
+
+  useEffect(() => {
+    if (!hydrated) return;
+    const fromDesign = pickDesignTitle(designDoc);
+    if (fromDesign) {
+      if (fromDesign !== topicTitle) setTopicTitle(fromDesign);
+      return;
+    }
+    if (meaningfulTitle(topicTitle)) return;
+    const found = pickTitle(topicDoc);
+    if (found) setTopicTitle(found);
+  }, [hydrated, topicTitle, topicDoc, designDoc]);
   const showPicker = hydrated && messages.length === 0 && !streamText && !topicDoc.trim();
 
   function applyDocs(next: StudioDocs) {
@@ -609,7 +800,7 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
       if (name) setStyleName(name);
     }
     setProseDoc(next.prose);
-    const title = pickTitle(next.topic);
+    const title = pickDesignTitle(next.design) || pickTitle(next.topic);
     if (title) setTopicTitle(title);
   }
 
@@ -623,7 +814,7 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
       applyDocs(nextDocs);
       setStory(nextStory);
       if (isPreviewTab(kind)) setTab(kind);
-      const title = pickTitle(nextDocs.topic);
+      const title = pickDesignTitle(nextDocs.design) || pickTitle(nextDocs.topic);
       viewRef.current = {
         ...viewRef.current,
         topicDoc: nextDocs.topic,
@@ -640,7 +831,7 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
     }
     const prev = storiesRef.current.find((s) => s.id === storyId);
     if (!prev) return;
-    const title = pickTitle(nextDocs.topic);
+    const title = pickDesignTitle(nextDocs.design) || pickTitle(nextDocs.topic);
     replaceStories(
       upsertStory(storiesRef.current, {
         ...prev,
@@ -668,6 +859,78 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
     replaceStories(upsertStory(storiesRef.current, { ...prev, messages: nextMessages, updatedAt: Date.now() }));
   }
 
+  function retryStructure() {
+    const storyId = currentIdRef.current;
+    if (!storyId || jobsRef.current[storyId]?.busy || jobsRef.current[storyId]?.structuring) return;
+    if (!viewRef.current.designDoc.trim()) return;
+    const ctrl = new AbortController();
+    abortsRef.current.set(storyId, ctrl);
+    void refreshStructure(storyId, '按当前故事设计重新整理结构', viewRef.current.designDoc, ctrl.signal).finally(() => {
+      if (abortsRef.current.get(storyId) === ctrl) abortsRef.current.delete(storyId);
+    });
+  }
+
+  async function refreshStructure(storyId: string, userText: string, designBefore: string, signal: AbortSignal) {
+    const source =
+      currentIdRef.current === storyId
+        ? viewRef.current
+        : storiesRef.current.find((item) => item.id === storyId);
+    const designDoc = source?.designDoc || '';
+    if (!designDoc.trim()) return;
+    const rawMessages = source?.messages || [];
+    const history = stripStructureMessages(rawMessages);
+    clearStructureError(storyId);
+    setJob(storyId, { structuring: true, error: '' });
+    if (currentIdRef.current === storyId && mountedRef.current) setTab('structure');
+    try {
+      const raw = await streamStructure(
+        history,
+        designDoc,
+        revisionForStructure(userText, designBefore),
+        () => {},
+        signal,
+        storyId,
+      );
+      const parsed = parseStructure(raw);
+      if (!parsed) throw new Error(structureParseError(raw));
+      const jsonText = JSON.stringify(parsed);
+      clearStructureError(storyId);
+      if (rawMessages.length !== history.length) commitMessages(storyId, history);
+      if (currentIdRef.current === storyId) {
+        setChaptersDoc(jsonText);
+        viewRef.current = { ...viewRef.current, chaptersDoc: jsonText };
+      } else {
+        const prev = storiesRef.current.find((item) => item.id === storyId);
+        if (prev) {
+          replaceStories(
+            upsertStory(storiesRef.current, { ...prev, chaptersDoc: jsonText, updatedAt: Date.now() }),
+          );
+        }
+      }
+      await persist('chapters', jsonText, storyId);
+      if (signal.aborted) return;
+      const done: ChatMessage = { role: 'assistant', content: '已梳理完成，请指示。' };
+      if (currentIdRef.current === storyId) {
+        commitMessages(storyId, [...viewRef.current.messages, done]);
+        setStory(storyFromProse(viewRef.current.proseDoc, parsed));
+        await flushSave();
+      } else {
+        const item = storiesRef.current.find((entry) => entry.id === storyId);
+        if (item) {
+          const next = { ...item, messages: [...item.messages, done], updatedAt: Date.now() };
+          replaceStories(upsertStory(storiesRef.current, next));
+          await saveProject(next).catch(() => null);
+        }
+      }
+    } catch (err) {
+      const message = structureFailMessage(err);
+      rememberStructureError(storyId, message);
+      if (mountedRef.current) setJob(storyId, { error: message });
+    } finally {
+      setJob(storyId, { structuring: false });
+    }
+  }
+
   async function persist(kind: DocKind, content: string, storyId: string) {
     if (!content.trim() || !isStoryId(storyId)) return;
     await apiJson(`/api/stories/${storyId}`, {
@@ -683,8 +946,13 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   ): Promise<RunResult> {
     const storyId = currentIdRef.current;
     if (!storyId || jobsRef.current[storyId]?.busy || !userText.trim()) return 'busy';
-    const history: ChatMessage[] = [...viewRef.current.messages, { role: 'user', content: userText }];
-    const modelMessages = opts?.messagesForModel ?? history;
+    const history: ChatMessage[] = [
+      ...viewRef.current.messages.filter((message) => message.role !== 'assistant' || message.content.trim()),
+      { role: 'user', content: userText },
+    ];
+    const modelMessages = opts?.messagesForModel
+      ? stripStructureMessages(opts.messagesForModel)
+      : withStructureContext(history, viewRef.current.chaptersDoc);
     const base = {
       docs: docsFrom({
         topicDoc: viewRef.current.topicDoc,
@@ -694,16 +962,18 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
         proseDoc: viewRef.current.proseDoc,
       }),
     };
+    stickToBottomRef.current = true;
     const ctrl = new AbortController();
     abortsRef.current.set(storyId, ctrl);
     setJob(storyId, { busy: true, generating: true, streamText: '', thinkText: '', error: '' });
     commitMessages(storyId, history);
     let assembled = '';
     let result: RunResult = 'ok';
+    const currentStructure = parseStructure(base.docs.chapters);
 
     async function settlePartial() {
       if (!assembled) return;
-      const preview = replyPreview(base, assembled, fallback);
+      const preview = replyPreview(base, assembled, fallback, currentStructure);
       applyGeneration(storyId, preview.nextDocs, preview.nextStory, preview.kind);
       commitMessages(storyId, [...history, { role: 'assistant', content: assembled }]);
       setJob(storyId, { streamText: '', thinkText: '' });
@@ -717,29 +987,36 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
       }
     }
 
+    const onDelta = (text: string) => {
+      if (ctrl.signal.aborted) return;
+      assembled = text;
+      setJob(storyId, { streamText: text });
+      const preview = replyPreview(base, text, fallback, currentStructure);
+      applyGeneration(storyId, preview.nextDocs, preview.nextStory, preview.kind);
+    };
+    const onThink = (thinking: string) => {
+      if (ctrl.signal.aborted) return;
+      setJob(storyId, { thinkText: thinking });
+    };
+
     try {
-      const full = await streamGenerate(
-        '',
-        modelMessages,
-        (text) => {
-          if (ctrl.signal.aborted) return;
-          assembled = text;
-          setJob(storyId, { streamText: text });
-          const preview = replyPreview(base, text, fallback);
-          applyGeneration(storyId, preview.nextDocs, preview.nextStory, preview.kind);
-        },
-        (thinking) => {
-          if (ctrl.signal.aborted) return;
-          setJob(storyId, { thinkText: thinking });
-        },
-        ctrl.signal,
-      );
+      let full = '';
+      try {
+        full = await streamGenerate('', modelMessages, onDelta, onThink, ctrl.signal);
+      } catch (err) {
+        if (isAbortError(err) || ctrl.signal.aborted || assembled.trim()) throw err;
+        const message = err instanceof Error ? err.message : '';
+        if (!/没有写出正文/.test(message)) throw err;
+        assembled = '';
+        setJob(storyId, { streamText: '', thinkText: '', error: '' });
+        full = await streamGenerate('', modelMessages, onDelta, onThink, ctrl.signal, 'medium');
+      }
       if (ctrl.signal.aborted) {
         result = 'aborted';
         await settlePartial();
         return result;
       }
-      const preview = replyPreview(base, full, fallback);
+      const preview = replyPreview(base, full, fallback, currentStructure);
       applyGeneration(storyId, preview.nextDocs, preview.nextStory, preview.kind);
       commitMessages(storyId, [...history, { role: 'assistant', content: full }]);
       setJob(storyId, { streamText: '', thinkText: '', error: '' });
@@ -751,6 +1028,24 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
         const item = storiesRef.current.find((s) => s.id === storyId);
         if (item) await saveProject(item).catch(() => null);
       }
+      const designAfter =
+        currentIdRef.current === storyId
+          ? viewRef.current.designDoc
+          : storiesRef.current.find((s) => s.id === storyId)?.designDoc || '';
+      if (
+        shouldRefreshStructure({
+          userText,
+          designBefore: base.docs.design,
+          designAfter,
+          assistant: full,
+        })
+      ) {
+        await refreshStructure(storyId, userText, base.docs.design, ctrl.signal);
+      }
+      if (ctrl.signal.aborted) {
+        result = 'aborted';
+        return result;
+      }
     } catch (err) {
       if (isAbortError(err) || ctrl.signal.aborted) {
         result = 'aborted';
@@ -759,10 +1054,14 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
       }
       result = 'error';
       setJob(storyId, { error: err instanceof Error ? err.message : '生成失败' });
+      if (!assembled && !autoRunRef.current && currentIdRef.current === storyId) {
+        const visible = userText.split('\n--------')[0].trim();
+        setDrafts((prev) => ({ ...prev, [storyId]: prev[storyId]?.trim() ? prev[storyId] : visible }));
+      }
       if (assembled) {
         commitMessages(storyId, [...history, { role: 'assistant', content: assembled }]);
         setJob(storyId, { streamText: '', thinkText: '' });
-        const preview = replyPreview(base, assembled, fallback);
+        const preview = replyPreview(base, assembled, fallback, currentStructure);
         for (const kind of ['topic', 'design', 'chapters', 'style', 'prose'] as DocKind[]) {
           if (preview.nextDocs[kind] !== base.docs[kind]) await persist(kind, preview.nextDocs[kind], storyId);
         }
@@ -784,19 +1083,22 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
     autoStoryIdRef.current = storyId;
     setAutoRunning(true);
     let stall = 0;
-    let lastCount = Object.keys(storyFromProse(viewRef.current.proseDoc).nodes).length;
+    let lastCount = Object.keys(storyFromProse(viewRef.current.proseDoc, parseStructure(viewRef.current.chaptersDoc)).nodes).length;
     try {
       for (let i = 0; i < MAX_AUTO_ROUNDS; i++) {
         if (!autoRunRef.current || currentIdRef.current !== storyId) return;
         const v = viewRef.current;
-        const currentStory = storyFromProse(v.proseDoc);
-        const lastAssist = [...v.messages].reverse().find((msg) => msg.role === 'assistant')?.content || '';
-        const title =
-          pickTitle(v.topicDoc) ||
-          parseCandidates(v.topicDoc)[0]?.name ||
-          parseCandidates(lastAssist)[0]?.name ||
-          v.topicTitle.trim() ||
-          '未命名故事';
+        const currentStory = storyFromProse(v.proseDoc, parseStructure(v.chaptersDoc));
+        const lastAssist =
+          [...v.messages].reverse().find((msg) => msg.role === 'assistant' && !isStructureMessage(msg))?.content || '';
+        const structureText = latestStructureRaw(v.messages) || v.chaptersDoc;
+        const mapNames = sceneNamesFromStructure(structureText);
+        const title = storyTitle({
+          topicTitle: v.topicTitle,
+          topicDoc: v.topicDoc,
+          designDoc: v.designDoc,
+          metaTitle: parseCandidates(v.topicDoc)[0]?.name || parseCandidates(lastAssist)[0]?.name,
+        });
         const step = nextAutoStep({
           topicDoc: v.topicDoc,
           designDoc: v.designDoc,
@@ -805,6 +1107,8 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
           story: currentStory,
           title,
           styleName: v.styleName || pickStyleName(v.styleDoc) || parseCandidates(v.styleDoc)[0]?.name || '烟火白话',
+          structureText,
+          mapNames,
         });
         if (step.kind === 'needTopic') return;
         if (step.kind === 'done') {
@@ -821,7 +1125,7 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
         });
         if (result !== 'ok') return;
         if (step.kind === 'proseStart' || step.kind === 'proseContinue') {
-          const nextCount = Object.keys(storyFromProse(viewRef.current.proseDoc).nodes).length;
+          const nextCount = Object.keys(storyFromProse(viewRef.current.proseDoc, parseStructure(viewRef.current.chaptersDoc)).nodes).length;
           if (nextCount <= lastCount) stall += 1;
           else stall = 0;
           lastCount = nextCount;
@@ -867,17 +1171,34 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   }
 
   function confirmTopic(pick: TopicPick) {
-    if (busy || autoRunning) return;
+    if (autoRunning) return;
     setAudience(pick.audience);
     setTagPath(pick.path);
     viewRef.current = { ...viewRef.current, audience: pick.audience, tagPath: pick.path };
-    run(PHASE_STARTERS.tagPick(pick.audienceName, pick.path, pick.topic.style, pick.topic.title), 'topic');
+    const id = currentIdRef.current;
+    if (!id) return;
+    const tags = pick.path.join(' × ');
+    const line = pick.topic.style ? `${pick.topic.style}：${pick.topic.title}` : pick.topic.title;
+    const text = [tags, line].filter(Boolean).join('\n');
+    setDrafts((prev) => ({ ...prev, [id]: text }));
+    window.setTimeout(() => {
+      const el = composerRef.current;
+      if (!el) return;
+      el.focus();
+      const end = el.value.length;
+      el.setSelectionRange(end, end);
+    }, 0);
   }
 
   function sendDraft() {
     const text = draft.trim();
     if (!text || autoRunRef.current) return;
     const id = currentIdRef.current;
+    if (/^写完全篇[。！]?$/.test(text)) {
+      setDrafts((prev) => ({ ...prev, [id]: '' }));
+      void startAutoWrite();
+      return;
+    }
     setDrafts((prev) => ({ ...prev, [id]: '' }));
     if (!topicDoc.trim()) {
       run(PHASE_STARTERS.consumeStart(text), 'topic');
@@ -936,6 +1257,9 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
           designDoc,
           chaptersDoc,
           styleDoc,
+          audience,
+          tagPath,
+          language: locale,
         }),
       });
       const data = await res.json();
@@ -1022,14 +1346,14 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
                       ),
                   };
 
-  const bookComplete = isBookComplete(designDoc, story, styleLocked);
+  const bookComplete = isBookComplete(designDoc, story, styleLocked, mapNames);
   const showFullWrite = canStartFullWrite({
     showPicker,
     topicDoc,
     hasTopicPicks: topicPicks.length >= 2,
     complete: bookComplete,
   });
-  const fullWriteProgress = autoWriteProgress(designDoc, story);
+  const fullWriteProgress = autoWriteProgress(designDoc, story, mapNames);
 
   if (loadError) {
     return (
@@ -1048,7 +1372,7 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
             className={`desk-story${listOpen ? ' open' : ''}`}
             aria-expanded={listOpen}
             aria-haspopup="menu"
-            aria-label={`当前故事 ${bookTitle}，点开切换`}
+            aria-label={en ? `Current story: ${bookTitle}. Open to switch.` : `当前故事 ${bookTitle}，点开切换`}
             disabled={!hydrated}
             onClick={() => setListOpen((open) => !open)}
           >
@@ -1072,52 +1396,54 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
               {stories.map((item) => (
                 <button key={item.id} type="button" className={item.id === currentId ? 'on' : ''} onClick={() => switchStory(item.id)}>
                   {displayTitle(item.id === currentId ? snapshot() : item)}
-                  {jobs[item.id]?.busy ? <em>正在写</em> : item.publishedId ? <em>已发布</em> : null}
+                  {jobs[item.id]?.busy ? <em>{en ? 'Writing' : '正在写'}</em> : item.publishedId ? <em>{en ? 'Published' : '已发布'}</em> : null}
                 </button>
               ))}
               <button type="button" className="desk-new" onClick={newStory}>
-                ＋ 新故事
+                ＋ {en ? 'New story' : '新故事'}
               </button>
             </div>
           ) : null}
         </div>
         <div className="desk-bar-actions">
-          <div className="desk-paneswitch" role="tablist" aria-label="对话或预览">
+          <div className="desk-paneswitch" role="tablist" aria-label={en ? 'Chat or preview' : '对话或预览'}>
             <button type="button" className={pane === 'chat' ? 'on' : ''} onClick={() => setPane('chat')}>
-              对话
+              {en ? 'Chat' : '对话'}
             </button>
             <button type="button" className={pane === 'preview' ? 'on' : ''} onClick={() => setPane('preview')}>
-              预览
+              {en ? 'Preview' : '预览'}
             </button>
           </div>
           <button type="button" className="desk-publish" disabled={busy || autoRunning || !canPublish} onClick={publish}>
-            {publishedId ? '更新到首页' : '发布'}
+            {publishedId ? (en ? 'Update' : '更新到首页') : (en ? 'Publish' : '发布')}
           </button>
         </div>
       </header>
 
       <div className={`desk-body${pane === 'preview' ? ' show-preview' : ' show-chat'}${showPicker ? ' picking' : ''}`}>
-        <section className="desk-chat" aria-label="和作家对话">
+        <section className="desk-chat" aria-label={en ? 'Chat with the writer' : '和作家对话'}>
           <div className={`desk-log${showPicker ? ' has-picker' : ''}`} ref={chatRef}>
             {showPicker ? <TopicPicker key={currentId} onConfirm={confirmTopic} /> : null}
             {!hydrated ? (
               <div className="desk-bubble assistant">
-                <p>正在打开创作台…</p>
+                <p>{en ? 'Opening the studio…' : '正在打开创作台…'}</p>
               </div>
             ) : messages.length === 0 && !streamText && !showPicker ? (
               <div className="desk-bubble assistant">
-                <ChatMarkdown text={GREETING} />
+                <ChatMarkdown text={en ? 'Tell me about the story in your head' : GREETING} />
               </div>
             ) : null}
-            {messages.map((msg, i) => (
-              <CreateBubble key={`${msg.role}-${i}`} message={msg} onOpenDoc={openPreview} />
-            ))}
-            {thinkText && busy ? (
-              <div className="desk-think">
-                <span>正在想</span>
-                <pre>{thinkText.slice(-800)}</pre>
+            {messages.map((msg, i) =>
+              isStructureMessage(msg) || (msg.role === 'assistant' && !msg.content.trim()) ? null : (
+                <CreateBubble key={`${msg.role}-${i}`} message={msg} onOpenDoc={openPreview} />
+              ),
+            )}
+            {job.structuring ? (
+              <div className="desk-bubble assistant">
+                <p>{en ? 'Building the flowchart, scene list, and state table…' : '正在整理流程图、节点表和状态表，请稍候。'}</p>
               </div>
             ) : null}
+            {thinkText && busy ? <ThinkBox text={thinkText} /> : null}
             {streamText ? <CreateBubble message={{ role: 'assistant', content: streamText }} onOpenDoc={openPreview} streaming /> : null}
           </div>
           <div className="desk-composer">
@@ -1125,19 +1451,19 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
               <div className="desk-fullwrite-row">
                 <p className="desk-fullwrite-progress">
                   {fullWriteProgress.missing > 0
-                    ? `正在写完全篇 · 已写 ${fullWriteProgress.written} 场 · 还缺 ${fullWriteProgress.missing} 场`
+                    ? (en ? `Writing full story · ${fullWriteProgress.written} scenes done · ${fullWriteProgress.missing} left` : `正在写完全篇 · 已写 ${fullWriteProgress.written} 场 · 还缺 ${fullWriteProgress.missing} 场`)
                     : fullWriteProgress.written > 0
-                      ? `正在写完全篇 · 已写 ${fullWriteProgress.written} 场`
-                      : '正在写完全篇'}
+                      ? (en ? `Writing full story · ${fullWriteProgress.written} scenes done` : `正在写完全篇 · 已写 ${fullWriteProgress.written} 场`)
+                      : (en ? 'Writing full story' : '正在写完全篇')}
                 </p>
                 <button type="button" className="desk-fullwrite stop" onClick={stopAutoWrite}>
-                  停止写完全篇
+                  {en ? 'Stop' : '停止写完全篇'}
                 </button>
               </div>
             ) : (
               <div className="desk-fullwrite-row">
                 {candidatePicks.length > 0 ? (
-                  <div className="desk-picks" role="group" aria-label={designDoc.trim() ? '选文风' : '选题'}>
+                  <div className="desk-picks" role="group" aria-label={designDoc.trim() ? (en ? 'Choose a style' : '选文风') : (en ? 'Choose an idea' : '选题')}>
                     {candidatePicks.map((pick) => (
                       <button key={pick.key} type="button" className="desk-pick" disabled={busy} onClick={pick.run}>
                         <span>{pick.label}</span>
@@ -1152,20 +1478,21 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
                 ) : null}
                 {showFullWrite ? (
                   <button type="button" className="desk-fullwrite" disabled={busy} onClick={() => void startAutoWrite()}>
-                    写完全篇
+                    {en ? 'Write full story' : '写完全篇'}
                   </button>
                 ) : null}
               </div>
             )}
             <div className="desk-input">
               <textarea
+                ref={composerRef}
                 value={draft}
                 onChange={(e) => {
                   const id = currentIdRef.current;
                   if (!id) return;
                   setDrafts((prev) => ({ ...prev, [id]: e.target.value }));
                 }}
-                placeholder={topicDoc ? '改设定、改文风、或接着聊' : '你想写什么样的故事'}
+                placeholder={topicDoc ? (en ? 'Change the premise, style, or keep talking' : '改设定、改文风、或接着聊') : (en ? 'What kind of story do you want to write?' : '你想写什么样的故事')}
                 rows={3}
                 disabled={autoRunning || !hydrated}
                 onKeyDown={(event) => {
@@ -1175,27 +1502,34 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
                   }
                 }}
               />
-              <button type="button" className="primary desk-send" disabled={!hydrated || busy || autoRunning || !draft.trim()} onClick={sendDraft}>
-                发送
-              </button>
+              {job.generating || autoRunning ? (
+                <button type="button" className="primary desk-send" onClick={pauseGeneration}>
+                  {en ? 'Pause' : '暂停'}
+                </button>
+              ) : (
+                <button type="button" className="primary desk-send" disabled={!hydrated || busy || !draft.trim()} onClick={sendDraft}>
+                  {en ? 'Send' : '发送'}
+                </button>
+              )}
             </div>
             {error ? <p className="desk-error">{error}</p> : null}
           </div>
         </section>
 
-        <section className="desk-preview" aria-label="故事预览">
+        <section className="desk-preview" aria-label={en ? 'Story preview' : '故事预览'}>
           <div className="desk-tabs">
-            <div className="desk-tabs-list" role="tablist" aria-label="预览文档">
+            <div className="desk-tabs-list" role="tablist" aria-label={en ? 'Preview documents' : '预览文档'}>
               {([
-                ['design', '故事设计'],
-                ['prose', nodeCount ? `正文 ${words}` : '正文'],
+                ['design', en ? 'Story design' : '故事设计'],
+                ['structure', en ? 'Story structure' : '故事结构'],
+                ['prose', nodeCount ? `${en ? 'Manuscript' : '正文'} ${words}` : (en ? 'Manuscript' : '正文')],
               ] as const).map(([id, label]) => (
                 <button key={id} type="button" className={tab === id ? 'on' : ''} onClick={() => setTab(id)}>
                   {label}
                 </button>
               ))}
             </div>
-            <button type="button" className="desk-play" aria-label="全屏阅读" title="全屏阅读" onClick={openPlay}>
+            <button type="button" className="desk-play" aria-label={en ? 'Read fullscreen' : '全屏阅读'} title={en ? 'Read fullscreen' : '全屏阅读'} onClick={openPlay}>
               <IconFullscreen />
             </button>
           </div>
@@ -1205,34 +1539,49 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
                 <Reader
                   key={`${currentId}${playOpen ? '-play' : ''}`}
                   story={story}
+                  structure={structure}
+                  title={bookTitle}
                   authorPreview={!playOpen}
-                  defaultTocOpen={false}
+                  defaultTocOpen={!playOpen}
                   writing={job.generating}
                   writeError={error}
                   onWriteMissing={requestPlayWrite}
                   onBack={playOpen ? () => setPlayOpen(false) : undefined}
-                  backLabel="退出全屏"
+                  backLabel={en ? 'Exit fullscreen' : '退出全屏'}
                 />
               </div>
             ) : (
               <div className="desk-reader play-open">
                 <div className="reader-empty">
                   <header className="reader-bar">
-                    <button type="button" className="reader-icon" aria-label="退出全屏" onClick={() => setPlayOpen(false)}>
+                    <button type="button" className="reader-icon" aria-label={en ? 'Exit fullscreen' : '退出全屏'} onClick={() => setPlayOpen(false)}>
                       <IconPlayBack />
                     </button>
                     <div className="reader-titles">
                       <b>{bookTitle}</b>
-                      <span>{job.generating ? '正在写' : '还没有正文'}</span>
+                      <span>{job.generating ? (en ? 'Writing' : '正在写') : (en ? 'No manuscript yet' : '还没有正文')}</span>
                     </div>
                   </header>
                   <div>
-                    <p>{job.generating ? '作家正在写这一场。写好会自己打开。' : '还没有正文。'}</p>
-                    {job.generating ? <p className="reader-writing">正在写</p> : null}
+                    <p>{job.generating ? (en ? 'The writer is working on this scene. It will open automatically.' : '作家正在写这一场。写好会自己打开。') : (en ? 'No manuscript yet.' : '还没有正文。')}</p>
+                    {job.generating ? <p className="reader-writing">{en ? 'Writing' : '正在写'}</p> : null}
                   </div>
                 </div>
               </div>
             )
+          ) : tab === 'structure' ? (
+            <div className="desk-doc">
+              <StoryStructurePanel
+                data={structure}
+                pending={job.structuring}
+                error={!structure && job.error ? job.error : ''}
+                onRetry={
+                  !job.structuring && !job.busy && designDoc.trim() && !structure
+                    ? () => retryStructure()
+                    : undefined
+                }
+              />
+            </div>
           ) : (
             <div className={`desk-doc${currentDoc ? '' : ' empty'}`}>
               {currentDoc ? (
@@ -1283,6 +1632,97 @@ function IconPlayBack() {
   );
 }
 
+function ThinkBox({ text }: { text: string }) {
+  const ref = useRef<HTMLPreElement>(null);
+  const stickRef = useRef(true);
+
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el || !stickRef.current) return;
+    el.scrollTop = el.scrollHeight;
+  }, [text]);
+
+  return (
+    <div className="desk-think">
+      <span>正在想</span>
+      <pre
+        ref={ref}
+        onScroll={() => {
+          const el = ref.current;
+          if (!el) return;
+          stickRef.current = el.scrollHeight - el.scrollTop - el.clientHeight < 24;
+        }}
+        onWheel={(event) => {
+          const el = ref.current;
+          if (!el || el.scrollHeight <= el.clientHeight + 1) return;
+          const atTop = el.scrollTop <= 0 && event.deltaY < 0;
+          const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight <= 1 && event.deltaY > 0;
+          if (!atTop && !atBottom) event.stopPropagation();
+        }}
+      >
+        {text}
+      </pre>
+    </div>
+  );
+}
+
+function userTextOverflows(text: string) {
+  return text.length > 160 || text.split('\n').length > 6;
+}
+
+function UserBubble({ text }: { text: string }) {
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const [overflows, setOverflows] = useState(() => userTextOverflows(text));
+
+  useLayoutEffect(() => {
+    const root = bodyRef.current;
+    if (!root) return;
+    let stop = false;
+    const measure = () => {
+      const target = root.querySelector<HTMLElement>('.desk-md') ?? root;
+      const line = parseFloat(getComputedStyle(target).lineHeight);
+      const limit = (Number.isFinite(line) ? line : 23) * 6;
+      const height = target.offsetHeight || target.scrollHeight;
+      if (height < 1) return;
+      setOverflows(height > limit + 2);
+    };
+    measure();
+    // 正文第一次排版时高度可能还是 0，多量几帧，避免长文被当成短消息。
+    const observer = new ResizeObserver(measure);
+    observer.observe(root);
+    const markdown = root.querySelector('.desk-md');
+    if (markdown) observer.observe(markdown);
+    let frames = 0;
+    const tick = () => {
+      if (stop) return;
+      measure();
+      frames += 1;
+      if (frames < 6) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    return () => {
+      stop = true;
+      observer.disconnect();
+    };
+  }, [text]);
+
+  return (
+    <div className="desk-bubble user">
+      <div className={overflows && !open ? 'desk-user-clip' : undefined}>
+        <div ref={bodyRef}>
+          <ChatMarkdown text={text} />
+        </div>
+      </div>
+      {overflows ? (
+        <button type="button" className="desk-fold" onClick={() => setOpen((value) => !value)}>
+          {open ? '收起' : '展开'}
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
 function CreateBubble({
   message,
   onOpenDoc,
@@ -1293,15 +1733,12 @@ function CreateBubble({
   streaming?: boolean;
 }) {
   if (message.role === 'user') {
-    return (
-      <div className="desk-bubble user">
-        <ChatMarkdown text={shortUserText(message.content)} />
-      </div>
-    );
+    return <UserBubble text={shortUserText(message.content)} />;
   }
   const parsed = parseAssistantPayload(message.content);
   const inlineDocs = parsed.updates.filter((u) => u.content && !PREVIEW_DOC_KINDS.has(u.kind));
   const previewKinds = [...new Set(parsed.updates.filter((u) => u.content).map((u) => u.kind).filter(isPreviewTab))];
+  const proseTitles = parsed.updates.filter((update) => update.kind === 'prose').flatMap((update) => sceneTitles(update.content));
   const firstDoc = message.content.search(/===DOC:(topic|design|chapters|style|prose)\+?===/);
   const lastClose = message.content.lastIndexOf('===END_DOC===');
   const afterStart = lastClose === -1 ? message.content.length : lastClose + '===END_DOC==='.length;
@@ -1333,7 +1770,7 @@ function CreateBubble({
         <div className="desk-chips">
           {previewKinds.map((kind) => (
             <button key={kind} type="button" className="desk-chip" onClick={() => onOpenDoc(kind)}>
-              {previewChipLabel(kind, streaming)}
+              {previewChipLabel(kind, streaming, kind === 'prose' ? proseTitles : [])}
             </button>
           ))}
         </div>

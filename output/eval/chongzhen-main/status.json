@@ -1,0 +1,28 @@
+{
+  "updatedAt": "2026-09-24T03:34:14.657Z",
+  "title": "朕，崇祯，重开一局",
+  "styleName": "推荐的那种",
+  "han": {
+    "topic": 1158,
+    "design": 5532,
+    "structure": 9050,
+    "style": 637,
+    "prose": 31664
+  },
+  "checks": {
+    "topic": true,
+    "designHasMain": true,
+    "designHasBible": true,
+    "designHasStats": true,
+    "designNoFlowJson": true,
+    "structureParsed": true,
+    "flowNodes": 36,
+    "stateStats": 3,
+    "endings": 4,
+    "styleLocked": false,
+    "proseNodes": 36,
+    "missing": []
+  },
+  "stage": "fatal",
+  "error": "03-structure-2 empty model output"
+}

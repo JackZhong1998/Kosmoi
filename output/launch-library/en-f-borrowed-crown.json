@@ -1,0 +1,386 @@
+{
+  "item": {
+    "slug": "en-f-borrowed-crown",
+    "language": "en",
+    "gender": "female",
+    "title": "A Crown Borrowed at Midnight",
+    "hook": "A dying queen hires you, a palace seamstress, to impersonate her for seven days. Three rivals know the truth, and each offers a different kind of love—and a different betrayal.",
+    "themes": [
+      "Romantasy",
+      "Court intrigue",
+      "Hidden identity",
+      "Female ambition",
+      "Enemies to lovers"
+    ]
+  },
+  "result": {
+    "topicDoc": "# Story Idea\n\n## Title\nA Crown Borrowed at Midnight\n\n## Hook\nA dying queen hires you, a palace seamstress, to impersonate her for seven days. Three rivals know the truth, and each offers a different kind of love—and a different betrayal.\n\n## Themes\nRomantasy, Court intrigue, Hidden identity, Female ambition, Enemies to lovers",
+    "designDoc": "# Story Design\n\n## Logline\nImpersonate a dying queen for seven days while navigating three dangerous suitors who know your secret.\n\n## Audience\nWomen\n\n## Themes and tone\nRomantasy, Court intrigue, Hidden identity, Female ambition, Enemies to lovers\n\n## Interactive structure\n- n01 · Prologue · The Seamstress's Summons: Accept the crown and the risk. → n02\n- n02 · Day One · The First Mask: Lean into mystery. Speak in riddles and retreat early. → n03 | Project strength. Command attention and dismiss doubts. → n04\n- n03 · Day Two · Shadows and Whispers: Push him away and maintain the facade. → n05 | Whisper back, acknowledging his insight. → n05\n- n04 · Day Two · Steel and Silk: Refuse his aid and walk away. → n05 | Accept his lesson and let him guide you. → n05\n- n05 · Day Four · The Masquerade Trap: Challenge Vane publicly at the party. → n06 | Seek refuge with Kaelen or Thorne. → n07\n- n06 · Day Five · The Public Defiance: Focus on consolidating power among allies. → n08 | Investigate Isolde’s condition personally. → n08\n- n07 · Day Five · Sanctuary of Secrets: Plan a preemptive strike against Vane. → n08 | Prepare for the worst-case scenario. → n08\n- n08 · Day Seven · The Final Vote: Claim the throne as Isolde’s chosen successor. → n09 | Reveal your identity and beg for exile. → n10 | Expose Vane’s treason and seize control. → n11\n- n09 · Epilogue A · The Velvet Cage\n- n10 · Epilogue B · The Unstitched Thread\n- n11 · Epilogue C · The Broken Mirror",
+    "chaptersDoc": "# Chapters and Nodes\n\n- n01 · Prologue · The Seamstress's Summons: Accept the crown and the risk. → n02\n- n02 · Day One · The First Mask: Lean into mystery. Speak in riddles and retreat early. → n03 | Project strength. Command attention and dismiss doubts. → n04\n- n03 · Day Two · Shadows and Whispers: Push him away and maintain the facade. → n05 | Whisper back, acknowledging his insight. → n05\n- n04 · Day Two · Steel and Silk: Refuse his aid and walk away. → n05 | Accept his lesson and let him guide you. → n05\n- n05 · Day Four · The Masquerade Trap: Challenge Vane publicly at the party. → n06 | Seek refuge with Kaelen or Thorne. → n07\n- n06 · Day Five · The Public Defiance: Focus on consolidating power among allies. → n08 | Investigate Isolde’s condition personally. → n08\n- n07 · Day Five · Sanctuary of Secrets: Plan a preemptive strike against Vane. → n08 | Prepare for the worst-case scenario. → n08\n- n08 · Day Seven · The Final Vote: Claim the throne as Isolde’s chosen successor. → n09 | Reveal your identity and beg for exile. → n10 | Expose Vane’s treason and seize control. → n11\n- n09 · Epilogue A · The Velvet Cage\n- n10 · Epilogue B · The Unstitched Thread\n- n11 · Epilogue C · The Broken Mirror",
+    "styleDoc": "# Locked Style\n\nCinematic immersive prose in second person, with concrete scenes, restrained dialogue, and legible consequences.",
+    "proseDoc": "===STORY_PATCH===\n{\"meta\":{\"title\":\"A Crown Borrowed at Midnight\",\"logline\":\"Impersonate a dying queen for seven days while navigating three dangerous suitors who know your secret.\",\"start\":\"n01\",\"stats\":[{\"id\":\"trust\",\"name\":\"Royal Trust\",\"initial\":5,\"min\":0,\"max\":10,\"visible\":true}],\"factLabels\":{\"knows_secret\":\"Knows the Secret\"}},\"nodes\":[{\"id\":\"n01\",\"chapter\":\"Prologue\",\"title\":\"The Seamstress's Summons\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"Rain lashes against the high windows of the Spire, blurring the lights of the capital below into streaks of gold and grey. You are Elara, a seamstress whose hands are calloused from needlework but steady enough to stitch silk without trembling. The summons arrived an hour ago, sealed with wax the color of dried blood. Now, you stand before Queen Isolde’s bedchamber, the air thick with the scent of lavender and decay.\\n\\nIsolde lies propped up on pillows, her skin translucent as parchment. She does not look like a ruler; she looks like a ghost haunting her own life. \\\"They want me dead,\\\" she whispers, her voice raspy. \\\"Not by sword, but by silence. My council plans to declare me incapacitated within the week. They need a face that commands respect, even if it is hollow.\\\" She gestures to a mannequin draped in royal velvet. \\\"You have my silhouette. You have my grace. For seven days, until I find a cure or die quietly, you will be Her Majesty.\\\"\\n\\nShe presses a heavy signet ring onto your finger. It is cold, biting into your knuckle. \\\"Three men circle this throne like vultures. Lord Kaelen, General Thorne, and Duke Vane. Each suspects something. Each wants power. But they also want... companionship. Beware their affections, Elara. In this court, love is just another weapon. If you fail, you disappear. If you succeed, you inherit nothing but exhaustion. Do you accept?\\\"\",\"choices\":[{\"id\":\"c1\",\"text\":\"Accept the crown and the risk.\",\"meaning\":\"Commit to the deception immediately.\",\"next\":\"n02\",\"effects\":{\"trust\":1},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n02\",\"chapter\":\"Day One\",\"title\":\"The First Mask\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"The morning audience is a blur of bowing heads and whispered rumors. You sit upon the Ironwood Throne, feeling small beneath layers of brocade. Your heart hammers against your ribs, a frantic bird trapped in a cage of bone. You remember Isolde’s instruction: *Never speak first. Let them fill the silence.*\\n\\nLord Kaelen approaches first. He is young, sharp-eyed, and wears his ambition like a second skin. He bows low, lingering longer than protocol demands. \\\"Your Majesty seems pale today,\\\" he murmurs, his gaze sweeping over you with unsettling intensity. He knows the real Isolde’s habits. Does he see through you?\\n\\nBehind him stands General Thorne, broad-shouldered and scarred, radiating protective warmth. He places a hand on the armrest near yours, a gesture of solidarity that feels intimate yet public. \\\"Rest easy, Majesty. We handle the borders.\\\" His eyes hold no suspicion, only weary devotion.\\n\\nFinally, Duke Vane slides forward, holding a single white rose. He smiles, charming and deadly. \\\"Beauty fades, but style endures. Shall we discuss the masquerade ball tonight?\\\" His tone suggests he already knows more than he should.\\n\\nYou must choose how to respond to establish your presence. Will you lean into mystery, offering cryptic answers that confuse them? Or will you project strength, shutting down speculation with authority? The choice defines how these three rivals perceive you—and how vulnerable you appear.\",\"choices\":[{\"id\":\"c2a\",\"text\":\"Lean into mystery. Speak in riddles and retreat early.\",\"meaning\":\"Confuse your enemies and keep distance.\",\"next\":\"n03\",\"effects\":{\"trust\":-1},\"setFacts\":[\"mysterious\"],\"conditions\":{}},{\"id\":\"c2b\",\"text\":\"Project strength. Command attention and dismiss doubts.\",\"meaning\":\"Assert dominance and demand loyalty.\",\"next\":\"n04\",\"effects\":{\"trust\":1},\"setFacts\":[\"authoritative\"],\"conditions\":{}}]},{\"id\":\"n03\",\"chapter\":\"Day Two\",\"title\":\"Shadows and Whispers\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"Your mysterious demeanor unsettles the court. By retreating early, you denied Vane his dance, which infuriates him but intrigues Kaelen. That evening, you slip away from your guards to explore the palace archives, seeking clues about Isolde’s illness. The shadows here are deep, smelling of old paper and dust.\\n\\nKaelen finds you there. He doesn’t announce himself; he simply appears beside you, holding a lantern. \\\"Curiosity killed the cat, Majesty,\\\" he says softly, though his eyes sparkle with amusement. \\\"But satisfaction brought it back. What are you looking for? A way out? Or a way in?\\\"\\n\\nHe steps closer, invading your personal space. Unlike Thorne’s blunt protection or Vane’s performative charm, Kaelen’s interest feels intellectual, predatory. He touches a stack of medical texts. \\\"I know you’re not her,\\\" he whispers. The admission hangs in the air, heavy and terrifying. \\\"Isolde hates history. She loves poetry. You read too fast.\\\"\\n\\nPanic flares in your chest. Is this a trap? Or an alliance? Kaelen leans in, his breath warm against your ear. \\\"If you want to survive this week, you need someone who sees the truth. Not because they care about the crown, but because they care about the player. I can help you. But you must trust me completely. And trust is a currency I spend wisely.\\\" He waits for your reaction, his expression unreadable.\",\"choices\":[{\"id\":\"c3a\",\"text\":\"Push him away and maintain the facade.\",\"meaning\":\"Reject intimacy and protect yourself.\",\"next\":\"n05\",\"effects\":{\"trust\":-1},\"setFacts\":[\"rejected_kaelen\"],\"conditions\":{}},{\"id\":\"c3b\",\"text\":\"Whisper back, acknowledging his insight.\",\"meaning\":\"Form a tentative bond with Kaelen.\",\"next\":\"n05\",\"effects\":{\"trust\":1},\"setFacts\":[\"allied_kaelen\"],\"conditions\":{}}]},{\"id\":\"n04\",\"chapter\":\"Day Two\",\"title\":\"Steel and Silk\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"Your authoritative stance solidifies your position. The court respects fear more than confusion. However, General Thorne takes issue with your isolation. He corners you in the courtyard during training exercises, ignoring the spectators.\\n\\n\\\"You hide behind walls, Majesty,\\\" Thorne grunts, handing you a practice sword. It is light, balanced. \\\"Isolde never trusted steel. She trusted words. Why do you favor force?\\\"\\n\\nHis question cuts deep. You realize your performance might be too aggressive, drawing unwanted scrutiny from those who knew the real queen’s pacifist nature. Thorne watches you closely, not with suspicion, but with concern. He sees a woman trying to hold herself together with brute will.\\n\\n\\\"Let me teach you something real,\\\" he offers, stepping close enough to adjust your grip. His touch is rough but gentle. \\\"Power isn't just commanding others. It's protecting what matters. You're alone up there. I can fix that. Not as a subject, but as a shield. Stand with me, and no one will dare question your right to rule.\\\"\\n\\nVane observes from the balcony above, sipping wine. He looks bored, perhaps disappointed by your lack of subtlety. Thorne’s offer is sincere, grounded in physical reality. Accepting means aligning with military power, potentially alienating the aristocracy. Rejecting means facing the next day’s challenges solo.\",\"choices\":[{\"id\":\"c4a\",\"text\":\"Refuse his aid and walk away.\",\"meaning\":\"Maintain independence and reject vulnerability.\",\"next\":\"n05\",\"effects\":{\"trust\":-1},\"setFacts\":[\"refused_thorne\"],\"conditions\":{}},{\"id\":\"c4b\",\"text\":\"Accept his lesson and let him guide you.\",\"meaning\":\"Build rapport with Thorne and show weakness.\",\"next\":\"n05\",\"effects\":{\"trust\":1},\"setFacts\":[\"allied_thorne\"],\"conditions\":{}}]},{\"id\":\"n05\",\"chapter\":\"Day Four\",\"title\":\"The Masquerade Trap\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"Midweek arrives with a storm outside and tension inside. The Grand Masquerade is tonight. All three rivals expect you to attend. This is where identities blur most dangerously. Masks allow for freedom, but also for exposure.\\n\\nDuke Vane intercepts you in the hallway, adjusting his own elaborate mask—a golden fox. \\\"Elara,\\\" he says, using your true name for the first time. The shock freezes your blood. \\\"Did you think I wouldn't check the tailor records? A seamstress hired by the Queen? Too convenient. I know what you are. And I know why you’re here.\\\"\\n\\nHe circles you, predatory. \\\"Isolde is dying, yes. But she left debts. Political debts. Debts paid in marriage alliances. I intend to collect. Dance with me, and I’ll ensure your transition is smooth. Refuse, and I’ll expose you before the cake is cut. Imagine the scandal. A peasant wearing a crown.\\\"\\n\\nVane holds all the cards now. He knows your secret, but so does Kaelen (if you allied) or Thorne (if you accepted). Yet Vane is the only one acting openly hostile. He expects fear. How do you counter a blackmailer who enjoys the game? You can try to outmaneuver him socially, turning his threat into a spectacle, or you can seek immediate sanctuary with another ally.\",\"choices\":[{\"id\":\"c5a\",\"text\":\"Challenge Vane publicly at the party.\",\"meaning\":\"Turn the tables by exposing his rudeness.\",\"next\":\"n06\",\"effects\":{\"trust\":1},\"setFacts\":[\"defied_vane\"],\"conditions\":{}},{\"id\":\"c5b\",\"text\":\"Seek refuge with Kaelen or Thorne.\",\"meaning\":\"Rely on previous alliances for protection.\",\"next\":\"n07\",\"effects\":{\"trust\":-1},\"setFacts\":[\"sought_refuge\"],\"conditions\":{}}]},{\"id\":\"n06\",\"chapter\":\"Day Five\",\"title\":\"The Public Defiance\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You stride into the ballroom, head held high. Vane follows, smirking, expecting you to crumble. Instead, you climb onto the dais and raise your glass. \\\"To Duke Vane,\\\" you announce, your voice carrying over the music. \\\"Who reminds us that loyalty is tested not in comfort, but in crisis.\\\"\\n\\nThe crowd applauds, thinking it a toast to unity. Vane’s smile falters. You’ve reframed his threat as a display of his own insecurity. Later, when he confronts you in the garden, furious, you don’t apologize. \\\"You wanted a reaction,\\\" you say calmly. \\\"Now you have one. Leave me be, Vane, or become the villain in everyone else’s story.\\\"\\n\\nHe backs down, impressed despite himself. \\\"Clever girl. But cleverness breaks under pressure.\\\" He walks away, but his eyes linger. You’ve gained respect, but made a powerful enemy. Kaelen approaches, clapping slowly. \\\"Brilliant theater. You played him like a fiddle. Tell me, did you enjoy the danger? Because I sense you thrive on it.\\\"\\n\\nThorne joins moments later, looking worried. \\\"That was risky. If he had shouted—\\\" \\\"He didn't,\\\" you interrupt. \\\"Because I control the narrative.\\\" The dynamic shifts. You are no longer just surviving; you are ruling. But the strain shows in your eyes. Isolde’s health worsens, reported by her physician. Time is running out.\",\"choices\":[{\"id\":\"c6a\",\"text\":\"Focus on consolidating power among allies.\",\"meaning\":\"Strengthen bonds with Kaelen/Thorne.\",\"next\":\"n08\",\"effects\":{\"trust\":1},\"setFacts\":[\"consolidated_power\"],\"conditions\":{}},{\"id\":\"c6b\",\"text\":\"Investigate Isolde’s condition personally.\",\"meaning\":\"Prioritize the Queen’s fate over politics.\",\"next\":\"n08\",\"effects\":{\"trust\":-1},\"setFacts\":[\"investigated_queen\"],\"conditions\":{}}]},{\"id\":\"n07\",\"chapter\":\"Day Five\",\"title\":\"Sanctuary of Secrets\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You flee the ballroom, heart pounding. Vane’s knowledge weighs on you like a stone. You find Kaelen in the library, reading by candlelight. He closes his book as you enter, sensing your distress.\\n\\n\\\"Runaways make poor rulers,\\\" he notes gently. \\\"But frightened ones make better listeners. Sit.\\\"\\n\\nYou confess everything—Vane’s blackmail, your fear, the weight of the crown. Kaelen listens without judgment. When you finish, he pours tea. \\\"Vane thinks he owns secrets. He doesn’t understand that secrets shared are burdens halved. I won’t save you, Elara. But I will stand beside you while you save yourself.\\\"\\n\\nAlternatively, if you sought Thorne, he meets you in the armory. He doesn’t speak much, just hands you a dagger. \\\"Keep this close. If Vane pushes, push back. Harder. I’ll watch your six.\\\" \\n\\nIn either case, you feel less alone, but also more dependent. Vane tracks you down later, sneering at your cowardice. \\\"Hiding in books or blades? Pathetic. Tomorrow, the Council votes on the Regency. If you aren’t convincing then, I will speak. And no amount of shielding will stop the truth from cutting deep.\\\" His confidence wavers slightly seeing you backed by two influential figures, but the threat remains potent. You survived the night, but barely.\",\"choices\":[{\"id\":\"c7a\",\"text\":\"Plan a preemptive strike against Vane.\",\"meaning\":\"Use your allies to neutralize the threat.\",\"next\":\"n08\",\"effects\":{\"trust\":1},\"setFacts\":[\"planned_strike\"],\"conditions\":{}},{\"id\":\"c7b\",\"text\":\"Prepare for the worst-case scenario.\",\"meaning\":\"Accept potential exile or death.\",\"next\":\"n08\",\"effects\":{\"trust\":-1},\"setFacts\":[\"prepared_worst\"],\"conditions\":{}}]},{\"id\":\"n08\",\"chapter\":\"Day Seven\",\"title\":\"The Final Vote\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"The seventh day dawns grey and silent. Isolde has passed in the night, leaving you truly alone. The Council gathers in the Great Hall. Vane sits at the far end, smiling serenely. Kaelen and Thorne flank you, ready to support whatever decision you make.\\n\\nThe Chief Minister asks, \\\"Does Her Majesty wish to address the realm regarding the succession?\\\"\\n\\nThis is the moment. You can step down, revealing yourself as a mere impostor, hoping for mercy. Or you can claim the throne fully, declaring Isolde named you heir—a lie, but one supported by force of arms and political maneuvering. Or you can burn the system down, exposing the corruption of all three rivals and fleeing into obscurity.\\n\\nVane leans forward. \\\"Speak, Seamstress. Or shall I speak for you?\\\" The room holds its breath. Your trust level determines how many believe your bluff. With high trust, your allies will back any claim. With low trust, hesitation will be fatal. Choose your final act carefully. There is no going back after this sentence.\",\"choices\":[{\"id\":\"c8a\",\"text\":\"Claim the throne as Isolde’s chosen successor.\",\"meaning\":\"Embrace power and defy tradition.\",\"next\":\"n09\",\"effects\":{\"trust\":2},\"setFacts\":[\"claimed_throne\"],\"conditions\":{\"trust_min\":6}},{\"id\":\"c8b\",\"text\":\"Reveal your identity and beg for exile.\",\"meaning\":\"Choose survival over status.\",\"next\":\"n10\",\"effects\":{\"trust\":-2},\"setFacts\":[\"revealed_truth\"],\"conditions\":{}},{\"id\":\"c8c\",\"text\":\"Expose Vane’s treason and seize control.\",\"meaning\":\"Destroy your rival and take charge.\",\"next\":\"n11\",\"effects\":{\"trust\":1},\"setFacts\":[\"exposed_vane\"],\"conditions\":{\"has_allies\":true}}]},{\"id\":\"n09\",\"chapter\":\"Epilogue A\",\"title\":\"The Velvet Cage\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"end_a\",\"body\":\"You rise, the crown heavy on your brow. \\\"Queen Isolde named me her heir,\\\" you declare, your voice steady despite the tremor in your hands. \\\"My lineage is irrelevant. My loyalty is absolute. Who dares dispute the will of the late monarch?\\\"\\n\\nSilence stretches, thin and brittle. Then, Kaelen bows. \\\"Long live the Queen.\\\" Thorne draws his sword, pointing it at Vane. \\\"Treason is punishable by death. Step aside, Duke.\\\"\\n\\nVane pales, realizing he underestimated your audacity. He flees the hall, stripped of his influence. You ascend the throne, not by birthright, but by sheer nerve. Years pass. You rule with an iron fist wrapped in velvet. You are respected, feared, and lonely. Kaelen becomes your advisor, Thorne your general. You never marry, keeping your past buried deeper than Isolde’s body.\\n\\nSometimes, late at night, you remove the crown and stare at your reflection. You see the seamstress still stitched into the fabric of the queen. You saved the kingdom, but lost yourself. The crown fits perfectly, cold and unyielding. You are safe. You are powerful. You are utterly alone.\",\"choices\":[]},{\"id\":\"n10\",\"chapter\":\"Epilogue B\",\"title\":\"The Unstitched Thread\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"end_b\",\"body\":\"\\\"I am not her,\\\" you whisper, then louder, \\\"I am Elara. A seamstress. Isolde died last night. I wore her face to buy time, not to steal a kingdom.\\\"\\n\\nGasps ripple through the hall. Vane laughs, triumphant. \\\"Seize her! Fraud! Usurper!\\\"\\n\\nBut Thorne steps between you and the guards. \\\"She spoke the truth. Kill her, and you kill honesty itself.\\\" Kaelen nods slowly. \\\"Let her go. Exile her. She has served us well enough.\\\"\\n\\nVane screams protests, but his voice is drowned by the murmur of the crowd, intrigued by the rare sight of genuine humility. You are stripped of the jewels, given a cloak, and escorted to the city gates. Rain washes the makeup from your face.\\n\\nYou leave the palace behind, walking into the unknown. You have no title, no wealth, no protector. But you have your name. Somewhere, in a distant village, you open a small shop. You mend clothes for peasants who don’t ask questions. You sleep soundly, dreaming of needles instead of swords. You traded glory for peace. It was a bargain few would make, but one you cherish every quiet dawn.\",\"choices\":[]},{\"id\":\"n11\",\"chapter\":\"Epilogue C\",\"title\":\"The Broken Mirror\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"end_c\",\"body\":\"You turn to Vane, eyes blazing. \\\"You accuse me of fraud, Duke? Look at your own letters. Intercepted by Kaelen’s spies. Proof you plotted to assassinate Isolde to hasten your rise.\\\"\\n\\nChaos erupts. Guards drag Vane away as he shouts denials. Kaelen smiles grimly, having provided the evidence. Thorne secures the perimeter. You stand tall, the center of the storm.\\n\\n\\\"The Queen is dead,\\\" you announce. \\\"And with her, the old guard dies too. I will rule as Regent until a suitable heir is found. Any opposition will be treated as treason.\\\"\\n\\nThere is no dissent. Fear keeps them silent. You dismantle the corrupt factions, installing loyalists. You are ruthless, efficient, and beloved by none but respected by all. You forge a new era, built on blood and betrayal. Vane rots in prison, cursing your name.\\n\\nYears later, you sit on the throne, older, harder. You look at your hands—they still bear the scars of needle pricks, hidden beneath rings. You conquered the court, but became part of its machinery. You are the architect of a stable empire, but the foundation is cracked. You rule with wisdom, but wonder often if kindness could have achieved the same result. Probably not. Power requires sacrifice, and you gave yours freely.\",\"choices\":[]}]}\n===END_STORY_PATCH==="
+  },
+  "story": {
+    "meta": {
+      "title": "A Crown Borrowed at Midnight",
+      "logline": "Impersonate a dying queen for seven days while navigating three dangerous suitors who know your secret.",
+      "start": "n01",
+      "stats": [
+        {
+          "id": "trust",
+          "name": "Royal Trust",
+          "initial": 5,
+          "min": 0,
+          "max": 10,
+          "visible": true
+        }
+      ],
+      "factLabels": {
+        "knows_secret": "Knows the Secret"
+      }
+    },
+    "nodes": [
+      {
+        "id": "n01",
+        "chapter": "Prologue",
+        "title": "The Seamstress's Summons",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Rain lashes against the high windows of the Spire, blurring the lights of the capital below into streaks of gold and grey. You are Elara, a seamstress whose hands are calloused from needlework but steady enough to stitch silk without trembling. The summons arrived an hour ago, sealed with wax the color of dried blood. Now, you stand before Queen Isolde’s bedchamber, the air thick with the scent of lavender and decay.\n\nIsolde lies propped up on pillows, her skin translucent as parchment. She does not look like a ruler; she looks like a ghost haunting her own life. \"They want me dead,\" she whispers, her voice raspy. \"Not by sword, but by silence. My council plans to declare me incapacitated within the week. They need a face that commands respect, even if it is hollow.\" She gestures to a mannequin draped in royal velvet. \"You have my silhouette. You have my grace. For seven days, until I find a cure or die quietly, you will be Her Majesty.\"\n\nShe presses a heavy signet ring onto your finger. It is cold, biting into your knuckle. \"Three men circle this throne like vultures. Lord Kaelen, General Thorne, and Duke Vane. Each suspects something. Each wants power. But they also want... companionship. Beware their affections, Elara. In this court, love is just another weapon. If you fail, you disappear. If you succeed, you inherit nothing but exhaustion. Do you accept?\"",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Accept the crown and the risk.",
+            "meaning": "Commit to the deception immediately.",
+            "next": "n02",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n02",
+        "chapter": "Day One",
+        "title": "The First Mask",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The morning audience is a blur of bowing heads and whispered rumors. You sit upon the Ironwood Throne, feeling small beneath layers of brocade. Your heart hammers against your ribs, a frantic bird trapped in a cage of bone. You remember Isolde’s instruction: *Never speak first. Let them fill the silence.*\n\nLord Kaelen approaches first. He is young, sharp-eyed, and wears his ambition like a second skin. He bows low, lingering longer than protocol demands. \"Your Majesty seems pale today,\" he murmurs, his gaze sweeping over you with unsettling intensity. He knows the real Isolde’s habits. Does he see through you?\n\nBehind him stands General Thorne, broad-shouldered and scarred, radiating protective warmth. He places a hand on the armrest near yours, a gesture of solidarity that feels intimate yet public. \"Rest easy, Majesty. We handle the borders.\" His eyes hold no suspicion, only weary devotion.\n\nFinally, Duke Vane slides forward, holding a single white rose. He smiles, charming and deadly. \"Beauty fades, but style endures. Shall we discuss the masquerade ball tonight?\" His tone suggests he already knows more than he should.\n\nYou must choose how to respond to establish your presence. Will you lean into mystery, offering cryptic answers that confuse them? Or will you project strength, shutting down speculation with authority? The choice defines how these three rivals perceive you—and how vulnerable you appear.",
+        "choices": [
+          {
+            "id": "c2a",
+            "text": "Lean into mystery. Speak in riddles and retreat early.",
+            "meaning": "Confuse your enemies and keep distance.",
+            "next": "n03",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "mysterious"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c2b",
+            "text": "Project strength. Command attention and dismiss doubts.",
+            "meaning": "Assert dominance and demand loyalty.",
+            "next": "n04",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "authoritative"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n03",
+        "chapter": "Day Two",
+        "title": "Shadows and Whispers",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Your mysterious demeanor unsettles the court. By retreating early, you denied Vane his dance, which infuriates him but intrigues Kaelen. That evening, you slip away from your guards to explore the palace archives, seeking clues about Isolde’s illness. The shadows here are deep, smelling of old paper and dust.\n\nKaelen finds you there. He doesn’t announce himself; he simply appears beside you, holding a lantern. \"Curiosity killed the cat, Majesty,\" he says softly, though his eyes sparkle with amusement. \"But satisfaction brought it back. What are you looking for? A way out? Or a way in?\"\n\nHe steps closer, invading your personal space. Unlike Thorne’s blunt protection or Vane’s performative charm, Kaelen’s interest feels intellectual, predatory. He touches a stack of medical texts. \"I know you’re not her,\" he whispers. The admission hangs in the air, heavy and terrifying. \"Isolde hates history. She loves poetry. You read too fast.\"\n\nPanic flares in your chest. Is this a trap? Or an alliance? Kaelen leans in, his breath warm against your ear. \"If you want to survive this week, you need someone who sees the truth. Not because they care about the crown, but because they care about the player. I can help you. But you must trust me completely. And trust is a currency I spend wisely.\" He waits for your reaction, his expression unreadable.",
+        "choices": [
+          {
+            "id": "c3a",
+            "text": "Push him away and maintain the facade.",
+            "meaning": "Reject intimacy and protect yourself.",
+            "next": "n05",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "rejected_kaelen"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c3b",
+            "text": "Whisper back, acknowledging his insight.",
+            "meaning": "Form a tentative bond with Kaelen.",
+            "next": "n05",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "allied_kaelen"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n04",
+        "chapter": "Day Two",
+        "title": "Steel and Silk",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Your authoritative stance solidifies your position. The court respects fear more than confusion. However, General Thorne takes issue with your isolation. He corners you in the courtyard during training exercises, ignoring the spectators.\n\n\"You hide behind walls, Majesty,\" Thorne grunts, handing you a practice sword. It is light, balanced. \"Isolde never trusted steel. She trusted words. Why do you favor force?\"\n\nHis question cuts deep. You realize your performance might be too aggressive, drawing unwanted scrutiny from those who knew the real queen’s pacifist nature. Thorne watches you closely, not with suspicion, but with concern. He sees a woman trying to hold herself together with brute will.\n\n\"Let me teach you something real,\" he offers, stepping close enough to adjust your grip. His touch is rough but gentle. \"Power isn't just commanding others. It's protecting what matters. You're alone up there. I can fix that. Not as a subject, but as a shield. Stand with me, and no one will dare question your right to rule.\"\n\nVane observes from the balcony above, sipping wine. He looks bored, perhaps disappointed by your lack of subtlety. Thorne’s offer is sincere, grounded in physical reality. Accepting means aligning with military power, potentially alienating the aristocracy. Rejecting means facing the next day’s challenges solo.",
+        "choices": [
+          {
+            "id": "c4a",
+            "text": "Refuse his aid and walk away.",
+            "meaning": "Maintain independence and reject vulnerability.",
+            "next": "n05",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "refused_thorne"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c4b",
+            "text": "Accept his lesson and let him guide you.",
+            "meaning": "Build rapport with Thorne and show weakness.",
+            "next": "n05",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "allied_thorne"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n05",
+        "chapter": "Day Four",
+        "title": "The Masquerade Trap",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Midweek arrives with a storm outside and tension inside. The Grand Masquerade is tonight. All three rivals expect you to attend. This is where identities blur most dangerously. Masks allow for freedom, but also for exposure.\n\nDuke Vane intercepts you in the hallway, adjusting his own elaborate mask—a golden fox. \"Elara,\" he says, using your true name for the first time. The shock freezes your blood. \"Did you think I wouldn't check the tailor records? A seamstress hired by the Queen? Too convenient. I know what you are. And I know why you’re here.\"\n\nHe circles you, predatory. \"Isolde is dying, yes. But she left debts. Political debts. Debts paid in marriage alliances. I intend to collect. Dance with me, and I’ll ensure your transition is smooth. Refuse, and I’ll expose you before the cake is cut. Imagine the scandal. A peasant wearing a crown.\"\n\nVane holds all the cards now. He knows your secret, but so does Kaelen (if you allied) or Thorne (if you accepted). Yet Vane is the only one acting openly hostile. He expects fear. How do you counter a blackmailer who enjoys the game? You can try to outmaneuver him socially, turning his threat into a spectacle, or you can seek immediate sanctuary with another ally.",
+        "choices": [
+          {
+            "id": "c5a",
+            "text": "Challenge Vane publicly at the party.",
+            "meaning": "Turn the tables by exposing his rudeness.",
+            "next": "n06",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "defied_vane"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c5b",
+            "text": "Seek refuge with Kaelen or Thorne.",
+            "meaning": "Rely on previous alliances for protection.",
+            "next": "n07",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "sought_refuge"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n06",
+        "chapter": "Day Five",
+        "title": "The Public Defiance",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You stride into the ballroom, head held high. Vane follows, smirking, expecting you to crumble. Instead, you climb onto the dais and raise your glass. \"To Duke Vane,\" you announce, your voice carrying over the music. \"Who reminds us that loyalty is tested not in comfort, but in crisis.\"\n\nThe crowd applauds, thinking it a toast to unity. Vane’s smile falters. You’ve reframed his threat as a display of his own insecurity. Later, when he confronts you in the garden, furious, you don’t apologize. \"You wanted a reaction,\" you say calmly. \"Now you have one. Leave me be, Vane, or become the villain in everyone else’s story.\"\n\nHe backs down, impressed despite himself. \"Clever girl. But cleverness breaks under pressure.\" He walks away, but his eyes linger. You’ve gained respect, but made a powerful enemy. Kaelen approaches, clapping slowly. \"Brilliant theater. You played him like a fiddle. Tell me, did you enjoy the danger? Because I sense you thrive on it.\"\n\nThorne joins moments later, looking worried. \"That was risky. If he had shouted—\" \"He didn't,\" you interrupt. \"Because I control the narrative.\" The dynamic shifts. You are no longer just surviving; you are ruling. But the strain shows in your eyes. Isolde’s health worsens, reported by her physician. Time is running out.",
+        "choices": [
+          {
+            "id": "c6a",
+            "text": "Focus on consolidating power among allies.",
+            "meaning": "Strengthen bonds with Kaelen/Thorne.",
+            "next": "n08",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "consolidated_power"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c6b",
+            "text": "Investigate Isolde’s condition personally.",
+            "meaning": "Prioritize the Queen’s fate over politics.",
+            "next": "n08",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "investigated_queen"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n07",
+        "chapter": "Day Five",
+        "title": "Sanctuary of Secrets",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You flee the ballroom, heart pounding. Vane’s knowledge weighs on you like a stone. You find Kaelen in the library, reading by candlelight. He closes his book as you enter, sensing your distress.\n\n\"Runaways make poor rulers,\" he notes gently. \"But frightened ones make better listeners. Sit.\"\n\nYou confess everything—Vane’s blackmail, your fear, the weight of the crown. Kaelen listens without judgment. When you finish, he pours tea. \"Vane thinks he owns secrets. He doesn’t understand that secrets shared are burdens halved. I won’t save you, Elara. But I will stand beside you while you save yourself.\"\n\nAlternatively, if you sought Thorne, he meets you in the armory. He doesn’t speak much, just hands you a dagger. \"Keep this close. If Vane pushes, push back. Harder. I’ll watch your six.\" \n\nIn either case, you feel less alone, but also more dependent. Vane tracks you down later, sneering at your cowardice. \"Hiding in books or blades? Pathetic. Tomorrow, the Council votes on the Regency. If you aren’t convincing then, I will speak. And no amount of shielding will stop the truth from cutting deep.\" His confidence wavers slightly seeing you backed by two influential figures, but the threat remains potent. You survived the night, but barely.",
+        "choices": [
+          {
+            "id": "c7a",
+            "text": "Plan a preemptive strike against Vane.",
+            "meaning": "Use your allies to neutralize the threat.",
+            "next": "n08",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "planned_strike"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c7b",
+            "text": "Prepare for the worst-case scenario.",
+            "meaning": "Accept potential exile or death.",
+            "next": "n08",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "prepared_worst"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n08",
+        "chapter": "Day Seven",
+        "title": "The Final Vote",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The seventh day dawns grey and silent. Isolde has passed in the night, leaving you truly alone. The Council gathers in the Great Hall. Vane sits at the far end, smiling serenely. Kaelen and Thorne flank you, ready to support whatever decision you make.\n\nThe Chief Minister asks, \"Does Her Majesty wish to address the realm regarding the succession?\"\n\nThis is the moment. You can step down, revealing yourself as a mere impostor, hoping for mercy. Or you can claim the throne fully, declaring Isolde named you heir—a lie, but one supported by force of arms and political maneuvering. Or you can burn the system down, exposing the corruption of all three rivals and fleeing into obscurity.\n\nVane leans forward. \"Speak, Seamstress. Or shall I speak for you?\" The room holds its breath. Your trust level determines how many believe your bluff. With high trust, your allies will back any claim. With low trust, hesitation will be fatal. Choose your final act carefully. There is no going back after this sentence.",
+        "choices": [
+          {
+            "id": "c8a",
+            "text": "Claim the throne as Isolde’s chosen successor.",
+            "meaning": "Embrace power and defy tradition.",
+            "next": "n09",
+            "effects": {
+              "trust": 2
+            },
+            "setFacts": [
+              "claimed_throne"
+            ],
+            "conditions": {
+              "trust_min": 6
+            }
+          },
+          {
+            "id": "c8b",
+            "text": "Reveal your identity and beg for exile.",
+            "meaning": "Choose survival over status.",
+            "next": "n10",
+            "effects": {
+              "trust": -2
+            },
+            "setFacts": [
+              "revealed_truth"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c8c",
+            "text": "Expose Vane’s treason and seize control.",
+            "meaning": "Destroy your rival and take charge.",
+            "next": "n11",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "exposed_vane"
+            ],
+            "conditions": {
+              "has_allies": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "n09",
+        "chapter": "Epilogue A",
+        "title": "The Velvet Cage",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "end_a",
+        "body": "You rise, the crown heavy on your brow. \"Queen Isolde named me her heir,\" you declare, your voice steady despite the tremor in your hands. \"My lineage is irrelevant. My loyalty is absolute. Who dares dispute the will of the late monarch?\"\n\nSilence stretches, thin and brittle. Then, Kaelen bows. \"Long live the Queen.\" Thorne draws his sword, pointing it at Vane. \"Treason is punishable by death. Step aside, Duke.\"\n\nVane pales, realizing he underestimated your audacity. He flees the hall, stripped of his influence. You ascend the throne, not by birthright, but by sheer nerve. Years pass. You rule with an iron fist wrapped in velvet. You are respected, feared, and lonely. Kaelen becomes your advisor, Thorne your general. You never marry, keeping your past buried deeper than Isolde’s body.\n\nSometimes, late at night, you remove the crown and stare at your reflection. You see the seamstress still stitched into the fabric of the queen. You saved the kingdom, but lost yourself. The crown fits perfectly, cold and unyielding. You are safe. You are powerful. You are utterly alone.",
+        "choices": []
+      },
+      {
+        "id": "n10",
+        "chapter": "Epilogue B",
+        "title": "The Unstitched Thread",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "end_b",
+        "body": "\"I am not her,\" you whisper, then louder, \"I am Elara. A seamstress. Isolde died last night. I wore her face to buy time, not to steal a kingdom.\"\n\nGasps ripple through the hall. Vane laughs, triumphant. \"Seize her! Fraud! Usurper!\"\n\nBut Thorne steps between you and the guards. \"She spoke the truth. Kill her, and you kill honesty itself.\" Kaelen nods slowly. \"Let her go. Exile her. She has served us well enough.\"\n\nVane screams protests, but his voice is drowned by the murmur of the crowd, intrigued by the rare sight of genuine humility. You are stripped of the jewels, given a cloak, and escorted to the city gates. Rain washes the makeup from your face.\n\nYou leave the palace behind, walking into the unknown. You have no title, no wealth, no protector. But you have your name. Somewhere, in a distant village, you open a small shop. You mend clothes for peasants who don’t ask questions. You sleep soundly, dreaming of needles instead of swords. You traded glory for peace. It was a bargain few would make, but one you cherish every quiet dawn.",
+        "choices": []
+      },
+      {
+        "id": "n11",
+        "chapter": "Epilogue C",
+        "title": "The Broken Mirror",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "end_c",
+        "body": "You turn to Vane, eyes blazing. \"You accuse me of fraud, Duke? Look at your own letters. Intercepted by Kaelen’s spies. Proof you plotted to assassinate Isolde to hasten your rise.\"\n\nChaos erupts. Guards drag Vane away as he shouts denials. Kaelen smiles grimly, having provided the evidence. Thorne secures the perimeter. You stand tall, the center of the storm.\n\n\"The Queen is dead,\" you announce. \"And with her, the old guard dies too. I will rule as Regent until a suitable heir is found. Any opposition will be treated as treason.\"\n\nThere is no dissent. Fear keeps them silent. You dismantle the corrupt factions, installing loyalists. You are ruthless, efficient, and beloved by none but respected by all. You forge a new era, built on blood and betrayal. Vane rots in prison, cursing your name.\n\nYears later, you sit on the throne, older, harder. You look at your hands—they still bear the scars of needle pricks, hidden beneath rings. You conquered the court, but became part of its machinery. You are the architect of a stable empire, but the foundation is cracked. You rule with wisdom, but wonder often if kindness could have achieved the same result. Probably not. Power requires sacrifice, and you gave yours freely.",
+        "choices": []
+      }
+    ]
+  },
+  "recommendation": {
+    "gender": "female",
+    "tags": [
+      "Romantasy",
+      "Court Intrigue",
+      "Hidden Identity",
+      "Enemies to Lovers",
+      "Female Ambition",
+      "Political Drama"
+    ],
+    "summary": "Step into the silken shoes of a dying queen and navigate seven perilous days in a court teeming with danger. As a skilled seamstress forced into impersonation, you must outmaneuver three sharp-witted suitors who suspect your true identity while wielding power through wit, steel, and secrets. Will you forge an alliance that secures the throne, or unravel under the weight of deception?"
+  },
+  "generatedAt": "2026-09-24T10:17:27.209Z"
+}

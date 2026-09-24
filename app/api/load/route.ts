@@ -4,26 +4,32 @@ import path from 'path';
 export const runtime = 'nodejs';
 
 export async function GET() {
-  const dir = path.join(process.cwd(), 'output');
+  const filmDir = path.join(process.cwd(), 'output', 'film');
   const read = async (name: string) => {
     try {
-      return await fs.readFile(path.join(dir, name), 'utf8');
+      return await fs.readFile(path.join(filmDir, name), 'utf8');
     } catch {
       return '';
     }
   };
-  const [topicDoc, designDoc, proseDoc, evalNote, messagesRaw] = await Promise.all([
-    read('选题文档.md'),
-    read('故事设计文档.md'),
-    read('小说正文.md'),
-    read('评测.md'),
-    read('messages.json'),
+  const [script, assetsBible, assetsFile, board, prompts, video] = await Promise.all([
+    read('01-剧本.md'),
+    read('02-资产圣经.md'),
+    read('02-资产.md'),
+    read('03-分镜.md'),
+    read('04-提示词.md'),
+    read('05-视频任务单.md'),
   ]);
-  let messages = [];
-  try {
-    messages = messagesRaw ? JSON.parse(messagesRaw) : [];
-  } catch {
-    messages = [];
-  }
-  return Response.json({ topicDoc, designDoc, proseDoc, evalNote, messages });
+  const prefer = (marker: string, ...texts: string[]) =>
+    texts.find((text) => text.includes(marker)) || texts.find((text) => text.trim()) || '';
+  return Response.json({
+    film: {
+      script: prefer('===FILM_STRUCTURE===', script),
+      assets: prefer('===ASSET_CATALOG===', assetsFile, assetsBible),
+      board: prefer('===STORYBOARD===', board),
+      prompts: prefer('===CLIP_JOB===', prompts),
+      video,
+      eval: '',
+    },
+  });
 }

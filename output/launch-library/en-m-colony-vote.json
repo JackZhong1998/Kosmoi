@@ -1,0 +1,333 @@
+{
+  "item": {
+    "slug": "en-m-colony-vote",
+    "language": "en",
+    "gender": "male",
+    "title": "Colony 13: Vote to Survive",
+    "hook": "A failing Mars colony has oxygen for 312 people and a population of 487. As the newly elected governor, every player vote saves a district and condemns another.",
+    "themes": [
+      "Mars survival",
+      "Leadership",
+      "Resource crisis",
+      "Political drama",
+      "Hard choices"
+    ]
+  },
+  "result": {
+    "topicDoc": "# Story Idea\n\n## Title\nColony 13: Vote to Survive\n\n## Hook\nA failing Mars colony has oxygen for 312 people and a population of 487. As the newly elected governor, every player vote saves a district and condemns another.\n\n## Themes\nMars survival, Leadership, Resource crisis, Political drama, Hard choices",
+    "designDoc": "# Story Design\n\n## Logline\nA failing Mars colony has oxygen for 312 people and a population of 487. As the newly elected governor, every vote you cast saves a district and condemns another.\n\n## Audience\nMen\n\n## Themes and tone\nMars survival, Leadership, Resource crisis, Political drama, Hard choices\n\n## Interactive structure\n- n01 · Chapter 1 · The Weight of Air: Continue → n02\n- n02 · Chapter 2 · The Address: Enforce Mandatory Rationing across all districts → n03 | Launch the Voluntary Reduction Program → n04\n- n03 · Chapter 3 · Thin Air: Continue → n05\n- n04 · Chapter 4 · The Volunteers: Continue → n05\n- n05 · Chapter 5 · The Arithmetic of Lives: Prioritize District Four: Full allocation to engineers → n06 | Prioritize District Three: Protect the families and children → n07\n- n06 · Chapter 6 · The Engine Room: Continue → n08\n- n07 · Chapter 7 · The Nursery: Continue → n08\n- n08 · Chapter 8 · The Last Vote: Launch the Full Evacuation: Save who you can → n09 | Implement the Sacrifice Protocol → n10 | Give your own oxygen to the colony → n11\n- n09 · Chapter 9 · The Shuttles Rise\n- n10 · Chapter 10 · The Quiet Room\n- n11 · Chapter 11 · The Last Breath",
+    "chaptersDoc": "# Chapters and Nodes\n\n- n01 · Chapter 1 · The Weight of Air: Continue → n02\n- n02 · Chapter 2 · The Address: Enforce Mandatory Rationing across all districts → n03 | Launch the Voluntary Reduction Program → n04\n- n03 · Chapter 3 · Thin Air: Continue → n05\n- n04 · Chapter 4 · The Volunteers: Continue → n05\n- n05 · Chapter 5 · The Arithmetic of Lives: Prioritize District Four: Full allocation to engineers → n06 | Prioritize District Three: Protect the families and children → n07\n- n06 · Chapter 6 · The Engine Room: Continue → n08\n- n07 · Chapter 7 · The Nursery: Continue → n08\n- n08 · Chapter 8 · The Last Vote: Launch the Full Evacuation: Save who you can → n09 | Implement the Sacrifice Protocol → n10 | Give your own oxygen to the colony → n11\n- n09 · Chapter 9 · The Shuttles Rise\n- n10 · Chapter 10 · The Quiet Room\n- n11 · Chapter 11 · The Last Breath",
+    "styleDoc": "# Locked Style\n\nCinematic immersive prose in second person, with concrete scenes, restrained dialogue, and legible consequences.",
+    "proseDoc": "===STORY_PATCH===\n{\"meta\":{\"title\":\"Colony 13: Vote to Survive\",\"logline\":\"A failing Mars colony has oxygen for 312 people and a population of 487. As the newly elected governor, every vote you cast saves a district and condemns another.\",\"start\":\"n01\",\"stats\":[{\"id\":\"trust\",\"name\":\"Public Trust\",\"initial\":5,\"min\":0,\"max\":10,\"visible\":true},{\"id\":\"oxygen\",\"name\":\"Oxygen Reserve\",\"initial\":5,\"min\":0,\"max\":10,\"visible\":true}],\"factLabels\":{\"rationed\":\"Rationing Enforced\",\"voluntary\":\"Voluntary Program\",\"engineers_saved\":\"Engineers Prioritized\",\"families_saved\":\"Families Prioritized\",\"full_evac\":\"Full Evacuation Attempted\",\"sacrifice\":\"Self-Sacrifice Protocol\",\"colony_saved\":\"Colony Survived\"}},\"nodes\":[{\"id\":\"n01\",\"chapter\":\"Chapter 1\",\"title\":\"The Weight of Air\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"The alarm is not loud. That is the worst part. You expected sirens, red lights, chaos. Instead, a soft chime pulses through the governor's office like a heartbeat slowing down.\\n\\nYou stand at the viewport, watching the rust-colored dawn crawl across Jezero Crater. Behind you, the holographic display projects the numbers that ended your first week in office before it truly began. Oxygen reserves: 312 person-days per cycle. Population: 487. The math is a blade pressed against every throat on this planet.\\n\\nGovernor. They elected you six days ago on a platform of transparency and hope. Now you understand why your predecessor resigned. The chair is still warm from her cowardice.\\n\\nYour chief engineer, Tomás Vega, stands at the door with a tablet clutched to his chest like a shield. His eyes are red-rimmed. He has not slept. None of the senior staff have.\\n\\n\\\"The recyclers in District Four failed at 0300,\\\" he says. His voice is flat, drained of inflection. \\\"We lost eighteen percent of our production capacity. The projections are no longer theoretical, Governor. We have eleven weeks before the deficit becomes irreversible.\\\"\\n\\nYou turn from the viewport. Through the reinforced glass, you can see the habitat domes glowing in the half-light—five districts, five communities, five groups of people who believe you will save them. All of them.\\n\\n\\\"Who knows?\\\" you ask.\\n\\n\\\"Everyone will know by morning. The atmospheric processors are loud when they run at full capacity. People will notice the silence in Four.\\\"\\n\\nHe is right. In a colony this small, secrets have a half-life measured in hours. You have one night—perhaps less—to decide how to frame this crisis before the framing decides you.\\n\\nYou pull up the district manifest on your desk display. Five districts. Five hundred lives arranged in neat rows of data. Somewhere in those numbers is an answer. You are not sure you want to find it.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Continue\",\"meaning\":\"Proceed to address the crisis\",\"next\":\"n02\",\"effects\":{},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n02\",\"chapter\":\"Chapter 2\",\"title\":\"The Address\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"You call the emergency assembly for 0600. The central atrium of District One fills with bodies and murmurs. Four hundred and eighty-seven people, minus the night-shift workers who will watch the recording later. Their faces are a mosaic of exhaustion and suspicion. They already know something is wrong. They always know.\\n\\nYou stand on the raised platform, the colony seal projected behind you—a stylized dome beneath a red sky. You chose this platform yourself during your campaign. Transparency. Accountability. The words taste like ash now.\\n\\n\\\"Citizens of Colony Thirteen,\\\" you begin, and the atrium falls silent with a speed that frightens you. \\\"I will not soften what I have to say. Our oxygen production has suffered a critical failure. We have eleven weeks to find a solution, or we will face a deficit that cannot be reversed.\\\"\\n\\nThe silence breaks. Voices rise like pressure escaping a seal. You raise your hand and wait. It takes forty seconds for quiet to return.\\n\\n\\\"I have two proposals before the council. I am bringing them to you because this decision belongs to every person breathing this air.\\\"\\n\\nYou pull up the first option: Mandatory Rationing Protocol. Reduce oxygen allocation across all districts by thirty percent. Everyone suffers equally. The weak, the elderly, the children—they all breathe less. It buys time, perhaps enough for a resupply mission from Earth, but it will test the limits of human endurance in a sealed environment.\\n\\nThe second option: Voluntary Reduction Program. Ask for volunteers to reduce their personal allocation. Frame it as heroism. Hope that enough people step forward to close the gap without forcing anyone's hand.\\n\\nTomás catches your eye from the crowd. He shakes his head almost imperceptibly. He thinks rationing is the only real answer. But you see the faces around you—families, children, the elderly who built this colony with their bare hands.\\n\\nThe vote is yours to call.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Enforce Mandatory Rationing across all districts\",\"meaning\":\"Equal suffering, guaranteed compliance, but brutal on the vulnerable\",\"next\":\"n03\",\"effects\":{\"trust\":-1,\"oxygen\":2},\"setFacts\":[\"rationed\"],\"conditions\":{}},{\"id\":\"c2\",\"text\":\"Launch the Voluntary Reduction Program\",\"meaning\":\"Hope in human goodness, but risky if not enough volunteers emerge\",\"next\":\"n04\",\"effects\":{\"trust\":1,\"oxygen\":-1},\"setFacts\":[\"voluntary\"],\"conditions\":{}}]},{\"id\":\"n03\",\"chapter\":\"Chapter 3\",\"title\":\"Thin Air\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"The rationing takes effect at midnight. You watch the atmospheric processors adjust their output from the control room, the numbers ticking downward like a countdown to something you refuse to name.\\n\\nThirty percent. It sounds abstract in a briefing document. In practice, it means every breath is slightly thinner. It means headaches by the second day. It means children crying at night because they feel like they are breathing through cloth. It means the elderly in District Three moving slower, their lips carrying a faint blue tinge that the medical staff pretends not to notice.\\n\\nBut the math works. That is the terrible mercy of it—the math works. Your eleven weeks stretch to sixteen. Perhaps eighteen if consumption drops further as people adapt.\\n\\nThe colony does not thank you. On the third day, someone paints TRAITOR across the exterior wall of the governor's residence in red oxide pigment. On the fifth day, a fight breaks out in District Two's mess hall over an oxygen mask that a man claims was stolen from his quarters. Security separates them. No one is seriously hurt, but the fear is a living thing now, moving through the corridors like a draft.\\n\\nTomás finds you on the seventh day, dark circles carved under his eyes. \\\"The rationing bought us time,\\\" he says, \\\"but it is not a solution. It is a delay. We still need to reduce the population-to-resource ratio permanently, or we will be here again in six months.\\\"\\n\\nHe lays two proposals on your desk. The first: prioritize the engineering district for full oxygen allocation. They are the ones who can repair the recyclers, build new ones, find long-term solutions. The logic is cold and utilitarian. The second: prioritize families with children. They represent the colony's future, its reason for existing. Protect them first.\\n\\nBoth proposals mean someone else gets less. Both mean you choose who matters more.\\n\\nThe colony watches. The colony waits. The colony breathes thin air and wonders what you will do next.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Continue\",\"meaning\":\"Face the next impossible choice\",\"next\":\"n05\",\"effects\":{},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n04\",\"chapter\":\"Chapter 4\",\"title\":\"The Volunteers\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"You frame it as heroism. You have to. The alternative is to frame it as desperation, and desperation is contagious.\\n\\nThe Voluntary Reduction Program launches with a ceremony in the atrium. You give a speech about the pioneers who came to Mars knowing the risks, about the spirit that built this colony from dust and determination. The words feel hollow in your mouth, but the crowd responds. They want to believe they are brave. They want to believe this is a choice and not a sentence.\\n\\nForty-three people sign up in the first day. By the end of the week, one hundred and twelve. It is not enough. The deficit requires at least one hundred and seventy-five volunteers to stabilize, and the rate of new sign-ups is slowing. People watch their neighbors volunteer and feel relief that it is not them. The heroism is finite. Self-preservation is not.\\n\\nOn the ninth day, a woman named Yuki Tanaka from District Five collapses during her shift in the hydroponics bay. She had reduced her allocation by forty percent—far more than the recommended twenty. The medical team stabilizes her, but the incident spreads through the colony like a shockwave. Voluntary becomes synonymous with reckless. Sign-ups stop entirely.\\n\\nYou are forced to implement a soft rationing anyway—ten percent across the board, framed as a \\\"community solidarity measure.\\\" It is not enough to close the gap alone, but combined with the volunteers, it buys you fourteen weeks. Better than nothing. Worse than what you need.\\n\\nTomás brings you the same two proposals he would have brought regardless of your earlier choice. The engineering district needs full allocation to repair and expand the recyclers. Or the families with children need protection because they are the colony's future. Both are true. Both cannot be fully funded.\\n\\nYou sit in your office, the numbers glowing on your desk, and you understand that hope is not a strategy. It is a feeling. And feelings do not produce oxygen.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Continue\",\"meaning\":\"Face the next impossible choice\",\"next\":\"n05\",\"effects\":{},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n05\",\"chapter\":\"Chapter 5\",\"title\":\"The Arithmetic of Lives\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"The engineering district—District Four—is where the colony's heart beats. The recyclers, the atmospheric processors, the water reclamation systems—all of it lives there, maintained by one hundred and thirty-two engineers and technicians who understand the machinery the way surgeons understand anatomy.\\n\\nTomás makes the case with the precision of a man who has rehearsed it in the mirror. \\\"Give my people full allocation. We can have two new recyclers operational within eight weeks. Maybe six if we cannibalize the backup systems in District Three. That solves the problem permanently. No more rationing. No more votes. No more choosing.\\\"\\n\\nThe logic is airtight. You hate it.\\n\\nBecause District Three is where the families live. Ninety-four children under the age of sixteen. The colony's school. The nursery where the youngest citizens—some born on Mars, some carried here in their mothers' wombs—take their first breaths of recycled air. They did not vote for you. They cannot advocate for themselves. They trust that the adults in the room will protect them.\\n\\nDr. Amara Osei, the colony's chief medical officer, presents the counter-argument. \\\"Children are more vulnerable to hypoxia. Their developing brains, their smaller lung capacity. A thirty percent reduction for an adult is discomfort. For a child under ten, it is cognitive damage. Permanent. You are not just choosing who breathes less. You are choosing who grows up diminished.\\\"\\n\\nBoth arguments are true. That is what makes this impossible. Truth is not a tiebreaker. Truth is the knife.\\n\\nYou look at the district map on your display. Five colored zones. Five groups of people who believe you will save them. You cannot save them all. Not today. Not with the numbers as they stand.\\n\\nYour hand hovers over the console. The vote is yours. The colony holds its breath—thinner now, always thinner—and waits.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Prioritize District Four: Full allocation to engineers\",\"meaning\":\"Invest in the solution, accept short-term harm to families\",\"next\":\"n06\",\"effects\":{\"trust\":-1,\"oxygen\":2},\"setFacts\":[\"engineers_saved\"],\"conditions\":{}},{\"id\":\"c2\",\"text\":\"Prioritize District Three: Protect the families and children\",\"meaning\":\"Protect the vulnerable, accept slower progress on repairs\",\"next\":\"n07\",\"effects\":{\"trust\":1,\"oxygen\":-1},\"setFacts\":[\"families_saved\"],\"conditions\":{}}]},{\"id\":\"n06\",\"chapter\":\"Chapter 6\",\"title\":\"The Engine Room\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"The engineers receive their full allocation at 0800 on a Tuesday. You know it is Tuesday because the mess hall serves reconstituted eggs on Tuesdays, and you are eating them alone when the announcement goes out over the colony speakers. The silence that follows is heavier than any protest.\\n\\nDistrict Four becomes a fortress of productivity. The engineers work eighteen-hour shifts, fueled by full oxygen and the knowledge that they are the colony's last best hope. New recyclers take shape in the fabrication bay—ugly, functional things built from salvaged parts and desperate ingenuity. Tomás sends you daily progress reports. They are ahead of schedule.\\n\\nDistrict Three pays the price. The children's ward in the medical center reports a twenty percent increase in respiratory complaints. Dr. Osei sends you a memo—clinical, restrained, devastating. Three children have shown early signs of cognitive impairment. Reversible if caught now. Permanent if the situation continues for another month.\\n\\nYou read the memo twice. Then you file it in a drawer and go back to work. There is nothing else to do. This is what leadership means—not the absence of guilt, but the ability to function while carrying it.\\n\\nOn the fourth week, a breakthrough. The engineers complete the first new recycler ahead of schedule. Oxygen production ticks upward for the first time since the crisis began. It is not enough—not yet—but the trajectory has changed. The curve bends toward survival.\\n\\nThe colony notices. The mood shifts from despair to cautious hope. People smile in the corridors. Someone paints a mural on the wall of District Four—a phoenix rising from red dust. The word TRAITOR that was scrawled on your residence has been scrubbed away. No one mentions it.\\n\\nBut the crisis is not over. The new recycler buys time, not salvation. You still face a final decision—the one that will define your legacy, your colony, and the lives of everyone who breathes this thin, precious air.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Continue\",\"meaning\":\"Approach the final decision\",\"next\":\"n08\",\"effects\":{},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n07\",\"chapter\":\"Chapter 7\",\"title\":\"The Nursery\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"You choose the children. The decision costs you something you cannot name—perhaps the cold comfort of pure logic, perhaps the respect of the engineers who built this colony with their hands and now watch you prioritize sentiment over survival.\\n\\nDistrict Three receives full allocation. The children breathe easier within days. The color returns to their cheeks. The nursery fills with laughter again, and the sound carries through the corridors like a hymn. Dr. Osei sends you a brief message: \\\"Thank you. The cognitive markers are stabilizing.\\\"\\n\\nDistrict Four does not thank you. Tomás stops attending your morning briefings. The engineers work their reduced shifts with mechanical precision and zero enthusiasm. Progress on the new recyclers slows to a crawl. Without full cognitive function, complex engineering tasks take longer. Mistakes multiply. A welding error in the fabrication bay causes a small fire that injures two technicians.\\n\\nThe colony's mood is split. Families in District Three call you a hero. Engineers in District Four call you a fool. Both are right. You have saved the future by mortgaging the present, and the interest is coming due.\\n\\nOn the fifth week, Tomás finally comes to your office. He looks older than he did a month ago. \\\"We can still build the recyclers,\\\" he says. \\\"But it will take twelve weeks instead of six. Maybe fourteen. And I need something from you.\\\"\\n\\n\\\"What?\\\"\\n\\n\\\"Permission to be honest with the colony. They need to know the timeline. They need to know what this choice costs. If they understand, they will help. If they do not, they will resent us until the air runs out.\\\"\\n\\nYou grant the permission. Tomás addresses the colony that evening. His speech is blunt, technical, and somehow more hopeful than anything you could have said. The colony listens. The colony adjusts. The curve bends—slowly, painfully, but it bends.\\n\\nNow the final decision approaches. The one that will determine whether this colony lives or dies.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Continue\",\"meaning\":\"Approach the final decision\",\"next\":\"n08\",\"effects\":{},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n08\",\"chapter\":\"Chapter 8\",\"title\":\"The Last Vote\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"Week ten. The recyclers are nearly complete—close enough to see, not close enough to breathe easy. The oxygen deficit has narrowed but not closed. You are still one hundred and twelve people over sustainable capacity. The math remains a blade.\\n\\nA resupply ship from Earth is possible. The United Mars Authority has offered one—enough oxygen and equipment to sustain the full population indefinitely. But it will take fourteen months to arrive. You do not have fourteen months. You have six weeks, maybe eight if the engineers push beyond safe limits.\\n\\nThe gap must be closed. One hundred and twelve people. That is the number that stands between this colony and extinction.\\n\\nThree options remain on your desk. Three paths through the dark.\\n\\nThe first: Full Evacuation Attempt. Load as many people as possible onto the colony's two transport shuttles and send them to the orbital station. The shuttles can carry one hundred and forty people between them. It is not enough to save everyone, but it reduces the population to a sustainable level. The question is who boards and who stays.\\n\\nThe second: The Sacrifice Protocol. A voluntary program—but not for reduced oxygen. For full cessation. A dignified end for those who choose it, framed as the ultimate act of love for the colony's future. It is monstrous. It is also, mathematically, the cleanest solution.\\n\\nThe third: You. The governor's office controls the emergency atmospheric override. You can redirect your own allocation—and the allocations of your senior staff—into the general supply. It is not enough to close the gap alone, but combined with reduced consumption from the remaining weeks, it might be just enough. You will not survive. Your staff will not survive. But the colony will.\\n\\nThe colony watches. The colony waits. The colony breathes.\\n\\nThis is your last vote, Governor. Make it count.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Launch the Full Evacuation: Save who you can\",\"meaning\":\"Partial salvation through triage—some leave, some stay\",\"next\":\"n09\",\"effects\":{\"trust\":-2,\"oxygen\":1},\"setFacts\":[\"full_evac\"],\"conditions\":{}},{\"id\":\"c2\",\"text\":\"Implement the Sacrifice Protocol\",\"meaning\":\"Ask for the ultimate volunteerism—a dignified end for the colony's future\",\"next\":\"n10\",\"effects\":{\"trust\":-1,\"oxygen\":2},\"setFacts\":[\"sacrifice\"],\"conditions\":{}},{\"id\":\"c3\",\"text\":\"Give your own oxygen to the colony\",\"meaning\":\"Self-sacrifice—the governor and staff surrender their allocation\",\"next\":\"n11\",\"effects\":{\"trust\":3,\"oxygen\":2},\"setFacts\":[\"colony_saved\"],\"conditions\":{}}]},{\"id\":\"n09\",\"chapter\":\"Chapter 9\",\"title\":\"The Shuttles Rise\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"evacuation\",\"body\":\"The evacuation takes three days to organize. You draw lots—publicly, transparently, with every citizen watching. One hundred and forty names are called. One hundred and forty people board the shuttles. Three hundred and forty-seven remain.\\n\\nYou watch the shuttles rise through the viewport, twin columns of fire against the rust-colored sky. They carry engineers, children, the elderly—chosen by algorithm, not by your hand. You refused to choose. The math chose for you.\\n\\nThe remaining population is sustainable. Barely. The new recyclers come online two weeks later, and the deficit closes like a wound healing. The colony survives.\\n\\nBut something is broken. The people who stayed watch the sky where the shuttles disappeared. They know they were not chosen. They know the difference between being saved and being left. You gave them life, but you took something else—the belief that their leader would fight for every single one of them.\\n\\nHistory will record that Colony Thirteen survived. It will not record the silence in the atrium after the shuttles launched. It will not record the way people stopped meeting your eyes.\\n\\nYou govern for two more years. The colony thrives. You are not re-elected.\",\"choices\":[]},{\"id\":\"n10\",\"chapter\":\"Chapter 10\",\"title\":\"The Quiet Room\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"sacrifice_protocol\",\"body\":\"You hate yourself for proposing it. You hate yourself more when forty-three people volunteer within the first hour.\\n\\nThe Sacrifice Protocol is administered in a small room in District Five. Medical staff ensure it is painless—a sedative, then a gradual reduction of oxygen until consciousness simply fades. Each volunteer is given a private hour with their loved ones. Each is recorded for the colony's archive. Each is remembered.\\n\\nForty-three is not one hundred and twelve. But combined with the new recyclers coming online and the reduced consumption from the remaining weeks, it is enough. The math closes. The colony survives.\\n\\nYou attend every ceremony. You speak every name. You look into the eyes of the families who lost someone and you do not look away. You owe them that much. You owe them more than that, but it is all you have.\\n\\nThe colony builds a memorial in the central atrium. Forty-three names etched into a plaque of Martian basalt. Beneath them, a single line: \\\"They gave their breath so we could keep ours.\\\"\\n\\nYou serve your full term. The colony prospers. On quiet nights, you stand before the memorial and count the names. You will always count them. You will never stop.\\n\\nThis is what leadership costs. Not your life. Something worse. Your certainty that you deserved to keep it.\",\"choices\":[]},{\"id\":\"n11\",\"chapter\":\"Chapter 11\",\"title\":\"The Last Breath\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"governor_sacrifice\",\"body\":\"You announce it on a Monday. The governor and seven senior staff members will surrender their oxygen allocations to the general supply. Combined with the new recyclers and the reduced consumption timeline, the deficit closes. The colony survives. You will not.\\n\\nTomás argues. Dr. Osei argues. Your security chief threatens to lock you in your quarters. You override them all. This is your vote. Your last one.\\n\\nThe final week is strange. People bring you gifts—small things, handmade. A child from District Three gives you a drawing of the colony with a golden dome. You pin it to your wall.\\n\\nOn the last day, you walk through every district. You shake hands. You learn names you never learned before. You breathe the thin air and you find that it tastes like something you cannot identify. Not fear. Not peace. Something between.\\n\\nThe override activates at midnight. You feel the change immediately—a lightness, as if gravity has loosened its grip. Your staff is with you. Eight people in a room, breathing less, breathing slower.\\n\\nThe colony survives. The recyclers come online. The deficit closes. Four hundred and seventy-nine people continue to live because eight chose not to.\\n\\nThey build a memorial. They name the new recycler complex after you. Children grow up knowing your name without knowing your face.\\n\\nYou gave them the only thing that was truly yours. It was enough.\",\"choices\":[]}]}\n===END_STORY_PATCH==="
+  },
+  "story": {
+    "meta": {
+      "title": "Colony 13: Vote to Survive",
+      "logline": "A failing Mars colony has oxygen for 312 people and a population of 487. As the newly elected governor, every vote you cast saves a district and condemns another.",
+      "start": "n01",
+      "stats": [
+        {
+          "id": "trust",
+          "name": "Public Trust",
+          "initial": 5,
+          "min": 0,
+          "max": 10,
+          "visible": true
+        },
+        {
+          "id": "oxygen",
+          "name": "Oxygen Reserve",
+          "initial": 5,
+          "min": 0,
+          "max": 10,
+          "visible": true
+        }
+      ],
+      "factLabels": {
+        "rationed": "Rationing Enforced",
+        "voluntary": "Voluntary Program",
+        "engineers_saved": "Engineers Prioritized",
+        "families_saved": "Families Prioritized",
+        "full_evac": "Full Evacuation Attempted",
+        "sacrifice": "Self-Sacrifice Protocol",
+        "colony_saved": "Colony Survived"
+      }
+    },
+    "nodes": [
+      {
+        "id": "n01",
+        "chapter": "Chapter 1",
+        "title": "The Weight of Air",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The alarm is not loud. That is the worst part. You expected sirens, red lights, chaos. Instead, a soft chime pulses through the governor's office like a heartbeat slowing down.\n\nYou stand at the viewport, watching the rust-colored dawn crawl across Jezero Crater. Behind you, the holographic display projects the numbers that ended your first week in office before it truly began. Oxygen reserves: 312 person-days per cycle. Population: 487. The math is a blade pressed against every throat on this planet.\n\nGovernor. They elected you six days ago on a platform of transparency and hope. Now you understand why your predecessor resigned. The chair is still warm from her cowardice.\n\nYour chief engineer, Tomás Vega, stands at the door with a tablet clutched to his chest like a shield. His eyes are red-rimmed. He has not slept. None of the senior staff have.\n\n\"The recyclers in District Four failed at 0300,\" he says. His voice is flat, drained of inflection. \"We lost eighteen percent of our production capacity. The projections are no longer theoretical, Governor. We have eleven weeks before the deficit becomes irreversible.\"\n\nYou turn from the viewport. Through the reinforced glass, you can see the habitat domes glowing in the half-light—five districts, five communities, five groups of people who believe you will save them. All of them.\n\n\"Who knows?\" you ask.\n\n\"Everyone will know by morning. The atmospheric processors are loud when they run at full capacity. People will notice the silence in Four.\"\n\nHe is right. In a colony this small, secrets have a half-life measured in hours. You have one night—perhaps less—to decide how to frame this crisis before the framing decides you.\n\nYou pull up the district manifest on your desk display. Five districts. Five hundred lives arranged in neat rows of data. Somewhere in those numbers is an answer. You are not sure you want to find it.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Continue",
+            "meaning": "Proceed to address the crisis",
+            "next": "n02",
+            "effects": {},
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n02",
+        "chapter": "Chapter 2",
+        "title": "The Address",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You call the emergency assembly for 0600. The central atrium of District One fills with bodies and murmurs. Four hundred and eighty-seven people, minus the night-shift workers who will watch the recording later. Their faces are a mosaic of exhaustion and suspicion. They already know something is wrong. They always know.\n\nYou stand on the raised platform, the colony seal projected behind you—a stylized dome beneath a red sky. You chose this platform yourself during your campaign. Transparency. Accountability. The words taste like ash now.\n\n\"Citizens of Colony Thirteen,\" you begin, and the atrium falls silent with a speed that frightens you. \"I will not soften what I have to say. Our oxygen production has suffered a critical failure. We have eleven weeks to find a solution, or we will face a deficit that cannot be reversed.\"\n\nThe silence breaks. Voices rise like pressure escaping a seal. You raise your hand and wait. It takes forty seconds for quiet to return.\n\n\"I have two proposals before the council. I am bringing them to you because this decision belongs to every person breathing this air.\"\n\nYou pull up the first option: Mandatory Rationing Protocol. Reduce oxygen allocation across all districts by thirty percent. Everyone suffers equally. The weak, the elderly, the children—they all breathe less. It buys time, perhaps enough for a resupply mission from Earth, but it will test the limits of human endurance in a sealed environment.\n\nThe second option: Voluntary Reduction Program. Ask for volunteers to reduce their personal allocation. Frame it as heroism. Hope that enough people step forward to close the gap without forcing anyone's hand.\n\nTomás catches your eye from the crowd. He shakes his head almost imperceptibly. He thinks rationing is the only real answer. But you see the faces around you—families, children, the elderly who built this colony with their bare hands.\n\nThe vote is yours to call.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Enforce Mandatory Rationing across all districts",
+            "meaning": "Equal suffering, guaranteed compliance, but brutal on the vulnerable",
+            "next": "n03",
+            "effects": {
+              "trust": -1,
+              "oxygen": 2
+            },
+            "setFacts": [
+              "rationed"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c2",
+            "text": "Launch the Voluntary Reduction Program",
+            "meaning": "Hope in human goodness, but risky if not enough volunteers emerge",
+            "next": "n04",
+            "effects": {
+              "trust": 1,
+              "oxygen": -1
+            },
+            "setFacts": [
+              "voluntary"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n03",
+        "chapter": "Chapter 3",
+        "title": "Thin Air",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The rationing takes effect at midnight. You watch the atmospheric processors adjust their output from the control room, the numbers ticking downward like a countdown to something you refuse to name.\n\nThirty percent. It sounds abstract in a briefing document. In practice, it means every breath is slightly thinner. It means headaches by the second day. It means children crying at night because they feel like they are breathing through cloth. It means the elderly in District Three moving slower, their lips carrying a faint blue tinge that the medical staff pretends not to notice.\n\nBut the math works. That is the terrible mercy of it—the math works. Your eleven weeks stretch to sixteen. Perhaps eighteen if consumption drops further as people adapt.\n\nThe colony does not thank you. On the third day, someone paints TRAITOR across the exterior wall of the governor's residence in red oxide pigment. On the fifth day, a fight breaks out in District Two's mess hall over an oxygen mask that a man claims was stolen from his quarters. Security separates them. No one is seriously hurt, but the fear is a living thing now, moving through the corridors like a draft.\n\nTomás finds you on the seventh day, dark circles carved under his eyes. \"The rationing bought us time,\" he says, \"but it is not a solution. It is a delay. We still need to reduce the population-to-resource ratio permanently, or we will be here again in six months.\"\n\nHe lays two proposals on your desk. The first: prioritize the engineering district for full oxygen allocation. They are the ones who can repair the recyclers, build new ones, find long-term solutions. The logic is cold and utilitarian. The second: prioritize families with children. They represent the colony's future, its reason for existing. Protect them first.\n\nBoth proposals mean someone else gets less. Both mean you choose who matters more.\n\nThe colony watches. The colony waits. The colony breathes thin air and wonders what you will do next.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Continue",
+            "meaning": "Face the next impossible choice",
+            "next": "n05",
+            "effects": {},
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n04",
+        "chapter": "Chapter 4",
+        "title": "The Volunteers",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You frame it as heroism. You have to. The alternative is to frame it as desperation, and desperation is contagious.\n\nThe Voluntary Reduction Program launches with a ceremony in the atrium. You give a speech about the pioneers who came to Mars knowing the risks, about the spirit that built this colony from dust and determination. The words feel hollow in your mouth, but the crowd responds. They want to believe they are brave. They want to believe this is a choice and not a sentence.\n\nForty-three people sign up in the first day. By the end of the week, one hundred and twelve. It is not enough. The deficit requires at least one hundred and seventy-five volunteers to stabilize, and the rate of new sign-ups is slowing. People watch their neighbors volunteer and feel relief that it is not them. The heroism is finite. Self-preservation is not.\n\nOn the ninth day, a woman named Yuki Tanaka from District Five collapses during her shift in the hydroponics bay. She had reduced her allocation by forty percent—far more than the recommended twenty. The medical team stabilizes her, but the incident spreads through the colony like a shockwave. Voluntary becomes synonymous with reckless. Sign-ups stop entirely.\n\nYou are forced to implement a soft rationing anyway—ten percent across the board, framed as a \"community solidarity measure.\" It is not enough to close the gap alone, but combined with the volunteers, it buys you fourteen weeks. Better than nothing. Worse than what you need.\n\nTomás brings you the same two proposals he would have brought regardless of your earlier choice. The engineering district needs full allocation to repair and expand the recyclers. Or the families with children need protection because they are the colony's future. Both are true. Both cannot be fully funded.\n\nYou sit in your office, the numbers glowing on your desk, and you understand that hope is not a strategy. It is a feeling. And feelings do not produce oxygen.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Continue",
+            "meaning": "Face the next impossible choice",
+            "next": "n05",
+            "effects": {},
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n05",
+        "chapter": "Chapter 5",
+        "title": "The Arithmetic of Lives",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The engineering district—District Four—is where the colony's heart beats. The recyclers, the atmospheric processors, the water reclamation systems—all of it lives there, maintained by one hundred and thirty-two engineers and technicians who understand the machinery the way surgeons understand anatomy.\n\nTomás makes the case with the precision of a man who has rehearsed it in the mirror. \"Give my people full allocation. We can have two new recyclers operational within eight weeks. Maybe six if we cannibalize the backup systems in District Three. That solves the problem permanently. No more rationing. No more votes. No more choosing.\"\n\nThe logic is airtight. You hate it.\n\nBecause District Three is where the families live. Ninety-four children under the age of sixteen. The colony's school. The nursery where the youngest citizens—some born on Mars, some carried here in their mothers' wombs—take their first breaths of recycled air. They did not vote for you. They cannot advocate for themselves. They trust that the adults in the room will protect them.\n\nDr. Amara Osei, the colony's chief medical officer, presents the counter-argument. \"Children are more vulnerable to hypoxia. Their developing brains, their smaller lung capacity. A thirty percent reduction for an adult is discomfort. For a child under ten, it is cognitive damage. Permanent. You are not just choosing who breathes less. You are choosing who grows up diminished.\"\n\nBoth arguments are true. That is what makes this impossible. Truth is not a tiebreaker. Truth is the knife.\n\nYou look at the district map on your display. Five colored zones. Five groups of people who believe you will save them. You cannot save them all. Not today. Not with the numbers as they stand.\n\nYour hand hovers over the console. The vote is yours. The colony holds its breath—thinner now, always thinner—and waits.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Prioritize District Four: Full allocation to engineers",
+            "meaning": "Invest in the solution, accept short-term harm to families",
+            "next": "n06",
+            "effects": {
+              "trust": -1,
+              "oxygen": 2
+            },
+            "setFacts": [
+              "engineers_saved"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c2",
+            "text": "Prioritize District Three: Protect the families and children",
+            "meaning": "Protect the vulnerable, accept slower progress on repairs",
+            "next": "n07",
+            "effects": {
+              "trust": 1,
+              "oxygen": -1
+            },
+            "setFacts": [
+              "families_saved"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n06",
+        "chapter": "Chapter 6",
+        "title": "The Engine Room",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The engineers receive their full allocation at 0800 on a Tuesday. You know it is Tuesday because the mess hall serves reconstituted eggs on Tuesdays, and you are eating them alone when the announcement goes out over the colony speakers. The silence that follows is heavier than any protest.\n\nDistrict Four becomes a fortress of productivity. The engineers work eighteen-hour shifts, fueled by full oxygen and the knowledge that they are the colony's last best hope. New recyclers take shape in the fabrication bay—ugly, functional things built from salvaged parts and desperate ingenuity. Tomás sends you daily progress reports. They are ahead of schedule.\n\nDistrict Three pays the price. The children's ward in the medical center reports a twenty percent increase in respiratory complaints. Dr. Osei sends you a memo—clinical, restrained, devastating. Three children have shown early signs of cognitive impairment. Reversible if caught now. Permanent if the situation continues for another month.\n\nYou read the memo twice. Then you file it in a drawer and go back to work. There is nothing else to do. This is what leadership means—not the absence of guilt, but the ability to function while carrying it.\n\nOn the fourth week, a breakthrough. The engineers complete the first new recycler ahead of schedule. Oxygen production ticks upward for the first time since the crisis began. It is not enough—not yet—but the trajectory has changed. The curve bends toward survival.\n\nThe colony notices. The mood shifts from despair to cautious hope. People smile in the corridors. Someone paints a mural on the wall of District Four—a phoenix rising from red dust. The word TRAITOR that was scrawled on your residence has been scrubbed away. No one mentions it.\n\nBut the crisis is not over. The new recycler buys time, not salvation. You still face a final decision—the one that will define your legacy, your colony, and the lives of everyone who breathes this thin, precious air.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Continue",
+            "meaning": "Approach the final decision",
+            "next": "n08",
+            "effects": {},
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n07",
+        "chapter": "Chapter 7",
+        "title": "The Nursery",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You choose the children. The decision costs you something you cannot name—perhaps the cold comfort of pure logic, perhaps the respect of the engineers who built this colony with their hands and now watch you prioritize sentiment over survival.\n\nDistrict Three receives full allocation. The children breathe easier within days. The color returns to their cheeks. The nursery fills with laughter again, and the sound carries through the corridors like a hymn. Dr. Osei sends you a brief message: \"Thank you. The cognitive markers are stabilizing.\"\n\nDistrict Four does not thank you. Tomás stops attending your morning briefings. The engineers work their reduced shifts with mechanical precision and zero enthusiasm. Progress on the new recyclers slows to a crawl. Without full cognitive function, complex engineering tasks take longer. Mistakes multiply. A welding error in the fabrication bay causes a small fire that injures two technicians.\n\nThe colony's mood is split. Families in District Three call you a hero. Engineers in District Four call you a fool. Both are right. You have saved the future by mortgaging the present, and the interest is coming due.\n\nOn the fifth week, Tomás finally comes to your office. He looks older than he did a month ago. \"We can still build the recyclers,\" he says. \"But it will take twelve weeks instead of six. Maybe fourteen. And I need something from you.\"\n\n\"What?\"\n\n\"Permission to be honest with the colony. They need to know the timeline. They need to know what this choice costs. If they understand, they will help. If they do not, they will resent us until the air runs out.\"\n\nYou grant the permission. Tomás addresses the colony that evening. His speech is blunt, technical, and somehow more hopeful than anything you could have said. The colony listens. The colony adjusts. The curve bends—slowly, painfully, but it bends.\n\nNow the final decision approaches. The one that will determine whether this colony lives or dies.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Continue",
+            "meaning": "Approach the final decision",
+            "next": "n08",
+            "effects": {},
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n08",
+        "chapter": "Chapter 8",
+        "title": "The Last Vote",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Week ten. The recyclers are nearly complete—close enough to see, not close enough to breathe easy. The oxygen deficit has narrowed but not closed. You are still one hundred and twelve people over sustainable capacity. The math remains a blade.\n\nA resupply ship from Earth is possible. The United Mars Authority has offered one—enough oxygen and equipment to sustain the full population indefinitely. But it will take fourteen months to arrive. You do not have fourteen months. You have six weeks, maybe eight if the engineers push beyond safe limits.\n\nThe gap must be closed. One hundred and twelve people. That is the number that stands between this colony and extinction.\n\nThree options remain on your desk. Three paths through the dark.\n\nThe first: Full Evacuation Attempt. Load as many people as possible onto the colony's two transport shuttles and send them to the orbital station. The shuttles can carry one hundred and forty people between them. It is not enough to save everyone, but it reduces the population to a sustainable level. The question is who boards and who stays.\n\nThe second: The Sacrifice Protocol. A voluntary program—but not for reduced oxygen. For full cessation. A dignified end for those who choose it, framed as the ultimate act of love for the colony's future. It is monstrous. It is also, mathematically, the cleanest solution.\n\nThe third: You. The governor's office controls the emergency atmospheric override. You can redirect your own allocation—and the allocations of your senior staff—into the general supply. It is not enough to close the gap alone, but combined with reduced consumption from the remaining weeks, it might be just enough. You will not survive. Your staff will not survive. But the colony will.\n\nThe colony watches. The colony waits. The colony breathes.\n\nThis is your last vote, Governor. Make it count.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Launch the Full Evacuation: Save who you can",
+            "meaning": "Partial salvation through triage—some leave, some stay",
+            "next": "n09",
+            "effects": {
+              "trust": -2,
+              "oxygen": 1
+            },
+            "setFacts": [
+              "full_evac"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c2",
+            "text": "Implement the Sacrifice Protocol",
+            "meaning": "Ask for the ultimate volunteerism—a dignified end for the colony's future",
+            "next": "n10",
+            "effects": {
+              "trust": -1,
+              "oxygen": 2
+            },
+            "setFacts": [
+              "sacrifice"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c3",
+            "text": "Give your own oxygen to the colony",
+            "meaning": "Self-sacrifice—the governor and staff surrender their allocation",
+            "next": "n11",
+            "effects": {
+              "trust": 3,
+              "oxygen": 2
+            },
+            "setFacts": [
+              "colony_saved"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n09",
+        "chapter": "Chapter 9",
+        "title": "The Shuttles Rise",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "evacuation",
+        "body": "The evacuation takes three days to organize. You draw lots—publicly, transparently, with every citizen watching. One hundred and forty names are called. One hundred and forty people board the shuttles. Three hundred and forty-seven remain.\n\nYou watch the shuttles rise through the viewport, twin columns of fire against the rust-colored sky. They carry engineers, children, the elderly—chosen by algorithm, not by your hand. You refused to choose. The math chose for you.\n\nThe remaining population is sustainable. Barely. The new recyclers come online two weeks later, and the deficit closes like a wound healing. The colony survives.\n\nBut something is broken. The people who stayed watch the sky where the shuttles disappeared. They know they were not chosen. They know the difference between being saved and being left. You gave them life, but you took something else—the belief that their leader would fight for every single one of them.\n\nHistory will record that Colony Thirteen survived. It will not record the silence in the atrium after the shuttles launched. It will not record the way people stopped meeting your eyes.\n\nYou govern for two more years. The colony thrives. You are not re-elected.",
+        "choices": []
+      },
+      {
+        "id": "n10",
+        "chapter": "Chapter 10",
+        "title": "The Quiet Room",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "sacrifice_protocol",
+        "body": "You hate yourself for proposing it. You hate yourself more when forty-three people volunteer within the first hour.\n\nThe Sacrifice Protocol is administered in a small room in District Five. Medical staff ensure it is painless—a sedative, then a gradual reduction of oxygen until consciousness simply fades. Each volunteer is given a private hour with their loved ones. Each is recorded for the colony's archive. Each is remembered.\n\nForty-three is not one hundred and twelve. But combined with the new recyclers coming online and the reduced consumption from the remaining weeks, it is enough. The math closes. The colony survives.\n\nYou attend every ceremony. You speak every name. You look into the eyes of the families who lost someone and you do not look away. You owe them that much. You owe them more than that, but it is all you have.\n\nThe colony builds a memorial in the central atrium. Forty-three names etched into a plaque of Martian basalt. Beneath them, a single line: \"They gave their breath so we could keep ours.\"\n\nYou serve your full term. The colony prospers. On quiet nights, you stand before the memorial and count the names. You will always count them. You will never stop.\n\nThis is what leadership costs. Not your life. Something worse. Your certainty that you deserved to keep it.",
+        "choices": []
+      },
+      {
+        "id": "n11",
+        "chapter": "Chapter 11",
+        "title": "The Last Breath",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "governor_sacrifice",
+        "body": "You announce it on a Monday. The governor and seven senior staff members will surrender their oxygen allocations to the general supply. Combined with the new recyclers and the reduced consumption timeline, the deficit closes. The colony survives. You will not.\n\nTomás argues. Dr. Osei argues. Your security chief threatens to lock you in your quarters. You override them all. This is your vote. Your last one.\n\nThe final week is strange. People bring you gifts—small things, handmade. A child from District Three gives you a drawing of the colony with a golden dome. You pin it to your wall.\n\nOn the last day, you walk through every district. You shake hands. You learn names you never learned before. You breathe the thin air and you find that it tastes like something you cannot identify. Not fear. Not peace. Something between.\n\nThe override activates at midnight. You feel the change immediately—a lightness, as if gravity has loosened its grip. Your staff is with you. Eight people in a room, breathing less, breathing slower.\n\nThe colony survives. The recyclers come online. The deficit closes. Four hundred and seventy-nine people continue to live because eight chose not to.\n\nThey build a memorial. They name the new recycler complex after you. Children grow up knowing your name without knowing your face.\n\nYou gave them the only thing that was truly yours. It was enough.",
+        "choices": []
+      }
+    ]
+  },
+  "recommendation": {
+    "gender": "male",
+    "tags": [
+      "Mars survival",
+      "political drama",
+      "resource crisis",
+      "hard choices",
+      "leadership",
+      "interactive fiction"
+    ],
+    "summary": "A failing Mars colony holds only 312 breaths' worth of oxygen for 487 souls. As the newly elected governor, you must navigate rationing debates, choose which districts to prioritize, and ultimately decide who lives and who doesn't. Every vote is a death sentence for someone. The branching narrative forces you to weigh engineers against families, pragmatism against compassion, and self-sacrifice against the greater good—culminating in one of three devastating final acts that will haunt you long after the last page."
+  },
+  "generatedAt": "2026-09-24T12:14:13.601Z"
+}

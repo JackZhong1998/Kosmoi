@@ -1,0 +1,529 @@
+[
+  {
+    "slug": "zh-f-404-bride",
+    "language": "zh",
+    "gender": "female",
+    "title": "《404号房的逃婚新娘》",
+    "hook": "婚礼前夜，你收到一张自己的死亡证明。想活到天亮，必须在未婚夫、失踪的姐姐和一名陌生警察之间选择信任。",
+    "themes": [
+      "都市悬疑",
+      "黑暗浪漫",
+      "逃婚",
+      "身份谜题",
+      "多结局"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "悬疑推理",
+        "心理博弈",
+        "暗黑言情",
+        "多结局",
+        "身份谜团"
+      ],
+      "summary": "你在一场婚礼前夕收到匿名死亡通知，未婚夫的反应看似关切却暗藏杀机。随着神秘警察介入与姐姐生死的线索浮现，你在信任与怀疑间反复拉扯。潜入家族禁区后，血色婚纱下的秘密逐渐揭开：是顺从命运成为完美新娘，还是撕碎谎言在黎明前完成自我救赎？你的每一次选择都将重塑真相的轮廓。"
+    },
+    "nodes": 15
+  },
+  {
+    "slug": "zh-f-changan-coroner",
+    "language": "zh",
+    "gender": "female",
+    "title": "《长安女仵作：第七具无名尸》",
+    "hook": "你是长安最会让死人开口的女仵作，第七具无名尸却长着你的脸。三日内查清真相，否则下一个死的人就是现在的你。",
+    "themes": [
+      "古风探案",
+      "女强",
+      "权谋",
+      "身份反转",
+      "宿命"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "古风探案",
+        "女强权谋",
+        "身份悬疑",
+        "双生谜团",
+        "宿命对决"
+      ],
+      "summary": "身为长安城令死者“开口”的天才仵作，你在第七具无名尸身上惊见自己的面容。三日倒计时开启，若不能查明这诡异的替身之谜，下一个倒在血泊中的便是你本人。从东宫太子的微笑到市井稳婆的低语，线索指向一段被掩埋的双生往事与朝堂暗流。在大理寺的尘封档案与普济寺的古刹钟声之间，你将揭开身世背后的惊天阴谋，于黎明前的黑暗中抉择：是玉石俱焚以正视听，还是金蝉脱壳遁入江湖？"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-f-last-exhibit",
+    "language": "zh",
+    "gender": "female",
+    "title": "《分手博物馆的最后一件藏品》",
+    "hook": "你帮别人保存爱情遗物，却在闭馆前收到一封来自五年后的分手信。每打开一件藏品，都会改写你和他的过去。",
+    "themes": [
+      "破镜重圆",
+      "都市治愈",
+      "时间奇幻",
+      "成年人爱情",
+      "遗憾"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "破镜重圆",
+        "时间奇幻",
+        "都市治愈",
+        "互动叙事",
+        "成年爱情"
+      ],
+      "summary": "在闭馆前的雨夜，你收到一封来自五年后的分手信。每一件藏品都藏着改写过去的秘密：是直面争吵的裂痕，还是重温承诺的温暖？站在命运的十字路口，你将选择重置记忆、艰难重修，或是放手告别。你的每一次抉择，都在重塑这段爱情的终章。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-f-dock-seven",
+    "language": "zh",
+    "gender": "female",
+    "title": "《第七码头没有她的名字》",
+    "hook": "九十年代的港口小城，四个厂妹约好一起南下，最后只有三人上车。二十年后，你必须决定是否说出那晚的真相。",
+    "themes": [
+      "年代女性群像",
+      "友谊",
+      "小城悬疑",
+      "成长",
+      "和解"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "年代文",
+        "女性群像",
+        "悬疑推理",
+        "现实题材",
+        "友谊救赎",
+        "成长和解"
+      ],
+      "summary": "九十年代港口小城的雨夜，四个厂妹曾约定一同南下闯荡命运，最终却只有一张缺席的车票和一段被尘封的真相。二十年后，当母亲留下的日记本重新揭开往事的面纱，你必须在旧友重逢的对峙、幸存者的低语与舆论风暴中做出抉择。是选择彻底的和解以换取内心的宁静，还是坚持追责直至正义降临？这不仅是一场关于罪案的重构，更是一次跨越时代的女性互助与自我救赎之旅。在记忆的废墟之上，你将如何安放那段破碎的青春？"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-f-apocalypse-roommates",
+    "language": "zh",
+    "gender": "female",
+    "title": "《末日合租守则》",
+    "hook": "城市封锁的第七天，你发现合租公寓里有一人已被感染。要带所有人活着离开，你得先决定谁能留在屋里。",
+    "themes": [
+      "末日求生",
+      "女性群像",
+      "信任博弈",
+      "慢热情感",
+      "道德选择"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "末日求生",
+        "女性群像",
+        "信任博弈",
+        "道德抉择",
+        "慢热情感"
+      ],
+      "summary": "城市封锁的第七天，密闭空间内的猜忌如病毒般蔓延。当合租室友疑似感染，你是选择冷酷隔离以求自保，还是坚守人性共渡难关？在资源匮乏与外部威胁的双重夹击下，每一次呼吸都可能是最后一次。这不仅是一场逃离死亡的游戏，更是一次对灵魂底线的残酷拷问。谁能活到黎明？答案藏在你指尖的选择之中。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-evacuation-72",
+    "language": "zh",
+    "gender": "male",
+    "title": "《72小时撤侨》",
+    "hook": "内战爆发，你是最后一支撤侨车队的临时指挥。二百一十三人、三条路、只够走一次的燃料，每个命令都会留下一串名字。",
+    "themes": [
+      "军事行动",
+      "撤侨",
+      "领导力",
+      "资源决策",
+      "真实向"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "军事行动",
+        "撤侨任务",
+        "领导决策",
+        "生存挑战",
+        "战术博弈",
+        "真实向"
+      ],
+      "summary": "内战烽火中，你作为最后一支撤侨车队的临时指挥，肩负着二百一十三条生命的重量。面对三条路线、有限燃料和步步紧逼的敌人，你的每一个决定都关乎生死存亡。从峡谷潜行到公路突围，从固守防御到突袭敌后，再到最终国门前的艰难抉择——谈判、强冲或等待，不同的选择将导向截然不同的结局。在这场资源匮乏与时间赛跑的极限行动中，考验的不仅是战术智慧，更是人性深处的勇气与担当。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-delete-tomorrow",
+    "language": "zh",
+    "gender": "male",
+    "title": "《我在AI公司删掉了明天》",
+    "hook": "公司的预测模型能看见未来，而你在日志里发现了自己明天的死亡记录。你每删除一次预测，现实就会失去一个人。",
+    "themes": [
+      "AI悬疑",
+      "时间循环",
+      "职场阴谋",
+      "科技伦理",
+      "高概念"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "AI悬疑",
+        "时间循环",
+        "职场阴谋",
+        "科技伦理",
+        "高概念",
+        "生存博弈"
+      ],
+      "summary": "在一家掌握未来预测权柄的科技巨头中，你于深夜日志里惊见自己的死亡倒计时。每一次试图抹去预言的挣扎，都以现实中无辜者的消亡为代价。面对高层的沉默施压与系统的冷酷逻辑，你是选择顺从命运成为替罪羊，还是黑入核心数据库掀起混乱？当真相指向更黑暗的深渊，是启动自毁程序玉石俱焚，还是夺取神座独裁统治？在这场关于自由意志与算法宿命的终极审判中，你的每一个抉择都在重塑世界的结局。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-last-metro",
+    "language": "zh",
+    "gender": "male",
+    "title": "《凌晨0:17的末班地铁》",
+    "hook": "你误上了一辆站名不存在的末班车。每到一站，车厢都会少一人；每救下一人，现实里就会忘掉你的一部分。",
+    "themes": [
+      "规则怪谈",
+      "都市恐怖",
+      "解谜逃生",
+      "记忆代价",
+      "多结局"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "规则怪谈",
+        "都市恐怖",
+        "解谜逃生",
+        "记忆代价",
+        "多结局"
+      ],
+      "summary": "午夜零点十七分，你误上了一辆站名不存在的末班车。每到一站，车厢内便会神秘消失一人；而每一次试图拯救他人的行动，都将让你失去一部分关于自己的记忆。在冷漠与违逆之间抉择，于秩序和混沌中求生，最终面对黎明前的黑暗——按下沉睡、毁灭还是永恒的按钮？你的选择将决定这场诡异旅程的终局。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-unfinished-city",
+    "language": "zh",
+    "gender": "male",
+    "title": "《破产后，我接手了一座烂尾城》",
+    "hook": "你负债三千万，被迫接管县城最大的烂尾项目。九十天内复工、交房、找出掏空资金的人，否则你和三千个家庭一起完蛋。",
+    "themes": [
+      "商战逆袭",
+      "县城现实",
+      "项目管理",
+      "阴谋",
+      "小人物翻盘"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "商战逆袭",
+        "烂尾楼危机",
+        "县城现实",
+        "悬疑解谜",
+        "小人物翻身",
+        "硬核项目管理"
+      ],
+      "summary": "背负三千万巨债，你被迫接手县城最大的烂尾工程。面对三千户家庭的血汗钱和九十天的死亡倒计时，你必须在废墟中重建秩序。是引入民间资本与虎狼共舞，还是搜集证据寻求官方介入？在层层阴谋与资金黑洞背后，你需要用极致的管理手段撕开缺口。当真相浮出水面，你是选择掩盖黑幕换取无声胜利，还是全网直播揭露黑暗哪怕身陷囹圄？这是一场关于人性、资本与责任的极限博弈。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-fallen-emperor",
+    "language": "zh",
+    "gender": "male",
+    "title": "《醒来时，我的反军已经进城》",
+    "hook": "你在自己的庆功宴上醒来，才知道三年前的自己失踪后，被替身皇帝逼成了反王。现在只有一夜，决定是夺回王座还是结束王朝。",
+    "themes": [
+      "架空历史",
+      "谋略",
+      "身份谜题",
+      "反王",
+      "多结局"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "架空历史",
+        "权谋智斗",
+        "身份悬疑",
+        "反王崛起",
+        "多结局"
+      ],
+      "summary": "庆功宴上惊醒，你发现自己竟是三年前被替身皇帝抹去的“真龙”。面对满朝文武与虎视眈眈的禁军，仅一夜时间，你是选择铁血冲锋夺回王座，还是通过密使布局和平接管？在宫门对峙的生死瞬间，是用剑劈开真伪，还是以言动摇人心？最终，你将戴上孤独的皇冠、折断象征压迫的权杖，或是放下利刃遁入江湖。每一步抉择都将改写王朝命运，见证从傀儡到棋手的极致反转。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-bride-404",
+    "language": "en",
+    "gender": "female",
+    "title": "The Bride in Room 404",
+    "hook": "On the eve of your wedding, a hotel key appears in your bouquet—and inside the room is proof that your perfect fiancé has married and murdered you before.",
+    "themes": [
+      "Dark romance",
+      "Murder mystery",
+      "Runaway bride",
+      "Identity secrets",
+      "Multiple endings"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "dark romance",
+        "murder mystery",
+        "runaway bride",
+        "identity secrets",
+        "multiple endings"
+      ],
+      "summary": "As you prepare for your dream wedding, a mysterious hotel key tucked into your bouquet leads you to Room 404, where chilling evidence reveals your fiancé has already married and murdered a version of you. Now caught between confronting the charming sociopath or fleeing into the shadows, every choice determines whether you seek justice, vanish forever, or face him head-on in this twisted tale of love and death."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-borrowed-crown",
+    "language": "en",
+    "gender": "female",
+    "title": "A Crown Borrowed at Midnight",
+    "hook": "A dying queen hires you, a palace seamstress, to impersonate her for seven days. Three rivals know the truth, and each offers a different kind of love—and a different betrayal.",
+    "themes": [
+      "Romantasy",
+      "Court intrigue",
+      "Hidden identity",
+      "Female ambition",
+      "Enemies to lovers"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "Romantasy",
+        "Court Intrigue",
+        "Hidden Identity",
+        "Enemies to Lovers",
+        "Female Ambition",
+        "Political Drama"
+      ],
+      "summary": "Step into the silken shoes of a dying queen and navigate seven perilous days in a court teeming with danger. As a skilled seamstress forced into impersonation, you must outmaneuver three sharp-witted suitors who suspect your true identity while wielding power through wit, steel, and secrets. Will you forge an alliance that secures the throne, or unravel under the weight of deception?"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-bellweather-train",
+    "language": "en",
+    "gender": "female",
+    "title": "The Last Train to Bellweather",
+    "hook": "Every night the last train returns you to the summer before your best friend vanished. You can save her or keep the life—and the love—you built after she was gone, but not both.",
+    "themes": [
+      "Time loop",
+      "Small-town mystery",
+      "Second-chance romance",
+      "Female friendship",
+      "Bittersweet"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "time loop",
+        "small town mystery",
+        "second chance romance",
+        "bittersweet",
+        "female friendship"
+      ],
+      "summary": "Trapped in a nightly time loop that returns you to the summer your best friend vanished, you face an impossible choice: step into the golden light to save Maya or walk toward the dark rear car to preserve the life and love you built with Elena. As the conductor issues his warning, navigate branching paths through echoes of summer and quiet compromises, ultimately deciding whether to break the cycle, accept the trade-off, or uncover hidden truths at the final station."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-influencer-murder",
+    "language": "en",
+    "gender": "female",
+    "title": "Murder at the Influencer Retreat",
+    "hook": "Five women built careers selling perfect lives. When one is found dead during a livestream blackout, your followers vote on who you should trust next.",
+    "themes": [
+      "Locked-room mystery",
+      "Female ensemble",
+      "Social media",
+      "Dark comedy",
+      "Public choices"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "locked-room mystery",
+        "social media thriller",
+        "dark comedy",
+        "interactive fiction",
+        "female ensemble"
+      ],
+      "summary": "Five influencers crafted flawless online personas, but when one dies mid-livestream during a mysterious blackout, the spotlight turns deadly. As followers vote on whom to trust next, you navigate conflicting alibis and digital footprints—confronting suspects, chasing data trails, and deciding whether truth matters more than engagement."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-saltwater-letters",
+    "language": "en",
+    "gender": "female",
+    "title": "Saltwater Letters",
+    "hook": "As your island disappears beneath the sea, letters arrive from the woman who will live in your house fifty years from now. Together you can save one community—hers or yours.",
+    "themes": [
+      "Climate fiction",
+      "Epistolary romance",
+      "Hopeful sci-fi",
+      "Community",
+      "Impossible choice"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "climate fiction",
+        "epistolary romance",
+        "sci-fi",
+        "interactive",
+        "hopeful"
+      ],
+      "summary": "As rising seas swallow your island home, mysterious letters arrive from a woman living in your house half a century in the future. Navigating an impossible choice between saving her community or preserving your own timeline, you must decide whether to share everything, guard your secrets, or risk merging minds across time. Your decisions shape not only the fate of two worlds but also the depth of a love that defies chronology."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-lunar-dead-drop",
+    "language": "en",
+    "gender": "male",
+    "title": "Dead Drop at the Lunar Embassy",
+    "hook": "You are the only diplomat on the Moon who knows Earth has already declared war. You have six hours to identify a double agent before the first missile launches.",
+    "themes": [
+      "Sci-fi espionage",
+      "Lunar colony",
+      "Double agent",
+      "Political thriller",
+      "Countdown"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "Sci-Fi Espionage",
+        "Lunar Colony",
+        "Double Agent Hunt",
+        "Political Thriller",
+        "Countdown Tension"
+      ],
+      "summary": "Stranded on the Moon as Earth's lone diplomat, you uncover a chilling truth: your home planet has already declared war. With only six hours before the first missile strikes, you must navigate a web of deception within the lunar colony to identify the hidden double agent orchestrating the betrayal. Interrogate suspects under pressure, choose between exposing traitors publicly or negotiating directly with hostile command centers, and face three distinct endings that hinge on split-second decisions made while the clock ticks down toward inevitable conflict."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-murder-startup",
+    "language": "en",
+    "gender": "male",
+    "title": "The Startup That Predicted Murders",
+    "hook": "Your failing startup gets one prediction right: a murder twelve hours before it happens. Investors want a product, police want a suspect, and the algorithm names you next.",
+    "themes": [
+      "Tech thriller",
+      "AI ethics",
+      "Startup noir",
+      "Conspiracy",
+      "Time pressure"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "tech thriller",
+        "AI ethics",
+        "startup noir",
+        "conspiracy",
+        "time pressure"
+      ],
+      "summary": "A failing startup's AI predicts a murder twelve hours early, thrusting its creator into a high-stakes web of corporate intrigue and law enforcement scrutiny. With the algorithm now marking him as the next target, he must navigate tight deadlines, moral dilemmas, and dangerous choices to uncover sabotage, evade capture, or confront shadowy forces controlling his fate."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-blackridge-mall",
+    "language": "en",
+    "gender": "male",
+    "title": "Last Shift at Blackridge Mall",
+    "hook": "The abandoned mall reopens for one night, staffed by people who all died there in 1999. Your security handbook has twelve rules; the final rule is written in your handwriting.",
+    "themes": [
+      "Survival horror",
+      "Rules mystery",
+      "Nineties nostalgia",
+      "Found footage",
+      "Multiple endings"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "Survival Horror",
+        "Rules Mystery",
+        "90s Nostalgia",
+        "Found Footage",
+        "Multiple Endings",
+        "Interactive Fiction"
+      ],
+      "summary": "Step into the flickering lights of a forgotten 1999 mall where time has stopped and the dead never left their posts. As the sole survivor of a brutal massacre, you must endure one final shift under strict, terrifying rules while uncovering the truth behind static-filled monitors and shadowy figures lurking in department stores and neon arcades. Navigate through branching paths that lead to distinct climaxes—whether facing your guilt in reflective mirrors or descending into fiery maintenance tunnels—and choose from three haunting conclusions that determine if you escape into the sunrise, burn with the building, or become trapped forever on the eternal night shift."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-own-rebellion",
+    "language": "en",
+    "gender": "male",
+    "title": "The King Who Woke Inside His Own Rebellion",
+    "hook": "You awaken with no memory as the masked rebel about to execute the king—then recognize the king as an older version of yourself.",
+    "themes": [
+      "Epic fantasy",
+      "Strategy",
+      "Identity paradox",
+      "Rebellion",
+      "Moral choices"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "Time Loop",
+        "Political Intrigue",
+        "Moral Dilemma",
+        "Rebellion",
+        "Identity Crisis"
+      ],
+      "summary": "Stand before the throne with your blade raised, only to find your target is an aged reflection of yourself. As the masked rebel, you must navigate a labyrinth of temporal paradoxes and political conspiracies where every choice reshapes history. Will you sever the cycle in blood, forge a fragile republic from paper promises, or don the crown of shadows to become the very tyrant you sought to destroy? Your identity hangs in the balance."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-colony-vote",
+    "language": "en",
+    "gender": "male",
+    "title": "Colony 13: Vote to Survive",
+    "hook": "A failing Mars colony has oxygen for 312 people and a population of 487. As the newly elected governor, every player vote saves a district and condemns another.",
+    "themes": [
+      "Mars survival",
+      "Leadership",
+      "Resource crisis",
+      "Political drama",
+      "Hard choices"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "Mars survival",
+        "political drama",
+        "resource crisis",
+        "hard choices",
+        "leadership",
+        "interactive fiction"
+      ],
+      "summary": "A failing Mars colony holds only 312 breaths' worth of oxygen for 487 souls. As the newly elected governor, you must navigate rationing debates, choose which districts to prioritize, and ultimately decide who lives and who doesn't. Every vote is a death sentence for someone. The branching narrative forces you to weigh engineers against families, pragmatism against compassion, and self-sacrifice against the greater good—culminating in one of three devastating final acts that will haunt you long after the last page."
+    },
+    "nodes": 11
+  }
+]

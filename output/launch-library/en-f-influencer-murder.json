@@ -1,0 +1,261 @@
+{
+  "item": {
+    "slug": "en-f-influencer-murder",
+    "language": "en",
+    "gender": "female",
+    "title": "Murder at the Influencer Retreat",
+    "hook": "Five women built careers selling perfect lives. When one is found dead during a livestream blackout, your followers vote on who you should trust next.",
+    "themes": [
+      "Locked-room mystery",
+      "Female ensemble",
+      "Social media",
+      "Dark comedy",
+      "Public choices"
+    ]
+  },
+  "result": {
+    "topicDoc": "# Story Idea\n\n## Title\nMurder at the Influencer Retreat\n\n## Hook\nFive women built careers selling perfect lives. When one is found dead during a livestream blackout, your followers vote on who you should trust next.\n\n## Themes\nLocked-room mystery, Female ensemble, Social media, Dark comedy, Public choices",
+    "designDoc": "# Story Design\n\n## Logline\nFive women built careers selling perfect lives. When one is found dead during a livestream blackout, your followers vote on who you should trust next.\n\n## Audience\nWomen\n\n## Themes and tone\nLocked-room mystery, Female ensemble, Social media, Dark comedy, Public choices\n\n## Interactive structure\n- n01 · Chapter 1: The Glitch · The Blackout\n- n02 · Chapter 2: The Suspects · Who Was There?: Confront Priya about her lack of witnesses. → n03 | Interrogate Maya about her motive. → n04\n- n03 · Chapter 3: The Observer · Silent Witness\n- n04 · Chapter 3: The Socialite · Golden Cage\n- n05 · Chapter 4: The Digital Trail · Data Breach: Enter the room to get Chloe's fingerprint. → n06 | Attempt to bypass the cloud security remotely. → n07\n- n06 · Chapter 5: Cold Hands · Touch of Death\n- n07 · Chapter 5: Firewall · Digital Ghost\n- n08 · Chapter 6: The Accusation · Point of No Return: Accuse Maya using the admin logs. → n09 | Expose Priya's cynicism and jammer. → n10 | Frame Jen with technical confusion. → n11\n- n09 · Ending: The Fall of Maya · Verified Guilty\n- n10 · Ending: The Unraveling · Truth Hurts\n- n11 · Ending: The Puppet Master · Controlled Chaos",
+    "chaptersDoc": "# Chapters and Nodes\n\n- n01 · Chapter 1: The Glitch · The Blackout\n- n02 · Chapter 2: The Suspects · Who Was There?: Confront Priya about her lack of witnesses. → n03 | Interrogate Maya about her motive. → n04\n- n03 · Chapter 3: The Observer · Silent Witness\n- n04 · Chapter 3: The Socialite · Golden Cage\n- n05 · Chapter 4: The Digital Trail · Data Breach: Enter the room to get Chloe's fingerprint. → n06 | Attempt to bypass the cloud security remotely. → n07\n- n06 · Chapter 5: Cold Hands · Touch of Death\n- n07 · Chapter 5: Firewall · Digital Ghost\n- n08 · Chapter 6: The Accusation · Point of No Return: Accuse Maya using the admin logs. → n09 | Expose Priya's cynicism and jammer. → n10 | Frame Jen with technical confusion. → n11\n- n09 · Ending: The Fall of Maya · Verified Guilty\n- n10 · Ending: The Unraveling · Truth Hurts\n- n11 · Ending: The Puppet Master · Controlled Chaos",
+    "styleDoc": "# Locked Style\n\nCinematic immersive prose in second person, with concrete scenes, restrained dialogue, and legible consequences.",
+    "proseDoc": "===STORY_PATCH===\n{\"meta\":{\"title\":\"Murder at the Influencer Retreat\",\"logline\":\"Five women built careers selling perfect lives. When one is found dead during a livestream blackout, your followers vote on who you should trust next.\",\"start\":\"n01\",\"stats\":[{\"id\":\"trust\",\"name\":\"Trust Rating\",\"initial\":5,\"min\":0,\"max\":10,\"visible\":true}],\"factLabels\":{\"hasMotive\":\"Has Motive\",\"sawShadow\":\"Saw Shadow\",\"checkedPhone\":\"Checked Phone\"}},\"nodes\":[{\"id\":\"n01\",\"chapter\":\"Chapter 1: The Glitch\",\"title\":\"The Blackout\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"Your ring light flickers, casting long, jagged shadows across the infinity pool villa. You are mid-sentence, explaining how stress-free luxury living has cured your acne, when the power dies. Not just in your suite, but everywhere. The hum of the air conditioning stops. The silence is heavier than the heat. Outside, the tropical storm that was supposed to stay offshore crashes against the glass walls.\\n\\n\\\"Stay calm,\\\" you whisper into the dark, instinctively checking your phone’s battery. 12%. A disaster. But then, a scream cuts through the rain. It’s sharp, terrified, and unmistakably Chloe. The group’s 'wellness guru,' known for her morning cold plunges and serene yoga flows.\\n\\nYou fumble for your flashlight app, the beam trembling as you rush toward the master bedroom where Chloe had been prepping for tomorrow's big launch party. The door is ajar. Inside, the room is bathed in the strobe-like flashes of lightning outside. And there she lies. On the plush white rug. Her neck bent at an angle no yoga instructor could achieve without breaking their spine.\\n\\nBut it’s not the body that freezes your blood; it’s the fact that her smartwatch is still recording heart rate data, glowing red in the darkness. She wasn’t alone. Someone else is in this locked room with us. Or they were, until the lights went out. Your follower count ticks up by ten thousand instantly. They want drama. They want truth. But mostly, they want someone to blame. You look down at your hands. Are they shaking from fear, or excitement? This is your moment. The ultimate content opportunity. But first, you have to survive the night.\",\"choices\":[]},{\"id\":\"n02\",\"chapter\":\"Chapter 2: The Suspects\",\"title\":\"Who Was There?\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"The other four women gather in the hallway, phones raised like torches. Their faces are pale masks under the harsh LED screens. Maya, the fashion icon, is already adjusting her hair, ensuring she looks distressed but photogenic. Jen, the tech reviewer, is muttering about signal jammers. Sarah, the food blogger, clutches a half-eaten avocado toast like a shield. And Priya, the travel vlogger, stands apart, arms crossed, watching everyone with predatory eyes.\\n\\n\\\"We need to figure out who entered Chloe's room before the lights died,\\\" Jen says, her voice tight. \\\"Chloe said she was doing a solo meditation session. No guests allowed.\\\"\\n\\nMaya scoffs. \\\"Well, clearly someone ignored the rules. Maybe she owed money? Or maybe she slept with the wrong person.\\\" Maya’s tone is dripping with faux concern, but her eyes dart to Priya.\\n\\nPriya doesn't flinch. \\\"I was editing footage in the lounge. Alone. Ask anyone. Well, no one can, because we're all here now.\\\"\\n\\nSarah whispers, \\\"I saw a shadow near the service entrance. Just before the lights cut. I thought it was the staff, but... did we even hire staff for tonight?\\\"\\n\\nA murmur ripples through the group. You realize the retreat was marketed as 'exclusive privacy.' No staff. Just five influencers and a killer. The tension is palpable, thick enough to choke on. Your camera roll is full of potential thumbnails. Who do you accuse? Do you go after the quiet observer, Priya, whose alibi is unverifiable? Or do you target Maya, who seems too eager to deflect suspicion?\\n\\nThe chat comments are flying faster than you can read. #JusticeForChloe. #TeamPriya. #TeamMaya. You hold the power to steer the narrative. One wrong move, and you become the villain. One right move, and you solve the mystery—or frame the perfect scapegoat.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Confront Priya about her lack of witnesses.\",\"meaning\":\"Accuse the outsider\",\"next\":\"n03\",\"effects\":{\"trust\":-1},\"setFacts\":[\"sawShadow\"],\"conditions\":{}},{\"id\":\"c2\",\"text\":\"Interrogate Maya about her motive.\",\"meaning\":\"Attack the socialite\",\"next\":\"n04\",\"effects\":{\"trust\":1},\"setFacts\":[\"hasMotive\"],\"conditions\":{}}]},{\"id\":\"n03\",\"chapter\":\"Chapter 3: The Observer\",\"title\":\"Silent Witness\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You step toward Priya, your flashlight beam cutting through the gloom to illuminate her face. She doesn't blink. In the world of influencer branding, Priya is the 'mysterious wanderer,' the woman who disappears for weeks and returns with breathtaking shots. Now, that mystique feels sinister.\\n\\n\\\"Where exactly were you, Priya?\\\" you ask, keeping your voice steady for the audio capture.\\n\\n\\\"Lounge. Editing,\\\" she repeats, monotone. \\\"Why does it matter? We all know Chloe was toxic. She stole my sponsorship deal last month. Why would I kill her? I’d rather ruin her reputation online. That lasts longer.\\\"\\n\\nHer logic is cold, calculated. Too calculated? You notice her fingers twitching—not from nerves, but from habit. She’s tapping out a rhythm. Morse code? No, just anxiety. Or guilt.\\n\\nMaya chimes in, trying to regain control of the conversation. \\\"See? Priya admits she hated her. Classic jealousy crime.\\\"\\n\\nBut you’re looking at Priya’s bag, slung over her shoulder. It’s open slightly. Inside, you see not a laptop charger, but a small, black device. A signal jammer? Jen mentioned them earlier. If Priya killed the Wi-Fi, she could isolate the house. Make sure no one called for help immediately.\\n\\n\\\"What’s in the bag, Priya?\\\" you demand.\\n\\nShe smiles, a thin, razor-sharp expression. \\\"Curiosity killed the cat, darling. But satisfaction brought it back. Check it yourself if you dare.\\\"\\n\\nThe crowd behind you shifts. Some lean forward, hungry for proof. Others pull back, sensing danger. You reach out, your hand hovering over the zipper. This is the pivot point. If you find evidence, you’re a hero. If you don’t, you’ve made an enemy of the most dangerous woman in the room. The storm rattles the windows again, louder this time.\",\"choices\":[]},{\"id\":\"n04\",\"chapter\":\"Chapter 3: The Socialite\",\"title\":\"Golden Cage\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You turn your attention to Maya. She’s leaning against the wall, posing naturally, chin tilted to catch the best light from your phone. But her eyes are wide, darting around the corridor like a trapped animal.\\n\\n\\\"Let’s talk motives, Maya,\\\" you say, stepping into her personal space. \\\"Chloe was going to expose your fake designer bags, weren't she? The ones you claim are vintage finds?\\\"\\n\\nMaya laughs, but it sounds brittle. \\\"Exposé? Please. Chloe was desperate. She needed clicks more than I did. Killing her wouldn’t help me. It would shut down the entire retreat. My brand relies on exclusivity. Dead bodies aren’t exclusive; they’re messy.\\\"\\n\\nIt’s a good argument. Logical. But you remember the comment section blowing up earlier. Rumors were swirling that Maya and Chloe had a heated argument yesterday evening. Overheard by Sarah.\\n\\n\\\"Sarah heard you yelling,\\\" you press. \\\"About what? Money? Men?\\\"\\n\\nMaya’s facade cracks. For a second, pure rage flashes in her eyes. \\\"She knew about the loan shark. She was going to sell my debt info to the tabloids. Can you imagine? Me? Bankrupt?\\\"\\n\\nThe admission hangs in the air. Admitting to financial desperation is dangerous, but it humanizes her. Or does it make her guilty? The line between victim and perpetrator is blurry here.\\n\\nSuddenly, Jen interrupts, holding up her tablet. \\\"Guys, the backup generator isn’t kicking in. We’re stuck in the dark until dawn. And my scanner picked up a heartbeat monitor signal coming from inside Chloe’s room. Still active.\\\"\\n\\nEveryone freezes. Chloe is dead. Right? Unless... unless she’s playing games. Or unless the killer left something behind. A tracker? A live feed? Maya looks horrified. \\\"If she’s alive, why didn’t she call for help?\\\"\\n\\n\\\"Maybe she couldn't,\\\" Priya says from the shadows. \\\"Or maybe she wanted us to panic. To reveal ourselves.\\\"\\n\\nThe implication lands hard. Is this all part of Chloe’s twisted final engagement strategy? Or is someone manipulating the technology to drive a wedge between us? You feel the weight of the group’s gaze. They are waiting for you to lead. To decide if this is a ghost story or a murder investigation.\",\"choices\":[]},{\"id\":\"n05\",\"chapter\":\"Chapter 4: The Digital Trail\",\"title\":\"Data Breach\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"Jen’s discovery changes everything. The heartbeat signal suggests either a miracle survival or a sophisticated trap. The group fractures into two camps. Those who want to investigate the source of the signal physically, risking another encounter with the killer. And those who believe the answer lies in the digital footprint Chloe left behind.\\n\\n\\\"We can’t go back in there blind,\\\" Maya argues, wringing her manicured hands. \\\"If she’s alive, she might be armed. If she’s dead, whoever put that tracker there is still hunting.\\\"\\n\\n\\\"Then let’s hack her cloud,\\\" Jen suggests, typing furiously on her tablet. \\\"Chloe synced everything. Photos, location history, private messages. If we access her account, we’ll see who was really talking to her in the hours before the blackout.\\\"\\n\\nPriya shakes her head. \\\"Too risky. Her security protocols are biometric. We’d need her thumbprint. Or her eye scan.\\\"\\n\\nYou look at the closed door of Chloe’s room. Then at your own phone. As the 'leader' of this impromptu detective squad, you have to choose the next step. Do you risk physical danger to retrieve the biological key (Chloe’s body) to unlock the digital secrets? Or do you try to brute-force the system using your combined technical skills, hoping the firewall holds while you dig?\\n\\nTime is ticking. The storm shows no signs of slowing. Your battery is at 8%. Every minute spent arguing is a minute the killer uses to cover tracks—or prepare for round two. The chat comments are scrolling so fast they’re a blur of emojis. Skulls, fire, question marks. They are voting in real-time. Trust me? Or doubt me?\\n\\nYou take a deep breath. The air smells of ozone and fear. What is the smarter play?\",\"choices\":[{\"id\":\"c3\",\"text\":\"Enter the room to get Chloe's fingerprint.\",\"meaning\":\"Physical Risk\",\"next\":\"n06\",\"effects\":{\"trust\":-2},\"setFacts\":[\"checkedPhone\"],\"conditions\":{}},{\"id\":\"c4\",\"text\":\"Attempt to bypass the cloud security remotely.\",\"meaning\":\"Technical Gamble\",\"next\":\"n07\",\"effects\":{\"trust\":1},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n06\",\"chapter\":\"Chapter 5: Cold Hands\",\"title\":\"Touch of Death\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"Gritting your teeth, you push past the others and re-enter Chloe’s bedroom. The smell hits you first—metallic copper mixed with lavender perfume. Disgusting. Beautiful. Perfectly curated death.\\n\\nYou approach the body. Chloe’s eyes are open, staring blankly at the ceiling. You suppress a gag, focusing on the task. You need her thumb. Gently, you lift her stiffening arm. Her skin is cool, clammy. As you press her thumb against your unlocked phone (using her passcode, which you guessed correctly—it was 'PerfectLife'), the sensor reads. Access granted.\\n\\nBut as you pull away, you notice something odd. Her fingernails are painted a vibrant electric blue. Underneath one nail, caught in the lacquer, is a tiny shred of fabric. Silk. Expensive. Black.\\n\\nMaya wears black silk pajamas. So does Priya. Everyone does. It proves nothing specific, yet it confirms struggle. She fought back.\\n\\nYou exit the room, showing the screen to the group. \\\"I got in. Let’s see her DMs.\\\"\\n\\nJen takes the phone, scrolling rapidly. \\\"Oh wow. Look at this. Two minutes before the blackout, Chloe sent a message to an unknown number. 'He knows. Meet me at the terrace. Bring the cash.'\\\"\\n\\n\\\"Terrace?\\\" Sarah gasps. \\\"That’s exposed! Anyone could see us!\\\"\\n\\n\\\"Unless the storm covered the sound,\\\" Priya murmurs. She looks out the window, where rain lashes the glass. \\\"And unless the person meeting her was already hiding in the shadows.\\\"\\n\\nThe revelation sends a chill through the room. Chloe wasn’t meditating. She was paying off blackmail. Who had leverage on Chloe? Who demanded cash?\\n\\nMaya turns pale. \\\"Cash? Chloe was broke. She told me she maxed out three credit cards. How could she pay off anyone?\\\"\\n\\n\\\"She lied,\\\" Jen says. \\\"Look at her bank transfer history. Huge sums moving offshore. Crypto wallets. She wasn’t just an influencer; she was laundering money for someone.\\\"\\n\\nThe stakes have escalated beyond petty rivalry. This is organized crime. Or corporate espionage. You look at each woman. One of them is involved. One of them pulled the trigger to stop the flow of information. The trust meter in your mind swings wildly. Did you make a mistake bringing the body into the equation? You violated her dignity, but gained crucial intel. Was it worth it?\",\"choices\":[]},{\"id\":\"n07\",\"chapter\":\"Chapter 5: Firewall\",\"title\":\"Digital Ghost\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You decide against disturbing the corpse. It feels disrespectful, and frankly, creepy. Instead, you huddle with Jen and Priya, pooling our devices. \\\"Run a trace on Chloe’s IP address logs,\\\" you instruct Jen. \\\"Find the last device connected to her home network before the outage.\\\"\\n\\nPriya watches skeptically. \\\"This is amateur hour. Real hackers use proxies. But fine. Let’s see what you’ve got.\\\"\\n\\nJen types furiously. Lines of code cascade down her screen. Minutes stretch into eternity. The wind howls outside, sounding almost like voices. Finally, Jen stops. \\\"Got it. But it’s weird.\\\"\\n\\n\\\"Show us,\\\" you command.\\n\\nOn the screen is a map of the villa’s local network. Most devices are greyed out—offline. But one node remains active, pulsing green. It’s labeled 'Nanny_Cam_04'.\\n\\n\\\"The nanny cam?\\\" Sarah asks. \\\"In the nursery? We don’t have kids.\\\"\\n\\n\\\"Chloe installed it for pets,\\\" Priya explains. \\\"She had a rare breed of dog. Said it calmed her anxiety.\\\"\\n\\n\\\"Pull up the feed,\\\" you say.\\n\\nThe video loads. Grainy, night-vision green. Empty room. Then, movement. A figure enters the frame. Hooded. Face obscured. They walk to the corner, pick up a small object—a wireless mic transmitter—and pocket it. Then they leave.\\n\\n\\\"They took the bug,\\\" Jen realizes. \\\"Someone was listening to Chloe. And they knew about the mic.\\\"\\n\\n\\\"Who knew about the mic?\\\" you ask aloud.\\n\\nSilence. Only Chloe, the maintenance crew (who weren’t hired), and perhaps... the people who helped her set up the 'smart home' integration. Maya bragged about being a tech wizard last week. Priya travels with custom surveillance gear. Jen reviews gadgets.\\n\\n\\\"Check the metadata,\\\" you order Jen. \\\"When was the file accessed?\\\"\\n\\n\\\"Just now,\\\" Jen whispers. \\\"By an admin account. An account registered to... 'Admin_Maya_V'.\\\"\\n\\nMaya steps back, knocking over a vase. It shatters loudly. \\\"No! I didn’t! I swear! I forgot I had admin privileges! I set it up months ago for testing!\\\"\\n\\n\\\"Forgot?\\\" Priya raises an eyebrow. \\\"Or erased your trail poorly?\\\"\\n\\nThe accusation hangs heavy. Maya is panicking, crying now, mascara running down her cheeks. Is it guilt? Or fear of being framed? You have a digital smoking gun pointing at Maya, but the hooded figure in the video looked tall. Broad-shouldered. Maya is petite.\\n\\nCould it be a setup? Did someone use Maya’s credentials to plant the evidence? The complexity of the web is tightening around your throat.\",\"choices\":[]},{\"id\":\"n08\",\"chapter\":\"Chapter 6: The Accusation\",\"title\":\"Point of No Return\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"The atmosphere in the hallway is toxic. Rain hammers the roof like gunfire. You stand at the center of the circle, the undisputed arbiter of truth. The clues are contradictory. Physical evidence points to a struggle involving expensive silk. Digital evidence points to Maya, but her physique doesn't match the intruder. Motive? Financial ruin affects them all. Secrets? Everyone has them.\\n\\nYour followers are screaming for resolution. The view count has hit one million. Sponsors are pulling ads. Brands are terrified of association. You have to end this. Now. Before the sun rises and the police arrive, turning this into a formal investigation where you lose control of the narrative.\\n\\nYou look at the three remaining suspects. \\n\\nMaya is sobbing, begging for belief. \\n\\nPriya is smirking, enjoying the chaos, confident in her ability to spin any outcome. \\n\\nJen is silent, analyzing, perhaps realizing she missed a detail. \\n\\nSarah is trembling, clutching her avocado toast, ready to break under pressure.\\n\\nYou have three paths. Each leads to a different kind of justice—or injustice. \\n\\nOption A: Accuse Maya publicly. Use the admin log as definitive proof. Sacrifice her to save your own reputation as a decisive leader. Even if it’s wrong, the mob will accept it. \\n\\nOption B: Expose Priya. Confront her about the signal jammer and her cynical attitude. Force a confession by leveraging her fear of being seen as 'uncool' or 'desperate.' Appeal to her vanity. \\n\\nOption C: Frame Jen. Plant the idea that Jen hacked the system to cover her own tracks regarding the money laundering. Turn the tech expert into the culprit by confusing the audience with complex jargon only Jen understands. \\n\\nThe choice defines your legacy. Are you a seeker of truth, a manipulator of masses, or a survivor willing to burn anyone to stay warm?\",\"choices\":[{\"id\":\"c5\",\"text\":\"Accuse Maya using the admin logs.\",\"meaning\":\"Scapegoat the Tech Novice\",\"next\":\"n09\",\"effects\":{\"trust\":3},\"setFacts\":[\"hasMotive\"],\"conditions\":{}},{\"id\":\"c6\",\"text\":\"Expose Priya's cynicism and jammer.\",\"meaning\":\"Target the Outsider\",\"next\":\"n10\",\"effects\":{\"trust\":-2},\"setFacts\":[\"sawShadow\"],\"conditions\":{}},{\"id\":\"c7\",\"text\":\"Frame Jen with technical confusion.\",\"meaning\":\"Manipulate the Narrative\",\"next\":\"n11\",\"effects\":{\"trust\":0},\"setFacts\":[\"checkedPhone\"],\"conditions\":{}}]},{\"id\":\"n09\",\"chapter\":\"Ending: The Fall of Maya\",\"title\":\"Verified Guilty\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_maya_fall\",\"body\":\"You raise your phone, streaming live to the world. \\\"Followers, we have a breakthrough. The digital footprints don’t lie. Maya Voss used her admin privileges to erase evidence of her involvement in Chloe’s extortion scheme. She killed her to protect her brand.\\\"\\n\\nMaya screams, lunging at you, but Priya tackles her, pinning her to the floor. \\\"Get off me! It wasn’t me! It was a glitch!\\\" Maya sobs, her perfect image shattered forever.\\n\\nThe chat explodes. #CancelMaya trends globally within seconds. Brands drop her. Her agency fires her via text. You watch her career disintegrate in real-time. It’s horrifying. It’s exhilarating.\\n\\nHours later, the police arrive. They find the black silk scrap under Chloe’s nails matches Maya’s robe. Case closed. Or so it seems. But as you pack your bags, leaving the villa, you catch Priya’s eye. She winks. \\n\\nDid you solve the murder? Or did you just execute the most successful marketing campaign in history? You lost a friend, gained millions of followers, and sold your soul for engagement. The algorithm loves you. But as you look in the mirror, you barely recognize the stranger staring back. You are safe. You are famous. And you are utterly, completely alone.\",\"choices\":[]},{\"id\":\"n10\",\"chapter\":\"Ending: The Unraveling\",\"title\":\"Truth Hurts\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_priya_truth\",\"body\":\"You turn the camera on Priya. \\\"Tell them, Priya. Tell them why you had a signal jammer. Tell them why you watched Chloe die without intervening.\\\"\\n\\nPriya doesn’t run. She straightens her jacket, looking directly into the lens. \\\"Fine. You want truth? Here it is. Chloe wasn’t murdered by us. She committed suicide. She was drowning in debt, haunted by the emptiness of our 'perfect' lives. She staged it to look like murder, to destroy us all. To prove that fame kills.\\\"\\n\\nGasps ripple through the chat. Denials flood the comments. But Priya continues, cold and detached. \\\"I didn’t kill her. I just... let her finish. Because I agreed with her. We are all dead inside.\\\"\\n\\nShe walks out into the storm, disappearing into the rain. The police arrive shortly after, finding inconsistencies in the scene that support Priya’s claim. No forced entry. No defensive wounds matching a struggle. Just a tragic, performative end.\\n\\nYou return to your normal life, but the hashtag #InfluencerSuicidePact sticks to your brand. Views plummet. Sponsors flee. You tried to uncover the truth, but the truth was too ugly for consumption. You survived, but your career is over. Sometimes, knowing everything means losing everything.\",\"choices\":[]},{\"id\":\"n11\",\"chapter\":\"Ending: The Puppet Master\",\"title\":\"Controlled Chaos\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_jen_frame\",\"body\":\"You lean close to Jen, whispering loud enough for the stream to hear. \\\"Admit it, Jen. You hacked the logs to hide your own embezzlement. You killed Chloe because she found out you were stealing from the retreat fund.\\\"\\n\\nJen blinks, confused. \\\"What? No! I’m just a reviewer!\\\"\\n\\n\\\"Exactly,\\\" you say, panning the camera to show her tablet, where you subtly swapped files moments ago. \\\"The evidence is clear.\\\"\\n\\nThe mob mentality kicks in. Jen is overwhelmed, dragged away by the panicked group who now see her as the threat. In the chaos, you slip away, locking yourself in the bathroom.\\n\\nYou check your stats. Engagement is through the roof. Controversy sells. By framing the least suspicious person, you created a twist ending that no one saw coming. The police will eventually sort it out, but by then, you’ll have signed a book deal. 'How I Solved a Murder Live.' \\n\\nYou look at your reflection. You are smiling. It’s a chilling expression. You realized that in the game of influencers, truth is irrelevant. Perception is reality. And you just mastered both. Jen goes to prison. You go viral. The perfect trade-off.\",\"choices\":[]}]}\n===END_STORY_PATCH==="
+  },
+  "story": {
+    "meta": {
+      "title": "Murder at the Influencer Retreat",
+      "logline": "Five women built careers selling perfect lives. When one is found dead during a livestream blackout, your followers vote on who you should trust next.",
+      "start": "n01",
+      "stats": [
+        {
+          "id": "trust",
+          "name": "Trust Rating",
+          "initial": 5,
+          "min": 0,
+          "max": 10,
+          "visible": true
+        }
+      ],
+      "factLabels": {
+        "hasMotive": "Has Motive",
+        "sawShadow": "Saw Shadow",
+        "checkedPhone": "Checked Phone"
+      }
+    },
+    "nodes": [
+      {
+        "id": "n01",
+        "chapter": "Chapter 1: The Glitch",
+        "title": "The Blackout",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Your ring light flickers, casting long, jagged shadows across the infinity pool villa. You are mid-sentence, explaining how stress-free luxury living has cured your acne, when the power dies. Not just in your suite, but everywhere. The hum of the air conditioning stops. The silence is heavier than the heat. Outside, the tropical storm that was supposed to stay offshore crashes against the glass walls.\n\n\"Stay calm,\" you whisper into the dark, instinctively checking your phone’s battery. 12%. A disaster. But then, a scream cuts through the rain. It’s sharp, terrified, and unmistakably Chloe. The group’s 'wellness guru,' known for her morning cold plunges and serene yoga flows.\n\nYou fumble for your flashlight app, the beam trembling as you rush toward the master bedroom where Chloe had been prepping for tomorrow's big launch party. The door is ajar. Inside, the room is bathed in the strobe-like flashes of lightning outside. And there she lies. On the plush white rug. Her neck bent at an angle no yoga instructor could achieve without breaking their spine.\n\nBut it’s not the body that freezes your blood; it’s the fact that her smartwatch is still recording heart rate data, glowing red in the darkness. She wasn’t alone. Someone else is in this locked room with us. Or they were, until the lights went out. Your follower count ticks up by ten thousand instantly. They want drama. They want truth. But mostly, they want someone to blame. You look down at your hands. Are they shaking from fear, or excitement? This is your moment. The ultimate content opportunity. But first, you have to survive the night.",
+        "choices": []
+      },
+      {
+        "id": "n02",
+        "chapter": "Chapter 2: The Suspects",
+        "title": "Who Was There?",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The other four women gather in the hallway, phones raised like torches. Their faces are pale masks under the harsh LED screens. Maya, the fashion icon, is already adjusting her hair, ensuring she looks distressed but photogenic. Jen, the tech reviewer, is muttering about signal jammers. Sarah, the food blogger, clutches a half-eaten avocado toast like a shield. And Priya, the travel vlogger, stands apart, arms crossed, watching everyone with predatory eyes.\n\n\"We need to figure out who entered Chloe's room before the lights died,\" Jen says, her voice tight. \"Chloe said she was doing a solo meditation session. No guests allowed.\"\n\nMaya scoffs. \"Well, clearly someone ignored the rules. Maybe she owed money? Or maybe she slept with the wrong person.\" Maya’s tone is dripping with faux concern, but her eyes dart to Priya.\n\nPriya doesn't flinch. \"I was editing footage in the lounge. Alone. Ask anyone. Well, no one can, because we're all here now.\"\n\nSarah whispers, \"I saw a shadow near the service entrance. Just before the lights cut. I thought it was the staff, but... did we even hire staff for tonight?\"\n\nA murmur ripples through the group. You realize the retreat was marketed as 'exclusive privacy.' No staff. Just five influencers and a killer. The tension is palpable, thick enough to choke on. Your camera roll is full of potential thumbnails. Who do you accuse? Do you go after the quiet observer, Priya, whose alibi is unverifiable? Or do you target Maya, who seems too eager to deflect suspicion?\n\nThe chat comments are flying faster than you can read. #JusticeForChloe. #TeamPriya. #TeamMaya. You hold the power to steer the narrative. One wrong move, and you become the villain. One right move, and you solve the mystery—or frame the perfect scapegoat.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Confront Priya about her lack of witnesses.",
+            "meaning": "Accuse the outsider",
+            "next": "n03",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "sawShadow"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c2",
+            "text": "Interrogate Maya about her motive.",
+            "meaning": "Attack the socialite",
+            "next": "n04",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "hasMotive"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n03",
+        "chapter": "Chapter 3: The Observer",
+        "title": "Silent Witness",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You step toward Priya, your flashlight beam cutting through the gloom to illuminate her face. She doesn't blink. In the world of influencer branding, Priya is the 'mysterious wanderer,' the woman who disappears for weeks and returns with breathtaking shots. Now, that mystique feels sinister.\n\n\"Where exactly were you, Priya?\" you ask, keeping your voice steady for the audio capture.\n\n\"Lounge. Editing,\" she repeats, monotone. \"Why does it matter? We all know Chloe was toxic. She stole my sponsorship deal last month. Why would I kill her? I’d rather ruin her reputation online. That lasts longer.\"\n\nHer logic is cold, calculated. Too calculated? You notice her fingers twitching—not from nerves, but from habit. She’s tapping out a rhythm. Morse code? No, just anxiety. Or guilt.\n\nMaya chimes in, trying to regain control of the conversation. \"See? Priya admits she hated her. Classic jealousy crime.\"\n\nBut you’re looking at Priya’s bag, slung over her shoulder. It’s open slightly. Inside, you see not a laptop charger, but a small, black device. A signal jammer? Jen mentioned them earlier. If Priya killed the Wi-Fi, she could isolate the house. Make sure no one called for help immediately.\n\n\"What’s in the bag, Priya?\" you demand.\n\nShe smiles, a thin, razor-sharp expression. \"Curiosity killed the cat, darling. But satisfaction brought it back. Check it yourself if you dare.\"\n\nThe crowd behind you shifts. Some lean forward, hungry for proof. Others pull back, sensing danger. You reach out, your hand hovering over the zipper. This is the pivot point. If you find evidence, you’re a hero. If you don’t, you’ve made an enemy of the most dangerous woman in the room. The storm rattles the windows again, louder this time.",
+        "choices": []
+      },
+      {
+        "id": "n04",
+        "chapter": "Chapter 3: The Socialite",
+        "title": "Golden Cage",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You turn your attention to Maya. She’s leaning against the wall, posing naturally, chin tilted to catch the best light from your phone. But her eyes are wide, darting around the corridor like a trapped animal.\n\n\"Let’s talk motives, Maya,\" you say, stepping into her personal space. \"Chloe was going to expose your fake designer bags, weren't she? The ones you claim are vintage finds?\"\n\nMaya laughs, but it sounds brittle. \"Exposé? Please. Chloe was desperate. She needed clicks more than I did. Killing her wouldn’t help me. It would shut down the entire retreat. My brand relies on exclusivity. Dead bodies aren’t exclusive; they’re messy.\"\n\nIt’s a good argument. Logical. But you remember the comment section blowing up earlier. Rumors were swirling that Maya and Chloe had a heated argument yesterday evening. Overheard by Sarah.\n\n\"Sarah heard you yelling,\" you press. \"About what? Money? Men?\"\n\nMaya’s facade cracks. For a second, pure rage flashes in her eyes. \"She knew about the loan shark. She was going to sell my debt info to the tabloids. Can you imagine? Me? Bankrupt?\"\n\nThe admission hangs in the air. Admitting to financial desperation is dangerous, but it humanizes her. Or does it make her guilty? The line between victim and perpetrator is blurry here.\n\nSuddenly, Jen interrupts, holding up her tablet. \"Guys, the backup generator isn’t kicking in. We’re stuck in the dark until dawn. And my scanner picked up a heartbeat monitor signal coming from inside Chloe’s room. Still active.\"\n\nEveryone freezes. Chloe is dead. Right? Unless... unless she’s playing games. Or unless the killer left something behind. A tracker? A live feed? Maya looks horrified. \"If she’s alive, why didn’t she call for help?\"\n\n\"Maybe she couldn't,\" Priya says from the shadows. \"Or maybe she wanted us to panic. To reveal ourselves.\"\n\nThe implication lands hard. Is this all part of Chloe’s twisted final engagement strategy? Or is someone manipulating the technology to drive a wedge between us? You feel the weight of the group’s gaze. They are waiting for you to lead. To decide if this is a ghost story or a murder investigation.",
+        "choices": []
+      },
+      {
+        "id": "n05",
+        "chapter": "Chapter 4: The Digital Trail",
+        "title": "Data Breach",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Jen’s discovery changes everything. The heartbeat signal suggests either a miracle survival or a sophisticated trap. The group fractures into two camps. Those who want to investigate the source of the signal physically, risking another encounter with the killer. And those who believe the answer lies in the digital footprint Chloe left behind.\n\n\"We can’t go back in there blind,\" Maya argues, wringing her manicured hands. \"If she’s alive, she might be armed. If she’s dead, whoever put that tracker there is still hunting.\"\n\n\"Then let’s hack her cloud,\" Jen suggests, typing furiously on her tablet. \"Chloe synced everything. Photos, location history, private messages. If we access her account, we’ll see who was really talking to her in the hours before the blackout.\"\n\nPriya shakes her head. \"Too risky. Her security protocols are biometric. We’d need her thumbprint. Or her eye scan.\"\n\nYou look at the closed door of Chloe’s room. Then at your own phone. As the 'leader' of this impromptu detective squad, you have to choose the next step. Do you risk physical danger to retrieve the biological key (Chloe’s body) to unlock the digital secrets? Or do you try to brute-force the system using your combined technical skills, hoping the firewall holds while you dig?\n\nTime is ticking. The storm shows no signs of slowing. Your battery is at 8%. Every minute spent arguing is a minute the killer uses to cover tracks—or prepare for round two. The chat comments are scrolling so fast they’re a blur of emojis. Skulls, fire, question marks. They are voting in real-time. Trust me? Or doubt me?\n\nYou take a deep breath. The air smells of ozone and fear. What is the smarter play?",
+        "choices": [
+          {
+            "id": "c3",
+            "text": "Enter the room to get Chloe's fingerprint.",
+            "meaning": "Physical Risk",
+            "next": "n06",
+            "effects": {
+              "trust": -2
+            },
+            "setFacts": [
+              "checkedPhone"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c4",
+            "text": "Attempt to bypass the cloud security remotely.",
+            "meaning": "Technical Gamble",
+            "next": "n07",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n06",
+        "chapter": "Chapter 5: Cold Hands",
+        "title": "Touch of Death",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Gritting your teeth, you push past the others and re-enter Chloe’s bedroom. The smell hits you first—metallic copper mixed with lavender perfume. Disgusting. Beautiful. Perfectly curated death.\n\nYou approach the body. Chloe’s eyes are open, staring blankly at the ceiling. You suppress a gag, focusing on the task. You need her thumb. Gently, you lift her stiffening arm. Her skin is cool, clammy. As you press her thumb against your unlocked phone (using her passcode, which you guessed correctly—it was 'PerfectLife'), the sensor reads. Access granted.\n\nBut as you pull away, you notice something odd. Her fingernails are painted a vibrant electric blue. Underneath one nail, caught in the lacquer, is a tiny shred of fabric. Silk. Expensive. Black.\n\nMaya wears black silk pajamas. So does Priya. Everyone does. It proves nothing specific, yet it confirms struggle. She fought back.\n\nYou exit the room, showing the screen to the group. \"I got in. Let’s see her DMs.\"\n\nJen takes the phone, scrolling rapidly. \"Oh wow. Look at this. Two minutes before the blackout, Chloe sent a message to an unknown number. 'He knows. Meet me at the terrace. Bring the cash.'\"\n\n\"Terrace?\" Sarah gasps. \"That’s exposed! Anyone could see us!\"\n\n\"Unless the storm covered the sound,\" Priya murmurs. She looks out the window, where rain lashes the glass. \"And unless the person meeting her was already hiding in the shadows.\"\n\nThe revelation sends a chill through the room. Chloe wasn’t meditating. She was paying off blackmail. Who had leverage on Chloe? Who demanded cash?\n\nMaya turns pale. \"Cash? Chloe was broke. She told me she maxed out three credit cards. How could she pay off anyone?\"\n\n\"She lied,\" Jen says. \"Look at her bank transfer history. Huge sums moving offshore. Crypto wallets. She wasn’t just an influencer; she was laundering money for someone.\"\n\nThe stakes have escalated beyond petty rivalry. This is organized crime. Or corporate espionage. You look at each woman. One of them is involved. One of them pulled the trigger to stop the flow of information. The trust meter in your mind swings wildly. Did you make a mistake bringing the body into the equation? You violated her dignity, but gained crucial intel. Was it worth it?",
+        "choices": []
+      },
+      {
+        "id": "n07",
+        "chapter": "Chapter 5: Firewall",
+        "title": "Digital Ghost",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You decide against disturbing the corpse. It feels disrespectful, and frankly, creepy. Instead, you huddle with Jen and Priya, pooling our devices. \"Run a trace on Chloe’s IP address logs,\" you instruct Jen. \"Find the last device connected to her home network before the outage.\"\n\nPriya watches skeptically. \"This is amateur hour. Real hackers use proxies. But fine. Let’s see what you’ve got.\"\n\nJen types furiously. Lines of code cascade down her screen. Minutes stretch into eternity. The wind howls outside, sounding almost like voices. Finally, Jen stops. \"Got it. But it’s weird.\"\n\n\"Show us,\" you command.\n\nOn the screen is a map of the villa’s local network. Most devices are greyed out—offline. But one node remains active, pulsing green. It’s labeled 'Nanny_Cam_04'.\n\n\"The nanny cam?\" Sarah asks. \"In the nursery? We don’t have kids.\"\n\n\"Chloe installed it for pets,\" Priya explains. \"She had a rare breed of dog. Said it calmed her anxiety.\"\n\n\"Pull up the feed,\" you say.\n\nThe video loads. Grainy, night-vision green. Empty room. Then, movement. A figure enters the frame. Hooded. Face obscured. They walk to the corner, pick up a small object—a wireless mic transmitter—and pocket it. Then they leave.\n\n\"They took the bug,\" Jen realizes. \"Someone was listening to Chloe. And they knew about the mic.\"\n\n\"Who knew about the mic?\" you ask aloud.\n\nSilence. Only Chloe, the maintenance crew (who weren’t hired), and perhaps... the people who helped her set up the 'smart home' integration. Maya bragged about being a tech wizard last week. Priya travels with custom surveillance gear. Jen reviews gadgets.\n\n\"Check the metadata,\" you order Jen. \"When was the file accessed?\"\n\n\"Just now,\" Jen whispers. \"By an admin account. An account registered to... 'Admin_Maya_V'.\"\n\nMaya steps back, knocking over a vase. It shatters loudly. \"No! I didn’t! I swear! I forgot I had admin privileges! I set it up months ago for testing!\"\n\n\"Forgot?\" Priya raises an eyebrow. \"Or erased your trail poorly?\"\n\nThe accusation hangs heavy. Maya is panicking, crying now, mascara running down her cheeks. Is it guilt? Or fear of being framed? You have a digital smoking gun pointing at Maya, but the hooded figure in the video looked tall. Broad-shouldered. Maya is petite.\n\nCould it be a setup? Did someone use Maya’s credentials to plant the evidence? The complexity of the web is tightening around your throat.",
+        "choices": []
+      },
+      {
+        "id": "n08",
+        "chapter": "Chapter 6: The Accusation",
+        "title": "Point of No Return",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The atmosphere in the hallway is toxic. Rain hammers the roof like gunfire. You stand at the center of the circle, the undisputed arbiter of truth. The clues are contradictory. Physical evidence points to a struggle involving expensive silk. Digital evidence points to Maya, but her physique doesn't match the intruder. Motive? Financial ruin affects them all. Secrets? Everyone has them.\n\nYour followers are screaming for resolution. The view count has hit one million. Sponsors are pulling ads. Brands are terrified of association. You have to end this. Now. Before the sun rises and the police arrive, turning this into a formal investigation where you lose control of the narrative.\n\nYou look at the three remaining suspects. \n\nMaya is sobbing, begging for belief. \n\nPriya is smirking, enjoying the chaos, confident in her ability to spin any outcome. \n\nJen is silent, analyzing, perhaps realizing she missed a detail. \n\nSarah is trembling, clutching her avocado toast, ready to break under pressure.\n\nYou have three paths. Each leads to a different kind of justice—or injustice. \n\nOption A: Accuse Maya publicly. Use the admin log as definitive proof. Sacrifice her to save your own reputation as a decisive leader. Even if it’s wrong, the mob will accept it. \n\nOption B: Expose Priya. Confront her about the signal jammer and her cynical attitude. Force a confession by leveraging her fear of being seen as 'uncool' or 'desperate.' Appeal to her vanity. \n\nOption C: Frame Jen. Plant the idea that Jen hacked the system to cover her own tracks regarding the money laundering. Turn the tech expert into the culprit by confusing the audience with complex jargon only Jen understands. \n\nThe choice defines your legacy. Are you a seeker of truth, a manipulator of masses, or a survivor willing to burn anyone to stay warm?",
+        "choices": [
+          {
+            "id": "c5",
+            "text": "Accuse Maya using the admin logs.",
+            "meaning": "Scapegoat the Tech Novice",
+            "next": "n09",
+            "effects": {
+              "trust": 3
+            },
+            "setFacts": [
+              "hasMotive"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c6",
+            "text": "Expose Priya's cynicism and jammer.",
+            "meaning": "Target the Outsider",
+            "next": "n10",
+            "effects": {
+              "trust": -2
+            },
+            "setFacts": [
+              "sawShadow"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c7",
+            "text": "Frame Jen with technical confusion.",
+            "meaning": "Manipulate the Narrative",
+            "next": "n11",
+            "effects": {
+              "trust": 0
+            },
+            "setFacts": [
+              "checkedPhone"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n09",
+        "chapter": "Ending: The Fall of Maya",
+        "title": "Verified Guilty",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_maya_fall",
+        "body": "You raise your phone, streaming live to the world. \"Followers, we have a breakthrough. The digital footprints don’t lie. Maya Voss used her admin privileges to erase evidence of her involvement in Chloe’s extortion scheme. She killed her to protect her brand.\"\n\nMaya screams, lunging at you, but Priya tackles her, pinning her to the floor. \"Get off me! It wasn’t me! It was a glitch!\" Maya sobs, her perfect image shattered forever.\n\nThe chat explodes. #CancelMaya trends globally within seconds. Brands drop her. Her agency fires her via text. You watch her career disintegrate in real-time. It’s horrifying. It’s exhilarating.\n\nHours later, the police arrive. They find the black silk scrap under Chloe’s nails matches Maya’s robe. Case closed. Or so it seems. But as you pack your bags, leaving the villa, you catch Priya’s eye. She winks. \n\nDid you solve the murder? Or did you just execute the most successful marketing campaign in history? You lost a friend, gained millions of followers, and sold your soul for engagement. The algorithm loves you. But as you look in the mirror, you barely recognize the stranger staring back. You are safe. You are famous. And you are utterly, completely alone.",
+        "choices": []
+      },
+      {
+        "id": "n10",
+        "chapter": "Ending: The Unraveling",
+        "title": "Truth Hurts",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_priya_truth",
+        "body": "You turn the camera on Priya. \"Tell them, Priya. Tell them why you had a signal jammer. Tell them why you watched Chloe die without intervening.\"\n\nPriya doesn’t run. She straightens her jacket, looking directly into the lens. \"Fine. You want truth? Here it is. Chloe wasn’t murdered by us. She committed suicide. She was drowning in debt, haunted by the emptiness of our 'perfect' lives. She staged it to look like murder, to destroy us all. To prove that fame kills.\"\n\nGasps ripple through the chat. Denials flood the comments. But Priya continues, cold and detached. \"I didn’t kill her. I just... let her finish. Because I agreed with her. We are all dead inside.\"\n\nShe walks out into the storm, disappearing into the rain. The police arrive shortly after, finding inconsistencies in the scene that support Priya’s claim. No forced entry. No defensive wounds matching a struggle. Just a tragic, performative end.\n\nYou return to your normal life, but the hashtag #InfluencerSuicidePact sticks to your brand. Views plummet. Sponsors flee. You tried to uncover the truth, but the truth was too ugly for consumption. You survived, but your career is over. Sometimes, knowing everything means losing everything.",
+        "choices": []
+      },
+      {
+        "id": "n11",
+        "chapter": "Ending: The Puppet Master",
+        "title": "Controlled Chaos",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_jen_frame",
+        "body": "You lean close to Jen, whispering loud enough for the stream to hear. \"Admit it, Jen. You hacked the logs to hide your own embezzlement. You killed Chloe because she found out you were stealing from the retreat fund.\"\n\nJen blinks, confused. \"What? No! I’m just a reviewer!\"\n\n\"Exactly,\" you say, panning the camera to show her tablet, where you subtly swapped files moments ago. \"The evidence is clear.\"\n\nThe mob mentality kicks in. Jen is overwhelmed, dragged away by the panicked group who now see her as the threat. In the chaos, you slip away, locking yourself in the bathroom.\n\nYou check your stats. Engagement is through the roof. Controversy sells. By framing the least suspicious person, you created a twist ending that no one saw coming. The police will eventually sort it out, but by then, you’ll have signed a book deal. 'How I Solved a Murder Live.' \n\nYou look at your reflection. You are smiling. It’s a chilling expression. You realized that in the game of influencers, truth is irrelevant. Perception is reality. And you just mastered both. Jen goes to prison. You go viral. The perfect trade-off.",
+        "choices": []
+      }
+    ]
+  },
+  "recommendation": {
+    "gender": "female",
+    "tags": [
+      "locked-room mystery",
+      "social media thriller",
+      "dark comedy",
+      "interactive fiction",
+      "female ensemble"
+    ],
+    "summary": "Five influencers crafted flawless online personas, but when one dies mid-livestream during a mysterious blackout, the spotlight turns deadly. As followers vote on whom to trust next, you navigate conflicting alibis and digital footprints—confronting suspects, chasing data trails, and deciding whether truth matters more than engagement."
+  },
+  "generatedAt": "2026-09-24T10:22:07.019Z"
+}

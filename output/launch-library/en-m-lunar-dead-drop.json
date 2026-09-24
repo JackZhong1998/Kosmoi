@@ -1,0 +1,331 @@
+{
+  "item": {
+    "slug": "en-m-lunar-dead-drop",
+    "language": "en",
+    "gender": "male",
+    "title": "Dead Drop at the Lunar Embassy",
+    "hook": "You are the only diplomat on the Moon who knows Earth has already declared war. You have six hours to identify a double agent before the first missile launches.",
+    "themes": [
+      "Sci-fi espionage",
+      "Lunar colony",
+      "Double agent",
+      "Political thriller",
+      "Countdown"
+    ]
+  },
+  "result": {
+    "topicDoc": "# Story Idea\n\n## Title\nDead Drop at the Lunar Embassy\n\n## Hook\nYou are the only diplomat on the Moon who knows Earth has already declared war. You have six hours to identify a double agent before the first missile launches.\n\n## Themes\nSci-fi espionage, Lunar colony, Double agent, Political thriller, Countdown",
+    "designDoc": "# Story Design\n\n## Logline\nYou are the only diplomat on the Moon who knows Earth has already declared war. You have six hours to identify a double agent before the first missile launches.\n\n## Audience\nMen\n\n## Themes and tone\nSci-fi espionage, Lunar colony, Double agent, Political thriller, Countdown\n\n## Interactive structure\n- n01 · Prologue · The Silent Signal\n- n02 · Chapter 1 · Three Suspects: Interrogate Dr. Aris Thorne (Medical) → n03 | Interrogate Lena Voss (Comms) → n04\n- n03 · Chapter 2a · The Doctor's Dilemma: Press Thorne on Voss's motives → n05\n- n04 · Chapter 2b · Static in the Line: Verify Voss's data integrity → n05\n- n05 · Chapter 3 · The Convergence: Expose Halloway Publicly → n06 | Negotiate Directly with Earth → n07\n- n06 · Chapter 4a · Chaos Unleashed: Lead the Resistance Cell → n08\n- n07 · Chapter 4b · The Diplomat's Gamble: Hold Ground Against Pressure → n08\n- n08 · Chapter 5 · The Final Hour: Manual Override Attempt → n09 | Accept Surrender Terms → n10 | Activate Kill-Switch → n11\n- n09 · Ending 1 · The Razor's Edge\n- n10 · Ending 2 · Golden Chains\n- n11 · Ending 3 · Ashes to Ashes",
+    "chaptersDoc": "# Chapters and Nodes\n\n- n01 · Prologue · The Silent Signal\n- n02 · Chapter 1 · Three Suspects: Interrogate Dr. Aris Thorne (Medical) → n03 | Interrogate Lena Voss (Comms) → n04\n- n03 · Chapter 2a · The Doctor's Dilemma: Press Thorne on Voss's motives → n05\n- n04 · Chapter 2b · Static in the Line: Verify Voss's data integrity → n05\n- n05 · Chapter 3 · The Convergence: Expose Halloway Publicly → n06 | Negotiate Directly with Earth → n07\n- n06 · Chapter 4a · Chaos Unleashed: Lead the Resistance Cell → n08\n- n07 · Chapter 4b · The Diplomat's Gamble: Hold Ground Against Pressure → n08\n- n08 · Chapter 5 · The Final Hour: Manual Override Attempt → n09 | Accept Surrender Terms → n10 | Activate Kill-Switch → n11\n- n09 · Ending 1 · The Razor's Edge\n- n10 · Ending 2 · Golden Chains\n- n11 · Ending 3 · Ashes to Ashes",
+    "styleDoc": "# Locked Style\n\nCinematic immersive prose in second person, with concrete scenes, restrained dialogue, and legible consequences.",
+    "proseDoc": "===STORY_PATCH===\n{\"meta\":{\"title\":\"Dead Drop at the Lunar Embassy\",\"logline\":\"You are the only diplomat on the Moon who knows Earth has already declared war. You have six hours to identify a double agent before the first missile launches.\",\"start\":\"n01\",\"stats\":[{\"id\":\"trust\",\"name\":\"Diplomatic Credibility\",\"initial\":5,\"min\":0,\"max\":10,\"visible\":true}],\"factLabels\":{\"key\":\"Agent Identity\"}},\"nodes\":[{\"id\":\"n01\",\"chapter\":\"Prologue\",\"title\":\"The Silent Signal\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"The airlock cycles with a hiss that sounds like a dying breath. Outside, the regolith stretches in endless gray desolation under the harsh glare of Sol. Inside the Lunar Embassy, the silence is heavier than gravity. You stand alone in your office, staring at the encrypted data pad in your hand. The message from Geneva was brief, brutal, and undeniable: Earth Command has authorized Operation Iron Sky. A kinetic bombardment targeting the colony’s life-support hubs. Launch window: T-minus six hours.\\n\\nYou are Ambassador Kaelen Vance, but right now, you feel less like a diplomat and more like a ghost haunting his own funeral. The Council doesn’t know yet. They believe negotiations are ongoing. If they find out early, panic will tear the colony apart before the missiles even leave their silos. But if you do nothing, thousands die. There is one variable left unchecked: someone within this building is feeding intelligence back to Earth, accelerating the timeline. Someone helped draft the justification for this strike. \\n\\nYour comms unit buzzes. It’s Director Halloway, head of internal security. \\\"Ambassador,\\\" her voice is crisp, devoid of emotion. \\\"I’ve flagged three anomalies in our personnel logs tonight. I need you to review them personally. We can’t afford leaks during these final talks.\\\" She sends the files. Three names. Three faces. One traitor. The clock starts ticking down. 05:59:58. You take a deep breath, tasting recycled oxygen and fear. This isn’t just about politics anymore. It’s survival.\",\"choices\":[],\"effects\":{\"trust\":0},\"setFacts\":[],\"conditions\":{}},{\"id\":\"n02\",\"chapter\":\"Chapter 1\",\"title\":\"Three Suspects\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"Halloway meets you in the secure briefing room, a sterile cube of white light and black glass. On the central table, holographic profiles rotate slowly. Three candidates. First: Dr. Aris Thorne, Chief Medical Officer. He requested restricted access to the atmospheric processors yesterday, claiming maintenance checks. Second: Lena Voss, Communications Lead. Her encryption keys were used to send an unlogged burst transmission to a relay satellite near Mars orbit. Third: Marcus Rhee, Logistics Coordinator. He altered shipping manifests, delaying critical spare parts for the defense grid by forty-eight hours.\\n\\n\\\"Each action looks suspicious in isolation,\\\" Halloway says, arms crossed. \\\"But together? They form a pattern of sabotage disguised as bureaucratic error. Or incompetence. I don’t care which. I care about stopping it.\\\" She slides a datapad toward you. \\\"Pick one to interrogate immediately. Time is short. If we wait, the trail goes cold.\\\"\\n\\nYou look at the faces. Thorne seems tired, his eyes shadowed by long shifts. Voss is sharp, calculating, always watching screens. Rhee is nervous, fidgeting with a stylus. Your gut twists. Interrogating the wrong person could tip off the real spy, allowing them to destroy evidence or trigger an early launch. Trust is a currency here, and you’re running low. Who do you confront first?\",\"choices\":[{\"id\":\"c1\",\"text\":\"Interrogate Dr. Aris Thorne (Medical)\",\"meaning\":\"Focus on physical sabotage via life support systems.\",\"next\":\"n03\",\"effects\":{\"trust\":-1},\"setFacts\":[\"Suspect_Medical\"],\"conditions\":{}},{\"id\":\"c2\",\"text\":\"Interrogate Lena Voss (Comms)\",\"meaning\":\"Focus on information leakage via communication channels.\",\"next\":\"n04\",\"effects\":{\"trust\":1},\"setFacts\":[\"Suspect_Comms\"],\"conditions\":{}}]},{\"id\":\"n03\",\"chapter\":\"Chapter 2a\",\"title\":\"The Doctor's Dilemma\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"You find Dr. Thorne in the med-bay, sterilizing instruments with mechanical precision. He doesn’t look up when you enter. \\\"Ambassador,\\\" he mutters. \\\"If this is about the atmospheric filters, I told Security it was a routine calibration. The CO2 scrubbers were drifting. People would have suffocated without my intervention.\\\"\\n\\n\\\"Or disabled,\\\" you counter, leaning against the doorframe. \\\"Conveniently timed with Earth’s ultimatum.\\\" Thorne finally stops. His hands tremble slightly—not from age, but rage. \\\"Do you think I want people dead? I saved three hundred lives last week when the pressure seal failed in Sector 4. I didn't ask for thanks. I asked for resources. Which Rhee denied me.\\\"\\n\\nHe pulls up a log on his wrist comp. \\\"Look. Here’s the request. Denied. Then I bypassed protocol to fix it myself. Is that treason? Or is it keeping us alive?\\\" You scan the data. It holds up. But why did Halloway flag him? Unless... unless Thorne is telling half-truths. You press harder. \\\"Who else knew about the bypass?\\\"\\n\\nThorne hesitates. \\\"Voss. She monitors all system overrides. She saw it happen in real-time. And she didn’t report it. Why? Because she wanted proof of instability to justify martial law? Or because she’s covering something bigger?\\\" The accusation hangs in the air. You realize Thorne might be innocent, but he’s pointing a finger at another suspect. The tension in the room spikes. You have to decide how much weight to give his word versus the official record. Trust erodes further as doubt creeps in.\",\"choices\":[{\"id\":\"c3\",\"text\":\"Press Thorne on Voss's motives\",\"meaning\":\"Dig deeper into the communications angle.\",\"next\":\"n05\",\"effects\":{\"trust\":-1},\"setFacts\":[\"Clue_Voss_Suspicious\"],\"conditions\":{}}]},{\"id\":\"n04\",\"chapter\":\"Chapter 2b\",\"title\":\"Static in the Line\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"Lena Voss sits surrounded by humming servers, headphones around her neck like a noose. When you approach, she doesn’t turn. \\\"Ambassador. I expected you sooner.\\\" Her voice is calm, unnervingly so. \\\"Before you ask: yes, I sent a burst transmission. No, it wasn’t to Earth. It was to the Colony Oversight Board on Luna Base Alpha. A status update. Encrypted, standard protocol.\\\"\\n\\n\\\"Then why hide it?\\\" you demand. Voss spins her chair around. Her eyes are bloodshot, dark circles bruising the skin beneath. \\\"Because if I logged it officially, Rhee would have intercepted it. He controls the logistics network. He knows every packet that moves through here. I had to ensure it reached Alpha directly. Without middlemen.\\\"\\n\\nShe tosses a drive onto the desk. \\\"Check it. See what I found. Rhee has been rerouting medical supplies meant for the outer rings to the military barracks. He’s starving the civilians to arm the soldiers. Thorne noticed. That’s why he bypassed protocols—to keep the air clean while Rhee strangles the food supply.\\\"\\n\\nYou plug in the drive. Data streams across your screen. Shipping manifests, altered timestamps, diverted cargo lists. It’s damning. But is it too convenient? Did Voss fabricate this to frame Rhee? Or is she the mastermind using Rhee as a puppet? The lines blur. You feel the weight of leadership crushing your chest. Every second spent analyzing this is a second closer to destruction. You must choose your next move carefully.\",\"choices\":[{\"id\":\"c4\",\"text\":\"Verify Voss's data integrity\",\"meaning\":\"Cross-reference with independent sources.\",\"next\":\"n05\",\"effects\":{\"trust\":1},\"setFacts\":[\"Clue_Rhee_Diverting\"],\"conditions\":{}}]},{\"id\":\"n05\",\"chapter\":\"Chapter 3\",\"title\":\"The Convergence\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"Whether you trusted Thorne’s anger or Voss’s data, the pieces begin to fit into a jagged puzzle. You return to the briefing room where Halloway waits, impatient. \\\"Time check,\\\" she snaps. \\\"T-minus four hours. What did you learn?\\\"\\n\\nYou lay out the findings. The sabotage isn’t random; it’s coordinated. Life support tampering, communication blackouts, resource diversion. It points to a single objective: destabilize the colony enough to make Earth’s 'peacekeeping' invasion seem necessary. But who benefits? Who has the access to pull all three strings?\\n\\n\\\"There’s a fourth player,\\\" you say quietly. \\\"Someone outside these three. Someone high up.\\\"\\n\\nHalloway raises an eyebrow. \\\"Explain.\\\"\\n\\n\\\"Rhee handles logistics. Voss handles comms. Thorne handles medical. All three reported issues to *you* directly. But none of the reports made it to the public council records until today. You suppressed them. Why? To protect the negotiation process? Or to buy time for the strike team to position itself?\\\"\\n\\nThe room temperature seems to drop ten degrees. Halloway’s face remains impassive, but her fingers tighten on the edge of the table. \\\"Careful, Ambassador. Accusing Internal Security of collusion is dangerous ground.\\\"\\n\\n\\\"Is it?\\\" You step closer. \\\"Or is it the only way to save us? I have two options left. I can expose Halloway publicly, causing chaos but potentially forcing Earth to abort due to loss of control. Or I can try to negotiate directly with Earth Command using the embassy’s main transmitter, risking immediate termination if they detect the breach. Choose wisely.\",\"choices\":[{\"id\":\"c5\",\"text\":\"Expose Halloway Publicly\",\"meaning\":\"Trigger internal unrest to disrupt command structure.\",\"next\":\"n06\",\"effects\":{\"trust\":-2},\"setFacts\":[\"Path_Public_Exposure\"],\"conditions\":{}},{\"id\":\"c6\",\"text\":\"Negotiate Directly with Earth\",\"meaning\":\"Attempt diplomatic resolution despite betrayal risk.\",\"next\":\"n07\",\"effects\":{\"trust\":2},\"setFacts\":[\"Path_Direct_Negotiation\"],\"conditions\":{}}]},{\"id\":\"n06\",\"chapter\":\"Chapter 4a\",\"title\":\"Chaos Unleashed\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You hit the broadcast button. Your voice echoes through every corridor, hab-unit, and workstation on the moon. \\\"Citizens of New Terra. I am Ambassador Vance. We are under attack. Not from aliens, not from accidents, but from our own home world. Earth Command plans to bomb our life support. Our security chief, Director Halloway, has known. She has hidden the truth. Look at the skies. Prepare for impact.\\\"\\n\\nSilence. For three heartbeats, nothing happens. Then, screaming. Alarms blare as crowds surge into the streets. Panic spreads faster than fire. In the briefing room, Halloway lunges for you, but security bots intercept her. She screams curses, her mask of professionalism shattered. \\\"You fool! You’ve doomed us all! Chaos means no order! No evacuation! Just death!\\\"\\n\\nShe’s right, partially. The colony descends into anarchy. People trample each other trying to reach shelters. Systems fail under overload. But amidst the noise, a signal comes through. Not from Earth. From the resistance cell embedded in the colony’s engineering sector. They heard you. They’re moving to seize control of the defense grid manually, overriding Halloway’s locks. \\n\\nIt’s messy. Violent. Many will die in the riots. But the automated launch sequence requires stable command codes. With Halloway detained and the chain of command broken, the missiles hang suspended in limbo. You bought time, but at the cost of social cohesion. Now, you must guide the fractured populace toward survival. The path forward is narrow and bloody.\",\"choices\":[{\"id\":\"c7\",\"text\":\"Lead the Resistance Cell\",\"meaning\":\"Unite the chaotic factions under emergency rule.\",\"next\":\"n08\",\"effects\":{\"trust\":1},\"setFacts\":[\"Outcome_Chaotic_Stability\"],\"conditions\":{}}]},{\"id\":\"n07\",\"chapter\":\"Chapter 4b\",\"title\":\"The Diplomat's Gamble\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You ignore Halloway’s threats and stride to the main transmitter console. Your hands shake, but your mind is clear. You override the local firewall, establishing a direct quantum-link to Geneva. The connection chimes—a sound of pure terror and hope. \\n\\n\\\"This is Ambassador Kaelen Vance of the Lunar Embassy,\\\" you state, projecting calm authority. \\\"I speak for the thirty thousand souls on this rock. We know about Operation Iron Sky. We know it’s based on fabricated intel provided by compromised assets within our government. Stand down. Immediately.\\\"\\n\\nA pause. Static crackles. Then, General Sterling’s face appears on the screen. Cold. Hard. \\\"Vance. You’re interfering with military operations. Step away from the console or be charged with treason.\\\"\\n\\n\\\"Treason?\\\" You laugh, a dry, humorless sound. \\\"General, look at your telemetry. My engineers—loyal ones—are currently broadcasting raw sensor data from the lunar surface to every news outlet in the solar system. If you fire, the footage shows unarmed civilians. No weapons. No threat. Just families. Do you want that on your conscience? Or do you want a scandal that topples your administration?\\\"\\n\\nSterling’s jaw tightens. He glances off-screen. Whispers. Arguments. The political machinery grinds. You’ve turned their weapon—their secrecy—against them. By exposing the lack of justification, you’ve removed the pretext for war. But it’s fragile. One slip, one lie uncovered, and they’ll still pull the trigger. You hold your breath, waiting for the verdict.\",\"choices\":[{\"id\":\"c8\",\"text\":\"Hold Ground Against Pressure\",\"meaning\":\"Maintain bluff until confirmation arrives.\",\"next\":\"n08\",\"effects\":{\"trust\":2},\"setFacts\":[\"Outcome_Diplomatic_Standoff\"],\"conditions\":{}}]},{\"id\":\"n08\",\"chapter\":\"Chapter 5\",\"title\":\"The Final Hour\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"T-minus sixty minutes. The decision point looms. Whether through chaos or diplomacy, you’ve stalled the inevitable, but you haven’t stopped it permanently. The enemy adapts. \\n\\nIn Scenario A (Chaos), the resistance cells are fighting security forces block by block. The defense grid is unstable. If you don’t stabilize it now, the automated failsafe will trigger the launch regardless of human intent. \\n\\nIn Scenario B (Diplomacy), General Sterling is negotiating terms behind closed doors. He demands unconditional surrender of the colony’s autonomy in exchange for sparing lives. Accepting means slavery. Refusing risks immediate annihilation.\\n\\nHalloway, either restrained or sidelined, offers a third option. \\\"There is a kill-switch,\\\" she whispers. \\\"Buried in the core code. I built it years ago, just in case. If activated, it fries every circuit on the moon. No missiles launch. But neither do the heaters. The lights. The water recyclers. We freeze. Starve. Die slowly over weeks instead of instantly.\\\"\\n\\nYou stare at the countdown. 00:59:59. Three paths remain. Each carries a heavy price. \\n\\n1. Force a manual override of the defense grid, risking explosion but saving infrastructure.\\n2. Accept Sterling’s terms, preserving life but sacrificing freedom.\\n3. Activate Halloway’s kill-switch, ensuring mutual destruction but denying Earth its victory.\\n\\nWhat kind of leader are you? Savior? Slave? Martyr?\",\"choices\":[{\"id\":\"c9\",\"text\":\"Manual Override Attempt\",\"meaning\":\"Risk technical failure to preserve autonomy and life.\",\"next\":\"n09\",\"effects\":{\"trust\":0},\"setFacts\":[\"Choice_Technical_Gambit\"],\"conditions\":{}},{\"id\":\"c10\",\"text\":\"Accept Surrender Terms\",\"meaning\":\"Prioritize biological survival over political liberty.\",\"next\":\"n10\",\"effects\":{\"trust\":-3},\"setFacts\":[\"Choice_Submission\"],\"conditions\":{}},{\"id\":\"c11\",\"text\":\"Activate Kill-Switch\",\"meaning\":\"Choose scorched earth policy to deny enemy gains.\",\"next\":\"n11\",\"effects\":{\"trust\":3},\"setFacts\":[\"Choice_Sacrifice\"],\"conditions\":{}}]},{\"id\":\"n09\",\"chapter\":\"Ending 1\",\"title\":\"The Razor's Edge\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"end_tech\",\"body\":\"Your fingers fly across the keyboard, bypassing safety protocols. Sparks shower from the console as you reroute power from non-essential systems to the jamming arrays. The colony groans, lights flickering dimly. For a terrifying minute, nothing happens. Then, the global alert ceases. The launch codes dissolve into static. \\n\\nEarth Command scrambles, confused by the sudden blackout of their remote links. Without precise targeting data, firing the missiles becomes impossible—they’d miss the habitats entirely, wasting billions in ordnance. Sterling calls off the strike, citing 'technical incompatibilities.'\\n\\nYou collapse into your chair, sweat soaking your uniform. Halloway watches you, hatred burning in her eyes, but she says nothing. The colony survives, battered and bruised, but free. You’ve proven that ingenuity beats brute force. Yet, the scars remain. Infrastructure is weakened. Trust is fractured. You are hailed as a hero, but you know the truth: luck played a larger part than skill. Next time, there may be no razor’s edge to walk. You live to fight another day, knowing the war isn’t over—it’s merely paused.\",\"choices\":[],\"effects\":{},\"setFacts\":[],\"conditions\":{}},{\"id\":\"n10\",\"chapter\":\"Ending 2\",\"title\":\"Golden Chains\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"end_submit\",\"body\":\"You sign the treaty. The ink dries wet and dark on the digital slate. General Sterling’s face softens, a predatory smile spreading. \\\"Wise choice, Ambassador. Order restored.\\\" \\n\\nThe missiles never launch. Instead, troop transports descend from orbit, landing pads expanding to accommodate armored divisions. Martial law is declared. Curfews imposed. Speech regulated. The colony breathes, eats, sleeps—but it does not dream. Freedom is traded for safety, comfort for compliance.\\n\\nYears later, you sit in your office, older, grayer. Children play in the parks below, laughing, unaware of the bars on their windows. You saved them. That is your burden and your pride. But sometimes, late at night, you hear the echo of those who resisted. You wonder if survival was worth the soul you sold. History will call you a peacemaker. You call yourself a coward. The war ended, but the peace feels like a grave.\",\"choices\":[],\"effects\":{},\"setFacts\":[],\"conditions\":{}},{\"id\":\"n11\",\"chapter\":\"Ending 3\",\"title\":\"Ashes to Ashes\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"end_sacrifice\",\"body\":\"You press the key. No hesitation. No regret. Only resolve. \\n\\nThe hum of the colony dies. Lights vanish. Heat fades. The artificial suns go dark. On Earth, screens flash red: TARGET LOST. SYSTEM FAILURE. NO SIGNAL. The missiles, programmed to seek active energy signatures, veer harmlessly into space, detonating in the vacuum far from any population center.\\n\\nEarth wins the battle but loses the prize. There is no colony to conquer, no resources to strip, no slaves to exploit. Only dust and ice. \\n\\nAs the cold seeps into your bones, you look out the viewport. Stars shine brighter than ever before, undimmed by city lights. You gave everything to deny them satisfaction. It is a grim victory, a pyrrgetic triumph. But in the end, humanity remembers not the tyrant who bowed, nor the survivor who hid, but the diplomat who chose death over dishonor. Let history judge you harshly. At least you judged yourself true.\",\"choices\":[],\"effects\":{},\"setFacts\":[],\"conditions\":{}}]}\n===END_STORY_PATCH==="
+  },
+  "story": {
+    "meta": {
+      "title": "Dead Drop at the Lunar Embassy",
+      "logline": "You are the only diplomat on the Moon who knows Earth has already declared war. You have six hours to identify a double agent before the first missile launches.",
+      "start": "n01",
+      "stats": [
+        {
+          "id": "trust",
+          "name": "Diplomatic Credibility",
+          "initial": 5,
+          "min": 0,
+          "max": 10,
+          "visible": true
+        }
+      ],
+      "factLabels": {
+        "key": "Agent Identity"
+      }
+    },
+    "nodes": [
+      {
+        "id": "n01",
+        "chapter": "Prologue",
+        "title": "The Silent Signal",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The airlock cycles with a hiss that sounds like a dying breath. Outside, the regolith stretches in endless gray desolation under the harsh glare of Sol. Inside the Lunar Embassy, the silence is heavier than gravity. You stand alone in your office, staring at the encrypted data pad in your hand. The message from Geneva was brief, brutal, and undeniable: Earth Command has authorized Operation Iron Sky. A kinetic bombardment targeting the colony’s life-support hubs. Launch window: T-minus six hours.\n\nYou are Ambassador Kaelen Vance, but right now, you feel less like a diplomat and more like a ghost haunting his own funeral. The Council doesn’t know yet. They believe negotiations are ongoing. If they find out early, panic will tear the colony apart before the missiles even leave their silos. But if you do nothing, thousands die. There is one variable left unchecked: someone within this building is feeding intelligence back to Earth, accelerating the timeline. Someone helped draft the justification for this strike. \n\nYour comms unit buzzes. It’s Director Halloway, head of internal security. \"Ambassador,\" her voice is crisp, devoid of emotion. \"I’ve flagged three anomalies in our personnel logs tonight. I need you to review them personally. We can’t afford leaks during these final talks.\" She sends the files. Three names. Three faces. One traitor. The clock starts ticking down. 05:59:58. You take a deep breath, tasting recycled oxygen and fear. This isn’t just about politics anymore. It’s survival.",
+        "choices": [],
+        "effects": {
+          "trust": 0
+        },
+        "setFacts": [],
+        "conditions": {}
+      },
+      {
+        "id": "n02",
+        "chapter": "Chapter 1",
+        "title": "Three Suspects",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Halloway meets you in the secure briefing room, a sterile cube of white light and black glass. On the central table, holographic profiles rotate slowly. Three candidates. First: Dr. Aris Thorne, Chief Medical Officer. He requested restricted access to the atmospheric processors yesterday, claiming maintenance checks. Second: Lena Voss, Communications Lead. Her encryption keys were used to send an unlogged burst transmission to a relay satellite near Mars orbit. Third: Marcus Rhee, Logistics Coordinator. He altered shipping manifests, delaying critical spare parts for the defense grid by forty-eight hours.\n\n\"Each action looks suspicious in isolation,\" Halloway says, arms crossed. \"But together? They form a pattern of sabotage disguised as bureaucratic error. Or incompetence. I don’t care which. I care about stopping it.\" She slides a datapad toward you. \"Pick one to interrogate immediately. Time is short. If we wait, the trail goes cold.\"\n\nYou look at the faces. Thorne seems tired, his eyes shadowed by long shifts. Voss is sharp, calculating, always watching screens. Rhee is nervous, fidgeting with a stylus. Your gut twists. Interrogating the wrong person could tip off the real spy, allowing them to destroy evidence or trigger an early launch. Trust is a currency here, and you’re running low. Who do you confront first?",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Interrogate Dr. Aris Thorne (Medical)",
+            "meaning": "Focus on physical sabotage via life support systems.",
+            "next": "n03",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "Suspect_Medical"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c2",
+            "text": "Interrogate Lena Voss (Comms)",
+            "meaning": "Focus on information leakage via communication channels.",
+            "next": "n04",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "Suspect_Comms"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n03",
+        "chapter": "Chapter 2a",
+        "title": "The Doctor's Dilemma",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You find Dr. Thorne in the med-bay, sterilizing instruments with mechanical precision. He doesn’t look up when you enter. \"Ambassador,\" he mutters. \"If this is about the atmospheric filters, I told Security it was a routine calibration. The CO2 scrubbers were drifting. People would have suffocated without my intervention.\"\n\n\"Or disabled,\" you counter, leaning against the doorframe. \"Conveniently timed with Earth’s ultimatum.\" Thorne finally stops. His hands tremble slightly—not from age, but rage. \"Do you think I want people dead? I saved three hundred lives last week when the pressure seal failed in Sector 4. I didn't ask for thanks. I asked for resources. Which Rhee denied me.\"\n\nHe pulls up a log on his wrist comp. \"Look. Here’s the request. Denied. Then I bypassed protocol to fix it myself. Is that treason? Or is it keeping us alive?\" You scan the data. It holds up. But why did Halloway flag him? Unless... unless Thorne is telling half-truths. You press harder. \"Who else knew about the bypass?\"\n\nThorne hesitates. \"Voss. She monitors all system overrides. She saw it happen in real-time. And she didn’t report it. Why? Because she wanted proof of instability to justify martial law? Or because she’s covering something bigger?\" The accusation hangs in the air. You realize Thorne might be innocent, but he’s pointing a finger at another suspect. The tension in the room spikes. You have to decide how much weight to give his word versus the official record. Trust erodes further as doubt creeps in.",
+        "choices": [
+          {
+            "id": "c3",
+            "text": "Press Thorne on Voss's motives",
+            "meaning": "Dig deeper into the communications angle.",
+            "next": "n05",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "Clue_Voss_Suspicious"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n04",
+        "chapter": "Chapter 2b",
+        "title": "Static in the Line",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Lena Voss sits surrounded by humming servers, headphones around her neck like a noose. When you approach, she doesn’t turn. \"Ambassador. I expected you sooner.\" Her voice is calm, unnervingly so. \"Before you ask: yes, I sent a burst transmission. No, it wasn’t to Earth. It was to the Colony Oversight Board on Luna Base Alpha. A status update. Encrypted, standard protocol.\"\n\n\"Then why hide it?\" you demand. Voss spins her chair around. Her eyes are bloodshot, dark circles bruising the skin beneath. \"Because if I logged it officially, Rhee would have intercepted it. He controls the logistics network. He knows every packet that moves through here. I had to ensure it reached Alpha directly. Without middlemen.\"\n\nShe tosses a drive onto the desk. \"Check it. See what I found. Rhee has been rerouting medical supplies meant for the outer rings to the military barracks. He’s starving the civilians to arm the soldiers. Thorne noticed. That’s why he bypassed protocols—to keep the air clean while Rhee strangles the food supply.\"\n\nYou plug in the drive. Data streams across your screen. Shipping manifests, altered timestamps, diverted cargo lists. It’s damning. But is it too convenient? Did Voss fabricate this to frame Rhee? Or is she the mastermind using Rhee as a puppet? The lines blur. You feel the weight of leadership crushing your chest. Every second spent analyzing this is a second closer to destruction. You must choose your next move carefully.",
+        "choices": [
+          {
+            "id": "c4",
+            "text": "Verify Voss's data integrity",
+            "meaning": "Cross-reference with independent sources.",
+            "next": "n05",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "Clue_Rhee_Diverting"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n05",
+        "chapter": "Chapter 3",
+        "title": "The Convergence",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "Whether you trusted Thorne’s anger or Voss’s data, the pieces begin to fit into a jagged puzzle. You return to the briefing room where Halloway waits, impatient. \"Time check,\" she snaps. \"T-minus four hours. What did you learn?\"\n\nYou lay out the findings. The sabotage isn’t random; it’s coordinated. Life support tampering, communication blackouts, resource diversion. It points to a single objective: destabilize the colony enough to make Earth’s 'peacekeeping' invasion seem necessary. But who benefits? Who has the access to pull all three strings?\n\n\"There’s a fourth player,\" you say quietly. \"Someone outside these three. Someone high up.\"\n\nHalloway raises an eyebrow. \"Explain.\"\n\n\"Rhee handles logistics. Voss handles comms. Thorne handles medical. All three reported issues to *you* directly. But none of the reports made it to the public council records until today. You suppressed them. Why? To protect the negotiation process? Or to buy time for the strike team to position itself?\"\n\nThe room temperature seems to drop ten degrees. Halloway’s face remains impassive, but her fingers tighten on the edge of the table. \"Careful, Ambassador. Accusing Internal Security of collusion is dangerous ground.\"\n\n\"Is it?\" You step closer. \"Or is it the only way to save us? I have two options left. I can expose Halloway publicly, causing chaos but potentially forcing Earth to abort due to loss of control. Or I can try to negotiate directly with Earth Command using the embassy’s main transmitter, risking immediate termination if they detect the breach. Choose wisely.",
+        "choices": [
+          {
+            "id": "c5",
+            "text": "Expose Halloway Publicly",
+            "meaning": "Trigger internal unrest to disrupt command structure.",
+            "next": "n06",
+            "effects": {
+              "trust": -2
+            },
+            "setFacts": [
+              "Path_Public_Exposure"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c6",
+            "text": "Negotiate Directly with Earth",
+            "meaning": "Attempt diplomatic resolution despite betrayal risk.",
+            "next": "n07",
+            "effects": {
+              "trust": 2
+            },
+            "setFacts": [
+              "Path_Direct_Negotiation"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n06",
+        "chapter": "Chapter 4a",
+        "title": "Chaos Unleashed",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You hit the broadcast button. Your voice echoes through every corridor, hab-unit, and workstation on the moon. \"Citizens of New Terra. I am Ambassador Vance. We are under attack. Not from aliens, not from accidents, but from our own home world. Earth Command plans to bomb our life support. Our security chief, Director Halloway, has known. She has hidden the truth. Look at the skies. Prepare for impact.\"\n\nSilence. For three heartbeats, nothing happens. Then, screaming. Alarms blare as crowds surge into the streets. Panic spreads faster than fire. In the briefing room, Halloway lunges for you, but security bots intercept her. She screams curses, her mask of professionalism shattered. \"You fool! You’ve doomed us all! Chaos means no order! No evacuation! Just death!\"\n\nShe’s right, partially. The colony descends into anarchy. People trample each other trying to reach shelters. Systems fail under overload. But amidst the noise, a signal comes through. Not from Earth. From the resistance cell embedded in the colony’s engineering sector. They heard you. They’re moving to seize control of the defense grid manually, overriding Halloway’s locks. \n\nIt’s messy. Violent. Many will die in the riots. But the automated launch sequence requires stable command codes. With Halloway detained and the chain of command broken, the missiles hang suspended in limbo. You bought time, but at the cost of social cohesion. Now, you must guide the fractured populace toward survival. The path forward is narrow and bloody.",
+        "choices": [
+          {
+            "id": "c7",
+            "text": "Lead the Resistance Cell",
+            "meaning": "Unite the chaotic factions under emergency rule.",
+            "next": "n08",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "Outcome_Chaotic_Stability"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n07",
+        "chapter": "Chapter 4b",
+        "title": "The Diplomat's Gamble",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You ignore Halloway’s threats and stride to the main transmitter console. Your hands shake, but your mind is clear. You override the local firewall, establishing a direct quantum-link to Geneva. The connection chimes—a sound of pure terror and hope. \n\n\"This is Ambassador Kaelen Vance of the Lunar Embassy,\" you state, projecting calm authority. \"I speak for the thirty thousand souls on this rock. We know about Operation Iron Sky. We know it’s based on fabricated intel provided by compromised assets within our government. Stand down. Immediately.\"\n\nA pause. Static crackles. Then, General Sterling’s face appears on the screen. Cold. Hard. \"Vance. You’re interfering with military operations. Step away from the console or be charged with treason.\"\n\n\"Treason?\" You laugh, a dry, humorless sound. \"General, look at your telemetry. My engineers—loyal ones—are currently broadcasting raw sensor data from the lunar surface to every news outlet in the solar system. If you fire, the footage shows unarmed civilians. No weapons. No threat. Just families. Do you want that on your conscience? Or do you want a scandal that topples your administration?\"\n\nSterling’s jaw tightens. He glances off-screen. Whispers. Arguments. The political machinery grinds. You’ve turned their weapon—their secrecy—against them. By exposing the lack of justification, you’ve removed the pretext for war. But it’s fragile. One slip, one lie uncovered, and they’ll still pull the trigger. You hold your breath, waiting for the verdict.",
+        "choices": [
+          {
+            "id": "c8",
+            "text": "Hold Ground Against Pressure",
+            "meaning": "Maintain bluff until confirmation arrives.",
+            "next": "n08",
+            "effects": {
+              "trust": 2
+            },
+            "setFacts": [
+              "Outcome_Diplomatic_Standoff"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n08",
+        "chapter": "Chapter 5",
+        "title": "The Final Hour",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "T-minus sixty minutes. The decision point looms. Whether through chaos or diplomacy, you’ve stalled the inevitable, but you haven’t stopped it permanently. The enemy adapts. \n\nIn Scenario A (Chaos), the resistance cells are fighting security forces block by block. The defense grid is unstable. If you don’t stabilize it now, the automated failsafe will trigger the launch regardless of human intent. \n\nIn Scenario B (Diplomacy), General Sterling is negotiating terms behind closed doors. He demands unconditional surrender of the colony’s autonomy in exchange for sparing lives. Accepting means slavery. Refusing risks immediate annihilation.\n\nHalloway, either restrained or sidelined, offers a third option. \"There is a kill-switch,\" she whispers. \"Buried in the core code. I built it years ago, just in case. If activated, it fries every circuit on the moon. No missiles launch. But neither do the heaters. The lights. The water recyclers. We freeze. Starve. Die slowly over weeks instead of instantly.\"\n\nYou stare at the countdown. 00:59:59. Three paths remain. Each carries a heavy price. \n\n1. Force a manual override of the defense grid, risking explosion but saving infrastructure.\n2. Accept Sterling’s terms, preserving life but sacrificing freedom.\n3. Activate Halloway’s kill-switch, ensuring mutual destruction but denying Earth its victory.\n\nWhat kind of leader are you? Savior? Slave? Martyr?",
+        "choices": [
+          {
+            "id": "c9",
+            "text": "Manual Override Attempt",
+            "meaning": "Risk technical failure to preserve autonomy and life.",
+            "next": "n09",
+            "effects": {
+              "trust": 0
+            },
+            "setFacts": [
+              "Choice_Technical_Gambit"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c10",
+            "text": "Accept Surrender Terms",
+            "meaning": "Prioritize biological survival over political liberty.",
+            "next": "n10",
+            "effects": {
+              "trust": -3
+            },
+            "setFacts": [
+              "Choice_Submission"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c11",
+            "text": "Activate Kill-Switch",
+            "meaning": "Choose scorched earth policy to deny enemy gains.",
+            "next": "n11",
+            "effects": {
+              "trust": 3
+            },
+            "setFacts": [
+              "Choice_Sacrifice"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n09",
+        "chapter": "Ending 1",
+        "title": "The Razor's Edge",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "end_tech",
+        "body": "Your fingers fly across the keyboard, bypassing safety protocols. Sparks shower from the console as you reroute power from non-essential systems to the jamming arrays. The colony groans, lights flickering dimly. For a terrifying minute, nothing happens. Then, the global alert ceases. The launch codes dissolve into static. \n\nEarth Command scrambles, confused by the sudden blackout of their remote links. Without precise targeting data, firing the missiles becomes impossible—they’d miss the habitats entirely, wasting billions in ordnance. Sterling calls off the strike, citing 'technical incompatibilities.'\n\nYou collapse into your chair, sweat soaking your uniform. Halloway watches you, hatred burning in her eyes, but she says nothing. The colony survives, battered and bruised, but free. You’ve proven that ingenuity beats brute force. Yet, the scars remain. Infrastructure is weakened. Trust is fractured. You are hailed as a hero, but you know the truth: luck played a larger part than skill. Next time, there may be no razor’s edge to walk. You live to fight another day, knowing the war isn’t over—it’s merely paused.",
+        "choices": [],
+        "effects": {},
+        "setFacts": [],
+        "conditions": {}
+      },
+      {
+        "id": "n10",
+        "chapter": "Ending 2",
+        "title": "Golden Chains",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "end_submit",
+        "body": "You sign the treaty. The ink dries wet and dark on the digital slate. General Sterling’s face softens, a predatory smile spreading. \"Wise choice, Ambassador. Order restored.\" \n\nThe missiles never launch. Instead, troop transports descend from orbit, landing pads expanding to accommodate armored divisions. Martial law is declared. Curfews imposed. Speech regulated. The colony breathes, eats, sleeps—but it does not dream. Freedom is traded for safety, comfort for compliance.\n\nYears later, you sit in your office, older, grayer. Children play in the parks below, laughing, unaware of the bars on their windows. You saved them. That is your burden and your pride. But sometimes, late at night, you hear the echo of those who resisted. You wonder if survival was worth the soul you sold. History will call you a peacemaker. You call yourself a coward. The war ended, but the peace feels like a grave.",
+        "choices": [],
+        "effects": {},
+        "setFacts": [],
+        "conditions": {}
+      },
+      {
+        "id": "n11",
+        "chapter": "Ending 3",
+        "title": "Ashes to Ashes",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "end_sacrifice",
+        "body": "You press the key. No hesitation. No regret. Only resolve. \n\nThe hum of the colony dies. Lights vanish. Heat fades. The artificial suns go dark. On Earth, screens flash red: TARGET LOST. SYSTEM FAILURE. NO SIGNAL. The missiles, programmed to seek active energy signatures, veer harmlessly into space, detonating in the vacuum far from any population center.\n\nEarth wins the battle but loses the prize. There is no colony to conquer, no resources to strip, no slaves to exploit. Only dust and ice. \n\nAs the cold seeps into your bones, you look out the viewport. Stars shine brighter than ever before, undimmed by city lights. You gave everything to deny them satisfaction. It is a grim victory, a pyrrgetic triumph. But in the end, humanity remembers not the tyrant who bowed, nor the survivor who hid, but the diplomat who chose death over dishonor. Let history judge you harshly. At least you judged yourself true.",
+        "choices": [],
+        "effects": {},
+        "setFacts": [],
+        "conditions": {}
+      }
+    ]
+  },
+  "recommendation": {
+    "gender": "male",
+    "tags": [
+      "Sci-Fi Espionage",
+      "Lunar Colony",
+      "Double Agent Hunt",
+      "Political Thriller",
+      "Countdown Tension"
+    ],
+    "summary": "Stranded on the Moon as Earth's lone diplomat, you uncover a chilling truth: your home planet has already declared war. With only six hours before the first missile strikes, you must navigate a web of deception within the lunar colony to identify the hidden double agent orchestrating the betrayal. Interrogate suspects under pressure, choose between exposing traitors publicly or negotiating directly with hostile command centers, and face three distinct endings that hinge on split-second decisions made while the clock ticks down toward inevitable conflict."
+  },
+  "generatedAt": "2026-09-24T10:25:47.153Z"
+}

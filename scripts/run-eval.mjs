@@ -12,14 +12,7 @@ for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
   if (!process.env[t.slice(0, i).trim()]) process.env[t.slice(0, i).trim()] = t.slice(i + 1).trim();
 }
 
-const promptSrc = fs.readFileSync(path.join(root, 'lib/system-prompt.ts'), 'utf8');
-const promptMatch = promptSrc.match(/export const SYSTEM_PROMPT = `([\s\S]*?)`;\n\nexport const PHASE_STARTERS/);
-if (!promptMatch) {
-  console.error('Cannot extract SYSTEM_PROMPT');
-  process.exit(1);
-}
-
-const SYSTEM_PROMPT = promptMatch[1];
+const SYSTEM_PROMPT = fs.readFileSync(path.join(root, 'lib/system-prompt.md'), 'utf8');
 const MODEL = process.env.OPENROUTER_TEXT_MODEL || 'deepseek/deepseek-v4.1-flash';
 const API_KEY = process.env.OPENROUTER_API_KEY;
 const OUT = path.join(root, 'output');

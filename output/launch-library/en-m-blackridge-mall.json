@@ -1,0 +1,316 @@
+{
+  "item": {
+    "slug": "en-m-blackridge-mall",
+    "language": "en",
+    "gender": "male",
+    "title": "Last Shift at Blackridge Mall",
+    "hook": "The abandoned mall reopens for one night, staffed by people who all died there in 1999. Your security handbook has twelve rules; the final rule is written in your handwriting.",
+    "themes": [
+      "Survival horror",
+      "Rules mystery",
+      "Nineties nostalgia",
+      "Found footage",
+      "Multiple endings"
+    ]
+  },
+  "result": {
+    "topicDoc": "# Story Idea\n\n## Title\nLast Shift at Blackridge Mall\n\n## Hook\nThe abandoned mall reopens for one night, staffed by people who all died there in 1999. Your security handbook has twelve rules; the final rule is written in your handwriting.\n\n## Themes\nSurvival horror, Rules mystery, Nineties nostalgia, Found footage, Multiple endings",
+    "designDoc": "# Story Design\n\n## Logline\nYou are the sole survivor of a 1999 massacre, forced to work one last shift in an abandoned mall where the dead still clock in.\n\n## Audience\nMen\n\n## Themes and tone\nSurvival horror, Rules mystery, Nineties nostalgia, Found footage, Multiple endings\n\n## Interactive structure\n- n01 · Prologue · The Reopening: Head toward the main office to check the cameras. → n02\n- n02 · Act I · Static and Shadows: Lock down the West Wing Department Store. → n03 | Seal off the East Arcade. → n04\n- n03 · Act II-A · The Silent Department: Accept the memory and proceed to the Control Room. → n05\n- n04 · Act II-B · Neon Purgatory: Use the remote to fast-forward to the present danger. → n05\n- n05 · Act III · Midnight Approach: Rush to the Food Court to guard the mirrors. → n06 | Descend into the Maintenance Tunnels. → n07\n- n06 · Climax-A · Reflections of Guilt: Stumble toward the Loading Dock Exit. → n08\n- n07 · Climax-B · The Heart of Fire: Drag yourself to the Service Elevator. → n08\n- n08 · Resolution Point · undefined: Walk away into the sunrise. → n09 | Trigger the demolition sequence. → n10 | Stay and assume command. → n11\n- n09 · Ending 1 · The Survivor's Burden\n- n10 · Ending 2 · Ashes to Ashes\n- n11 · Ending 3 · The Eternal Shift",
+    "chaptersDoc": "# Chapters and Nodes\n\n- n01 · Prologue · The Reopening: Head toward the main office to check the cameras. → n02\n- n02 · Act I · Static and Shadows: Lock down the West Wing Department Store. → n03 | Seal off the East Arcade. → n04\n- n03 · Act II-A · The Silent Department: Accept the memory and proceed to the Control Room. → n05\n- n04 · Act II-B · Neon Purgatory: Use the remote to fast-forward to the present danger. → n05\n- n05 · Act III · Midnight Approach: Rush to the Food Court to guard the mirrors. → n06 | Descend into the Maintenance Tunnels. → n07\n- n06 · Climax-A · Reflections of Guilt: Stumble toward the Loading Dock Exit. → n08\n- n07 · Climax-B · The Heart of Fire: Drag yourself to the Service Elevator. → n08\n- n08 · Resolution Point · undefined: Walk away into the sunrise. → n09 | Trigger the demolition sequence. → n10 | Stay and assume command. → n11\n- n09 · Ending 1 · The Survivor's Burden\n- n10 · Ending 2 · Ashes to Ashes\n- n11 · Ending 3 · The Eternal Shift",
+    "styleDoc": "# Locked Style\n\nCinematic immersive prose in second person, with concrete scenes, restrained dialogue, and legible consequences.",
+    "proseDoc": "===STORY_PATCH===\n{\"meta\":{\"title\":\"Last Shift at Blackridge Mall\",\"logline\":\"You are the sole survivor of a 1999 massacre, forced to work one last shift in an abandoned mall where the dead still clock in.\",\"start\":\"n01\",\"stats\":[{\"id\":\"trust\",\"name\":\"Trust\",\"initial\":5,\"min\":0,\"max\":10,\"visible\":true}],\"factLabels\":{\"has_key\":\"Security Key\",\"knows_rule_12\":\"Rule 12 Knowledge\"}},\"nodes\":[{\"id\":\"n01\",\"chapter\":\"Prologue\",\"title\":\"The Reopening\",\"kind\":\"linear\",\"isEnding\":false,\"endingId\":null,\"body\":\"The fluorescent lights buzz with the frequency of dying insects. You stand before the rusted turnstiles of Blackridge Mall, a monolith of concrete and glass that has been sealed since October 14, 1999. Tonight, it reopens. Not for shoppers, but for you. A crumpled letter from your former supervisor sits in your pocket, smelling faintly of mildew and old coffee. It demands your presence for 'one final audit.'\\n\\nYour security uniform hangs stiff on your shoulders, the polyester itching against skin that hasn’t aged a day since the incident. The air inside is stagnant, heavy with the scent of popcorn grease and despair. As you step past the threshold, the automatic doors hiss shut behind you, sealing you in darkness broken only by emergency exit signs glowing red.\\n\\nIn your hand, you hold the Security Handbook. Its cover is faded blue, the title embossed in silver. You open it to find twelve rules printed in crisp, typewriter font. But as you reach the bottom of page three, the ink changes. It becomes smudged, handwritten in black ballpoint pen. Your handwriting. Rule Twelve reads: *Do not look directly into the food court mirrors after midnight.*\\n\\nA cold draft sweeps through the atrium. Somewhere deep within the structure, a PA system crackles to life, emitting a burst of static followed by the opening chords of Smash Mouth’s 'All Star.' The song loops, distorted and slow. You realize with a sinking heart that you are not alone. The shadows near the escalators seem to detach themselves from the walls, taking the shape of people who died here twenty-five years ago. They are waiting for their manager. And tonight, that’s you.\",\"choices\":[{\"id\":\"c1\",\"text\":\"Head toward the main office to check the cameras.\",\"meaning\":\"Seek control and information via surveillance.\",\"next\":\"n02\",\"effects\":{\"trust\":1},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n02\",\"chapter\":\"Act I\",\"title\":\"Static and Shadows\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"The walk to the main security office feels like wading through molasses. The mannequins lining the corridor have turned their heads slightly, watching you pass. Their plastic eyes reflect no light, yet you feel seen. When you push open the door to the office, the room is exactly as you left it in ’99. Dust motes dance in the beam of your flashlight. Banks of CRT monitors line the wall, displaying grainy, black-and-white feeds of the empty mall.\\n\\nOne monitor flickers violently. On screen 4, which covers the Food Court entrance, you see a figure standing perfectly still. It wears a janitor’s uniform. The timestamp in the corner reads 11:45 PM. Fifteen minutes until the mirror rule activates. The figure raises a mop and begins to scrub the floor, though there is nothing there but shadow.\\n\\nSuddenly, the radio on your hip crackles. \\\"Unit One, this is Base,\\\" a voice says. It sounds like Sarah, the cashier who vanished during the fire. Her voice is wet, gurgling, as if she’s speaking underwater. \\\"They’re waking up early. We need backup in the West Wing or the East Arcade. Choose quickly, Manager. The power grid is failing.\\\" \\n\\nThe monitors go dark except for screens 7 and 12. Screen 7 shows the West Wing, where the department store lies. Screen 12 shows the East Arcade, filled with neon-lit cabinets. Both areas are moving. Figures are emerging from the stores, shambling toward the center of the mall. If you don’t intervene, they will converge in the atrium. You grip the keys to the master override panel. You can lock down one sector, trapping them away from the central hub, but leaving the other exposed. Which path do you take?\",\"choices\":[{\"id\":\"c2a\",\"text\":\"Lock down the West Wing Department Store.\",\"meaning\":\"Contain the bulk of the entities in the large retail space.\",\"next\":\"n03\",\"effects\":{\"trust\":-1},\"setFacts\":[\"has_key\"],\"conditions\":{}},{\"id\":\"c2b\",\"text\":\"Seal off the East Arcade.\",\"meaning\":\"Isolate the high-energy zone where spirits feed on noise.\",\"next\":\"n04\",\"effects\":{\"trust\":1},\"setFacts\":[\"has_key\"],\"conditions\":{}}]},{\"id\":\"n03\",\"chapter\":\"Act II-A\",\"title\":\"The Silent Department\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You slam the lever for the West Wing lockdown. Heavy steel shutters crash down across the entrances to the department store, sealing the ghosts inside. For a moment, silence reigns. Then, a low hum vibrates through the floorboards. The entities aren’t angry; they are confused. Through the thick glass of the shutter window, you see hundreds of faces pressed against the barrier. They wear flannel shirts, denim jackets, and grunge band tees. They mouth words you cannot hear.\\n\\nSarah’s voice returns over the radio, clearer now. \\\"Good choice. They hate being ignored. Now come to the break room. There’s something you need to see.\\\" \\n\\nYou leave the office, the hallway stretching longer than it should. The posters on the walls feature celebrities long dead—Kurt Cobain, Princess Diana—smiling vacantly. When you enter the employee break room, the smell of burnt toast is overpowering. Sitting at the table is Mr. Henderson, your old boss. He looks younger than he did when he died, his tie neatly knotted. He slides a cassette tape across the laminate surface.\\n\\n\\\"This was found in the safe,\\\" Henderson says, his voice devoid of emotion. \\\"It contains the original audio logs from the night of the fire. Listen to it. But be warned: hearing the truth might make you part of the loop forever.\\\" \\n\\nHe stands up and walks out, passing through the closed door without touching it. You pick up the cassette. It’s labeled 'FINAL SHIFT - DO NOT PLAY'. Your hands tremble. The trust meter in your mind fluctuates. Do you play it, risking madness for clarity, or destroy it to maintain your sanity? You decide to listen. The tape recorder clicks. Static fills the room, then screams. Not human screams, but digital distortion mixed with laughter. You recognize your own voice pleading for help. The realization hits you hard: you didn’t survive. You never left.\",\"choices\":[{\"id\":\"c3\",\"text\":\"Accept the memory and proceed to the Control Room.\",\"meaning\":\"Integrate the trauma to gain strength.\",\"next\":\"n05\",\"effects\":{\"trust\":2},\"setFacts\":[\"knows_rule_12\"],\"conditions\":{}}]},{\"id\":\"n04\",\"chapter\":\"Act II-B\",\"title\":\"Neon Purgatory\",\"kind\":\"merge\",\"isEnding\":false,\"endingId\":null,\"body\":\"You engage the seal for the East Arcade. The sound of clinking coins and electronic jingles cuts off abruptly, replaced by a deafening quiet. The arcade machines’ marquee lights dim to a dull purple glow. You expected resistance, but instead, you feel a strange sense of relief. The entities in the arcade were feeding on stimulation; starved of noise, they retreat into the circuitry.\\n\\nAs you move back toward the center of the mall, the atmosphere shifts. The air grows colder. Frost patterns bloom on the windows facing the parking lot. From the shadows of the cinema entrance, a figure emerges. It’s David, the guy who used to run the ticket booth. He holds a stack of movie tickets. \\\"Showtime's changed, Boss,\\\" he whispers. His eyes are hollow pits of black ink. \\\"We’re screening your memories tonight. Front row seats reserved.\\\"\\n\\nHe gestures toward the projection room. Inside, the projector whirs to life, casting a beam of light onto the blank wall. Images flash rapidly: your first day at Blackridge, the taste of stale pretzels, the argument with your girlfriend outside the fountain, and finally, the spark of the arsonist’s lighter. The images accelerate, blurring into a kaleidoscope of regret.\\n\\nDavid places a remote control in your hand. \\\"Pause button doesn't work anymore,\\\" he says, fading into the dust. \\\"But the skip button does. Use it wisely. You’re running out of time before midnight strikes. The mirrors are already fogging up.\\\" \\n\\nYou clutch the remote, feeling its weight. It’s warm, pulsing like a heartbeat. You know what you must do. You head toward the control room to prepare for the final hour, carrying the burden of these fragmented recollections. The nostalgia is a trap, sweet and suffocating.\",\"choices\":[{\"id\":\"c4\",\"text\":\"Use the remote to fast-forward to the present danger.\",\"meaning\":\"Skip the painful past to focus on survival.\",\"next\":\"n05\",\"effects\":{\"trust\":-1},\"setFacts\":[\"knows_rule_12\"],\"conditions\":{}}]},{\"id\":\"n05\",\"chapter\":\"Act III\",\"title\":\"Midnight Approach\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"The digital clock above the information kiosk ticks closer to 12:00 AM. The mall is alive with a sinister energy. The music from the PA system has shifted to a minor key, looping endlessly. You stand in the central atrium, surrounded by the dormant forms of the dead staff. They wait for instruction. You are the conductor of this ghostly orchestra.\\n\\nYour handbook burns in your pocket. Rule Twelve echoes in your mind: *Do not look directly into the food court mirrors after midnight.* But why? What happens if you do? Or worse, what happens if you don’t follow the other eleven rules? You recall Rule Seven: *Never accept change from the vending machine operator.* Rule Four: *Keep the fountain water clear.*\\n\\nTwo paths diverge before you. To your left, the Food Court beckons, its tiled floors gleaming under harsh white lights. The mirrors hang there, ancient and tarnished. To your right, the Maintenance Tunnels lead beneath the foundation, where the true source of the haunting resides—the boiler room where the fire started. \\n\\nIf you go to the Food Court, you confront the visual manifestation of your guilt. If you go to the tunnels, you face the physical cause. The trust level among the spirits varies based on your previous actions. Some whisper warnings; others urge you forward. \\n\\n\\\"Manager!\\\" cries a voice. It’s Jenny, the mascot performer whose suit is torn and stained. She points to the Food Court. \\\"They’re coming out of the glass! Don’t let them cross the threshold!\\\" Meanwhile, a rumble shakes the floor from below. The boiler is overheating. Steam vents hiss angrily from grates nearby. You have seconds to decide. Do you protect the boundary of reality in the Food Court, or extinguish the engine of hell in the tunnels?\",\"choices\":[{\"id\":\"c5a\",\"text\":\"Rush to the Food Court to guard the mirrors.\",\"meaning\":\"Confront the supernatural reflection of your psyche.\",\"next\":\"n06\",\"effects\":{\"trust\":1},\"setFacts\":[],\"conditions\":{}},{\"id\":\"c5b\",\"text\":\"Descend into the Maintenance Tunnels.\",\"meaning\":\"Attack the root cause of the haunting physically.\",\"next\":\"n07\",\"effects\":{\"trust\":-1},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n06\",\"chapter\":\"Climax-A\",\"title\":\"Reflections of Guilt\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"You sprint toward the Food Court, dodging tables overturned by invisible winds. The air smells of ozone and rotting fruit. As you round the corner, you freeze. The mirrors along the far wall are rippling like water surfaces disturbed by rain. Faces emerge from the glass—not just yours, but everyone who died here. They press against the barrier, mouths open in silent screams.\\n\\nJenny is gone. In her place stands a tall figure wearing the Blackridge bear costume. It tilts its head, the fabric stretched tight over boneless limbs. \\\"Look closely, Manager,\\\" it growls, its voice layered with dozens of others. \\\"See what you missed.\\\"\\n\\nYou try to look away, but Rule Twelve forbids direct eye contact. Yet, peripheral vision betrays you. You see yourself in the mirror, but older, tired, holding a gun. The reflection winks. A surge of panic rises in your chest. The glass begins to crack. Shards float upward, defying gravity. \\n\\nYou realize the mirrors aren’t showing the past; they’re showing possible futures. One future ends with you escaping. Another ends with you joining them. The bear steps aside, revealing a narrow gap between two cracked panels. Beyond it lies the exit to the loading dock. But the path is blocked by swirling debris. You must navigate carefully, trusting your instincts rather than sight. Each step risks cutting you, bleeding into the spectral realm. You pull your flashlight, using its beam to solidify the floating shards temporarily. With a grunt of effort, you shove through the curtain of glass fragments, emerging onto the slick concrete of the loading bay. Behind you, the mirrors shatter completely, releasing a howl that shakes the foundations of the mall.\",\"choices\":[{\"id\":\"c6\",\"text\":\"Stumble toward the Loading Dock Exit.\",\"meaning\":\"Attempt to flee the physical location.\",\"next\":\"n08\",\"effects\":{\"trust\":0},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n07\",\"chapter\":\"Climax-B\",\"title\":\"The Heart of Fire\",\"kind\":\"branch\",\"isEnding\":false,\"endingId\":null,\"body\":\"The descent into the maintenance tunnels is claustrophobic. Pipes sweat condensation, dripping onto your neck like icy tears. The heat intensifies as you approach the boiler room. Red warning lights strobe rhythmically, casting long, dancing shadows. Here, the laws of physics bend. Gravity pulls sideways; sound travels faster than light. You see flashes of the 1999 fire replaying in real-time around you—flames licking the ceiling, smoke choking the air.\\n\\nAt the center of the room stands the Great Boiler, a massive iron beast groaning under pressure. Attached to it is a valve wheel painted yellow. Next to it lies the body of the arsonist, frozen in time, mid-scream. His hand reaches for the detonator. \\n\\n\\\"Turn it,\\\" commands a voice from the steam. It’s Mr. Henderson again, materializing from the vapor. \\\"Release the pressure, or we all burn again. But beware: turning the valve releases the memories trapped in the pipes. You’ll experience every second of their pain.\\\"\\n\\nYou hesitate. Is this mercy or torture? The boiler gauge spikes into the red. Metal shrieks. You grab the wheel. It’s scorching hot. Searing your palms, you force it counter-clockwise. A blast of superheated steam erupts, knocking you back. Visions flood your mind: Sarah burning at the register, David crushed by falling beams, Jenny suffocating in her suit. The agony is absolute. You scream, but no sound comes out. As the pressure drops, the visions fade, leaving you gasping on the grate floor. The boiler quiets to a steady hum. The tunnel exits ahead, leading to the service elevator that goes straight up to the roof access.\",\"choices\":[{\"id\":\"c7\",\"text\":\"Drag yourself to the Service Elevator.\",\"meaning\":\"Escape the underground torment towards the sky.\",\"next\":\"n08\",\"effects\":{\"trust\":0},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n08\",\"chapter\":\"Resolution Point\",\"kind\":\"choice\",\"isEnding\":false,\"endingId\":null,\"body\":\"You arrive at the nexus point: the rooftop access hatch. Dawn is breaking, painting the sky in hues of bruised purple and orange. Below, the mall is silent. The entities have retreated to their corners, waiting for the next cycle. You stand at the edge of freedom, but the handbook remains in your pocket. Rule Twelve has passed. Midnight is over. Technically, you are free to leave.\\n\\nHowever, three options remain, each carrying profound consequences. \\n\\nFirst, you can simply walk away. Leave the mall to its fate. The curse continues, but you survive. This requires abandoning any hope of saving the souls trapped within. \\n\\nSecond, you can use your security key to initiate the self-destruct sequence coded into the building’s mainframe. This would erase Blackridge Mall from existence, freeing the spirits but destroying evidence of your involvement. It is an act of ultimate sacrifice. \\n\\nThird, you can stay. Accept the role of Eternal Manager. By staying, you bind yourself to the mall forever, becoming part of the lore, ensuring the rules are kept, and perhaps finding peace in duty. \\n\\nThe wind tugs at your uniform. The sun rises higher. Time is running out. The spirits watch from the skylights below, their expressions unreadable. What is your final decision?\",\"choices\":[{\"id\":\"c8a\",\"text\":\"Walk away into the sunrise.\",\"meaning\":\"Choose personal survival over moral closure.\",\"next\":\"n09\",\"effects\":{\"trust\":-5},\"setFacts\":[],\"conditions\":{}},{\"id\":\"c8b\",\"text\":\"Trigger the demolition sequence.\",\"meaning\":\"Destroy the mall to free the souls.\",\"next\":\"n10\",\"effects\":{\"trust\":5},\"setFacts\":[],\"conditions\":{}},{\"id\":\"c8c\",\"text\":\"Stay and assume command.\",\"meaning\":\"Become the eternal guardian of Blackridge.\",\"next\":\"n11\",\"effects\":{\"trust\":10},\"setFacts\":[],\"conditions\":{}}]},{\"id\":\"n09\",\"chapter\":\"Ending 1\",\"title\":\"The Survivor's Burden\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_survivor\",\"body\":\"You turn your back on the railing and descend the stairs. The metal groans under your boots, a mournful sound that follows you all the way to the ground level. You push through the side exit, stepping out into the cool morning air of the parking lot. Cars sit rusted and abandoned, covered in leaves. You start walking toward the highway, hoping to flag down a trucker or find a working phone.\\n\\nBehind you, Blackridge Mall looms, silent and imposing. You tell yourself it’s over. You survived. But as you drive away days later, listening to the radio, you hear a snippet of 'All Star' playing softly in the background. You glance in the rearview mirror. For a split second, your reflection isn’t you. It’s wearing the security uniform, smiling sadly. \\n\\nYou live a long life, but you never sleep well. Every night, you dream of fluorescent lights and the smell of burnt popcorn. You carry the guilt of those left behind, knowing you could have saved them, or at least ended their suffering. You are free, but you are haunted. The mall waits for the next fool to wander in, and you wonder if you’ve set the stage for another tragedy. The handbook stays in your drawer, unopened, a testament to the cowardice that kept you alive.\",\"choices\":[]},{\"id\":\"n10\",\"chapter\":\"Ending 2\",\"title\":\"Ashes to Ashes\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_destroyer\",\"body\":\"Your fingers fly across the keypad hidden in the service closet. Code: 9-9-O-C-T-1-4. Enter. The building shudders. Alarms blare, not the usual fire sirens, but a deep, resonant tone signaling structural collapse. You sprint for the exit, lungs burning. Explosions ripple through the lower levels, blowing out windows and sending plumes of dust into the sky.\\n\\nYou barely make it to the perimeter fence before the main atrium caves in. The roar is deafening, a thunderclap that shakes the earth. When the dust settles, Blackridge Mall is a skeleton of twisted steel and rubble. Silence returns, heavier than before.\\n\\nWalking away, you feel a strange lightness. The voices in your head are gone. The nightmares stop that very night. Years later, developers build a park on the site. Children play where the food court once stood. Sometimes, on windy nights, locals swear they hear laughter echoing from the grass, bright and joyful. You visit the park occasionally, sitting on a bench, watching the kids. You don’t speak of your past. You don’t need to. You gave them peace, even if it cost you everything else. You are anonymous, forgotten, and finally, truly free.\",\"choices\":[]},{\"id\":\"n11\",\"chapter\":\"Ending 3\",\"title\":\"The Eternal Shift\",\"kind\":\"ending\",\"isEnding\":true,\"endingId\":\"e_guardian\",\"body\":\"You close the hatch. The sunlight fades as you step back inside. The mall seems different now—warmer, welcoming. The spirits gather around you, not as threats, but as colleagues. Sarah brings you a fresh cup of coffee. David adjusts your tie. Jenny hugs your leg, her fur soft and clean.\\n\\n\\\"Welcome home, Manager,\\\" Henderson says, handing you a new badge. It glows with a faint golden light. \\n\\nYou realize you were never meant to leave. Your death in 1999 wasn’t an accident; it was an appointment. You take your post at the security desk. The hours stretch into eternity, but they pass quickly. You enforce the rules with kindness. You guide the lost souls to rest. You become legend, a myth told to teenagers who dare to trespass. \\n\\nSometimes, a living person wanders in, scared and confused. You meet them at the door, offer directions, and send them safely away. You are the guardian of the threshold, the keeper of the balance. The nostalgia isn’t a trap anymore; it’s a comfort. You belong here. And as the next century turns, you smile, ready for the next shift. Forever.\",\"choices\":[]}]}\n===END_STORY_PATCH==="
+  },
+  "story": {
+    "meta": {
+      "title": "Last Shift at Blackridge Mall",
+      "logline": "You are the sole survivor of a 1999 massacre, forced to work one last shift in an abandoned mall where the dead still clock in.",
+      "start": "n01",
+      "stats": [
+        {
+          "id": "trust",
+          "name": "Trust",
+          "initial": 5,
+          "min": 0,
+          "max": 10,
+          "visible": true
+        }
+      ],
+      "factLabels": {
+        "has_key": "Security Key",
+        "knows_rule_12": "Rule 12 Knowledge"
+      }
+    },
+    "nodes": [
+      {
+        "id": "n01",
+        "chapter": "Prologue",
+        "title": "The Reopening",
+        "kind": "linear",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The fluorescent lights buzz with the frequency of dying insects. You stand before the rusted turnstiles of Blackridge Mall, a monolith of concrete and glass that has been sealed since October 14, 1999. Tonight, it reopens. Not for shoppers, but for you. A crumpled letter from your former supervisor sits in your pocket, smelling faintly of mildew and old coffee. It demands your presence for 'one final audit.'\n\nYour security uniform hangs stiff on your shoulders, the polyester itching against skin that hasn’t aged a day since the incident. The air inside is stagnant, heavy with the scent of popcorn grease and despair. As you step past the threshold, the automatic doors hiss shut behind you, sealing you in darkness broken only by emergency exit signs glowing red.\n\nIn your hand, you hold the Security Handbook. Its cover is faded blue, the title embossed in silver. You open it to find twelve rules printed in crisp, typewriter font. But as you reach the bottom of page three, the ink changes. It becomes smudged, handwritten in black ballpoint pen. Your handwriting. Rule Twelve reads: *Do not look directly into the food court mirrors after midnight.*\n\nA cold draft sweeps through the atrium. Somewhere deep within the structure, a PA system crackles to life, emitting a burst of static followed by the opening chords of Smash Mouth’s 'All Star.' The song loops, distorted and slow. You realize with a sinking heart that you are not alone. The shadows near the escalators seem to detach themselves from the walls, taking the shape of people who died here twenty-five years ago. They are waiting for their manager. And tonight, that’s you.",
+        "choices": [
+          {
+            "id": "c1",
+            "text": "Head toward the main office to check the cameras.",
+            "meaning": "Seek control and information via surveillance.",
+            "next": "n02",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n02",
+        "chapter": "Act I",
+        "title": "Static and Shadows",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The walk to the main security office feels like wading through molasses. The mannequins lining the corridor have turned their heads slightly, watching you pass. Their plastic eyes reflect no light, yet you feel seen. When you push open the door to the office, the room is exactly as you left it in ’99. Dust motes dance in the beam of your flashlight. Banks of CRT monitors line the wall, displaying grainy, black-and-white feeds of the empty mall.\n\nOne monitor flickers violently. On screen 4, which covers the Food Court entrance, you see a figure standing perfectly still. It wears a janitor’s uniform. The timestamp in the corner reads 11:45 PM. Fifteen minutes until the mirror rule activates. The figure raises a mop and begins to scrub the floor, though there is nothing there but shadow.\n\nSuddenly, the radio on your hip crackles. \"Unit One, this is Base,\" a voice says. It sounds like Sarah, the cashier who vanished during the fire. Her voice is wet, gurgling, as if she’s speaking underwater. \"They’re waking up early. We need backup in the West Wing or the East Arcade. Choose quickly, Manager. The power grid is failing.\" \n\nThe monitors go dark except for screens 7 and 12. Screen 7 shows the West Wing, where the department store lies. Screen 12 shows the East Arcade, filled with neon-lit cabinets. Both areas are moving. Figures are emerging from the stores, shambling toward the center of the mall. If you don’t intervene, they will converge in the atrium. You grip the keys to the master override panel. You can lock down one sector, trapping them away from the central hub, but leaving the other exposed. Which path do you take?",
+        "choices": [
+          {
+            "id": "c2a",
+            "text": "Lock down the West Wing Department Store.",
+            "meaning": "Contain the bulk of the entities in the large retail space.",
+            "next": "n03",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "has_key"
+            ],
+            "conditions": {}
+          },
+          {
+            "id": "c2b",
+            "text": "Seal off the East Arcade.",
+            "meaning": "Isolate the high-energy zone where spirits feed on noise.",
+            "next": "n04",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [
+              "has_key"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n03",
+        "chapter": "Act II-A",
+        "title": "The Silent Department",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You slam the lever for the West Wing lockdown. Heavy steel shutters crash down across the entrances to the department store, sealing the ghosts inside. For a moment, silence reigns. Then, a low hum vibrates through the floorboards. The entities aren’t angry; they are confused. Through the thick glass of the shutter window, you see hundreds of faces pressed against the barrier. They wear flannel shirts, denim jackets, and grunge band tees. They mouth words you cannot hear.\n\nSarah’s voice returns over the radio, clearer now. \"Good choice. They hate being ignored. Now come to the break room. There’s something you need to see.\" \n\nYou leave the office, the hallway stretching longer than it should. The posters on the walls feature celebrities long dead—Kurt Cobain, Princess Diana—smiling vacantly. When you enter the employee break room, the smell of burnt toast is overpowering. Sitting at the table is Mr. Henderson, your old boss. He looks younger than he did when he died, his tie neatly knotted. He slides a cassette tape across the laminate surface.\n\n\"This was found in the safe,\" Henderson says, his voice devoid of emotion. \"It contains the original audio logs from the night of the fire. Listen to it. But be warned: hearing the truth might make you part of the loop forever.\" \n\nHe stands up and walks out, passing through the closed door without touching it. You pick up the cassette. It’s labeled 'FINAL SHIFT - DO NOT PLAY'. Your hands tremble. The trust meter in your mind fluctuates. Do you play it, risking madness for clarity, or destroy it to maintain your sanity? You decide to listen. The tape recorder clicks. Static fills the room, then screams. Not human screams, but digital distortion mixed with laughter. You recognize your own voice pleading for help. The realization hits you hard: you didn’t survive. You never left.",
+        "choices": [
+          {
+            "id": "c3",
+            "text": "Accept the memory and proceed to the Control Room.",
+            "meaning": "Integrate the trauma to gain strength.",
+            "next": "n05",
+            "effects": {
+              "trust": 2
+            },
+            "setFacts": [
+              "knows_rule_12"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n04",
+        "chapter": "Act II-B",
+        "title": "Neon Purgatory",
+        "kind": "merge",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You engage the seal for the East Arcade. The sound of clinking coins and electronic jingles cuts off abruptly, replaced by a deafening quiet. The arcade machines’ marquee lights dim to a dull purple glow. You expected resistance, but instead, you feel a strange sense of relief. The entities in the arcade were feeding on stimulation; starved of noise, they retreat into the circuitry.\n\nAs you move back toward the center of the mall, the atmosphere shifts. The air grows colder. Frost patterns bloom on the windows facing the parking lot. From the shadows of the cinema entrance, a figure emerges. It’s David, the guy who used to run the ticket booth. He holds a stack of movie tickets. \"Showtime's changed, Boss,\" he whispers. His eyes are hollow pits of black ink. \"We’re screening your memories tonight. Front row seats reserved.\"\n\nHe gestures toward the projection room. Inside, the projector whirs to life, casting a beam of light onto the blank wall. Images flash rapidly: your first day at Blackridge, the taste of stale pretzels, the argument with your girlfriend outside the fountain, and finally, the spark of the arsonist’s lighter. The images accelerate, blurring into a kaleidoscope of regret.\n\nDavid places a remote control in your hand. \"Pause button doesn't work anymore,\" he says, fading into the dust. \"But the skip button does. Use it wisely. You’re running out of time before midnight strikes. The mirrors are already fogging up.\" \n\nYou clutch the remote, feeling its weight. It’s warm, pulsing like a heartbeat. You know what you must do. You head toward the control room to prepare for the final hour, carrying the burden of these fragmented recollections. The nostalgia is a trap, sweet and suffocating.",
+        "choices": [
+          {
+            "id": "c4",
+            "text": "Use the remote to fast-forward to the present danger.",
+            "meaning": "Skip the painful past to focus on survival.",
+            "next": "n05",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [
+              "knows_rule_12"
+            ],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n05",
+        "chapter": "Act III",
+        "title": "Midnight Approach",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The digital clock above the information kiosk ticks closer to 12:00 AM. The mall is alive with a sinister energy. The music from the PA system has shifted to a minor key, looping endlessly. You stand in the central atrium, surrounded by the dormant forms of the dead staff. They wait for instruction. You are the conductor of this ghostly orchestra.\n\nYour handbook burns in your pocket. Rule Twelve echoes in your mind: *Do not look directly into the food court mirrors after midnight.* But why? What happens if you do? Or worse, what happens if you don’t follow the other eleven rules? You recall Rule Seven: *Never accept change from the vending machine operator.* Rule Four: *Keep the fountain water clear.*\n\nTwo paths diverge before you. To your left, the Food Court beckons, its tiled floors gleaming under harsh white lights. The mirrors hang there, ancient and tarnished. To your right, the Maintenance Tunnels lead beneath the foundation, where the true source of the haunting resides—the boiler room where the fire started. \n\nIf you go to the Food Court, you confront the visual manifestation of your guilt. If you go to the tunnels, you face the physical cause. The trust level among the spirits varies based on your previous actions. Some whisper warnings; others urge you forward. \n\n\"Manager!\" cries a voice. It’s Jenny, the mascot performer whose suit is torn and stained. She points to the Food Court. \"They’re coming out of the glass! Don’t let them cross the threshold!\" Meanwhile, a rumble shakes the floor from below. The boiler is overheating. Steam vents hiss angrily from grates nearby. You have seconds to decide. Do you protect the boundary of reality in the Food Court, or extinguish the engine of hell in the tunnels?",
+        "choices": [
+          {
+            "id": "c5a",
+            "text": "Rush to the Food Court to guard the mirrors.",
+            "meaning": "Confront the supernatural reflection of your psyche.",
+            "next": "n06",
+            "effects": {
+              "trust": 1
+            },
+            "setFacts": [],
+            "conditions": {}
+          },
+          {
+            "id": "c5b",
+            "text": "Descend into the Maintenance Tunnels.",
+            "meaning": "Attack the root cause of the haunting physically.",
+            "next": "n07",
+            "effects": {
+              "trust": -1
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n06",
+        "chapter": "Climax-A",
+        "title": "Reflections of Guilt",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You sprint toward the Food Court, dodging tables overturned by invisible winds. The air smells of ozone and rotting fruit. As you round the corner, you freeze. The mirrors along the far wall are rippling like water surfaces disturbed by rain. Faces emerge from the glass—not just yours, but everyone who died here. They press against the barrier, mouths open in silent screams.\n\nJenny is gone. In her place stands a tall figure wearing the Blackridge bear costume. It tilts its head, the fabric stretched tight over boneless limbs. \"Look closely, Manager,\" it growls, its voice layered with dozens of others. \"See what you missed.\"\n\nYou try to look away, but Rule Twelve forbids direct eye contact. Yet, peripheral vision betrays you. You see yourself in the mirror, but older, tired, holding a gun. The reflection winks. A surge of panic rises in your chest. The glass begins to crack. Shards float upward, defying gravity. \n\nYou realize the mirrors aren’t showing the past; they’re showing possible futures. One future ends with you escaping. Another ends with you joining them. The bear steps aside, revealing a narrow gap between two cracked panels. Beyond it lies the exit to the loading dock. But the path is blocked by swirling debris. You must navigate carefully, trusting your instincts rather than sight. Each step risks cutting you, bleeding into the spectral realm. You pull your flashlight, using its beam to solidify the floating shards temporarily. With a grunt of effort, you shove through the curtain of glass fragments, emerging onto the slick concrete of the loading bay. Behind you, the mirrors shatter completely, releasing a howl that shakes the foundations of the mall.",
+        "choices": [
+          {
+            "id": "c6",
+            "text": "Stumble toward the Loading Dock Exit.",
+            "meaning": "Attempt to flee the physical location.",
+            "next": "n08",
+            "effects": {
+              "trust": 0
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n07",
+        "chapter": "Climax-B",
+        "title": "The Heart of Fire",
+        "kind": "branch",
+        "isEnding": false,
+        "endingId": null,
+        "body": "The descent into the maintenance tunnels is claustrophobic. Pipes sweat condensation, dripping onto your neck like icy tears. The heat intensifies as you approach the boiler room. Red warning lights strobe rhythmically, casting long, dancing shadows. Here, the laws of physics bend. Gravity pulls sideways; sound travels faster than light. You see flashes of the 1999 fire replaying in real-time around you—flames licking the ceiling, smoke choking the air.\n\nAt the center of the room stands the Great Boiler, a massive iron beast groaning under pressure. Attached to it is a valve wheel painted yellow. Next to it lies the body of the arsonist, frozen in time, mid-scream. His hand reaches for the detonator. \n\n\"Turn it,\" commands a voice from the steam. It’s Mr. Henderson again, materializing from the vapor. \"Release the pressure, or we all burn again. But beware: turning the valve releases the memories trapped in the pipes. You’ll experience every second of their pain.\"\n\nYou hesitate. Is this mercy or torture? The boiler gauge spikes into the red. Metal shrieks. You grab the wheel. It’s scorching hot. Searing your palms, you force it counter-clockwise. A blast of superheated steam erupts, knocking you back. Visions flood your mind: Sarah burning at the register, David crushed by falling beams, Jenny suffocating in her suit. The agony is absolute. You scream, but no sound comes out. As the pressure drops, the visions fade, leaving you gasping on the grate floor. The boiler quiets to a steady hum. The tunnel exits ahead, leading to the service elevator that goes straight up to the roof access.",
+        "choices": [
+          {
+            "id": "c7",
+            "text": "Drag yourself to the Service Elevator.",
+            "meaning": "Escape the underground torment towards the sky.",
+            "next": "n08",
+            "effects": {
+              "trust": 0
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n08",
+        "chapter": "Resolution Point",
+        "kind": "choice",
+        "isEnding": false,
+        "endingId": null,
+        "body": "You arrive at the nexus point: the rooftop access hatch. Dawn is breaking, painting the sky in hues of bruised purple and orange. Below, the mall is silent. The entities have retreated to their corners, waiting for the next cycle. You stand at the edge of freedom, but the handbook remains in your pocket. Rule Twelve has passed. Midnight is over. Technically, you are free to leave.\n\nHowever, three options remain, each carrying profound consequences. \n\nFirst, you can simply walk away. Leave the mall to its fate. The curse continues, but you survive. This requires abandoning any hope of saving the souls trapped within. \n\nSecond, you can use your security key to initiate the self-destruct sequence coded into the building’s mainframe. This would erase Blackridge Mall from existence, freeing the spirits but destroying evidence of your involvement. It is an act of ultimate sacrifice. \n\nThird, you can stay. Accept the role of Eternal Manager. By staying, you bind yourself to the mall forever, becoming part of the lore, ensuring the rules are kept, and perhaps finding peace in duty. \n\nThe wind tugs at your uniform. The sun rises higher. Time is running out. The spirits watch from the skylights below, their expressions unreadable. What is your final decision?",
+        "choices": [
+          {
+            "id": "c8a",
+            "text": "Walk away into the sunrise.",
+            "meaning": "Choose personal survival over moral closure.",
+            "next": "n09",
+            "effects": {
+              "trust": -5
+            },
+            "setFacts": [],
+            "conditions": {}
+          },
+          {
+            "id": "c8b",
+            "text": "Trigger the demolition sequence.",
+            "meaning": "Destroy the mall to free the souls.",
+            "next": "n10",
+            "effects": {
+              "trust": 5
+            },
+            "setFacts": [],
+            "conditions": {}
+          },
+          {
+            "id": "c8c",
+            "text": "Stay and assume command.",
+            "meaning": "Become the eternal guardian of Blackridge.",
+            "next": "n11",
+            "effects": {
+              "trust": 10
+            },
+            "setFacts": [],
+            "conditions": {}
+          }
+        ]
+      },
+      {
+        "id": "n09",
+        "chapter": "Ending 1",
+        "title": "The Survivor's Burden",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_survivor",
+        "body": "You turn your back on the railing and descend the stairs. The metal groans under your boots, a mournful sound that follows you all the way to the ground level. You push through the side exit, stepping out into the cool morning air of the parking lot. Cars sit rusted and abandoned, covered in leaves. You start walking toward the highway, hoping to flag down a trucker or find a working phone.\n\nBehind you, Blackridge Mall looms, silent and imposing. You tell yourself it’s over. You survived. But as you drive away days later, listening to the radio, you hear a snippet of 'All Star' playing softly in the background. You glance in the rearview mirror. For a split second, your reflection isn’t you. It’s wearing the security uniform, smiling sadly. \n\nYou live a long life, but you never sleep well. Every night, you dream of fluorescent lights and the smell of burnt popcorn. You carry the guilt of those left behind, knowing you could have saved them, or at least ended their suffering. You are free, but you are haunted. The mall waits for the next fool to wander in, and you wonder if you’ve set the stage for another tragedy. The handbook stays in your drawer, unopened, a testament to the cowardice that kept you alive.",
+        "choices": []
+      },
+      {
+        "id": "n10",
+        "chapter": "Ending 2",
+        "title": "Ashes to Ashes",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_destroyer",
+        "body": "Your fingers fly across the keypad hidden in the service closet. Code: 9-9-O-C-T-1-4. Enter. The building shudders. Alarms blare, not the usual fire sirens, but a deep, resonant tone signaling structural collapse. You sprint for the exit, lungs burning. Explosions ripple through the lower levels, blowing out windows and sending plumes of dust into the sky.\n\nYou barely make it to the perimeter fence before the main atrium caves in. The roar is deafening, a thunderclap that shakes the earth. When the dust settles, Blackridge Mall is a skeleton of twisted steel and rubble. Silence returns, heavier than before.\n\nWalking away, you feel a strange lightness. The voices in your head are gone. The nightmares stop that very night. Years later, developers build a park on the site. Children play where the food court once stood. Sometimes, on windy nights, locals swear they hear laughter echoing from the grass, bright and joyful. You visit the park occasionally, sitting on a bench, watching the kids. You don’t speak of your past. You don’t need to. You gave them peace, even if it cost you everything else. You are anonymous, forgotten, and finally, truly free.",
+        "choices": []
+      },
+      {
+        "id": "n11",
+        "chapter": "Ending 3",
+        "title": "The Eternal Shift",
+        "kind": "ending",
+        "isEnding": true,
+        "endingId": "e_guardian",
+        "body": "You close the hatch. The sunlight fades as you step back inside. The mall seems different now—warmer, welcoming. The spirits gather around you, not as threats, but as colleagues. Sarah brings you a fresh cup of coffee. David adjusts your tie. Jenny hugs your leg, her fur soft and clean.\n\n\"Welcome home, Manager,\" Henderson says, handing you a new badge. It glows with a faint golden light. \n\nYou realize you were never meant to leave. Your death in 1999 wasn’t an accident; it was an appointment. You take your post at the security desk. The hours stretch into eternity, but they pass quickly. You enforce the rules with kindness. You guide the lost souls to rest. You become legend, a myth told to teenagers who dare to trespass. \n\nSometimes, a living person wanders in, scared and confused. You meet them at the door, offer directions, and send them safely away. You are the guardian of the threshold, the keeper of the balance. The nostalgia isn’t a trap anymore; it’s a comfort. You belong here. And as the next century turns, you smile, ready for the next shift. Forever.",
+        "choices": []
+      }
+    ]
+  },
+  "recommendation": {
+    "gender": "male",
+    "tags": [
+      "Survival Horror",
+      "Rules Mystery",
+      "90s Nostalgia",
+      "Found Footage",
+      "Multiple Endings",
+      "Interactive Fiction"
+    ],
+    "summary": "Step into the flickering lights of a forgotten 1999 mall where time has stopped and the dead never left their posts. As the sole survivor of a brutal massacre, you must endure one final shift under strict, terrifying rules while uncovering the truth behind static-filled monitors and shadowy figures lurking in department stores and neon arcades. Navigate through branching paths that lead to distinct climaxes—whether facing your guilt in reflective mirrors or descending into fiery maintenance tunnels—and choose from three haunting conclusions that determine if you escape into the sunrise, burn with the building, or become trapped forever on the eternal night shift."
+  },
+  "generatedAt": "2026-09-24T10:29:41.648Z"
+}
