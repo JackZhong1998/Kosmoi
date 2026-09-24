@@ -86,7 +86,7 @@ export function StoryFeed() {
       ) : null}
       {ready && !error && stories.length > 0 ? <div className="feed" ref={feedRef}>
       {stories.map((story) => (
-        <Link key={story.id} href={`/novel/${story.id}`} className="feed-card">
+        <Link key={story.id} href={`/read/${story.id}`} className="feed-card">
           <article className="feed-sheet">
             <header className="feed-head">
               <h1>{story.title}</h1>
