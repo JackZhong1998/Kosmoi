@@ -19,7 +19,7 @@ import {
 import { asLocale, localeInstruction } from '@/lib/i18n';
 
 export const runtime = 'nodejs';
-export const maxDuration = 800;
+export const maxDuration = 300;
 
 type ChatTurn = { role: 'user' | 'assistant'; content: string };
 

@@ -7,7 +7,7 @@ import { requireUserId } from '@/lib/auth-user';
 import { asLocale, localeInstruction } from '@/lib/i18n';
 
 export const runtime = 'nodejs';
-export const maxDuration = 800;
+export const maxDuration = 300;
 
 function openRouterStream(apiKey: string, payload: string): Promise<{ status: number; body: ReadableStream }> {
   return new Promise((resolve, reject) => {
