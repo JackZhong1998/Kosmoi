@@ -13,6 +13,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
+    env:
+      VERCEL_PROJECT_NAME: kosmoi
+      VERCEL_SCOPE: carneyzzzzzs-projects
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
@@ -28,38 +31,6 @@ jobs:
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
-
-      - name: Resolve linked Vercel project
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: |
-          node - <<'NODE'
-          const fs = require('node:fs');
-          (async () => {
-            const token = process.env.VERCEL_TOKEN;
-            const response = await fetch('https://api.vercel.com/v9/projects?limit=100', {
-              headers: { Authorization: `Bearer ${token}` },
-            });
-            if (!response.ok) throw new Error(`Unable to list Vercel projects (${response.status})`);
-            const { projects = [] } = await response.json();
-            const matches = projects.filter((project) => {
-              const repo = String(project.link?.repo || '').toLowerCase();
-              const name = String(project.name || '').toLowerCase();
-              return repo === 'kosmoi' || name === 'kosmoi';
-            });
-            if (matches.length !== 1) throw new Error(`Expected one Kosmoi Vercel project, found ${matches.length}`);
-            const project = matches[0];
-            if (!project.id || !project.accountId) throw new Error('Kosmoi project is missing its Vercel identifiers');
-            const teamResponse = await fetch(`https://api.vercel.com/v2/teams/${project.accountId}`, {
-              headers: { Authorization: `Bearer ${token}` },
-            });
-            if (!teamResponse.ok) throw new Error(`Unable to read the Kosmoi Vercel team (${teamResponse.status})`);
-            const team = await teamResponse.json();
-            if (!team?.slug) throw new Error('Kosmoi Vercel team has no slug');
-            fs.appendFileSync(process.env.GITHUB_ENV, `VERCEL_PROJECT_NAME=${project.name}\nVERCEL_SCOPE=${team.slug}\n`);
-            console.log(`Resolved Vercel project: ${project.name}`);
-          })().catch((error) => { console.error(error.message); process.exit(1); });
-          NODE
 
       - name: Link Vercel project
         run: vercel link --yes --project="$VERCEL_PROJECT_NAME" --scope="$VERCEL_SCOPE" --token=${{ secrets.VERCEL_TOKEN }}
