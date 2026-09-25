@@ -50,18 +50,26 @@ jobs:
             if (matches.length !== 1) throw new Error(`Expected one Kosmoi Vercel project, found ${matches.length}`);
             const project = matches[0];
             if (!project.id || !project.accountId) throw new Error('Kosmoi project is missing its Vercel identifiers');
-            fs.appendFileSync(process.env.GITHUB_ENV, `VERCEL_PROJECT_ID=${project.id}\nVERCEL_ORG_ID=${project.accountId}\n`);
-            fs.mkdirSync('.vercel', { recursive: true });
-            fs.writeFileSync('.vercel/project.json', JSON.stringify({ projectId: project.id, orgId: project.accountId }));
+            const teamsResponse = await fetch('https://api.vercel.com/v2/teams?limit=100', {
+              headers: { Authorization: `Bearer ${token}` },
+            });
+            if (!teamsResponse.ok) throw new Error(`Unable to list Vercel teams (${teamsResponse.status})`);
+            const { teams = [] } = await teamsResponse.json();
+            const team = teams.find((candidate) => candidate.id === project.accountId);
+            if (!team?.slug) throw new Error('Unable to resolve the Vercel team for Kosmoi');
+            fs.appendFileSync(process.env.GITHUB_ENV, `VERCEL_PROJECT_NAME=${project.name}\nVERCEL_SCOPE=${team.slug}\n`);
             console.log(`Resolved Vercel project: ${project.name}`);
           })().catch((error) => { console.error(error.message); process.exit(1); });
           NODE
 
+      - name: Link Vercel project
+        run: vercel link --yes --project="$VERCEL_PROJECT_NAME" --scope="$VERCEL_SCOPE" --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Pull production configuration
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=production --scope="$VERCEL_SCOPE" --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build deployment artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --prod --scope="$VERCEL_SCOPE" --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy production
-        run: vercel deploy --prebuilt --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --prod --archive=tgz --scope="$VERCEL_SCOPE" --token=${{ secrets.VERCEL_TOKEN }}
