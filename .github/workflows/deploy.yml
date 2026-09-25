@@ -13,9 +13,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
-    env:
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
@@ -54,6 +51,8 @@ jobs:
             const project = matches[0];
             if (!project.id || !project.accountId) throw new Error('Kosmoi project is missing its Vercel identifiers');
             fs.appendFileSync(process.env.GITHUB_ENV, `VERCEL_PROJECT_ID=${project.id}\nVERCEL_ORG_ID=${project.accountId}\n`);
+            fs.mkdirSync('.vercel', { recursive: true });
+            fs.writeFileSync('.vercel/project.json', JSON.stringify({ projectId: project.id, orgId: project.accountId }));
             console.log(`Resolved Vercel project: ${project.name}`);
           })().catch((error) => { console.error(error.message); process.exit(1); });
           NODE
