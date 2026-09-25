@@ -50,7 +50,13 @@ jobs:
             if (matches.length !== 1) throw new Error(`Expected one Kosmoi Vercel project, found ${matches.length}`);
             const project = matches[0];
             if (!project.id || !project.accountId) throw new Error('Kosmoi project is missing its Vercel identifiers');
-            fs.appendFileSync(process.env.GITHUB_ENV, `VERCEL_PROJECT_NAME=${project.name}\nVERCEL_SCOPE=${project.accountId}\n`);
+            const teamResponse = await fetch(`https://api.vercel.com/v2/teams/${project.accountId}`, {
+              headers: { Authorization: `Bearer ${token}` },
+            });
+            if (!teamResponse.ok) throw new Error(`Unable to read the Kosmoi Vercel team (${teamResponse.status})`);
+            const team = await teamResponse.json();
+            if (!team?.slug) throw new Error('Kosmoi Vercel team has no slug');
+            fs.appendFileSync(process.env.GITHUB_ENV, `VERCEL_PROJECT_NAME=${project.name}\nVERCEL_SCOPE=${team.slug}\n`);
             console.log(`Resolved Vercel project: ${project.name}`);
           })().catch((error) => { console.error(error.message); process.exit(1); });
           NODE
