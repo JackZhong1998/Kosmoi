@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { requireUserId } from '@/lib/auth-user';
 import { getStory, updateStory, type StoryPatch } from '@/lib/db';
+import { latestJob } from '@/lib/generation-jobs';
 import { isStoryId } from '@/lib/stories';
 import type { Audience } from '@/lib/topic-tags';
 import type { ChatMessage } from '@/lib/types';
@@ -71,6 +72,10 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
   if (!isStoryId(id)) return NextResponse.json({ error: '无效的故事' }, { status: 400 });
   const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
   try {
+    const active = await latestJob(userId, id);
+    if (active?.status === 'queued' || active?.status === 'running') {
+      return NextResponse.json({ error: '这篇故事正在生成，请稍后再保存' }, { status: 409 });
+    }
     const story = await updateStory(userId, id, patchFrom(body));
     if (!story) return NextResponse.json({ error: '未找到这篇草稿' }, { status: 404 });
     return NextResponse.json({ story });

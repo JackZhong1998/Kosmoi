@@ -3,7 +3,7 @@ import path from 'node:path';
 import https from 'node:https';
 import { createClient } from '@supabase/supabase-js';
 
-const CATALOG = [
+const LEGACY_CATALOG = [
   { slug: 'zh-f-404-bride', language: 'zh', gender: 'female', title: '《404号房的逃婚新娘》', hook: '婚礼前夜，你收到一张自己的死亡证明。想活到天亮，必须在未婚夫、失踪的姐姐和一名陌生警察之间选择信任。', themes: ['都市悬疑', '黑暗浪漫', '逃婚', '身份谜题', '多结局'] },
   { slug: 'zh-f-changan-coroner', language: 'zh', gender: 'female', title: '《长安女仵作：第七具无名尸》', hook: '你是长安最会让死人开口的女仵作，第七具无名尸却长着你的脸。三日内查清真相，否则下一个死的人就是现在的你。', themes: ['古风探案', '女强', '权谋', '身份反转', '宿命'] },
   { slug: 'zh-f-last-exhibit', language: 'zh', gender: 'female', title: '《分手博物馆的最后一件藏品》', hook: '你帮别人保存爱情遗物，却在闭馆前收到一封来自五年后的分手信。每打开一件藏品，都会改写你和他的过去。', themes: ['破镜重圆', '都市治愈', '时间奇幻', '成年人爱情', '遗憾'] },
@@ -27,6 +27,32 @@ const CATALOG = [
   { slug: 'en-m-blackridge-mall', language: 'en', gender: 'male', title: 'Last Shift at Blackridge Mall', hook: 'The abandoned mall reopens for one night, staffed by people who all died there in 1999. Your security handbook has twelve rules; the final rule is written in your handwriting.', themes: ['Survival horror', 'Rules mystery', 'Nineties nostalgia', 'Found footage', 'Multiple endings'] },
   { slug: 'en-m-own-rebellion', language: 'en', gender: 'male', title: 'The King Who Woke Inside His Own Rebellion', hook: 'You awaken with no memory as the masked rebel about to execute the king—then recognize the king as an older version of yourself.', themes: ['Epic fantasy', 'Strategy', 'Identity paradox', 'Rebellion', 'Moral choices'] },
   { slug: 'en-m-colony-vote', language: 'en', gender: 'male', title: 'Colony 13: Vote to Survive', hook: 'A failing Mars colony has oxygen for 312 people and a population of 487. As the newly elected governor, every player vote saves a district and condemns another.', themes: ['Mars survival', 'Leadership', 'Resource crisis', 'Political drama', 'Hard choices'] },
+];
+
+const CATALOG = [
+  { slug: 'zh-f-404-bride', language: 'zh', gender: 'female', title: '《恋爱综艺里，四个男人都选了我》', hook: '你只想替好友救场，却在首轮心动投票中同时收到四张票：温柔影帝、毒舌主理人、年下冠军和你的初恋。镜头之外，每个人都想让你只看他。', themes: ['恋综修罗场', '全员心动', '初恋重逢', '成年人恋爱', '多男主结局'] },
+  { slug: 'zh-f-changan-coroner', language: 'zh', gender: 'female', title: '《长安第一女掌柜的四封婚书》', hook: '你要在长安重开家业，却同时收到冷面将军、腹黑王爷、温润御医与江湖少主的婚书。他们争的不只是你的心，还有你手中能改变长安商路的密钥。', themes: ['古风乙女', '多男主', '女商人', '权谋甜宠', '自主选择'] },
+  { slug: 'zh-f-last-exhibit', language: 'zh', gender: 'female', title: '《离婚倒计时：前任们全回来了》', hook: '你在离婚冷静期第一天搬进海边公寓，门外却依次出现想复婚的前夫、最懂你的竹马、气场全开的新老板和当年不告而别的摄影师。', themes: ['都市成年人恋爱', '前任修罗场', '破镜重圆', '年上年下', '女性成长'] },
+  { slug: 'zh-f-dock-seven', language: 'zh', gender: 'female', title: '《顶流女导演今天选谁做男主》', hook: '你的处女作杀入国际电影节，四位男人争着演你的男主角：顶流、实力派影帝、天才编剧和投资人。试戏结束后，他们的表白却都不在剧本里。', themes: ['娱乐圈', '女导演', '四角竞逐', '事业爱情', '电影感'] },
+  { slug: 'zh-f-apocalypse-roommates', language: 'zh', gender: 'female', title: '《末日安全屋的心动合约》', hook: '你是安全屋唯一能修复净水系统的工程师，冷静队长、天才医生、危险雇佣兵和你失联的未婚夫都想带你离开，却只能选一条生路。', themes: ['末日恋爱', '强强联手', '守护与占有', '多男主', '生存抉择'] },
+
+  { slug: 'zh-m-evacuation-72', language: 'zh', gender: 'male', title: '《全公司都在猜我最后选谁》', hook: '你空降成为濒临破产的工作室主理人，高冷合伙人、元气策划、秘密投资人和你的天才前任同时进组。她们争项目，也在争你下班后的时间。', themes: ['职场恋爱', '多女主', '创业逆袭', '前任重逢', '成年人拉扯'] },
+  { slug: 'zh-m-delete-tomorrow', language: 'zh', gender: 'male', title: '《科技展上，四位天才女生向我宣战》', hook: '你带着一台未完成的陪伴机器人参展，却被冷艳女教授、青梅程序员、天才产品经理和竞争公司千金同时盯上。她们想抢你的代码，更想抢你的未来。', themes: ['科技圈恋爱', '天才女友', '欢喜冤家', '青梅竹马', '多结局'] },
+  { slug: 'zh-m-last-metro', language: 'zh', gender: 'male', title: '《恋爱公寓的最后一间房》', hook: '你刚失业就抽中免费公寓，入住后才发现三位室友和神秘女房东都曾与你擦肩而过。一张共居合约，让四段错过的缘分同时开始。', themes: ['合租日常', '多女主', '治愈喜剧', '与女房东恋爱', '心动选择'] },
+  { slug: 'zh-m-unfinished-city', language: 'zh', gender: 'male', title: '《回村开民宿后，她们都追来了》', hook: '你辞去大厂工作回海岛修老宅，青梅村医、直播博主、毒舌建筑师和前上司先后入住。民宿还没开业，小岛已经开始押注你会和谁留下。', themes: ['田园恋爱', '民宿创业', '青梅竹马', '御姐年上', '轻喜剧'] },
+  { slug: 'zh-m-fallen-emperor', language: 'zh', gender: 'male', title: '《我的四位女谋士都想当皇后》', hook: '你被推上乱世的王座，冷艳女将、腹黑宰相、温柔医女和敌国公主各自为你献上胜策。朝堂要你立后，她们却都不肯让你只把这当成政治。', themes: ['架空宫廷', '多女主', '女将女相', '权谋恋爱', '王座与真心'] },
+
+  { slug: 'en-f-bride-404', language: 'en', gender: 'female', title: 'Every Man at the Wedding Chose Me', hook: 'You attend a destination wedding determined to stay invisible, then receive confessions from the best man, the bride\'s guarded brother, a famous musician, and the ex who once broke your heart. By sunset, all four are openly competing for your next dance.', themes: ['Destination romance', 'Multiple male love interests', 'Second chances', 'Rivals in love', 'Choice-driven endings'] },
+  { slug: 'en-f-borrowed-crown', language: 'en', gender: 'female', title: 'Four Princes, One Borrowed Crown', hook: 'You impersonate a missing princess for seven days and discover that four men—a loyal knight, a rival prince, a charming spy, and your childhood protector—know the truth. Each offers an alliance, a kiss, and a different future.', themes: ['Romantasy', 'Reverse harem rivalry', 'Hidden identity', 'Court intrigue', 'Multiple romance endings'] },
+  { slug: 'en-f-bellweather-train', language: 'en', gender: 'female', title: 'The Summer All My Exes Came Home', hook: 'You return to save your family’s lakeside inn and find three former flames plus the infuriating architect next door competing to help. The town festival ends with one public declaration—and the choice is yours.', themes: ['Small-town romance', 'Second chance', 'Multiple suitors', 'Summer festival', 'Female ambition'] },
+  { slug: 'en-f-influencer-murder', language: 'en', gender: 'female', title: 'The Bachelorette Bet Nobody Was Meant to Win', hook: 'You join a dating show to expose its producer, but the sincere single dad, the rebellious chef, the polished heir, and the cameraman who knows your secret all fall for you—and start breaking the show’s rules to prove it.', themes: ['Reality TV romance', 'Four suitors', 'Behind-the-scenes secrets', 'Romantic comedy', 'Player choice'] },
+  { slug: 'en-f-saltwater-letters', language: 'en', gender: 'female', title: 'The Last Lighthouse Keeper Has Four Visitors', hook: 'You inherit a remote lighthouse for one stormy month. A rescue pilot, a marine biologist, a bestselling novelist, and the island mayor each arrive with a reason to stay—and none intends to let the others win your heart.', themes: ['Coastal romance', 'Forced proximity', 'Multiple male love interests', 'Cozy mystery', 'Emotional choice'] },
+
+  { slug: 'en-m-lunar-dead-drop', language: 'en', gender: 'male', title: 'Four Women at the Lunar Embassy', hook: 'Your first week as Earth’s lunar diplomat becomes complicated when a fearless pilot, a brilliant scientist, a rival ambassador, and your former academy partner all request you for the same mission—and for reasons that are not strictly professional.', themes: ['Sci-fi romance', 'Multiple female love interests', 'Rivals to lovers', 'Moon colony', 'Choice-driven endings'] },
+  { slug: 'en-m-murder-startup', language: 'en', gender: 'male', title: 'My Startup Has Four Co-Founders and One Impossible Choice', hook: 'You have thirty days to save your company while four remarkable women—your relentless COO, a playful designer, a mysterious investor, and the engineer who was your first love—compete for control of the launch and a place beside you afterward.', themes: ['Startup romance', 'Multiple heroines', 'Workplace rivalry', 'First love', 'Ambition and affection'] },
+  { slug: 'en-m-blackridge-mall', language: 'en', gender: 'male', title: 'The Apartment Above the Midnight Bookshop', hook: 'A cheap room above a bookshop comes with four women already woven into its nights: the sharp-tongued owner, a warmhearted baker, a famous author in hiding, and your adventurous childhood friend. Their book-club rivalry soon becomes personal.', themes: ['Cozy urban romance', 'Multiple heroines', 'Roommates', 'Bookshop', 'Slow burn'] },
+  { slug: 'en-m-own-rebellion', language: 'en', gender: 'male', title: 'The King and His Four Rival Queens', hook: 'On the eve of your coronation, a warrior general, a cunning chancellor, a compassionate healer, and a rebellious foreign princess each offers the alliance that could save your kingdom. Each also wants the man beneath the crown.', themes: ['Fantasy romance', 'Four heroines', 'Court rivalry', 'Political marriage', 'Multiple endings'] },
+  { slug: 'en-m-colony-vote', language: 'en', gender: 'male', title: 'Mars Colony Dating Protocol', hook: 'You are selected for the colony’s compatibility trial, only to match equally with its daring commander, reserved botanist, mischievous mechanic, and charismatic rival candidate. The whole colony watches them compete—but the final decision belongs to you.', themes: ['Mars romance', 'Multiple female love interests', 'Dating experiment', 'Found family', 'Choice-driven endings'] },
 ];
 
 function loadEnv(text) {
@@ -54,6 +80,12 @@ function request(apiKey, payload) {
 
 function storyPrompt(item) {
   const language = item.language === 'zh' ? '简体中文' : 'English';
+  const protagonist = item.gender === 'female'
+    ? 'The player-character is an adult woman pursued by at least three distinct adult men.'
+    : 'The player-character is an adult man pursued by at least three distinct adult women.';
+  const lengthRule = item.language === 'zh'
+    ? '每个非结局节点正文为 700–1100 个汉字，每个结局为 500–800 个汉字。'
+    : 'Every non-ending body must be 550–800 words and every ending 350–500 words.';
   return `Create a complete, polished short interactive novel in ${language} for Spark Story Studio.
 
 TITLE: ${item.title}
@@ -61,9 +93,17 @@ PREMISE: ${item.hook}
 AUDIENCE: ${item.gender}
 THEMES: ${item.themes.join(', ')}
 
+CORE ROMANCE REQUIREMENTS:
+- ${protagonist}
+- All love interests actively like the protagonist, notice one another's feelings, and compete through dates, gifts, protection, teasing, jealousy, or open declarations.
+- Give every love interest a distinctive worldview, chemistry, flaw, and emotionally credible reason to love the protagonist. The protagonist must have agency and a meaningful personal goal beyond being desired.
+- Keep the rivalry consensual and entertaining. No coercion, stalking presented as romantic, sexual violence, incest, or underage characters. Intimacy may be sensual but never explicit.
+- The final three ending nodes n09, n10, and n11 must each be a complete, satisfying romantic ending with a DIFFERENT named love interest. No generic single ending, harem ending, death ending, or cliffhanger.
+- Use at least three visible affection stats, one for each endgame love interest. Choices must change relevant affection stats and produce visible emotional consequences.
+
 Return strict JSON only with two top-level fields: meta and nodes.
 
-The novel must be complete and playable, not an outline. Create EXACTLY 11 substantial scenes with IDs n01 through n11. Use this topology: n01→n02; n02 has a meaningful choice to n03 or n04; n03 and n04 both lead to n05; n05 has a meaningful choice to n06 or n07; n06 and n07 both lead to n08; n08 has three consequential choices leading to the distinct endings n09, n10, and n11. Use second-person narration and concrete cinematic prose. Every non-ending body must be 250-400 words and every ending 180-300 words, so the full story feels satisfying. Avoid explicit sexual content, hate, and gratuitous gore.
+The novel must be complete and playable, not an outline. Create EXACTLY 11 substantial scenes with IDs n01 through n11. Use this topology: n01→n02; n02 has a meaningful choice to n03 or n04; n03 and n04 both lead to n05; n05 has a meaningful choice to n06 or n07; n06 and n07 both lead to n08; n08 has three consequential choices leading to the distinct romantic endings n09, n10, and n11. Use second-person narration, concrete cinematic prose, plenty of dialogue, and recurring rivalry among the love interests. ${lengthRule} Avoid explicit sexual content, hate, and gratuitous gore.
 
 {"meta":{"title":"...","logline":"...","start":"n01","stats":[{"id":"trust","name":"...","initial":5,"min":0,"max":10,"visible":true}],"factLabels":{"key":"..."}},"nodes":[{"id":"n01","chapter":"...","title":"...","kind":"linear|choice|branch|merge|ending","isEnding":false,"endingId":null,"body":"full narrative prose","choices":[{"id":"c1","text":"...","meaning":"...","next":"n02","effects":{"trust":1},"setFacts":["key"],"conditions":{}}]}]}
 
@@ -80,7 +120,13 @@ function extractJson(text) {
 
 function validateStory(item, story) {
   const nodes = Array.isArray(story.nodes) ? story.nodes : [];
-  if (nodes.length < 8 || !nodes.some((node) => node.isEnding)) throw new Error(`incomplete story (${nodes.length} nodes)`);
+  const endings = nodes.filter((node) => node.isEnding);
+  const bodyChars = nodes.reduce((sum, node) => sum + String(node.body || '').length, 0);
+  const minimumChars = item.language === 'zh' ? 5000 : 18000;
+  if (nodes.length !== 11 || endings.length !== 3) throw new Error(`incomplete story (${nodes.length} nodes, ${endings.length} endings)`);
+  if ((story.meta?.stats || []).length < 3) throw new Error('story needs at least three affection stats');
+  if (bodyChars < minimumChars) throw new Error(`story is too short (${bodyChars}/${minimumChars} characters)`);
+  if (new Set(endings.map((node) => node.endingId)).size !== 3) throw new Error('romantic endings must be distinct');
   const ids = new Set(nodes.map((node) => node.id));
   for (const node of nodes) for (const choice of node.choices || []) if (!ids.has(choice.next)) throw new Error(`broken choice ${choice.next}`);
   return story;
@@ -204,11 +250,14 @@ async function main() {
   // Long, schema-heavy launch assets need a non-reasoning model so the output
   // budget is spent on the actual novel rather than hidden chain-of-thought.
   const model = process.env.OPENROUTER_LIBRARY_MODEL || env.OPENROUTER_LIBRARY_MODEL || 'qwen/qwen3.8-max-prime';
-  const outputDir = path.join(process.cwd(), 'output', 'launch-library');
+  const outputDir = path.join(process.cwd(), 'output', 'romance-library');
   await fs.mkdir(outputDir, { recursive: true });
+  const shardCount = Math.max(1, Number.parseInt(process.env.LIBRARY_SHARD_COUNT || '1', 10) || 1);
+  const shardIndex = Math.max(0, Number.parseInt(process.env.LIBRARY_SHARD_INDEX || '0', 10) || 0);
+  const selected = CATALOG.filter((_, index) => index % shardCount === shardIndex);
   const records = [];
-  for (let index = 0; index < CATALOG.length; index++) {
-    const item = CATALOG[index];
+  for (let index = 0; index < selected.length; index++) {
+    const item = selected[index];
     const file = path.join(outputDir, `${item.slug}.json`);
     let saved;
     try {
@@ -217,9 +266,9 @@ async function main() {
       saved = JSON.parse(normalized);
       if (normalized !== raw) await fs.writeFile(file, normalized);
       validateStory(item, saved.story);
-      console.log(`[${index + 1}/${CATALOG.length}] cached ${item.slug}`);
+      console.log(`[${index + 1}/${selected.length}] cached ${item.slug}`);
     } catch {
-      console.log(`[${index + 1}/${CATALOG.length}] generating ${item.slug}`);
+      console.log(`[${index + 1}/${selected.length}] generating ${item.slug}`);
       let lastError;
       for (let attempt = 1; attempt <= 3; attempt++) {
         try {
@@ -238,7 +287,9 @@ async function main() {
     }
     records.push(saved);
   }
-  await fs.writeFile(path.join(outputDir, 'manifest.json'), `${JSON.stringify(records.map(({ item, recommendation, story }) => ({ ...item, recommendation, nodes: story.nodes.length })), null, 2)}\n`);
+  if (shardCount === 1) {
+    await fs.writeFile(path.join(outputDir, 'manifest.json'), `${JSON.stringify(records.map(({ item, recommendation, story }) => ({ ...item, recommendation, nodes: story.nodes.length })), null, 2)}\n`);
+  }
   if (process.argv.includes('--publish')) await publishAll(env, records, model);
   console.log(`complete: ${records.length} stories`);
 }

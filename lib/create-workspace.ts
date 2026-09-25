@@ -14,6 +14,10 @@ type Cache = {
 
 let cache: Cache | null = null;
 
+export function invalidateCreateWorkspace() {
+  cache = null;
+}
+
 export function createWorkspaceKey(id?: string) {
   return isStoryId(id || '') ? id! : '';
 }

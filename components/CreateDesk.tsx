@@ -12,10 +12,8 @@ import {
   nextAutoStep,
 } from '@/lib/auto-write';
 import {
-  applyDocUpdates,
   hasLockedStyle,
   foldChatProse,
-  lastUpdatedKind,
   lockedStyleName,
   parseAssistantPayload,
   parseCandidates,
@@ -26,12 +24,12 @@ import {
   emptyStory,
   isBookComplete,
   isPageTurnText,
-  mergeProseAppend,
-  proseShouldAppend,
   storyFromProse,
   storyWordCount,
 } from '@/lib/parse-story';
 import { streamGenerate, streamStructure } from '@/lib/stream-generate';
+import { replyPreview } from '@/lib/generation-preview';
+import { meaningfulTitle, pickDesignTitle, pickTitle, storyTitle } from '@/lib/story-title';
 import {
   isStructureMessage,
   latestStructureRaw,
@@ -57,7 +55,7 @@ import {
   upsertStory,
 } from '@/lib/stories';
 import { apiJson } from '@/lib/client-api';
-import { loadCreateWorkspace, peekCreateWorkspace } from '@/lib/create-workspace';
+import { invalidateCreateWorkspace, loadCreateWorkspace, peekCreateWorkspace } from '@/lib/create-workspace';
 import { PHASE_STARTERS } from '@/lib/system-prompt';
 import type { ChatMessage, DocKind, StoryChoice, StoryData, StudioDocs } from '@/lib/types';
 import type { Audience } from '@/lib/topic-tags';
@@ -100,51 +98,6 @@ function docsFrom(project: Pick<StoryProject, 'topicDoc' | 'designDoc' | 'chapte
   };
 }
 
-const PLACEHOLDER_TITLES = new Set(['未命名故事', '未命名互动小说', '目录']);
-
-function meaningfulTitle(title: string) {
-  const name = title.trim();
-  return name && !PLACEHOLDER_TITLES.has(name) ? name : '';
-}
-
-/** 选题常把书名写成 **书名：**《…》，星号会挡在冒号和书名号中间。 */
-function plainDoc(text: string) {
-  return text.replace(/\*\*/g, '');
-}
-
-function pickTitle(topic: string) {
-  const text = plainDoc(topic);
-  const recBlock = (text.split(/##\s*推荐/)[1] || '').trim();
-  const rec = recBlock.match(/[《「]([^》」]{2,80})[》」]/);
-  if (rec) return rec[1].trim();
-  const rec2 = text.match(/推荐[^\n《]*[《「]([^》」]+)[》」]/);
-  if (rec2) return rec2[1].trim();
-  const bookName = text.match(/书名[：:]\s*[《「]([^》」]+)[》」]/);
-  if (bookName) return bookName[1].trim();
-  const named = [...text.matchAll(/[#]{2,3}[^\n]*[《]([^》]+)[》]/g)].pop();
-  if (named) return named[1].trim();
-  const h1 = text.match(/^#\s+《([^》\n]+)》/m);
-  return h1 ? h1[1].trim() : '';
-}
-
-function pickDesignTitle(design: string) {
-  const text = plainDoc(design);
-  const named = text.match(/^\s*书名[：:]\s*[《「]([^》」\n]+)[》」]/m);
-  if (named) return named[1].trim();
-  const marked = text.match(/^#\s*《([^》\n]+)》/m);
-  return marked ? marked[1].trim() : '';
-}
-
-function storyTitle(opts: { topicTitle?: string; topicDoc?: string; designDoc?: string; metaTitle?: string }) {
-  return (
-    pickDesignTitle(opts.designDoc || '') ||
-    meaningfulTitle(opts.topicTitle || '') ||
-    pickTitle(opts.topicDoc || '') ||
-    meaningfulTitle(opts.metaTitle || '') ||
-    '未命名故事'
-  );
-}
-
 function pickStyleName(styleDoc: string) {
   return (
     lockedStyleName(styleDoc) ||
@@ -154,6 +107,9 @@ function pickStyleName(styleDoc: string) {
 }
 
 type ProjectJob = {
+  id?: string;
+  kind?: 'single' | 'auto' | 'structure';
+  round?: number;
   busy: boolean;
   generating: boolean;
   structuring: boolean;
@@ -172,6 +128,18 @@ const EMPTY_JOB: ProjectJob = {
 };
 
 type RunResult = 'ok' | 'aborted' | 'busy' | 'error';
+
+type ServerJob = {
+  id: string;
+  story_id: string;
+  kind: 'single' | 'auto' | 'structure';
+  stage?: 'generate' | 'structure';
+  status: 'queued' | 'running' | 'done' | 'error' | 'canceled';
+  output: string;
+  thinking: string;
+  error: string;
+  round: number;
+};
 
 function isAbortError(err: unknown) {
   return (
@@ -215,40 +183,6 @@ function structureFailMessage(err: unknown) {
     return '结构请求失败了，连接中断，没有拿到结果。再试一次即可。';
   }
   return message || '结构整理失败';
-}
-
-function looksLikeStyleDoc(text: string) {
-  return /(?:^|\n)#{1,3}\s*已锁定|\*\*已锁定|候选\s*[一二三123]/.test(text);
-}
-
-function replyPreview(base: { docs: StudioDocs }, text: string, fallback?: DocKind, structure?: ReturnType<typeof parseStructure>) {
-  const parsed = parseAssistantPayload(text);
-  let updates = parsed.updates;
-  if (base.docs.prose.trim()) {
-    updates = updates.map((update) => {
-      if (update.kind !== 'prose' || update.append) return update;
-      const keep =
-        fallback === 'prose' || proseShouldAppend(base.docs.prose, update.content);
-      return keep ? { ...update, append: true } : update;
-    });
-  }
-  let nextDocs = applyDocUpdates(base.docs, updates);
-  if (!updates.length && fallback) {
-    if (fallback === 'prose' && base.docs.prose.trim()) {
-      if (/^##\s+/m.test(text)) nextDocs = { ...nextDocs, prose: mergeProseAppend(base.docs.prose, text) };
-    } else if (!(fallback === 'style' && !looksLikeStyleDoc(text))) {
-      nextDocs = { ...nextDocs, [fallback]: text };
-    }
-  }
-  if (fallback === 'design' || nextDocs.design) {
-    nextDocs = { ...nextDocs, design: peelEditorTalk(nextDocs.design).doc };
-  }
-  return {
-    parsed,
-    nextDocs,
-    nextStory: storyFromProse(nextDocs.prose, parseStructure(nextDocs.chapters) || structure),
-    kind: lastUpdatedKind(updates) || (updates.length === 0 ? fallback : null),
-  };
 }
 
 function shortUserText(text: string) {
@@ -375,7 +309,8 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   const bootedRef = useRef(false);
   const autoRunRef = useRef(false);
   const autoStoryIdRef = useRef('');
-  const [autoRunning, setAutoRunning] = useState(false);
+  const [localAutoRunning, setAutoRunning] = useState(false);
+  const syncedServerJobsRef = useRef(new Map<string, string>());
   const viewRef = useRef({
     currentId: '',
     topicTitle: '',
@@ -416,6 +351,7 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   const thinkText = job.thinkText;
   const error = job.error;
   const draft = drafts[currentId] ?? '';
+  const autoRunning = signedIn ? Boolean(job.busy && job.kind === 'auto') : localAutoRunning;
 
   function snapshot(): StoryProject {
     const v = viewRef.current;
@@ -471,18 +407,22 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   function queueSave() {
     if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
     saveTimerRef.current = setTimeout(() => {
-      saveProject(snapshot()).catch(() => null);
+      const project = snapshot();
+      if (signedIn && jobsRef.current[project.id]?.busy) return;
+      saveProject(project).catch(() => null);
     }, 800);
   }
 
-  async function flushSave() {
+  async function flushSave(force = false) {
     if (saveTimerRef.current) {
       clearTimeout(saveTimerRef.current);
       saveTimerRef.current = null;
     }
     const project = snapshot();
     if (!isStoryId(project.id)) return;
-    await saveProject(project).catch(() => null);
+    if (signedIn && jobsRef.current[project.id]?.busy && !force) return;
+    if (force) await saveProject(project);
+    else await saveProject(project).catch(() => null);
   }
 
   function setJob(storyId: string, patch: Partial<ProjectJob>) {
@@ -492,12 +432,71 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
     setJobs(jobsRef.current);
   }
 
+  async function syncServerStory(storyId: string) {
+    const { story: fresh } = await apiJson<{ story: StoryProject }>(`/api/stories/${storyId}`);
+    loadedIdsRef.current.add(storyId);
+    replaceStories(upsertStory(storiesRef.current, fresh));
+    if (currentIdRef.current === storyId && mountedRef.current) {
+      skipSaveRef.current = true;
+      applyProject(fresh);
+    }
+  }
+
+  async function pollServerJob(storyId: string) {
+    if (!mountedRef.current) return;
+    const { job: remote } = await apiJson<{ job: ServerJob | null }>(`/api/generation-jobs?storyId=${encodeURIComponent(storyId)}`);
+    if (!remote || !mountedRef.current) return;
+    const active = remote.status === 'queued' || remote.status === 'running';
+    const previous = jobsRef.current[storyId];
+    const syncKey = `${remote.id}:${remote.round}:${remote.status}`;
+    if ((!active || remote.round !== previous?.round) && syncedServerJobsRef.current.get(storyId) !== syncKey) {
+      await syncServerStory(storyId);
+      syncedServerJobsRef.current.set(storyId, syncKey);
+    }
+    setJob(storyId, {
+      id: remote.id, kind: remote.kind, round: remote.round,
+      busy: active, generating: active && remote.stage !== 'structure',
+      structuring: active && remote.stage === 'structure',
+      streamText: active ? remote.output : '', thinkText: active ? remote.thinking : '', error: remote.error,
+    });
+  }
+
+  async function startServerJob(storyId: string, kind: 'single' | 'auto' | 'structure', input: {
+    userText?: string;
+    fallback?: DocKind;
+    messagesForModel?: ChatMessage[];
+  }): Promise<RunResult> {
+    if (!storyId || jobsRef.current[storyId]?.busy) return 'busy';
+    setJob(storyId, { busy: true, generating: kind !== 'structure', structuring: kind === 'structure', kind, streamText: '', thinkText: '', error: '' });
+    try {
+      await flushSave(true);
+      const { job: remote } = await apiJson<{ job: ServerJob }>('/api/generation-jobs', {
+        method: 'POST',
+        body: JSON.stringify({ storyId, kind, locale, ...input }),
+      });
+      setJob(storyId, { id: remote.id, round: remote.round, kind: remote.kind, busy: true, generating: remote.stage !== 'structure', structuring: remote.stage === 'structure' });
+      return 'ok';
+    } catch (err) {
+      setJob(storyId, { busy: false, generating: false, structuring: false, error: err instanceof Error ? err.message : '无法启动生成' });
+      if (input.userText && currentIdRef.current === storyId) {
+        const visible = input.userText.split('\n--------')[0].trim();
+        setDrafts((prev) => ({ ...prev, [storyId]: prev[storyId]?.trim() ? prev[storyId] : visible }));
+      }
+      return 'error';
+    }
+  }
+
   function replaceStories(next: StoryProject[]) {
     storiesRef.current = next;
     if (mountedRef.current) setStories(next);
   }
 
   function stopAutoWrite() {
+    if (signedIn) {
+      const id = jobsRef.current[currentIdRef.current]?.id;
+      if (id) void fetch(`/api/generation-jobs/${id}`, { method: 'DELETE' });
+      return;
+    }
     autoRunRef.current = false;
     const id = autoStoryIdRef.current || currentIdRef.current;
     if (id) abortsRef.current.get(id)?.abort();
@@ -505,6 +504,11 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   }
 
   function pauseGeneration() {
+    if (signedIn) {
+      const id = jobsRef.current[currentIdRef.current]?.id;
+      if (id) void fetch(`/api/generation-jobs/${id}`, { method: 'DELETE' });
+      return;
+    }
     if (autoRunRef.current) {
       stopAutoWrite();
       return;
@@ -555,7 +559,7 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   }
 
   function openStory(project: StoryProject, list = storiesRef.current) {
-    if (project.id !== currentIdRef.current) stopAutoWrite();
+    if (!signedIn && project.id !== currentIdRef.current) stopAutoWrite();
     replaceStories(list);
     applyProject(project);
     setPlayOpen(false);
@@ -638,11 +642,35 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
     return () => {
       mountedRef.current = false;
       autoRunRef.current = false;
+      invalidateCreateWorkspace();
       if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
       for (const ctrl of abortsRef.current.values()) ctrl.abort();
       abortsRef.current.clear();
     };
   }, []);
+
+  useEffect(() => {
+    if (!signedIn || !hydrated || !currentId) return;
+    let polling = false;
+    const poll = async () => {
+      if (polling) return;
+      polling = true;
+      const ids = new Set([currentId, ...Object.entries(jobsRef.current)
+        .filter(([, value]) => value.busy).map(([id]) => id)]);
+      await Promise.all([...ids].map((id) => pollServerJob(id).catch(() => null)));
+      polling = false;
+    };
+    void poll();
+    const timer = window.setInterval(poll, 1600);
+    const onFocus = () => void poll();
+    window.addEventListener('focus', onFocus);
+    document.addEventListener('visibilitychange', onFocus);
+    return () => {
+      window.clearInterval(timer);
+      window.removeEventListener('focus', onFocus);
+      document.removeEventListener('visibilitychange', onFocus);
+    };
+  }, [signedIn, hydrated, currentId]);
 
   useEffect(() => {
     if (!hydrated || !isStoryId(routeId) || routeId === currentIdRef.current) return;
@@ -863,6 +891,11 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
     const storyId = currentIdRef.current;
     if (!storyId || jobsRef.current[storyId]?.busy || jobsRef.current[storyId]?.structuring) return;
     if (!viewRef.current.designDoc.trim()) return;
+    if (signedIn) {
+      setTab('structure');
+      void startServerJob(storyId, 'structure', {});
+      return;
+    }
     const ctrl = new AbortController();
     abortsRef.current.set(storyId, ctrl);
     void refreshStructure(storyId, '按当前故事设计重新整理结构', viewRef.current.designDoc, ctrl.signal).finally(() => {
@@ -946,6 +979,7 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   ): Promise<RunResult> {
     const storyId = currentIdRef.current;
     if (!storyId || jobsRef.current[storyId]?.busy || !userText.trim()) return 'busy';
+    if (signedIn) return startServerJob(storyId, 'single', { userText, fallback, messagesForModel: opts?.messagesForModel });
     const history: ChatMessage[] = [
       ...viewRef.current.messages.filter((message) => message.role !== 'assistant' || message.content.trim()),
       { role: 'user', content: userText },
@@ -1079,6 +1113,10 @@ function CreateDeskInner({ ready, signedIn }: { ready: boolean; signedIn: boolea
   async function startAutoWrite() {
     const storyId = currentIdRef.current;
     if (!storyId || autoRunRef.current || jobsRef.current[storyId]?.busy) return;
+    if (signedIn) {
+      await startServerJob(storyId, 'auto', {});
+      return;
+    }
     autoRunRef.current = true;
     autoStoryIdRef.current = storyId;
     setAutoRunning(true);

@@ -1,0 +1,542 @@
+[
+  {
+    "slug": "zh-f-404-bride",
+    "language": "zh",
+    "gender": "female",
+    "title": "《恋爱综艺里，四个男人都选了我》",
+    "hook": "你只想替好友救场，却在首轮心动投票中同时收到四张票：温柔影帝、毒舌主理人、年下冠军和你的初恋。镜头之外，每个人都想让你只看他。",
+    "themes": [
+      "恋综修罗场",
+      "全员心动",
+      "初恋重逢",
+      "成年人恋爱",
+      "多男主结局"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "恋综修罗场",
+        "全员心动",
+        "初恋重逢",
+        "多男主结局",
+        "成年人恋爱",
+        "互动选择"
+      ],
+      "summary": "替好友救场登上恋爱综艺，却在首轮心动投票中意外收获四张票——温柔影帝、毒舌主理人、年下冠军，还有消失五年的初恋。镜头前是甜蜜互动，镜头后是暗流涌动的心意博弈。每一次选择都将推向不同的情感漩涡，而最终的心动投票，将决定谁陪你走到最后。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-f-changan-coroner",
+    "language": "zh",
+    "gender": "female",
+    "title": "《长安第一女掌柜的四封婚书》",
+    "hook": "你要在长安重开家业，却同时收到冷面将军、腹黑王爷、温润御医与江湖少主的婚书。他们争的不只是你的心，还有你手中能改变长安商路的密钥。",
+    "themes": [
+      "古风乙女",
+      "多男主",
+      "女商人",
+      "权谋甜宠",
+      "自主选择"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "古风乙女",
+        "多男主攻略",
+        "女商成长",
+        "权谋甜宠",
+        "自主选择",
+        "长安商战"
+      ],
+      "summary": "你带着改变长安商路的密钥重返故都，却同时收到四封婚书——冷面将军、腹黑王爷、温润御医、江湖少主各怀心思。你以商人之姿周旋于权谋与深情之间，在琉璃灯下试探、在暗桩夜探中博弈，最终在刀光与月色中做出只属于自己的抉择。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-f-last-exhibit",
+    "language": "zh",
+    "gender": "female",
+    "title": "《离婚倒计时：前任们全回来了》",
+    "hook": "你在离婚冷静期第一天搬进海边公寓，门外却依次出现想复婚的前夫、最懂你的竹马、气场全开的新老板和当年不告而别的摄影师。",
+    "themes": [
+      "都市成年人恋爱",
+      "前任修罗场",
+      "破镜重圆",
+      "年上年下",
+      "女性成长"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "都市恋爱",
+        "破镜重圆",
+        "多线攻略",
+        "女性成长",
+        "修罗场",
+        "互动选择"
+      ],
+      "summary": "离婚冷静期第一天，你搬进海边公寓，本以为只是给自己放个假。然而前任陆深若即若离的目光、竹马顾屿十几年如一日的温柔守候、新老板霍征不动声色的靠近，以及神秘摄影师沈夜镜头里那些令人心跳加速的瞬间，让这三十天变得暗流涌动。每一次选择都在改写故事的走向——是回到旧爱身边重新缝合裂痕，还是回应那份从未说出口的深情，又或者追随一个让你重新看见自己的灵魂？最终，你要找回的不只是一段感情，更是那个被遗忘的自己。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-f-dock-seven",
+    "language": "zh",
+    "gender": "female",
+    "title": "《顶流女导演今天选谁做男主》",
+    "hook": "你的处女作杀入国际电影节，四位男人争着演你的男主角：顶流、实力派影帝、天才编剧和投资人。试戏结束后，他们的表白却都不在剧本里。",
+    "themes": [
+      "娱乐圈",
+      "女导演",
+      "四角竞逐",
+      "事业爱情",
+      "电影感"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "娱乐圈",
+        "女导演",
+        "多男主竞逐",
+        "事业与爱情",
+        "互动选择",
+        "电影质感"
+      ],
+      "summary": "你的处女作意外杀入国际电影节，四位风格迥异的男人——顶流演员陆沉、实力派影帝沈屿、天才编剧顾行、神秘投资人——争相出演你的男主角。试戏的镜头之外，他们各自用不同的方式靠近你：有人在码头爆发式地袒露脆弱，有人在剧本边角写下只有你能读懂的批注，有人在深夜路灯下递来一个未完成的故事。当最终选角的电话拨出，你选择的不仅是一位演员，更是一段关系的开始。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-f-apocalypse-roommates",
+    "language": "zh",
+    "gender": "female",
+    "title": "《末日安全屋的心动合约》",
+    "hook": "你是安全屋唯一能修复净水系统的工程师，冷静队长、天才医生、危险雇佣兵和你失联的未婚夫都想带你离开，却只能选一条生路。",
+    "themes": [
+      "末日恋爱",
+      "强强联手",
+      "守护与占有",
+      "多男主",
+      "生存抉择"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "末日生存",
+        "多男主",
+        "强强联手",
+        "守护与占有",
+        "生存抉择",
+        "恋爱"
+      ],
+      "summary": "净水系统崩溃的末日安全屋里，你是唯一能修复它的工程师。冷静队长陆沉、天才医生沈夜、危险雇佣兵顾行舟——三个截然不同的男人各怀心思，都想带你离开这座摇摇欲坠的避难所。修复系统的每一个夜晚都暗流涌动，每一次抉择都将你推向不同的命运。当最后的时刻来临，你只能选择一条生路，而那个选择，也将决定谁陪你走向末世的尽头。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-evacuation-72",
+    "language": "zh",
+    "gender": "male",
+    "title": "《全公司都在猜我最后选谁》",
+    "hook": "你空降成为濒临破产的工作室主理人，高冷合伙人、元气策划、秘密投资人和你的天才前任同时进组。她们争项目，也在争你下班后的时间。",
+    "themes": [
+      "职场恋爱",
+      "多女主",
+      "创业逆袭",
+      "前任重逢",
+      "成年人拉扯"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "职场恋爱",
+        "多女主",
+        "创业逆袭",
+        "前任重逢",
+        "互动选择",
+        "成年人拉扯"
+      ],
+      "summary": "你空降成为一家濒临破产的游戏工作室主理人，高冷技术合伙人苏晚、元气策划林小鹿、神秘投资人沈知意，以及你的天才前任同时入局。她们在项目方向上针锋相对，也在你下班后的时间里暗中较量。每一次选择——支持谁的方案、让谁陪你准备路演、路演结束后走向谁——都将改写工作室的命运，也改写你与她们之间那条暧昧的线。三条终章，三种答案，成年人的感情没有标准解。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-delete-tomorrow",
+    "language": "zh",
+    "gender": "male",
+    "title": "《科技展上，四位天才女生向我宣战》",
+    "hook": "你带着一台未完成的陪伴机器人参展，却被冷艳女教授、青梅程序员、天才产品经理和竞争公司千金同时盯上。她们想抢你的代码，更想抢你的未来。",
+    "themes": [
+      "科技圈恋爱",
+      "天才女友",
+      "欢喜冤家",
+      "青梅竹马",
+      "多结局"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "科技创业",
+        "多女主",
+        "青梅竹马",
+        "欢喜冤家",
+        "多结局",
+        "天才女友"
+      ],
+      "summary": "你带着一台尚未完成的陪伴机器人「小橘」闯入科技展会，却意外成为全场焦点。冷艳女教授林知微想拆解你的算法，青梅竹马苏念默默递来关键补丁，天才产品经理唐若晴则直接开出合作邀约。代码是战场，心动是暗线——每一次技术交锋都在拉近彼此的距离。当展会落幕，你必须在月光实验室、火锅旧时光与并肩星光之间，做出唯一的抉择。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-last-metro",
+    "language": "zh",
+    "gender": "male",
+    "title": "《恋爱公寓的最后一间房》",
+    "hook": "你刚失业就抽中免费公寓，入住后才发现三位室友和神秘女房东都曾与你擦肩而过。一张共居合约，让四段错过的缘分同时开始。",
+    "themes": [
+      "合租日常",
+      "多女主",
+      "治愈喜剧",
+      "与女房东恋爱",
+      "心动选择"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "合租日常",
+        "多女主",
+        "治愈喜剧",
+        "女房东恋爱",
+        "心动选择",
+        "错过重逢"
+      ],
+      "summary": "刚失业的你意外抽中一间免费公寓，搬入后才发现三位性格迥异的女室友和那位神秘女房东，竟都曾在人生的某个转角与你擦肩而过。厨房里的深夜汤面、天台上的旧伞回忆、耳机里未说出口的告白……一张共居合约将四段错过的缘分重新牵起。合约到期之日，你必须在画、故事与雨之间，做出唯一的心动选择。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-unfinished-city",
+    "language": "zh",
+    "gender": "male",
+    "title": "《回村开民宿后，她们都追来了》",
+    "hook": "你辞去大厂工作回海岛修老宅，青梅村医、直播博主、毒舌建筑师和前上司先后入住。民宿还没开业，小岛已经开始押注你会和谁留下。",
+    "themes": [
+      "田园恋爱",
+      "民宿创业",
+      "青梅竹马",
+      "御姐年上",
+      "轻喜剧"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "田园恋爱",
+        "民宿创业",
+        "青梅竹马",
+        "御姐年上",
+        "轻喜剧",
+        "多线结局"
+      ],
+      "summary": "辞去大厂工作，回到海岛修缮祖辈老宅，本想开一间面朝大海的民宿，却没想到四位性格迥异的女性先后闯入生活——温柔的青梅村医、元气满满的直播博主、毒舌却靠谱的御姐建筑师，还有那位曾让你又敬又怕的前上司。修屋顶、清院子、筹备开业，每一个选择都在悄悄改写故事的走向。小岛上的邻居们已经开始打赌，而你的答案，藏在海风里。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "zh-m-fallen-emperor",
+    "language": "zh",
+    "gender": "male",
+    "title": "《我的四位女谋士都想当皇后》",
+    "hook": "你被推上乱世的王座，冷艳女将、腹黑宰相、温柔医女和敌国公主各自为你献上胜策。朝堂要你立后，她们却都不肯让你只把这当成政治。",
+    "themes": [
+      "架空宫廷",
+      "多女主",
+      "女将女相",
+      "权谋恋爱",
+      "王座与真心"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "架空宫廷",
+        "多女主",
+        "权谋恋爱",
+        "女将女相",
+        "王座与真心",
+        "互动分支"
+      ],
+      "summary": "乱世之中，你被推上王座，身边围绕着四位各怀心思的女子——冷艳女将沈清霜以银枪镇北境，腹黑宰相柳隐以折扇搅风云，温柔医女苏吟以药香守你安寝，敌国公主则在暗处递来另一条路。朝堂步步紧逼你立后，她们却各以真心为注，不肯让你只将这当作一场政治交易。每一次抉择都牵动战局与人心，最终你将走向演武场、相府还是太医院，以不同的方式回应那颗不肯退让的心。"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-bride-404",
+    "language": "en",
+    "gender": "female",
+    "title": "Every Man at the Wedding Chose Me",
+    "hook": "You attend a destination wedding determined to stay invisible, then receive confessions from the best man, the bride's guarded brother, a famous musician, and the ex who once broke your heart. By sunset, all four are openly competing for your next dance.",
+    "themes": [
+      "Destination romance",
+      "Multiple male love interests",
+      "Second chances",
+      "Rivals in love",
+      "Choice-driven endings"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "destination wedding",
+        "multiple love interests",
+        "second chances",
+        "rivals in love",
+        "choice-driven romance",
+        "interactive fiction"
+      ],
+      "summary": "You arrive at a sun-drenched destination wedding planning to blend into the background, but fate has other plans. Between the garden paths and the glowing dance floor, four very different men—each carrying their own secrets and desires—begin to orbit around you. The charming best man who makes you laugh until you forget your walls, the bride's guarded brother who finally lets someone in, a famous musician who sees something raw in your eyes, and the ex who once shattered your heart now standing close enough to touch. As the evening deepens and the music swells, every glance becomes a confession and every hand extended is a question: who will you choose for the last dance?"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-borrowed-crown",
+    "language": "en",
+    "gender": "female",
+    "title": "Four Princes, One Borrowed Crown",
+    "hook": "You impersonate a missing princess for seven days and discover that four men—a loyal knight, a rival prince, a charming spy, and your childhood protector—know the truth. Each offers an alliance, a kiss, and a different future.",
+    "themes": [
+      "Romantasy",
+      "Reverse harem rivalry",
+      "Hidden identity",
+      "Court intrigue",
+      "Multiple romance endings"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "Reverse Harem",
+        "Hidden Identity",
+        "Court Intrigue",
+        "Romantasy",
+        "Multiple Endings",
+        "Princess Impersonation"
+      ],
+      "summary": "Step into the borrowed face of a vanished princess and survive seven days of court intrigue where every smile hides a blade. Four men know your secret—a loyal knight, a rival prince, a charming spy, and your childhood protector—and each offers a different alliance, a different kiss, and a different future. Navigate branching paths through palace gardens and hidden gorges, choose between risky diplomacy and unshakeable evidence, and ultimately decide whose hand to take at the Conclave of Crowns. Will you claim the throne beside your champion, stand as an equal with a former rival, or walk away from power entirely with the one who sees only you?"
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-bellweather-train",
+    "language": "en",
+    "gender": "female",
+    "title": "The Summer All My Exes Came Home",
+    "hook": "You return to save your family’s lakeside inn and find three former flames plus the infuriating architect next door competing to help. The town festival ends with one public declaration—and the choice is yours.",
+    "themes": [
+      "Small-town romance",
+      "Second chance",
+      "Multiple suitors",
+      "Summer festival",
+      "Female ambition"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "small-town romance",
+        "second chance",
+        "multiple suitors",
+        "summer festival",
+        "female ambition",
+        "interactive choice"
+      ],
+      "summary": "When you return home to rescue your family's crumbling lakeside inn, you're met by three men from your past—Daniel, the quietly devoted one who always shows up; Theo, the architect whose blueprint with you was never finished; and Marco, the artist whose passion sets everything ablaze. As summer unfolds and the town festival approaches, each man offers something different: stability, reinvention, or creative fire. Your choices shape alliances, reopen old wounds, and build toward a single night when one of them will make a public declaration—and you'll decide who gets to stay."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-influencer-murder",
+    "language": "en",
+    "gender": "female",
+    "title": "The Bachelorette Bet Nobody Was Meant to Win",
+    "hook": "You join a dating show to expose its producer, but the sincere single dad, the rebellious chef, the polished heir, and the cameraman who knows your secret all fall for you—and start breaking the show’s rules to prove it.",
+    "themes": [
+      "Reality TV romance",
+      "Four suitors",
+      "Behind-the-scenes secrets",
+      "Romantic comedy",
+      "Player choice"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "Reality TV Romance",
+        "Multiple Love Interests",
+        "Undercover Identity",
+        "Romantic Comedy",
+        "Player Choice",
+        "Behind-the-Scenes Intrigue"
+      ],
+      "summary": "You go undercover on a hit dating show to expose its corrupt producer, but the four contestants have no idea you're a journalist—and they're all falling for you. Between stolen terrace conversations, a rose ceremony that tests your loyalties, and a finale night that forces you to choose between a steady single father, a fiery chef, and a sharp-tongued heir willing to torch his own legacy, the line between your mission and your heart blurs fast. Every choice reshapes who you trust, what you publish, and whether love on camera can ever be real."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-f-saltwater-letters",
+    "language": "en",
+    "gender": "female",
+    "title": "The Last Lighthouse Keeper Has Four Visitors",
+    "hook": "You inherit a remote lighthouse for one stormy month. A rescue pilot, a marine biologist, a bestselling novelist, and the island mayor each arrive with a reason to stay—and none intends to let the others win your heart.",
+    "themes": [
+      "Coastal romance",
+      "Forced proximity",
+      "Multiple male love interests",
+      "Cozy mystery",
+      "Emotional choice"
+    ],
+    "recommendation": {
+      "gender": "female",
+      "tags": [
+        "coastal romance",
+        "forced proximity",
+        "multiple love interests",
+        "cozy mystery",
+        "emotional choice",
+        "interactive fiction"
+      ],
+      "summary": "A solitary lighthouse on a storm-battered island becomes the stage for an unforgettable month when four compelling men arrive, each with their own reason to stay—and to win your heart. Finn, a passionate marine biologist drawn to the seals; Rowan, a bestselling novelist haunted by a mysterious connection to the island; Callum, a steady rescue pilot who commands the skies; and the enigmatic island mayor all orbit your world as the weather closes in. Through branching choices—from helping set up monitoring equipment on the rocks to accepting a quiet conversation about a woman named Maren—you shape not only the romance but the mystery woven into the lighthouse's past. The story builds toward a final, deeply personal choice: the sky, the shore, or the quiet fire of being truly seen. Atmospheric, cozy, and emotionally rich, this is a love letter to slow-burn connection set against the wild beauty of the coast."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-lunar-dead-drop",
+    "language": "en",
+    "gender": "male",
+    "title": "Four Women at the Lunar Embassy",
+    "hook": "Your first week as Earth’s lunar diplomat becomes complicated when a fearless pilot, a brilliant scientist, a rival ambassador, and your former academy partner all request you for the same mission—and for reasons that are not strictly professional.",
+    "themes": [
+      "Sci-fi romance",
+      "Multiple female love interests",
+      "Rivals to lovers",
+      "Moon colony",
+      "Choice-driven endings"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "Sci-fi romance",
+        "Multiple love interests",
+        "Moon colony",
+        "Choice-driven endings",
+        "Rivals to lovers",
+        "Interactive fiction"
+      ],
+      "summary": "You've just been appointed Earth's lunar diplomat, and your first week at Selene Station is anything but routine. A daring pilot named Valera, a visionary scientist called Suki, and your sharp-tongued rival ambassador Maren each pull you toward the same high-stakes mission to Shackleton Crater—but their motives blur the line between professional duty and personal desire. Navigate political intrigue, moonlit galas, and rooftop escapes as you weigh loyalty against ambition, ultimately choosing which woman will stand beside you when the mission reaches its heart."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-murder-startup",
+    "language": "en",
+    "gender": "male",
+    "title": "My Startup Has Four Co-Founders and One Impossible Choice",
+    "hook": "You have thirty days to save your company while four remarkable women—your relentless COO, a playful designer, a mysterious investor, and the engineer who was your first love—compete for control of the launch and a place beside you afterward.",
+    "themes": [
+      "Startup romance",
+      "Multiple heroines",
+      "Workplace rivalry",
+      "First love",
+      "Ambition and affection"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "Startup Romance",
+        "Multiple Heroines",
+        "Workplace Rivalry",
+        "Branching Choices",
+        "Ambition vs. Love",
+        "First Love"
+      ],
+      "summary": "Your company has thirty days before a make-or-break product launch, and four extraordinary women each hold a piece of the puzzle—and a piece of your heart. Dana offers steady reliability, Mira brings breathtaking vision, Elena carries the weight of shared history, and Sofia wields sharp solutions with sharper charm. Every decision you make reshapes the launch strategy and pulls you closer to one of them. As deadlines tighten and alliances shift, you'll discover that saving the company and choosing who stands beside you might be the same impossible decision."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-blackridge-mall",
+    "language": "en",
+    "gender": "male",
+    "title": "The Apartment Above the Midnight Bookshop",
+    "hook": "A cheap room above a bookshop comes with four women already woven into its nights: the sharp-tongued owner, a warmhearted baker, a famous author in hiding, and your adventurous childhood friend. Their book-club rivalry soon becomes personal.",
+    "themes": [
+      "Cozy urban romance",
+      "Multiple heroines",
+      "Roommates",
+      "Bookshop",
+      "Slow burn"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "cozy romance",
+        "multiple heroines",
+        "bookshop setting",
+        "slow burn",
+        "roommates",
+        "slice of life"
+      ],
+      "summary": "A cheap room above a bookshop comes with four women already woven into its nights: the sharp-tongued owner, a warmhearted baker, a famous author in hiding, and your adventurous childhood friend. Their book-club rivalry soon becomes personal."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-own-rebellion",
+    "language": "en",
+    "gender": "male",
+    "title": "The King and His Four Rival Queens",
+    "hook": "On the eve of your coronation, a warrior general, a cunning chancellor, a compassionate healer, and a rebellious foreign princess each offers the alliance that could save your kingdom. Each also wants the man beneath the crown.",
+    "themes": [
+      "Fantasy romance",
+      "Four heroines",
+      "Court rivalry",
+      "Political marriage",
+      "Multiple endings"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "fantasy romance",
+        "multiple heroines",
+        "political intrigue",
+        "branching choices",
+        "coronation drama",
+        "multiple endings"
+      ],
+      "summary": "On the night before your coronation, the fate of your kingdom rests not only on the crown but on the woman who stands beside it. Seraphina, a battle-hardened general who speaks only truth; Isolde, a gentle healer whose devotion runs deeper than years; and Vanya, a foreign princess who offers an alliance as dangerous as it is dazzling—each presents a path to power, and each wants the man beneath the throne. Navigate intimate dinners, moonlit gardens, and tense court audiences as rival factions close in. Your final choice will determine not just your queen, but the very shape of the realm."
+    },
+    "nodes": 11
+  },
+  {
+    "slug": "en-m-colony-vote",
+    "language": "en",
+    "gender": "male",
+    "title": "Mars Colony Dating Protocol",
+    "hook": "You are selected for the colony’s compatibility trial, only to match equally with its daring commander, reserved botanist, mischievous mechanic, and charismatic rival candidate. The whole colony watches them compete—but the final decision belongs to you.",
+    "themes": [
+      "Mars romance",
+      "Multiple female love interests",
+      "Dating experiment",
+      "Found family",
+      "Choice-driven endings"
+    ],
+    "recommendation": {
+      "gender": "male",
+      "tags": [
+        "Mars romance",
+        "multiple love interests",
+        "dating experiment",
+        "choice-driven",
+        "sci-fi colony",
+        "found family"
+      ],
+      "summary": "On a remote Mars colony, you're chosen for a public compatibility trial that pairs you with four unforgettable women: a daring commander, a reserved botanist, a mischievous mechanic, and a charismatic rival candidate. As the entire colony watches the competition unfold, you navigate quiet greenhouse moments, sunset ridge conversations, and midnight surprises in engineering bays. Each path reveals a different lesson about love, courage, and connection—until the midpoint evaluation forces you to choose whose heart you'll carry home among the stars."
+    },
+    "nodes": 11
+  }
+]

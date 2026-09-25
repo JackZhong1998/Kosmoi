@@ -12,6 +12,10 @@ npm run dev
 
 打开 http://localhost:3000
 
+使用云端创作任务前，先在 Supabase SQL Editor 执行
+`supabase/migrations/20260925_generation_jobs.sql`。部署新版本前也必须先执行这份迁移。
+创作任务由服务端持续执行，切换页面或把浏览器放到后台后可以继续；返回创作页会重新读取进度。
+
 环境变量：
 
 ```

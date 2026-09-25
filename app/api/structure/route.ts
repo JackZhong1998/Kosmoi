@@ -4,6 +4,7 @@ import path from 'node:path';
 import { Readable } from 'node:stream';
 import { NextRequest } from 'next/server';
 import { requireUserId } from '@/lib/auth-user';
+import { getJob } from '@/lib/generation-jobs';
 import { updateStory } from '@/lib/db';
 import { isStoryId } from '@/lib/stories';
 import {
@@ -321,8 +322,22 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  const { userId, error } = await requireUserId();
-  if (error) return error;
+  let userId: string | null = null;
+  let authorizedStoryId = '';
+  const jobId = req.headers.get('x-generation-job-id') || '';
+  const jobToken = req.headers.get('x-job-token') || '';
+  if (jobId && jobToken) {
+    const job = await getJob(jobId);
+    if (!job || job.input.dispatchToken !== jobToken || job.status !== 'running' || job.input.stage !== 'structure') {
+      return Response.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    userId = job.user_id;
+    authorizedStoryId = job.story_id;
+  } else {
+    const auth = await requireUserId();
+    if (auth.error) return auth.error;
+    userId = auth.userId;
+  }
   const apiKey = process.env.OPENROUTER_API_KEY;
   const model = process.env.OPENROUTER_TEXT_MODEL || 'deepseek/deepseek-v4.1-flash';
   if (!apiKey) {
@@ -335,6 +350,9 @@ export async function POST(req: NextRequest) {
   const designDoc = typeof body.designDoc === 'string' ? body.designDoc : '';
   const revision = typeof body.revision === 'string' ? body.revision : '';
   const storyId = typeof body.storyId === 'string' ? body.storyId : '';
+  if (authorizedStoryId && storyId !== authorizedStoryId) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
   const part = asPart(body.part);
   const flowIds = asStringList(body.flowIds);
   const missingIds = asStringList(body.missingIds);

@@ -178,6 +178,32 @@ CREATE TABLE IF NOT EXISTS public.ai_usage (
 CREATE INDEX IF NOT EXISTS idx_ai_usage_user
   ON public.ai_usage(user_id, created_at DESC);
 
+-- Generation runs independently of the browser connection. One active run per story.
+CREATE TABLE IF NOT EXISTS public.generation_jobs (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id TEXT NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
+  story_id UUID NOT NULL REFERENCES public.stories(id) ON DELETE CASCADE,
+  kind TEXT NOT NULL CHECK (kind IN ('single', 'auto', 'structure')),
+  status TEXT NOT NULL DEFAULT 'queued' CHECK (status IN ('queued', 'running', 'done', 'error', 'canceled')),
+  input JSONB NOT NULL DEFAULT '{}'::jsonb,
+  output TEXT NOT NULL DEFAULT '',
+  thinking TEXT NOT NULL DEFAULT '',
+  error TEXT NOT NULL DEFAULT '',
+  round INTEGER NOT NULL DEFAULT 0,
+  cancel_requested BOOLEAN NOT NULL DEFAULT false,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_generation_jobs_one_active_story
+  ON public.generation_jobs(story_id) WHERE status IN ('queued', 'running');
+CREATE INDEX IF NOT EXISTS idx_generation_jobs_user_story
+  ON public.generation_jobs(user_id, story_id, created_at DESC);
+DROP TRIGGER IF EXISTS generation_jobs_updated_at ON public.generation_jobs;
+CREATE TRIGGER generation_jobs_updated_at
+  BEFORE UPDATE ON public.generation_jobs
+  FOR EACH ROW EXECUTE FUNCTION public.update_updated_at();
+
 -- ---------------------------------------------------------------------------
 -- Row Level Security: deny anon/authenticated; service_role bypasses RLS
 -- ---------------------------------------------------------------------------
@@ -188,6 +214,7 @@ ALTER TABLE public.stories ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.publications ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.reading_progress ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.ai_usage ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.generation_jobs ENABLE ROW LEVEL SECURITY;
 
 DROP POLICY IF EXISTS "Service role can manage profiles" ON public.profiles;
 DROP POLICY IF EXISTS "Service role can manage subscriptions" ON public.subscriptions;
@@ -196,6 +223,7 @@ DROP POLICY IF EXISTS "Service role can manage stories" ON public.stories;
 DROP POLICY IF EXISTS "Service role can manage publications" ON public.publications;
 DROP POLICY IF EXISTS "Service role can manage reading progress" ON public.reading_progress;
 DROP POLICY IF EXISTS "Service role can manage ai usage" ON public.ai_usage;
+DROP POLICY IF EXISTS "Service role can manage generation jobs" ON public.generation_jobs;
 
 CREATE POLICY "Service role can manage profiles"
   ON public.profiles FOR ALL
@@ -229,5 +257,10 @@ CREATE POLICY "Service role can manage reading progress"
 
 CREATE POLICY "Service role can manage ai usage"
   ON public.ai_usage FOR ALL
+  USING (auth.role() = 'service_role')
+  WITH CHECK (auth.role() = 'service_role');
+
+CREATE POLICY "Service role can manage generation jobs"
+  ON public.generation_jobs FOR ALL
   USING (auth.role() = 'service_role')
   WITH CHECK (auth.role() = 'service_role');
